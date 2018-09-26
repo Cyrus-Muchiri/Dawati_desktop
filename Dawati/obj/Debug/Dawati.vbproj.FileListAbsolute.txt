@@ -43,3 +43,8 @@ C:\Users\Carrel-PC\documents\visual studio 2015\Projects\Dawati\Dawati\obj\Debug
 C:\Users\Carrel-PC\documents\visual studio 2015\Projects\Dawati\Dawati\obj\Debug\Dawati.xml
 C:\Users\Carrel-PC\documents\visual studio 2015\Projects\Dawati\Dawati\obj\Debug\Dawati.pdb
 C:\Users\Carrel-PC\documents\visual studio 2015\Projects\Dawati\Dawati\obj\Debug\Dawati.vbprojResolveAssemblyReference.cache
+C:\Users\Carrel-PC\documents\visual studio 2015\Projects\Dawati\Dawati\obj\Debug\Dawati.ebookViewer.resources
+C:\Users\Carrel-PC\documents\visual studio 2015\Projects\Dawati\Dawati\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Carrel-PC\documents\visual studio 2015\Projects\Dawati\Dawati\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Users\Carrel-PC\documents\visual studio 2015\Projects\Dawati\Dawati\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
+C:\Users\Carrel-PC\documents\visual studio 2015\Projects\Dawati\Dawati\bin\Debug\BCrypt.Net.xml

@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class signInForm
-    Inherits MetroFramework.Forms.MetroForm
+    Inherits System.Windows.Forms.Form
 
 
 
@@ -31,8 +31,8 @@ Partial Class signInForm
         Me.signInMetroButton = New MetroFramework.Controls.MetroButton()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
-        Me.logoPanel = New System.Windows.Forms.Panel()
         Me.closeMetroButton = New MetroFramework.Controls.MetroButton()
+        Me.logoPanel = New System.Windows.Forms.Panel()
         Me.SuspendLayout()
         '
         'titleMetroLabel
@@ -136,14 +136,6 @@ Partial Class signInForm
         Me.MetroLabel2.TabIndex = 5
         Me.MetroLabel2.Text = "Password"
         '
-        'logoPanel
-        '
-        Me.logoPanel.BackgroundImage = CType(resources.GetObject("logoPanel.BackgroundImage"), System.Drawing.Image)
-        Me.logoPanel.Location = New System.Drawing.Point(2, 5)
-        Me.logoPanel.Name = "logoPanel"
-        Me.logoPanel.Size = New System.Drawing.Size(284, 300)
-        Me.logoPanel.TabIndex = 6
-        '
         'closeMetroButton
         '
         Me.closeMetroButton.Location = New System.Drawing.Point(339, 210)
@@ -153,11 +145,21 @@ Partial Class signInForm
         Me.closeMetroButton.Text = "Close"
         Me.closeMetroButton.UseSelectable = True
         '
+        'logoPanel
+        '
+        Me.logoPanel.BackgroundImage = CType(resources.GetObject("logoPanel.BackgroundImage"), System.Drawing.Image)
+        Me.logoPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.logoPanel.Location = New System.Drawing.Point(2, 0)
+        Me.logoPanel.Name = "logoPanel"
+        Me.logoPanel.Size = New System.Drawing.Size(284, 305)
+        Me.logoPanel.TabIndex = 6
+        '
         'signInForm
         '
         Me.AcceptButton = Me.signInMetroButton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(673, 303)
         Me.ControlBox = False
@@ -169,11 +171,9 @@ Partial Class signInForm
         Me.Controls.Add(Me.passwordMetroTextBox)
         Me.Controls.Add(Me.emailMetroTextBox)
         Me.Controls.Add(Me.titleMetroLabel)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
-        Me.Movable = False
         Me.Name = "signInForm"
-        Me.Resizable = False
-        Me.Style = MetroFramework.MetroColorStyle.Purple
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -185,6 +185,6 @@ Partial Class signInForm
     Friend WithEvents signInMetroButton As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents logoPanel As Panel
     Friend WithEvents closeMetroButton As MetroFramework.Controls.MetroButton
+    Friend WithEvents logoPanel As Panel
 End Class

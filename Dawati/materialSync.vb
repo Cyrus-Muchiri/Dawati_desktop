@@ -1,4 +1,5 @@
 ﻿Imports System.Net
+Imports System.IO
 Imports System.Net.WebClient.dowloadFile
 
 Public Class materialSync
@@ -81,7 +82,8 @@ Public Class materialSync
                     Dim insertstrSql As String = "Insert into multimedia_content (file_id,file_name,file_type,target,num_slides,multimedia_series,
                     multimedia_type,study_level ) VALUES( '" & file_id & "','" & file_name & "','" & file_type & "','" & target & "','" & num_slides & "',
                     '" & multimedia_series & "','" & multimedia_type & "','" & study_level & "') "
-
+                    'download said video
+                    downloadVideos(file_name)
                     dbConnect.insertSqlite(insertstrSql)
                     dbConnect.closeSqlite()
 
@@ -97,14 +99,20 @@ Public Class materialSync
 
         ElseIf count > 0 Then
             MessageBox.Show("" & count & " videos and ebooks will be added to your offline base", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            downloadVideos(count, file_id)
 
         End If
         dbConnect.closeDbConnection() 'close connection
     End Sub
 
-    Private Sub downloadVideos(count, file_id)
+    Private Sub downloadVideos(file_name)
+        If (File.Exists("https://www.dawati.co.ke/uploads/multimedia/content/video/Biology/" & file_name & "")) Then
+            MessageBox.Show("You are lucky mf")
+            'My.Computer.Network.DownloadFile("https://dawati.co.ke/uploads/")
+        Else
+            MessageBox.Show("unlucky bro")
 
+
+        End If
     End Sub
 
 

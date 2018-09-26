@@ -1,6 +1,7 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class signUpForm
-    Inherits MetroFramework.Forms.MetroForm
+    Inherits System.Windows.Forms.Form
+
 
     'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _
@@ -83,7 +84,7 @@ Partial Class signUpForm
         Me.detailsMetroPanel.HorizontalScrollbarSize = 10
         Me.detailsMetroPanel.Location = New System.Drawing.Point(438, 5)
         Me.detailsMetroPanel.Name = "detailsMetroPanel"
-        Me.detailsMetroPanel.Size = New System.Drawing.Size(463, 471)
+        Me.detailsMetroPanel.Size = New System.Drawing.Size(463, 485)
         Me.detailsMetroPanel.Style = MetroFramework.MetroColorStyle.Purple
         Me.detailsMetroPanel.TabIndex = 14
         Me.detailsMetroPanel.VerticalScrollbarBarColor = True
@@ -284,6 +285,7 @@ Partial Class signUpForm
         '
         'emailMetroTextBox
         '
+        Me.emailMetroTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight
         '
         '
         '
@@ -421,7 +423,7 @@ Partial Class signUpForm
         Me.MetroPanel2.HorizontalScrollbarSize = 10
         Me.MetroPanel2.Location = New System.Drawing.Point(0, 5)
         Me.MetroPanel2.Name = "MetroPanel2"
-        Me.MetroPanel2.Size = New System.Drawing.Size(441, 464)
+        Me.MetroPanel2.Size = New System.Drawing.Size(441, 485)
         Me.MetroPanel2.TabIndex = 15
         Me.MetroPanel2.VerticalScrollbarBarColor = True
         Me.MetroPanel2.VerticalScrollbarHighlightOnWheel = False
@@ -431,16 +433,14 @@ Partial Class signUpForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackLocation = MetroFramework.Forms.BackLocation.TopLeft
-        Me.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.None
         Me.ClientSize = New System.Drawing.Size(895, 492)
         Me.ControlBox = False
         Me.Controls.Add(Me.MetroPanel2)
         Me.Controls.Add(Me.detailsMetroPanel)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "signUpForm"
-        Me.Resizable = False
-        Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.Flat
-        Me.Style = MetroFramework.MetroColorStyle.Purple
         Me.TransparencyKey = System.Drawing.Color.MidnightBlue
         Me.detailsMetroPanel.ResumeLayout(False)
         Me.detailsMetroPanel.PerformLayout()

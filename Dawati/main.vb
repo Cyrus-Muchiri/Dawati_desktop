@@ -11,6 +11,7 @@ Public Class mainForm
     'variable to store whether videos or ebooks the user chose to click
     Public subject As String ' stores subject
     Public learningMaterial As String 'stores video or ebook
+    Public Shared learningMaterialType As String = "videos" ' stores either value ebook or video
     Public url As String
 
     Public Sub initialize()
@@ -155,13 +156,13 @@ Public Class mainForm
         Dim decrypter As New folderEnc
 
         Try
-            Dim ebooksPath = "assets\ebooks\encrypted"
+            Dim ebooksPath = path
 
-            Dim originalFileName As String = Dir.Substring(24)
-            Dim filenameNoExtension As String = System.IO.Path.GetFileNameWithoutExtension(originalFileName)
-            Dim outfilePath = "assets\ebooks\decrypted\" & originalFileName & ""
+            Dim originalFileName As String = ebooksPath.Substring(24)
+            'Dim filenameNoExtension As String = System.IO.Path.GetFileNameWithoutExtension(originalFileName)
+            Dim outfilePath = "assets\ebooks\decrypted\" & originalFileName & ".pdf"
             Dim password = "1234567890"
-            decrypter.DecryptFile(password, Dir, outfilePath)
+            decrypter.DecryptFile(password, ebooksPath, outfilePath)
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -171,11 +172,13 @@ Public Class mainForm
 
     Private Sub videosMetroTile_Click(sender As Object, e As EventArgs) Handles videosMetroTile.Click
         videosMetroPanel.Visible = True
+        learningMaterialType = "videos"
         ebooksMetroPanel.Visible = False
     End Sub
 
     Private Sub ebooksMetroTile_Click(sender As Object, e As EventArgs) Handles ebooksMetroTile.Click
         ebooksMetroPanel.Visible = True
+        learningMaterialType = "ebooks"
         videosMetroPanel.Visible = False
     End Sub
 

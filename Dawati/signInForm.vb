@@ -52,7 +52,7 @@ Public Class signInForm
         End Try
         'comparing passwords
         If userStatus = "Confirmed" Then
-            If BCrypt.Net.BCrypt.CheckPassword(password, dbPassword) Then
+            If BCrypt.Net.BCrypt.Verify(password, dbPassword) Then
                 'getting user category
                 If userCategory = 1 Then
                     mainForm.initialize()

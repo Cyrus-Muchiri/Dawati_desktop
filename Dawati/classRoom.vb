@@ -92,6 +92,7 @@ Public Class classRoom
 
         While dbConnect.reader.Read
             listBox.Items.Add(dbConnect.reader("file_name"))
+            ebookViewer.ebookPlayListBox.Items.Add(dbConnect.reader("file_name"))
             videoPlayer.playListListBox.Items.Add(dbConnect.reader("file_name"))
         End While
         dbConnect.closeSqlite()
@@ -114,12 +115,19 @@ Public Class classRoom
     End Sub
     'get the selected videos and call player
     Public Sub getSelectedEbook(ByVal listBox As ListBox)
+        'videos in file are encrypted so we have to decrypt first.
+
         Dim selectedItem As String = listBox.SelectedItem
-        Dim urlToDecrypt As String = "assets\videos\encrypted\" & selectedItem & "".Substring(urlToDecrypt - 4) 'removes the file extension by substringing
-        'urlToDecrypt.Substring(urlToDecrypt - 4) 'removes the file extension by substringing
-        mainForm.decryptVideo(urlToDecrypt)
-        Dim videoUrl As String = "assets\videos\decrypted\" & selectedItem & ""
-        playVideo(videoUrl)
+        'string to decrypt , order is reverse, substring then reverse.
+        'Dim urlToSubstring As String = StrReverse("assets\ebooks\encrypted\" & selectedItem & "")
+        'removes the file extension by substringing while in reverse
+        'Dim partialString As String = urlToSubstring.Substring(4)
+        ''revesing back to get orignal string
+        Dim urlToDecrypt = "assets\ebooks\encrypted\" & selectedItem & ""
+        mainForm.decryptEbook(urlToDecrypt)
+        Dim ebookUrl As String = "assets\ebooks\decrypted\" & selectedItem & ".pdf"
+        MessageBox.Show(ebookUrl)
+        playEbook(ebookUrl)
     End Sub
     Private Sub playVideo(ByVal url As String)
         videoPlayer.initialize(url)
@@ -127,6 +135,8 @@ Public Class classRoom
         videoPlayer.Show()
     End Sub
     Private Sub playEbook(ByVal url As String)
+        ebookViewer.Show()
+        ebookViewer.initialize(url)
 
     End Sub
 
@@ -134,27 +144,52 @@ Public Class classRoom
     'do not change the names of the selected tab string
     Public Sub viewMetroButton_Click(sender As Object, e As EventArgs) Handles viewMetroButton.Click
         ' Dim multimediaSeries As String 'this is a local one
-        Dim listbox As ListBox
-        Dim selectedTab As String = classRoomMetroTabControl.SelectedTab.Text
-        If selectedTab = "                                    Lab practicals                                          |" Then
-            listbox = labListBox
-            getSelectedVideo(listbox)
-            'videoPlayer.fillListBox()
+        If mainForm.learningMaterialType = "videos" Then
+            Dim listbox As ListBox
+            Dim selectedTab As String = classRoomMetroTabControl.SelectedTab.Text
+            If selectedTab = "                                    Lab practicals                                          |" Then
+                listbox = labListBox
+                getSelectedVideo(listbox)
+                'videoPlayer.fillListBox()
 
 
-        ElseIf selectedTab = "                              Class Work                                           |" Then
-            listbox = classWorkListBox
-            getSelectedVideo(listbox)
-            ' videoPlayer.fillListBox()
+            ElseIf selectedTab = "                              Class Work                                           |" Then
+                listbox = classWorkListBox
+                getSelectedVideo(listbox)
+                ' videoPlayer.fillListBox()
 
-            ' MessageBox.Show("true")
-        ElseIf selectedTab = "                                     Exams                           " Then
-            listbox = examsListBox
-            getSelectedVideo(listbox)
-            'videoPlayer.fillListBox()
+                ' MessageBox.Show("true")
+            ElseIf selectedTab = "                                     Exams                           " Then
+                listbox = examsListBox
+                getSelectedVideo(listbox)
+                'videoPlayer.fillListBox()
 
-        Else
-            'MessageBox.Show(selectedTab)
+            Else
+                'MessageBox.Show(selectedTab)
+            End If
+        ElseIf mainForm.learningMaterialType = "ebooks" Then
+            Dim listbox As ListBox
+            Dim selectedTab As String = classRoomMetroTabControl.SelectedTab.Text
+            If selectedTab = "                                    Lab practicals                                          |" Then
+                listbox = labListBox
+                getSelectedEbook(listbox)
+                'videoPlayer.fillListBox()
+
+
+            ElseIf selectedTab = "                              Class Work                                           |" Then
+                listbox = classWorkListBox
+                getSelectedEbook(listbox)
+                ' videoPlayer.fillListBox()
+
+                ' MessageBox.Show("true")
+            ElseIf selectedTab = "                                     Exams                           " Then
+                listbox = examsListBox
+                getSelectedEbook(listbox)
+                'videoPlayer.fillListBox()
+
+            Else
+                'MessageBox.Show(selectedTab)
+            End If
         End If
 
     End Sub
