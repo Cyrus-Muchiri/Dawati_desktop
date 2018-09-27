@@ -19,6 +19,10 @@ Public Class signUpForm
     Private userCategory As String
     Private count As Integer ' activates sign up button
 
+
+    Public Sub initialize()
+
+    End Sub
     'make sign up button inactive
     Private Sub signUpForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         signUpMetroButton.Enabled = False

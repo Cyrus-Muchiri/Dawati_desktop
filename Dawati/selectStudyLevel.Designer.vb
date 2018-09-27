@@ -32,45 +32,54 @@ Partial Class selectStudyLevel
         'form1MetroTile
         '
         Me.form1MetroTile.ActiveControl = Nothing
+        Me.form1MetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.form1MetroTile.Location = New System.Drawing.Point(23, 85)
         Me.form1MetroTile.Name = "form1MetroTile"
         Me.form1MetroTile.Size = New System.Drawing.Size(107, 63)
         Me.form1MetroTile.TabIndex = 0
         Me.form1MetroTile.Text = "Form 1"
+        Me.form1MetroTile.UseCustomBackColor = True
         Me.form1MetroTile.UseSelectable = True
         '
         'form2MetroTile
         '
         Me.form2MetroTile.ActiveControl = Nothing
+        Me.form2MetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.form2MetroTile.Location = New System.Drawing.Point(153, 85)
         Me.form2MetroTile.Name = "form2MetroTile"
         Me.form2MetroTile.Size = New System.Drawing.Size(104, 63)
         Me.form2MetroTile.TabIndex = 1
         Me.form2MetroTile.Text = "Form 2"
+        Me.form2MetroTile.UseCustomBackColor = True
         Me.form2MetroTile.UseSelectable = True
         '
         'form3MetroTile
         '
         Me.form3MetroTile.ActiveControl = Nothing
+        Me.form3MetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.form3MetroTile.Location = New System.Drawing.Point(23, 180)
         Me.form3MetroTile.Name = "form3MetroTile"
         Me.form3MetroTile.Size = New System.Drawing.Size(107, 60)
         Me.form3MetroTile.TabIndex = 2
         Me.form3MetroTile.Text = "Form 3"
+        Me.form3MetroTile.UseCustomBackColor = True
         Me.form3MetroTile.UseSelectable = True
         '
         'form4MetroTile
         '
         Me.form4MetroTile.ActiveControl = Nothing
+        Me.form4MetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.form4MetroTile.Location = New System.Drawing.Point(153, 180)
         Me.form4MetroTile.Name = "form4MetroTile"
         Me.form4MetroTile.Size = New System.Drawing.Size(104, 60)
         Me.form4MetroTile.TabIndex = 3
         Me.form4MetroTile.Text = "Form 4"
+        Me.form4MetroTile.UseCustomBackColor = True
         Me.form4MetroTile.UseSelectable = True
         '
         'cancelMetroButton
         '
+        Me.cancelMetroButton.Highlight = True
         Me.cancelMetroButton.Location = New System.Drawing.Point(184, 254)
         Me.cancelMetroButton.Name = "cancelMetroButton"
         Me.cancelMetroButton.Size = New System.Drawing.Size(75, 34)
@@ -91,7 +100,7 @@ Partial Class selectStudyLevel
         Me.Controls.Add(Me.form1MetroTile)
         Me.Name = "selectStudyLevel"
         Me.Resizable = False
-        Me.Style = MetroFramework.MetroColorStyle.Purple
+        Me.Style = MetroFramework.MetroColorStyle.Green
         Me.Text = "Select Study Level"
         Me.ResumeLayout(False)
 

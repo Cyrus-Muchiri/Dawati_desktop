@@ -7,19 +7,26 @@ Imports System.Net
 
 
 Imports System.IO
+
+' enumeration for user type, visible through the project
+
 Public Class mainForm
     'variable to store whether videos or ebooks the user chose to click
     Public subject As String ' stores subject
     Public learningMaterial As String 'stores video or ebook
+    Public Shared learningMaterialType As String = "videos" ' stores either value ebook or video
     Public url As String
-
+    Private fname As String
     Public Sub initialize()
         videosMetroPanel.Visible = True
         ebooksMetroPanel.Visible = False
+        profilePanel.Visible = False
+
+
         'variables for profile pic, last name first name and status
         Dim prof_pic As String
         Dim lname As String
-        Dim fname As String
+        'Dim fname As String
         Dim userStatus As String
 
         'database object
@@ -155,13 +162,13 @@ Public Class mainForm
         Dim decrypter As New folderEnc
 
         Try
-            Dim ebooksPath = "assets\ebooks\encrypted"
+            Dim ebooksPath = path
 
-            Dim originalFileName As String = Dir.Substring(24)
-            Dim filenameNoExtension As String = System.IO.Path.GetFileNameWithoutExtension(originalFileName)
-            Dim outfilePath = "assets\ebooks\decrypted\" & originalFileName & ""
+            Dim originalFileName As String = ebooksPath.Substring(24)
+            'Dim filenameNoExtension As String = System.IO.Path.GetFileNameWithoutExtension(originalFileName)
+            Dim outfilePath = "assets\ebooks\decrypted\" & originalFileName & ".pdf"
             Dim password = "1234567890"
-            decrypter.DecryptFile(password, Dir, outfilePath)
+            decrypter.DecryptFile(password, ebooksPath, outfilePath)
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -171,12 +178,16 @@ Public Class mainForm
 
     Private Sub videosMetroTile_Click(sender As Object, e As EventArgs) Handles videosMetroTile.Click
         videosMetroPanel.Visible = True
+        learningMaterialType = "videos"
         ebooksMetroPanel.Visible = False
+        profilePanel.Visible = False
     End Sub
 
     Private Sub ebooksMetroTile_Click(sender As Object, e As EventArgs) Handles ebooksMetroTile.Click
         ebooksMetroPanel.Visible = True
+        learningMaterialType = "ebooks"
         videosMetroPanel.Visible = False
+        profilePanel.Visible = False
     End Sub
 
     Private Sub exitMetroButton_Click(sender As Object, e As EventArgs) Handles exitMetroButton.Click
@@ -271,4 +282,44 @@ Public Class mainForm
         selectStudyLevel.Show()
     End Sub
 
+    Private Sub viewProfile()
+        Dim prof_image As String
+        Dim dbConnect As New databaseConnection
+        dbConnect.sqlLiteConnection("dawatico_dawati.db")
+        Dim strSql As String = "select fname, lname, email, prof_img, gender,user_type from users where fname = '" & fname & "'"
+        dbConnect.selectSqlite(strSql)
+        While dbConnect.reader.Read
+            fnameMetroTextBox.Text = dbConnect.reader("fname").ToString
+            lnameMetroTextBox.Text = dbConnect.reader("lname").ToString
+            genderMetroComboBox.SelectedItem = dbConnect.reader("gender").ToString
+            userTypeMetroTextBox.Text = "Student"
+            emailMetroTextBox.Text = dbConnect.reader("email").ToString
+            prof_image = dbConnect.reader("prof_img").ToString
+            profilemagePictureBox.Image = Image.FromFile("assets\profile_pictures\" & prof_image & "")
+
+        End While
+    End Sub
+
+    Private Sub MetroTile1_Click(sender As Object, e As EventArgs) Handles MetroTile1.Click
+        viewProfile()
+        videosMetroPanel.Visible = False
+        ebooksMetroPanel.Visible = False
+        profilePanel.Visible = True
+
+    End Sub
+
+    Private Sub editMetroButton_Click(sender As Object, e As EventArgs) Handles editMetroButton.Click
+        fnameMetroTextBox.ReadOnly = False
+        lnameMetroTextBox.ReadOnly = False
+        emailMetroTextBox.ReadOnly = False
+        browseButton.Visible = True
+
+        editMetroButton.Visible = False
+        updateMetroButton.Visible = True
+    End Sub
+
+    Private Sub browseButton_Click(sender As Object, e As EventArgs) Handles browseButton.Click
+        ' selectPhotoFolderBrowserDialog.ShowDialog()
+
+    End Sub
 End Class

@@ -22,7 +22,6 @@ Partial Class mainForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mainForm))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -89,7 +88,24 @@ Partial Class mainForm
         Me.chemistryVideosMetroTile = New MetroFramework.Controls.MetroTile()
         Me.physicsVideosMetroTile = New MetroFramework.Controls.MetroTile()
         Me.mathsVideosMetroTile = New MetroFramework.Controls.MetroTile()
-        Me.mainLoadTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.classRoomLabel = New System.Windows.Forms.Label()
+        Me.profilePanel = New System.Windows.Forms.Panel()
+        Me.profilemagePictureBox = New System.Windows.Forms.PictureBox()
+        Me.profPhotoLabel = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.editMetroButton = New MetroFramework.Controls.MetroButton()
+        Me.genderMetroComboBox = New MetroFramework.Controls.MetroComboBox()
+        Me.userTypeMetroTextBox = New MetroFramework.Controls.MetroTextBox()
+        Me.emailMetroTextBox = New MetroFramework.Controls.MetroTextBox()
+        Me.lnameMetroTextBox = New MetroFramework.Controls.MetroTextBox()
+        Me.fnameMetroTextBox = New MetroFramework.Controls.MetroTextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.updateMetroButton = New MetroFramework.Controls.MetroButton()
+        Me.browseButton = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.MetroPanel1.SuspendLayout()
         CType(Me.avatarPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -109,6 +125,8 @@ Partial Class mainForm
         CType(Me.biologyVideosPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.englishVideosPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mathVideosPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.profilePanel.SuspendLayout()
+        CType(Me.profilemagePictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -204,35 +222,41 @@ Partial Class mainForm
         'videosMetroTile
         '
         Me.videosMetroTile.ActiveControl = Nothing
+        Me.videosMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.videosMetroTile.Location = New System.Drawing.Point(16, 80)
         Me.videosMetroTile.Name = "videosMetroTile"
         Me.videosMetroTile.Size = New System.Drawing.Size(83, 37)
         Me.videosMetroTile.Style = MetroFramework.MetroColorStyle.Blue
         Me.videosMetroTile.TabIndex = 3
         Me.videosMetroTile.Text = "Videos"
+        Me.videosMetroTile.UseCustomBackColor = True
         Me.videosMetroTile.UseSelectable = True
         '
         'ebooksMetroTile
         '
         Me.ebooksMetroTile.ActiveControl = Nothing
+        Me.ebooksMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.ebooksMetroTile.Location = New System.Drawing.Point(16, 145)
         Me.ebooksMetroTile.Name = "ebooksMetroTile"
         Me.ebooksMetroTile.Size = New System.Drawing.Size(83, 37)
         Me.ebooksMetroTile.Style = MetroFramework.MetroColorStyle.Blue
         Me.ebooksMetroTile.TabIndex = 4
         Me.ebooksMetroTile.Text = "Ebooks"
+        Me.ebooksMetroTile.UseCustomBackColor = True
         Me.ebooksMetroTile.UseSelectable = True
         Me.ebooksMetroTile.UseStyleColors = True
         '
         'evaluationsMetroTile
         '
         Me.evaluationsMetroTile.ActiveControl = Nothing
+        Me.evaluationsMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.evaluationsMetroTile.Location = New System.Drawing.Point(16, 204)
         Me.evaluationsMetroTile.Name = "evaluationsMetroTile"
         Me.evaluationsMetroTile.Size = New System.Drawing.Size(83, 37)
         Me.evaluationsMetroTile.Style = MetroFramework.MetroColorStyle.Blue
         Me.evaluationsMetroTile.TabIndex = 5
         Me.evaluationsMetroTile.Text = "Evaluation"
+        Me.evaluationsMetroTile.UseCustomBackColor = True
         Me.evaluationsMetroTile.UseSelectable = True
         '
         'exitMetroButton
@@ -297,7 +321,7 @@ Partial Class mainForm
         '
         'MetroPanel2
         '
-        Me.MetroPanel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.MetroPanel2.BackColor = System.Drawing.SystemColors.Control
         Me.MetroPanel2.Controls.Add(Me.MetroTile3)
         Me.MetroPanel2.Controls.Add(Me.MetroTile2)
         Me.MetroPanel2.Controls.Add(Me.MetroTile1)
@@ -310,10 +334,11 @@ Partial Class mainForm
         Me.MetroPanel2.HorizontalScrollbarBarColor = True
         Me.MetroPanel2.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroPanel2.HorizontalScrollbarSize = 10
-        Me.MetroPanel2.Location = New System.Drawing.Point(12, 60)
+        Me.MetroPanel2.Location = New System.Drawing.Point(26, 81)
         Me.MetroPanel2.Name = "MetroPanel2"
         Me.MetroPanel2.Size = New System.Drawing.Size(177, 552)
         Me.MetroPanel2.TabIndex = 8
+        Me.MetroPanel2.UseCustomBackColor = True
         Me.MetroPanel2.VerticalScrollbarBarColor = True
         Me.MetroPanel2.VerticalScrollbarHighlightOnWheel = False
         Me.MetroPanel2.VerticalScrollbarSize = 10
@@ -321,34 +346,40 @@ Partial Class mainForm
         'MetroTile3
         '
         Me.MetroTile3.ActiveControl = Nothing
+        Me.MetroTile3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.MetroTile3.Location = New System.Drawing.Point(19, 417)
         Me.MetroTile3.Name = "MetroTile3"
         Me.MetroTile3.Size = New System.Drawing.Size(83, 38)
         Me.MetroTile3.Style = MetroFramework.MetroColorStyle.Blue
         Me.MetroTile3.TabIndex = 8
         Me.MetroTile3.Text = "Log out"
+        Me.MetroTile3.UseCustomBackColor = True
         Me.MetroTile3.UseSelectable = True
         '
         'MetroTile2
         '
         Me.MetroTile2.ActiveControl = Nothing
+        Me.MetroTile2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.MetroTile2.Location = New System.Drawing.Point(19, 357)
         Me.MetroTile2.Name = "MetroTile2"
         Me.MetroTile2.Size = New System.Drawing.Size(83, 37)
         Me.MetroTile2.Style = MetroFramework.MetroColorStyle.Blue
         Me.MetroTile2.TabIndex = 7
         Me.MetroTile2.Text = "About Us"
+        Me.MetroTile2.UseCustomBackColor = True
         Me.MetroTile2.UseSelectable = True
         '
         'MetroTile1
         '
         Me.MetroTile1.ActiveControl = Nothing
+        Me.MetroTile1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.MetroTile1.Location = New System.Drawing.Point(19, 300)
         Me.MetroTile1.Name = "MetroTile1"
         Me.MetroTile1.Size = New System.Drawing.Size(83, 37)
         Me.MetroTile1.Style = MetroFramework.MetroColorStyle.Blue
         Me.MetroTile1.TabIndex = 6
         Me.MetroTile1.Text = "Profile"
+        Me.MetroTile1.UseCustomBackColor = True
         Me.MetroTile1.UseSelectable = True
         '
         'MetroLabel2
@@ -361,17 +392,19 @@ Partial Class mainForm
         Me.MetroLabel2.Size = New System.Drawing.Size(61, 25)
         Me.MetroLabel2.TabIndex = 3
         Me.MetroLabel2.Text = "Other"
+        Me.MetroLabel2.UseCustomBackColor = True
         '
         'MetroLabel1
         '
         Me.MetroLabel1.AutoSize = True
         Me.MetroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.MetroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel1.Location = New System.Drawing.Point(3, 32)
+        Me.MetroLabel1.Location = New System.Drawing.Point(4, 33)
         Me.MetroLabel1.Name = "MetroLabel1"
         Me.MetroLabel1.Size = New System.Drawing.Size(170, 25)
         Me.MetroLabel1.TabIndex = 2
         Me.MetroLabel1.Text = "Learning Materials"
+        Me.MetroLabel1.UseCustomBackColor = True
         '
         'MetroPanel3
         '
@@ -490,6 +523,7 @@ Partial Class mainForm
         '
         'ebooksMetroPanel
         '
+        Me.ebooksMetroPanel.BackColor = System.Drawing.SystemColors.Control
         Me.ebooksMetroPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ebooksMetroPanel.Controls.Add(Me.chemistryEbooksPictureBox)
         Me.ebooksMetroPanel.Controls.Add(Me.socialEbooksPictureBox)
@@ -507,10 +541,11 @@ Partial Class mainForm
         Me.ebooksMetroPanel.HorizontalScrollbarBarColor = True
         Me.ebooksMetroPanel.HorizontalScrollbarHighlightOnWheel = False
         Me.ebooksMetroPanel.HorizontalScrollbarSize = 10
-        Me.ebooksMetroPanel.Location = New System.Drawing.Point(209, 60)
+        Me.ebooksMetroPanel.Location = New System.Drawing.Point(209, 81)
         Me.ebooksMetroPanel.Name = "ebooksMetroPanel"
         Me.ebooksMetroPanel.Size = New System.Drawing.Size(957, 552)
         Me.ebooksMetroPanel.TabIndex = 9
+        Me.ebooksMetroPanel.UseCustomBackColor = True
         Me.ebooksMetroPanel.VerticalScrollbarBarColor = True
         Me.ebooksMetroPanel.VerticalScrollbarHighlightOnWheel = False
         Me.ebooksMetroPanel.VerticalScrollbarSize = 10
@@ -588,6 +623,7 @@ Partial Class mainForm
         'socialEbookMetroTile
         '
         Me.socialEbookMetroTile.ActiveControl = Nothing
+        Me.socialEbookMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.socialEbookMetroTile.Location = New System.Drawing.Point(663, 473)
         Me.socialEbookMetroTile.Name = "socialEbookMetroTile"
         Me.socialEbookMetroTile.Size = New System.Drawing.Size(263, 49)
@@ -596,12 +632,14 @@ Partial Class mainForm
         Me.socialEbookMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.socialEbookMetroTile.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall
         Me.socialEbookMetroTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold
+        Me.socialEbookMetroTile.UseCustomBackColor = True
         Me.socialEbookMetroTile.UseSelectable = True
         Me.socialEbookMetroTile.UseTileImage = True
         '
         'biologyEbookMetroTile
         '
         Me.biologyEbookMetroTile.ActiveControl = Nothing
+        Me.biologyEbookMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.biologyEbookMetroTile.Location = New System.Drawing.Point(389, 473)
         Me.biologyEbookMetroTile.Name = "biologyEbookMetroTile"
         Me.biologyEbookMetroTile.Size = New System.Drawing.Size(263, 49)
@@ -610,12 +648,14 @@ Partial Class mainForm
         Me.biologyEbookMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.biologyEbookMetroTile.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall
         Me.biologyEbookMetroTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold
+        Me.biologyEbookMetroTile.UseCustomBackColor = True
         Me.biologyEbookMetroTile.UseSelectable = True
         Me.biologyEbookMetroTile.UseTileImage = True
         '
         'englishEbooksMetroTile
         '
         Me.englishEbooksMetroTile.ActiveControl = Nothing
+        Me.englishEbooksMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.englishEbooksMetroTile.Location = New System.Drawing.Point(389, 259)
         Me.englishEbooksMetroTile.Name = "englishEbooksMetroTile"
         Me.englishEbooksMetroTile.Size = New System.Drawing.Size(263, 50)
@@ -624,12 +664,14 @@ Partial Class mainForm
         Me.englishEbooksMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.englishEbooksMetroTile.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall
         Me.englishEbooksMetroTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold
+        Me.englishEbooksMetroTile.UseCustomBackColor = True
         Me.englishEbooksMetroTile.UseSelectable = True
         Me.englishEbooksMetroTile.UseTileImage = True
         '
         'chemistryEbookMetroTile
         '
         Me.chemistryEbookMetroTile.ActiveControl = Nothing
+        Me.chemistryEbookMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.chemistryEbookMetroTile.Location = New System.Drawing.Point(114, 473)
         Me.chemistryEbookMetroTile.Name = "chemistryEbookMetroTile"
         Me.chemistryEbookMetroTile.Size = New System.Drawing.Size(263, 49)
@@ -638,12 +680,14 @@ Partial Class mainForm
         Me.chemistryEbookMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.chemistryEbookMetroTile.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall
         Me.chemistryEbookMetroTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold
+        Me.chemistryEbookMetroTile.UseCustomBackColor = True
         Me.chemistryEbookMetroTile.UseSelectable = True
         Me.chemistryEbookMetroTile.UseTileImage = True
         '
         'physicsEbookMetroTile
         '
         Me.physicsEbookMetroTile.ActiveControl = Nothing
+        Me.physicsEbookMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.physicsEbookMetroTile.Location = New System.Drawing.Point(663, 259)
         Me.physicsEbookMetroTile.Name = "physicsEbookMetroTile"
         Me.physicsEbookMetroTile.Size = New System.Drawing.Size(263, 50)
@@ -652,12 +696,14 @@ Partial Class mainForm
         Me.physicsEbookMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.physicsEbookMetroTile.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall
         Me.physicsEbookMetroTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold
+        Me.physicsEbookMetroTile.UseCustomBackColor = True
         Me.physicsEbookMetroTile.UseSelectable = True
         Me.physicsEbookMetroTile.UseTileImage = True
         '
         'mathsEbooksMetroTile
         '
         Me.mathsEbooksMetroTile.ActiveControl = Nothing
+        Me.mathsEbooksMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.mathsEbooksMetroTile.Location = New System.Drawing.Point(114, 259)
         Me.mathsEbooksMetroTile.Name = "mathsEbooksMetroTile"
         Me.mathsEbooksMetroTile.Size = New System.Drawing.Size(263, 50)
@@ -666,11 +712,13 @@ Partial Class mainForm
         Me.mathsEbooksMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.mathsEbooksMetroTile.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall
         Me.mathsEbooksMetroTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold
+        Me.mathsEbooksMetroTile.UseCustomBackColor = True
         Me.mathsEbooksMetroTile.UseSelectable = True
         Me.mathsEbooksMetroTile.UseTileImage = True
         '
         'videosMetroPanel
         '
+        Me.videosMetroPanel.BackColor = System.Drawing.SystemColors.Control
         Me.videosMetroPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.videosMetroPanel.Controls.Add(Me.chemistryVideosPictureBox)
         Me.videosMetroPanel.Controls.Add(Me.socialVideosPictureBox)
@@ -688,10 +736,11 @@ Partial Class mainForm
         Me.videosMetroPanel.HorizontalScrollbarBarColor = True
         Me.videosMetroPanel.HorizontalScrollbarHighlightOnWheel = False
         Me.videosMetroPanel.HorizontalScrollbarSize = 10
-        Me.videosMetroPanel.Location = New System.Drawing.Point(206, 60)
+        Me.videosMetroPanel.Location = New System.Drawing.Point(205, 81)
         Me.videosMetroPanel.Name = "videosMetroPanel"
-        Me.videosMetroPanel.Size = New System.Drawing.Size(957, 525)
+        Me.videosMetroPanel.Size = New System.Drawing.Size(957, 549)
         Me.videosMetroPanel.TabIndex = 15
+        Me.videosMetroPanel.UseCustomBackColor = True
         Me.videosMetroPanel.VerticalScrollbarBarColor = True
         Me.videosMetroPanel.VerticalScrollbarHighlightOnWheel = False
         Me.videosMetroPanel.VerticalScrollbarSize = 10
@@ -764,10 +813,12 @@ Partial Class mainForm
         Me.MetroLabel5.Size = New System.Drawing.Size(69, 25)
         Me.MetroLabel5.TabIndex = 8
         Me.MetroLabel5.Text = "Videos"
+        Me.MetroLabel5.UseCustomBackColor = True
         '
         'socialVideosMetroTile
         '
         Me.socialVideosMetroTile.ActiveControl = Nothing
+        Me.socialVideosMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.socialVideosMetroTile.Location = New System.Drawing.Point(663, 473)
         Me.socialVideosMetroTile.Name = "socialVideosMetroTile"
         Me.socialVideosMetroTile.Size = New System.Drawing.Size(263, 49)
@@ -776,12 +827,14 @@ Partial Class mainForm
         Me.socialVideosMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.socialVideosMetroTile.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall
         Me.socialVideosMetroTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold
+        Me.socialVideosMetroTile.UseCustomBackColor = True
         Me.socialVideosMetroTile.UseSelectable = True
         Me.socialVideosMetroTile.UseTileImage = True
         '
         'biologyVideosMetroTile
         '
         Me.biologyVideosMetroTile.ActiveControl = Nothing
+        Me.biologyVideosMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.biologyVideosMetroTile.Location = New System.Drawing.Point(389, 473)
         Me.biologyVideosMetroTile.Name = "biologyVideosMetroTile"
         Me.biologyVideosMetroTile.Size = New System.Drawing.Size(263, 49)
@@ -790,12 +843,14 @@ Partial Class mainForm
         Me.biologyVideosMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.biologyVideosMetroTile.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall
         Me.biologyVideosMetroTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold
+        Me.biologyVideosMetroTile.UseCustomBackColor = True
         Me.biologyVideosMetroTile.UseSelectable = True
         Me.biologyVideosMetroTile.UseTileImage = True
         '
         'englishVideosMetroTile
         '
         Me.englishVideosMetroTile.ActiveControl = Nothing
+        Me.englishVideosMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.englishVideosMetroTile.Location = New System.Drawing.Point(389, 259)
         Me.englishVideosMetroTile.Name = "englishVideosMetroTile"
         Me.englishVideosMetroTile.Size = New System.Drawing.Size(263, 50)
@@ -804,12 +859,14 @@ Partial Class mainForm
         Me.englishVideosMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.englishVideosMetroTile.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall
         Me.englishVideosMetroTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold
+        Me.englishVideosMetroTile.UseCustomBackColor = True
         Me.englishVideosMetroTile.UseSelectable = True
         Me.englishVideosMetroTile.UseTileImage = True
         '
         'chemistryVideosMetroTile
         '
         Me.chemistryVideosMetroTile.ActiveControl = Nothing
+        Me.chemistryVideosMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.chemistryVideosMetroTile.Location = New System.Drawing.Point(114, 473)
         Me.chemistryVideosMetroTile.Name = "chemistryVideosMetroTile"
         Me.chemistryVideosMetroTile.Size = New System.Drawing.Size(263, 49)
@@ -818,12 +875,14 @@ Partial Class mainForm
         Me.chemistryVideosMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.chemistryVideosMetroTile.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall
         Me.chemistryVideosMetroTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold
+        Me.chemistryVideosMetroTile.UseCustomBackColor = True
         Me.chemistryVideosMetroTile.UseSelectable = True
         Me.chemistryVideosMetroTile.UseTileImage = True
         '
         'physicsVideosMetroTile
         '
         Me.physicsVideosMetroTile.ActiveControl = Nothing
+        Me.physicsVideosMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.physicsVideosMetroTile.Location = New System.Drawing.Point(663, 259)
         Me.physicsVideosMetroTile.Name = "physicsVideosMetroTile"
         Me.physicsVideosMetroTile.Size = New System.Drawing.Size(263, 50)
@@ -832,12 +891,14 @@ Partial Class mainForm
         Me.physicsVideosMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.physicsVideosMetroTile.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall
         Me.physicsVideosMetroTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold
+        Me.physicsVideosMetroTile.UseCustomBackColor = True
         Me.physicsVideosMetroTile.UseSelectable = True
         Me.physicsVideosMetroTile.UseTileImage = True
         '
         'mathsVideosMetroTile
         '
         Me.mathsVideosMetroTile.ActiveControl = Nothing
+        Me.mathsVideosMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.mathsVideosMetroTile.Location = New System.Drawing.Point(114, 259)
         Me.mathsVideosMetroTile.Name = "mathsVideosMetroTile"
         Me.mathsVideosMetroTile.Size = New System.Drawing.Size(263, 50)
@@ -846,12 +907,289 @@ Partial Class mainForm
         Me.mathsVideosMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.mathsVideosMetroTile.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall
         Me.mathsVideosMetroTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold
+        Me.mathsVideosMetroTile.UseCustomBackColor = True
         Me.mathsVideosMetroTile.UseSelectable = True
         Me.mathsVideosMetroTile.UseTileImage = True
         '
-        'mainLoadTimer
+        'classRoomLabel
         '
-        Me.mainLoadTimer.Interval = 1000
+        Me.classRoomLabel.AutoSize = True
+        Me.classRoomLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.classRoomLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
+        Me.classRoomLabel.Location = New System.Drawing.Point(454, 35)
+        Me.classRoomLabel.Name = "classRoomLabel"
+        Me.classRoomLabel.Size = New System.Drawing.Size(289, 33)
+        Me.classRoomLabel.TabIndex = 16
+        Me.classRoomLabel.Text = "Dawati Class Room"
+        '
+        'profilePanel
+        '
+        Me.profilePanel.Controls.Add(Me.browseButton)
+        Me.profilePanel.Controls.Add(Me.profilemagePictureBox)
+        Me.profilePanel.Controls.Add(Me.profPhotoLabel)
+        Me.profilePanel.Controls.Add(Me.Label4)
+        Me.profilePanel.Controls.Add(Me.editMetroButton)
+        Me.profilePanel.Controls.Add(Me.genderMetroComboBox)
+        Me.profilePanel.Controls.Add(Me.userTypeMetroTextBox)
+        Me.profilePanel.Controls.Add(Me.emailMetroTextBox)
+        Me.profilePanel.Controls.Add(Me.lnameMetroTextBox)
+        Me.profilePanel.Controls.Add(Me.fnameMetroTextBox)
+        Me.profilePanel.Controls.Add(Me.Label10)
+        Me.profilePanel.Controls.Add(Me.Label5)
+        Me.profilePanel.Controls.Add(Me.Label3)
+        Me.profilePanel.Controls.Add(Me.Label2)
+        Me.profilePanel.Controls.Add(Me.Label1)
+        Me.profilePanel.Controls.Add(Me.updateMetroButton)
+        Me.profilePanel.Location = New System.Drawing.Point(205, 81)
+        Me.profilePanel.Name = "profilePanel"
+        Me.profilePanel.Size = New System.Drawing.Size(961, 559)
+        Me.profilePanel.TabIndex = 17
+        '
+        'profilemagePictureBox
+        '
+        Me.profilemagePictureBox.Location = New System.Drawing.Point(760, 113)
+        Me.profilemagePictureBox.Name = "profilemagePictureBox"
+        Me.profilemagePictureBox.Size = New System.Drawing.Size(160, 124)
+        Me.profilemagePictureBox.TabIndex = 19
+        Me.profilemagePictureBox.TabStop = False
+        '
+        'profPhotoLabel
+        '
+        Me.profPhotoLabel.AutoSize = True
+        Me.profPhotoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.profPhotoLabel.Location = New System.Drawing.Point(674, 85)
+        Me.profPhotoLabel.Name = "profPhotoLabel"
+        Me.profPhotoLabel.Size = New System.Drawing.Size(94, 18)
+        Me.profPhotoLabel.TabIndex = 18
+        Me.profPhotoLabel.Text = "Profile Photo"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(445, 35)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(69, 24)
+        Me.Label4.TabIndex = 17
+        Me.Label4.Text = "Profile"
+        '
+        'editMetroButton
+        '
+        Me.editMetroButton.Location = New System.Drawing.Point(760, 417)
+        Me.editMetroButton.Name = "editMetroButton"
+        Me.editMetroButton.Size = New System.Drawing.Size(93, 37)
+        Me.editMetroButton.TabIndex = 15
+        Me.editMetroButton.Text = "Edit"
+        Me.editMetroButton.UseSelectable = True
+        '
+        'genderMetroComboBox
+        '
+        Me.genderMetroComboBox.FormattingEnabled = True
+        Me.genderMetroComboBox.ItemHeight = 23
+        Me.genderMetroComboBox.Items.AddRange(New Object() {"Male", "Female"})
+        Me.genderMetroComboBox.Location = New System.Drawing.Point(420, 345)
+        Me.genderMetroComboBox.Name = "genderMetroComboBox"
+        Me.genderMetroComboBox.Size = New System.Drawing.Size(159, 29)
+        Me.genderMetroComboBox.TabIndex = 14
+        Me.genderMetroComboBox.UseSelectable = True
+        '
+        'userTypeMetroTextBox
+        '
+        '
+        '
+        '
+        Me.userTypeMetroTextBox.CustomButton.Image = Nothing
+        Me.userTypeMetroTextBox.CustomButton.Location = New System.Drawing.Point(133, 2)
+        Me.userTypeMetroTextBox.CustomButton.Name = ""
+        Me.userTypeMetroTextBox.CustomButton.Size = New System.Drawing.Size(23, 23)
+        Me.userTypeMetroTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.userTypeMetroTextBox.CustomButton.TabIndex = 1
+        Me.userTypeMetroTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.userTypeMetroTextBox.CustomButton.UseSelectable = True
+        Me.userTypeMetroTextBox.CustomButton.Visible = False
+        Me.userTypeMetroTextBox.Lines = New String() {"MetroTextBox4"}
+        Me.userTypeMetroTextBox.Location = New System.Drawing.Point(420, 278)
+        Me.userTypeMetroTextBox.MaxLength = 32767
+        Me.userTypeMetroTextBox.Name = "userTypeMetroTextBox"
+        Me.userTypeMetroTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.userTypeMetroTextBox.ReadOnly = True
+        Me.userTypeMetroTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.userTypeMetroTextBox.SelectedText = ""
+        Me.userTypeMetroTextBox.SelectionLength = 0
+        Me.userTypeMetroTextBox.SelectionStart = 0
+        Me.userTypeMetroTextBox.ShortcutsEnabled = True
+        Me.userTypeMetroTextBox.Size = New System.Drawing.Size(159, 28)
+        Me.userTypeMetroTextBox.TabIndex = 13
+        Me.userTypeMetroTextBox.Text = "MetroTextBox4"
+        Me.userTypeMetroTextBox.UseSelectable = True
+        Me.userTypeMetroTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.userTypeMetroTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'emailMetroTextBox
+        '
+        '
+        '
+        '
+        Me.emailMetroTextBox.CustomButton.Image = Nothing
+        Me.emailMetroTextBox.CustomButton.Location = New System.Drawing.Point(133, 2)
+        Me.emailMetroTextBox.CustomButton.Name = ""
+        Me.emailMetroTextBox.CustomButton.Size = New System.Drawing.Size(23, 23)
+        Me.emailMetroTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.emailMetroTextBox.CustomButton.TabIndex = 1
+        Me.emailMetroTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.emailMetroTextBox.CustomButton.UseSelectable = True
+        Me.emailMetroTextBox.CustomButton.Visible = False
+        Me.emailMetroTextBox.Lines = New String() {"MetroTextBox3"}
+        Me.emailMetroTextBox.Location = New System.Drawing.Point(420, 215)
+        Me.emailMetroTextBox.MaxLength = 32767
+        Me.emailMetroTextBox.Name = "emailMetroTextBox"
+        Me.emailMetroTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.emailMetroTextBox.ReadOnly = True
+        Me.emailMetroTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.emailMetroTextBox.SelectedText = ""
+        Me.emailMetroTextBox.SelectionLength = 0
+        Me.emailMetroTextBox.SelectionStart = 0
+        Me.emailMetroTextBox.ShortcutsEnabled = True
+        Me.emailMetroTextBox.Size = New System.Drawing.Size(159, 28)
+        Me.emailMetroTextBox.TabIndex = 12
+        Me.emailMetroTextBox.Text = "MetroTextBox3"
+        Me.emailMetroTextBox.UseSelectable = True
+        Me.emailMetroTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.emailMetroTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'lnameMetroTextBox
+        '
+        '
+        '
+        '
+        Me.lnameMetroTextBox.CustomButton.Image = Nothing
+        Me.lnameMetroTextBox.CustomButton.Location = New System.Drawing.Point(133, 2)
+        Me.lnameMetroTextBox.CustomButton.Name = ""
+        Me.lnameMetroTextBox.CustomButton.Size = New System.Drawing.Size(23, 23)
+        Me.lnameMetroTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.lnameMetroTextBox.CustomButton.TabIndex = 1
+        Me.lnameMetroTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.lnameMetroTextBox.CustomButton.UseSelectable = True
+        Me.lnameMetroTextBox.CustomButton.Visible = False
+        Me.lnameMetroTextBox.Lines = New String() {"MetroTextBox2"}
+        Me.lnameMetroTextBox.Location = New System.Drawing.Point(420, 152)
+        Me.lnameMetroTextBox.MaxLength = 32767
+        Me.lnameMetroTextBox.Name = "lnameMetroTextBox"
+        Me.lnameMetroTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.lnameMetroTextBox.ReadOnly = True
+        Me.lnameMetroTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.lnameMetroTextBox.SelectedText = ""
+        Me.lnameMetroTextBox.SelectionLength = 0
+        Me.lnameMetroTextBox.SelectionStart = 0
+        Me.lnameMetroTextBox.ShortcutsEnabled = True
+        Me.lnameMetroTextBox.Size = New System.Drawing.Size(159, 28)
+        Me.lnameMetroTextBox.TabIndex = 11
+        Me.lnameMetroTextBox.Text = "MetroTextBox2"
+        Me.lnameMetroTextBox.UseSelectable = True
+        Me.lnameMetroTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.lnameMetroTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'fnameMetroTextBox
+        '
+        '
+        '
+        '
+        Me.fnameMetroTextBox.CustomButton.Image = Nothing
+        Me.fnameMetroTextBox.CustomButton.Location = New System.Drawing.Point(133, 2)
+        Me.fnameMetroTextBox.CustomButton.Name = ""
+        Me.fnameMetroTextBox.CustomButton.Size = New System.Drawing.Size(23, 23)
+        Me.fnameMetroTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.fnameMetroTextBox.CustomButton.TabIndex = 1
+        Me.fnameMetroTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.fnameMetroTextBox.CustomButton.UseSelectable = True
+        Me.fnameMetroTextBox.CustomButton.Visible = False
+        Me.fnameMetroTextBox.Lines = New String() {"MetroTextBox1"}
+        Me.fnameMetroTextBox.Location = New System.Drawing.Point(420, 89)
+        Me.fnameMetroTextBox.MaxLength = 32767
+        Me.fnameMetroTextBox.Name = "fnameMetroTextBox"
+        Me.fnameMetroTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.fnameMetroTextBox.ReadOnly = True
+        Me.fnameMetroTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.fnameMetroTextBox.SelectedText = ""
+        Me.fnameMetroTextBox.SelectionLength = 0
+        Me.fnameMetroTextBox.SelectionStart = 0
+        Me.fnameMetroTextBox.ShortcutsEnabled = True
+        Me.fnameMetroTextBox.Size = New System.Drawing.Size(159, 28)
+        Me.fnameMetroTextBox.TabIndex = 10
+        Me.fnameMetroTextBox.Text = "MetroTextBox1"
+        Me.fnameMetroTextBox.UseSelectable = True
+        Me.fnameMetroTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.fnameMetroTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(194, 162)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(80, 18)
+        Me.Label10.TabIndex = 9
+        Me.Label10.Text = "Last Name"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(194, 351)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(57, 18)
+        Me.Label5.TabIndex = 4
+        Me.Label5.Text = "Gender"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(194, 288)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(76, 18)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "User Type"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(194, 225)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(45, 18)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Email"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(194, 99)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(81, 18)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "First Name"
+        '
+        'updateMetroButton
+        '
+        Me.updateMetroButton.Location = New System.Drawing.Point(760, 417)
+        Me.updateMetroButton.Name = "updateMetroButton"
+        Me.updateMetroButton.Size = New System.Drawing.Size(91, 38)
+        Me.updateMetroButton.TabIndex = 16
+        Me.updateMetroButton.Text = "Save"
+        Me.updateMetroButton.UseSelectable = True
+        Me.updateMetroButton.Visible = False
+        '
+        'browseButton
+        '
+        Me.browseButton.Location = New System.Drawing.Point(845, 256)
+        Me.browseButton.Name = "browseButton"
+        Me.browseButton.Size = New System.Drawing.Size(75, 23)
+        Me.browseButton.TabIndex = 20
+        Me.browseButton.Text = "Browse"
+        Me.browseButton.UseVisualStyleBackColor = True
+        Me.browseButton.Visible = False
         '
         'mainForm
         '
@@ -859,13 +1197,15 @@ Partial Class mainForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(1335, 673)
+        Me.Controls.Add(Me.profilePanel)
+        Me.Controls.Add(Me.classRoomLabel)
         Me.Controls.Add(Me.MetroPanel1)
         Me.Controls.Add(Me.MetroPanel2)
         Me.Controls.Add(Me.exitMetroButton)
         Me.Controls.Add(Me.avatarPictureBox)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Controls.Add(Me.ebooksMetroPanel)
         Me.Controls.Add(Me.videosMetroPanel)
+        Me.Controls.Add(Me.ebooksMetroPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "mainForm"
         Me.Text = "Home"
@@ -895,6 +1235,9 @@ Partial Class mainForm
         CType(Me.biologyVideosPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.englishVideosPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.mathVideosPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.profilePanel.ResumeLayout(False)
+        Me.profilePanel.PerformLayout()
+        CType(Me.profilemagePictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -965,5 +1308,22 @@ Partial Class mainForm
     Friend WithEvents chemistryVideosMetroTile As MetroFramework.Controls.MetroTile
     Friend WithEvents physicsVideosMetroTile As MetroFramework.Controls.MetroTile
     Friend WithEvents mathsVideosMetroTile As MetroFramework.Controls.MetroTile
-    Friend WithEvents mainLoadTimer As Timer
+    Friend WithEvents classRoomLabel As Label
+    Friend WithEvents profilePanel As Panel
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents userTypeMetroTextBox As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents emailMetroTextBox As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents lnameMetroTextBox As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents fnameMetroTextBox As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents genderMetroComboBox As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents editMetroButton As MetroFramework.Controls.MetroButton
+    Friend WithEvents updateMetroButton As MetroFramework.Controls.MetroButton
+    Friend WithEvents profilemagePictureBox As PictureBox
+    Friend WithEvents profPhotoLabel As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents browseButton As Button
 End Class

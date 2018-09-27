@@ -2,31 +2,14 @@
 'date : 06/09/2018
 'welcome
 Public Class welcomeForm
-    Private loading As Boolean
+    Public Sub initialize()
 
+        welcomeLabel.Text = "DAWATI ONLINE EDUCATION"
+        welcomeLabel.ForeColor = Color.FromArgb(0, 161, 154)
+        mainPictureBox.BackgroundImage = Image.FromFile("assets\images\elearn3.jpg")
+        mainPictureBox.BackgroundImageLayout = ImageLayout.Stretch
 
-    Public Function initialize()
-        welcomeFormPanel.BackgroundImage = Image.FromFile("assets\images\bannner.png")
-        welcomeFormPanel.BackgroundImageLayout = ImageLayout.Stretch
-        'welcomeFormPanel.BackgroundImage = Opacity(BackgroundImage, 25%)
-
-    End Function
-
-
-    'Private Sub prevMetroButton_Click(sender As Object, e As EventArgs)
-    '    Dim count As Integer = 1
-    '    Dim i As Integer = 5
-
-    '    While count < i
-    '        '  sliderPictureBox.Image = sliderImageList.Images(count)
-    '        count += count
-
-    '    End While
-
-    '    loading = True
-
-
-    'End Sub
+    End Sub
 
 
     Private Sub signUpMetroTile_Click_1(sender As Object, e As EventArgs) Handles signUpMetroTile.Click
@@ -39,12 +22,15 @@ Public Class welcomeForm
         signInForm.Show()
     End Sub
 
-    Private Sub MetroButton3_Click(sender As Object, e As EventArgs) Handles MetroButton3.Click
+    Private Sub MetroButton3_Click(sender As Object, e As EventArgs) Handles exitMetroButton.Click
         Me.Close()
         Application.Exit()
     End Sub
+    Private Sub MetroButton3_gotFocus(sender As Object, e As EventArgs) Handles exitMetroButton.GotFocus
+        exitMetroButton.Highlight = True
+    End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
         ' Panel1.BackColor = Color.FromArgb(30, Color.Blue)
     End Sub
 
