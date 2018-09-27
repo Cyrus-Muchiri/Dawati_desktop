@@ -29,11 +29,11 @@ Partial Class classRoom
         Me.labListBox = New System.Windows.Forms.ListBox()
         Me.examsTabPage = New MetroFramework.Controls.MetroTabPage()
         Me.examsListBox = New System.Windows.Forms.ListBox()
-        Me.studyLevelMetroLabel = New MetroFramework.Controls.MetroLabel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.viewMetroButton = New MetroFramework.Controls.MetroButton()
         Me.exitMetroButton = New MetroFramework.Controls.MetroButton()
         Me.subjectLabel = New System.Windows.Forms.Label()
+        Me.studyLevelLabel = New System.Windows.Forms.Label()
         Me.classRoomMetroTabControl.SuspendLayout()
         Me.classWorkTabPage.SuspendLayout()
         Me.labsTabPage.SuspendLayout()
@@ -47,7 +47,7 @@ Partial Class classRoom
         Me.classRoomMetroTabControl.Controls.Add(Me.examsTabPage)
         Me.classRoomMetroTabControl.Location = New System.Drawing.Point(96, 145)
         Me.classRoomMetroTabControl.Name = "classRoomMetroTabControl"
-        Me.classRoomMetroTabControl.SelectedIndex = 1
+        Me.classRoomMetroTabControl.SelectedIndex = 0
         Me.classRoomMetroTabControl.Size = New System.Drawing.Size(1134, 463)
         Me.classRoomMetroTabControl.TabIndex = 0
         Me.classRoomMetroTabControl.UseSelectable = True
@@ -132,15 +132,6 @@ Partial Class classRoom
         Me.examsListBox.Size = New System.Drawing.Size(1116, 485)
         Me.examsListBox.TabIndex = 2
         '
-        'studyLevelMetroLabel
-        '
-        Me.studyLevelMetroLabel.AutoSize = True
-        Me.studyLevelMetroLabel.Location = New System.Drawing.Point(645, 60)
-        Me.studyLevelMetroLabel.Name = "studyLevelMetroLabel"
-        Me.studyLevelMetroLabel.Size = New System.Drawing.Size(69, 19)
-        Me.studyLevelMetroLabel.TabIndex = 1
-        Me.studyLevelMetroLabel.Text = "study level"
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -172,22 +163,35 @@ Partial Class classRoom
         'subjectLabel
         '
         Me.subjectLabel.AutoSize = True
-        Me.subjectLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.subjectLabel.Location = New System.Drawing.Point(628, 18)
+        Me.subjectLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.subjectLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
+        Me.subjectLabel.Location = New System.Drawing.Point(585, 9)
         Me.subjectLabel.Name = "subjectLabel"
-        Me.subjectLabel.Size = New System.Drawing.Size(0, 25)
+        Me.subjectLabel.Size = New System.Drawing.Size(0, 31)
         Me.subjectLabel.TabIndex = 6
+        Me.subjectLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'studyLevelLabel
+        '
+        Me.studyLevelLabel.AutoSize = True
+        Me.studyLevelLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.studyLevelLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
+        Me.studyLevelLabel.Location = New System.Drawing.Point(620, 74)
+        Me.studyLevelLabel.Name = "studyLevelLabel"
+        Me.studyLevelLabel.Size = New System.Drawing.Size(72, 24)
+        Me.studyLevelLabel.TabIndex = 7
+        Me.studyLevelLabel.Text = "Label2"
         '
         'classRoom
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1322, 673)
+        Me.Controls.Add(Me.studyLevelLabel)
         Me.Controls.Add(Me.subjectLabel)
         Me.Controls.Add(Me.exitMetroButton)
         Me.Controls.Add(Me.viewMetroButton)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.studyLevelMetroLabel)
         Me.Controls.Add(Me.classRoomMetroTabControl)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -204,7 +208,6 @@ Partial Class classRoom
     End Sub
 
     Friend WithEvents classRoomMetroTabControl As MetroFramework.Controls.MetroTabControl
-    Friend WithEvents studyLevelMetroLabel As MetroFramework.Controls.MetroLabel
     Friend WithEvents classWorkTabPage As MetroFramework.Controls.MetroTabPage
     Friend WithEvents labsTabPage As MetroFramework.Controls.MetroTabPage
     Friend WithEvents examsTabPage As MetroFramework.Controls.MetroTabPage
@@ -215,4 +218,5 @@ Partial Class classRoom
     Friend WithEvents viewMetroButton As MetroFramework.Controls.MetroButton
     Friend WithEvents exitMetroButton As MetroFramework.Controls.MetroButton
     Friend WithEvents subjectLabel As Label
+    Friend WithEvents studyLevelLabel As Label
 End Class

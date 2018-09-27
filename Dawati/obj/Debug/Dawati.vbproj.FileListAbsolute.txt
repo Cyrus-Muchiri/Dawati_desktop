@@ -48,3 +48,5 @@ C:\Users\Carrel-PC\documents\visual studio 2015\Projects\Dawati\Dawati\bin\Debug
 C:\Users\Carrel-PC\documents\visual studio 2015\Projects\Dawati\Dawati\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
 C:\Users\Carrel-PC\documents\visual studio 2015\Projects\Dawati\Dawati\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
 C:\Users\Carrel-PC\documents\visual studio 2015\Projects\Dawati\Dawati\bin\Debug\BCrypt.Net.xml
+C:\Users\Carrel-PC\Documents\Visual Studio 2015\Projects\Dawati\Dawati\bin\Debug\Dawati.exe.CodeAnalysisLog.xml
+C:\Users\Carrel-PC\Documents\Visual Studio 2015\Projects\Dawati\Dawati\bin\Debug\Dawati.exe.lastcodeanalysissucceeded

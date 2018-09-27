@@ -10,7 +10,7 @@ Public Class classRoom
     Public Sub initialize(ByVal subject As String, ByVal learningMaterial As String, ByVal studyLevel As String)
 
         Text = subject
-        studyLevelMetroLabel.Text = studyLevel
+        studyLevelLabel.Text = studyLevel
         subjectLabel.Text = subject
 
         'select type of multimedia series

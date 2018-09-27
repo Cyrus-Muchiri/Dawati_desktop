@@ -89,9 +89,9 @@ Partial Class ebookViewer
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(968, 15)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(142, 25)
+        Me.Label1.Size = New System.Drawing.Size(165, 25)
         Me.Label1.TabIndex = 5
-        Me.Label1.Text = "Other Books"
+        Me.Label1.Text = "Related Books"
         '
         'ebookViewer
         '
