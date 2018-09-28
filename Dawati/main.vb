@@ -22,6 +22,8 @@ Public Class mainForm
         ebooksMetroPanel.Visible = False
         profilePanel.Visible = False
 
+        'Me.BackColor = Color.FromArgb()
+
 
         'variables for profile pic, last name first name and status
         Dim prof_pic As String

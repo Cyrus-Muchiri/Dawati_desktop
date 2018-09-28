@@ -171,7 +171,7 @@ Partial Class signInForm
         Me.Controls.Add(Me.passwordMetroTextBox)
         Me.Controls.Add(Me.emailMetroTextBox)
         Me.Controls.Add(Me.titleMetroLabel)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.Name = "signInForm"
         Me.ResumeLayout(False)
