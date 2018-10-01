@@ -5,7 +5,21 @@
     Public Sub initialize()
 
 
+
     End Sub
+    Public Sub databaseReader()
+        Dim dbConnect As New databaseConnection
+        dbConnect.sqlLiteConnection("Evaluations.db")
+        Dim selectsql As String = "select exam_name,hours,minutes from exams"
+        dbConnect.selectSqlite(selectsql)
+
+        While dbConnect.reader.Read
+
+            evaluationsListBox.Items.Add(dbConnect.reader("exam_name"))
+        End While
+        dbConnect.closeSqlite()
+    End Sub
+
 
     Public Sub trueOrFalseQuestions()
         'initialize components
@@ -26,10 +40,6 @@
     Public Sub openEndedQuestion()
 
     End Sub
-    Public Sub databaseReader()
-
-    End Sub
-
 
 
 End Class
