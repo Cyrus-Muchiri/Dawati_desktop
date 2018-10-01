@@ -90,6 +90,7 @@ Partial Class mainForm
         Me.mathsVideosMetroTile = New MetroFramework.Controls.MetroTile()
         Me.classRoomLabel = New System.Windows.Forms.Label()
         Me.profilePanel = New System.Windows.Forms.Panel()
+        Me.browseButton = New System.Windows.Forms.Button()
         Me.profilemagePictureBox = New System.Windows.Forms.PictureBox()
         Me.profPhotoLabel = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -105,7 +106,6 @@ Partial Class mainForm
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.updateMetroButton = New MetroFramework.Controls.MetroButton()
-        Me.browseButton = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.MetroPanel1.SuspendLayout()
         CType(Me.avatarPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -950,6 +950,16 @@ Partial Class mainForm
         Me.profilePanel.Size = New System.Drawing.Size(961, 559)
         Me.profilePanel.TabIndex = 17
         '
+        'browseButton
+        '
+        Me.browseButton.Location = New System.Drawing.Point(845, 256)
+        Me.browseButton.Name = "browseButton"
+        Me.browseButton.Size = New System.Drawing.Size(75, 23)
+        Me.browseButton.TabIndex = 20
+        Me.browseButton.Text = "Browse"
+        Me.browseButton.UseVisualStyleBackColor = True
+        Me.browseButton.Visible = False
+        '
         'profilemagePictureBox
         '
         Me.profilemagePictureBox.Location = New System.Drawing.Point(760, 113)
@@ -1185,16 +1195,6 @@ Partial Class mainForm
         Me.updateMetroButton.Text = "Save"
         Me.updateMetroButton.UseSelectable = True
         Me.updateMetroButton.Visible = False
-        '
-        'browseButton
-        '
-        Me.browseButton.Location = New System.Drawing.Point(845, 256)
-        Me.browseButton.Name = "browseButton"
-        Me.browseButton.Size = New System.Drawing.Size(75, 23)
-        Me.browseButton.TabIndex = 20
-        Me.browseButton.Text = "Browse"
-        Me.browseButton.UseVisualStyleBackColor = True
-        Me.browseButton.Visible = False
         '
         'mainForm
         '

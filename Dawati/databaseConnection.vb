@@ -11,6 +11,7 @@ Public Class databaseConnection
     Public sqliteConnectionString As String
     Public reader As SQLiteDataReader
     Public MySqlReader As MySqlDataReader
+    Public sqliteCommand As New SQLiteCommand
     'sqllite connection for offline database
 
     'creates connection
@@ -27,7 +28,7 @@ Public Class databaseConnection
     Public Sub insertSqlite(ByVal strSql As String)
 
         Try
-            Dim sqliteCommand As New SQLiteCommand(strSql, sqliteConnection)
+            sqliteCommand = New SQLiteCommand(strSql, sqliteConnection)
             sqliteCommand.ExecuteNonQuery()
         Catch ex As Exception
             MessageBox.Show(ex.Message)

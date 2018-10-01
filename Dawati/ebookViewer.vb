@@ -16,4 +16,8 @@
     Private Sub playMetroButton_Click(sender As Object, e As EventArgs) Handles playMetroButton.Click
         classRoom.getSelectedEbook(ebookPlayListBox)
     End Sub
+
+    Private Sub ebookPlayListBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ebookPlayListBox.DoubleClick
+        classRoom.getSelectedEbook(ebookPlayListBox)
+    End Sub
 End Class

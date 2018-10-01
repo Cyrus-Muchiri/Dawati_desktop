@@ -324,4 +324,9 @@ Public Class mainForm
         ' selectPhotoFolderBrowserDialog.ShowDialog()
 
     End Sub
+
+    Private Sub evaluationsMetroTile_Click(sender As Object, e As EventArgs) Handles evaluationsMetroTile.Click
+        evaluationForm.Show()
+    End Sub
+
 End Class
