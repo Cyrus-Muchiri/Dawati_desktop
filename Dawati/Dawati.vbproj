@@ -197,6 +197,12 @@
     <Compile Include="main.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="questions.Designer.vb">
+      <DependentUpon>questions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="questions.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="selectStudyLevel.Designer.vb">
       <DependentUpon>selectStudyLevel.vb</DependentUpon>
     </Compile>
@@ -263,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="main.resx">
       <DependentUpon>main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="questions.resx">
+      <DependentUpon>questions.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="selectStudyLevel.resx">
       <DependentUpon>selectStudyLevel.vb</DependentUpon>
