@@ -38,7 +38,7 @@ Partial Class ebookViewer
         Me.ebookAxAcroPDF.Location = New System.Drawing.Point(12, 52)
         Me.ebookAxAcroPDF.Name = "ebookAxAcroPDF"
         Me.ebookAxAcroPDF.OcxState = CType(resources.GetObject("ebookAxAcroPDF.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.ebookAxAcroPDF.Size = New System.Drawing.Size(708, 636)
+        Me.ebookAxAcroPDF.Size = New System.Drawing.Size(747, 636)
         Me.ebookAxAcroPDF.TabIndex = 0
         '
         'ebookPlayListBox
@@ -47,9 +47,9 @@ Partial Class ebookViewer
         Me.ebookPlayListBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ebookPlayListBox.FormattingEnabled = True
         Me.ebookPlayListBox.ItemHeight = 25
-        Me.ebookPlayListBox.Location = New System.Drawing.Point(883, 52)
+        Me.ebookPlayListBox.Location = New System.Drawing.Point(913, 52)
         Me.ebookPlayListBox.Name = "ebookPlayListBox"
-        Me.ebookPlayListBox.Size = New System.Drawing.Size(347, 279)
+        Me.ebookPlayListBox.Size = New System.Drawing.Size(317, 279)
         Me.ebookPlayListBox.TabIndex = 1
         '
         'playMetroButton

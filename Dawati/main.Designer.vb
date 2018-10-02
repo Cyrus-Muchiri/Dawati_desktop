@@ -90,6 +90,7 @@ Partial Class mainForm
         Me.mathsVideosMetroTile = New MetroFramework.Controls.MetroTile()
         Me.classRoomLabel = New System.Windows.Forms.Label()
         Me.profilePanel = New System.Windows.Forms.Panel()
+        Me.browseButton = New System.Windows.Forms.Button()
         Me.profilemagePictureBox = New System.Windows.Forms.PictureBox()
         Me.profPhotoLabel = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -105,7 +106,6 @@ Partial Class mainForm
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.updateMetroButton = New MetroFramework.Controls.MetroButton()
-        Me.browseButton = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.MetroPanel1.SuspendLayout()
         CType(Me.avatarPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -280,6 +280,7 @@ Partial Class mainForm
         Me.MetroPanel1.Name = "MetroPanel1"
         Me.MetroPanel1.Size = New System.Drawing.Size(160, 52)
         Me.MetroPanel1.TabIndex = 7
+        Me.MetroPanel1.UseCustomBackColor = True
         Me.MetroPanel1.VerticalScrollbarBarColor = True
         Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.VerticalScrollbarSize = 10
@@ -292,6 +293,7 @@ Partial Class mainForm
         Me.LnameMetroLabel.Size = New System.Drawing.Size(48, 19)
         Me.LnameMetroLabel.TabIndex = 5
         Me.LnameMetroLabel.Text = "Lname"
+        Me.LnameMetroLabel.UseCustomBackColor = True
         '
         'fnameMetroLabel
         '
@@ -301,6 +303,7 @@ Partial Class mainForm
         Me.fnameMetroLabel.Size = New System.Drawing.Size(49, 19)
         Me.fnameMetroLabel.TabIndex = 4
         Me.fnameMetroLabel.Text = "Fname"
+        Me.fnameMetroLabel.UseCustomBackColor = True
         '
         'emailMetroLabel
         '
@@ -310,10 +313,11 @@ Partial Class mainForm
         Me.emailMetroLabel.Size = New System.Drawing.Size(102, 19)
         Me.emailMetroLabel.TabIndex = 2
         Me.emailMetroLabel.Text = "my@gmail.com"
+        Me.emailMetroLabel.UseCustomBackColor = True
         '
         'avatarPictureBox
         '
-        Me.avatarPictureBox.Location = New System.Drawing.Point(1169, 60)
+        Me.avatarPictureBox.Location = New System.Drawing.Point(1169, 81)
         Me.avatarPictureBox.Name = "avatarPictureBox"
         Me.avatarPictureBox.Size = New System.Drawing.Size(160, 124)
         Me.avatarPictureBox.TabIndex = 3
@@ -321,7 +325,7 @@ Partial Class mainForm
         '
         'MetroPanel2
         '
-        Me.MetroPanel2.BackColor = System.Drawing.SystemColors.Control
+        Me.MetroPanel2.BackColor = System.Drawing.Color.Transparent
         Me.MetroPanel2.Controls.Add(Me.MetroTile3)
         Me.MetroPanel2.Controls.Add(Me.MetroTile2)
         Me.MetroPanel2.Controls.Add(Me.MetroTile1)
@@ -523,7 +527,7 @@ Partial Class mainForm
         '
         'ebooksMetroPanel
         '
-        Me.ebooksMetroPanel.BackColor = System.Drawing.SystemColors.Control
+        Me.ebooksMetroPanel.BackColor = System.Drawing.Color.Transparent
         Me.ebooksMetroPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ebooksMetroPanel.Controls.Add(Me.chemistryEbooksPictureBox)
         Me.ebooksMetroPanel.Controls.Add(Me.socialEbooksPictureBox)
@@ -718,7 +722,7 @@ Partial Class mainForm
         '
         'videosMetroPanel
         '
-        Me.videosMetroPanel.BackColor = System.Drawing.SystemColors.Control
+        Me.videosMetroPanel.BackColor = System.Drawing.Color.Transparent
         Me.videosMetroPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.videosMetroPanel.Controls.Add(Me.chemistryVideosPictureBox)
         Me.videosMetroPanel.Controls.Add(Me.socialVideosPictureBox)
@@ -924,6 +928,7 @@ Partial Class mainForm
         '
         'profilePanel
         '
+        Me.profilePanel.BackColor = System.Drawing.Color.Transparent
         Me.profilePanel.Controls.Add(Me.browseButton)
         Me.profilePanel.Controls.Add(Me.profilemagePictureBox)
         Me.profilePanel.Controls.Add(Me.profPhotoLabel)
@@ -944,6 +949,16 @@ Partial Class mainForm
         Me.profilePanel.Name = "profilePanel"
         Me.profilePanel.Size = New System.Drawing.Size(961, 559)
         Me.profilePanel.TabIndex = 17
+        '
+        'browseButton
+        '
+        Me.browseButton.Location = New System.Drawing.Point(845, 256)
+        Me.browseButton.Name = "browseButton"
+        Me.browseButton.Size = New System.Drawing.Size(75, 23)
+        Me.browseButton.TabIndex = 20
+        Me.browseButton.Text = "Browse"
+        Me.browseButton.UseVisualStyleBackColor = True
+        Me.browseButton.Visible = False
         '
         'profilemagePictureBox
         '
@@ -1181,31 +1196,21 @@ Partial Class mainForm
         Me.updateMetroButton.UseSelectable = True
         Me.updateMetroButton.Visible = False
         '
-        'browseButton
-        '
-        Me.browseButton.Location = New System.Drawing.Point(845, 256)
-        Me.browseButton.Name = "browseButton"
-        Me.browseButton.Size = New System.Drawing.Size(75, 23)
-        Me.browseButton.TabIndex = 20
-        Me.browseButton.Text = "Browse"
-        Me.browseButton.UseVisualStyleBackColor = True
-        Me.browseButton.Visible = False
-        '
         'mainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(1335, 673)
-        Me.Controls.Add(Me.profilePanel)
         Me.Controls.Add(Me.classRoomLabel)
         Me.Controls.Add(Me.MetroPanel1)
         Me.Controls.Add(Me.MetroPanel2)
         Me.Controls.Add(Me.exitMetroButton)
         Me.Controls.Add(Me.avatarPictureBox)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Controls.Add(Me.videosMetroPanel)
         Me.Controls.Add(Me.ebooksMetroPanel)
+        Me.Controls.Add(Me.profilePanel)
+        Me.Controls.Add(Me.videosMetroPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "mainForm"
         Me.Text = "Home"

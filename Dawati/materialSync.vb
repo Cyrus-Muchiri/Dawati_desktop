@@ -39,6 +39,8 @@ Public Class materialSync
 
         If result = DialogResult.Yes Then
             writeMaterialDetails()
+            syncEvaluations()
+            counter()
         ElseIf result = DialogResult.No Then
 
         End If
@@ -94,14 +96,9 @@ Public Class materialSync
             End Try
 
         End While
-        If count = 0 Then
-            MessageBox.Show("Your videos and ebooks are up to date", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-        ElseIf count > 0 Then
-            MessageBox.Show("" & count & " videos and ebooks will be added to your offline base", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-        End If
         dbConnect.closeDbConnection() 'close connection
+
+
     End Sub
 
     Private Sub downloadVideos(file_name)
@@ -115,5 +112,179 @@ Public Class materialSync
         End If
     End Sub
 
+    Private Sub sendAnalytics()
+
+    End Sub
+    ' syncs new evaluation from the internet
+    Private Sub syncEvaluations()
+        Dim dbconnect As New databaseConnection
+        dbconnect.dbConnection()
+        'select statements from remote
+        Dim examsStrSql As String = "select * from exams;"
+        Dim questionsStrSql As String = "select * from questions;"
+        Dim questionAnswersSql As String = "select * from question_answers;"
+        Dim questionTypeSql As String = "select * from question_type"
+
+        'read and write to variables
+
+        'exams
+        dbconnect.selectMySql(examsStrSql)
+        'read while write into sqlite database
+        dbconnect.sqlLiteConnection("Evaluations.db")
+        While dbconnect.MySqlReader.Read
+
+
+
+            Dim examId As Integer = dbconnect.MySqlReader("exam_id")
+            Dim examName As String = dbconnect.MySqlReader("exam_name")
+            Dim subject As String = dbconnect.MySqlReader("subject")
+            ' Dim studyLevel As String = dbconnect.MySqlReader("")
+            Dim description As String = dbconnect.MySqlReader("description")
+            Dim numOfQuestions As Integer = dbconnect.MySqlReader("num_of_questions")
+            Dim hours As Integer = dbconnect.MySqlReader("hours")
+            Dim minutes As Integer = dbconnect.MySqlReader("minutes")
+            Dim dateCreated As String = dbconnect.MySqlReader("date_created")
+
+            'check if record exists
+
+            Dim existsStrSql As String = "select exam_id from exams where exam_id ='" & examId & "'"
+            dbconnect.selectSqlite(existsStrSql)
+
+            If dbconnect.reader.HasRows Then
+                'do nothing
+            Else
+                Dim insertExamsSql As String = "insert into exams(exam_id, exam_name,subject,description,num_of_questions,hours,minutes)values
+                ('" & examId & "','" & examName & "','" & subject & "','" & description & "','" & numOfQuestions & "','" & hours & "','" & minutes & "');"
+
+
+                dbconnect.insertSqlite(insertExamsSql)
+
+                count = count + 1
+                dbconnect.reader.Close()
+            End If
+
+
+        End While
+        'dbconnect.closeSqlite()
+        dbconnect.MySqlReader.Dispose()
+
+        'questions
+        dbconnect.selectMySql(questionsStrSql)
+        'read while write into sqlite database
+        While dbconnect.MySqlReader.Read
+
+            Dim questionId As Integer = dbconnect.MySqlReader("question_id")
+            Dim question As String = dbconnect.MySqlReader("question")
+            Dim type As String = dbconnect.MySqlReader("type")
+            ' Dim studyLevel As String = dbconnect.MySqlReader("")
+            Dim score As String = dbconnect.MySqlReader("score")
+            ' Dim date_updated As String = dbconnect.MySqlReader("date_updated").ToString
+            Dim examId As Integer = dbconnect.MySqlReader("exam_id")
+            Dim attachment As String = dbconnect.MySqlReader("attachment")
+            'Dim numOfAnswers As String = dbconnect.MySqlReader("num_answers")
+
+            'check if file exists
+            Dim existsStrSql As String = "select question_id from questions where question_id ='" & questionId & "'"
+            dbconnect.selectSqlite(existsStrSql)
+
+
+            If dbconnect.reader.HasRows Then
+                'do nothing
+            Else
+                Dim insertQuestionsSql As String = "insert into questions(question_id, question,type,score,exam_id,attachment)values
+                ('" & questionId & "','" & question & "','" & type & "','" & score & "','" & examId & "','" & attachment & "');"
+
+
+                dbconnect.insertSqlite(insertQuestionsSql)
+
+                count = count + 1
+                dbconnect.reader.Close()
+            End If
+
+
+        End While
+        'dbconnect.closeSqlite()
+        dbconnect.MySqlReader.Dispose()
+
+
+
+
+
+        'question answers
+        dbconnect.selectMySql(questionAnswersSql)
+        'read while write into sqlite database
+        While dbconnect.MySqlReader.Read
+
+            Dim choiceId As Integer = dbconnect.MySqlReader("choice_id")
+            Dim choice As String = dbconnect.MySqlReader("choice")
+            Dim status As String = dbconnect.MySqlReader("status")
+            Dim questionId As String = dbconnect.MySqlReader("question_id")
+
+
+            'check if file exists
+            Dim existsStrSql As String = "select choice_id from question_answers where choice_id ='" & choiceId & "'"
+            dbconnect.selectSqlite(existsStrSql)
+
+
+            If dbconnect.reader.HasRows Then
+                'do nothing
+            Else
+                Dim insertQuestionAnswersSql As String = "insert into question_answers(choice_id, choice,status,question_id)values
+                ('" & choiceId & "','" & choice & "','" & status & "','" & questionId & "');"
+
+
+                dbconnect.insertSqlite(insertQuestionAnswersSql)
+
+                count = count + 1
+                dbconnect.reader.Close()
+            End If
+
+        End While
+        'dbconnect.closeSqlite()
+        dbconnect.MySqlReader.Dispose()
+
+        'question type
+        dbconnect.selectMySql(questionTypeSql)
+        'read while write into sqlite database
+        While dbconnect.MySqlReader.Read
+            Dim Id As Integer = dbconnect.MySqlReader("id")
+            Dim name As String = dbconnect.MySqlReader("name")
+
+
+
+            'check if file exists
+            Dim existsStrSql As String = "select id from question_type where id ='" & Id & "'"
+            dbconnect.selectSqlite(existsStrSql)
+
+
+            If dbconnect.reader.HasRows Then
+                'do nothing
+            Else
+                Dim insertQuestionTypeSql As String = "insert into question_type(id, name)values
+                ('" & Id & "','" & name & "');"
+
+
+                dbconnect.insertSqlite(insertQuestionTypeSql)
+
+                count = count + 1
+                dbconnect.reader.Close()
+            End If
+
+
+        End While
+        'dbconnect.closeSqlite()
+        dbconnect.MySqlReader.Dispose()
+
+
+    End Sub
+    Private Sub counter()
+        If count = 0 Then
+            MessageBox.Show("Your videos,ebooks and evaluations are up to date", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        ElseIf count > 0 Then
+            MessageBox.Show("" & count & " entries will be added to your offline base", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        End If
+    End Sub
 
 End Class
