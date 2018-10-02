@@ -73,6 +73,7 @@ Partial Class evaluationForm
         Me.Controls.Add(Me.evaluationsListBox)
         Me.Name = "evaluationForm"
         Me.Text = "evaluationForm"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

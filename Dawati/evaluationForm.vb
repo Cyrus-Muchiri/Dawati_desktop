@@ -41,5 +41,7 @@
 
     End Sub
 
-
+    Private Sub evaluationForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        databaseReader()
+    End Sub
 End Class
