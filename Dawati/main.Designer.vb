@@ -61,11 +61,7 @@ Partial Class mainForm
         Me.MetroTile8 = New MetroFramework.Controls.MetroTile()
         Me.MetroTile9 = New MetroFramework.Controls.MetroTile()
         Me.ebooksMetroPanel = New MetroFramework.Controls.MetroPanel()
-        Me.chemistryEbooksPictureBox = New System.Windows.Forms.PictureBox()
         Me.socialEbooksPictureBox = New System.Windows.Forms.PictureBox()
-        Me.physicsEbooksPictureBox = New System.Windows.Forms.PictureBox()
-        Me.biologyEbooksPictureBox = New System.Windows.Forms.PictureBox()
-        Me.englishEbooksPictureBox = New System.Windows.Forms.PictureBox()
         Me.mathsEbooksPictureBox = New System.Windows.Forms.PictureBox()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
         Me.socialEbookMetroTile = New MetroFramework.Controls.MetroTile()
@@ -74,6 +70,10 @@ Partial Class mainForm
         Me.chemistryEbookMetroTile = New MetroFramework.Controls.MetroTile()
         Me.physicsEbookMetroTile = New MetroFramework.Controls.MetroTile()
         Me.mathsEbooksMetroTile = New MetroFramework.Controls.MetroTile()
+        Me.chemistryEbooksPictureBox = New System.Windows.Forms.PictureBox()
+        Me.physicsEbooksPictureBox = New System.Windows.Forms.PictureBox()
+        Me.biologyEbooksPictureBox = New System.Windows.Forms.PictureBox()
+        Me.englishEbooksPictureBox = New System.Windows.Forms.PictureBox()
         Me.videosMetroPanel = New MetroFramework.Controls.MetroPanel()
         Me.chemistryVideosPictureBox = New System.Windows.Forms.PictureBox()
         Me.socialVideosPictureBox = New System.Windows.Forms.PictureBox()
@@ -106,18 +106,32 @@ Partial Class mainForm
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.updateMetroButton = New MetroFramework.Controls.MetroButton()
+        Me.evaluationMetroPanel = New MetroFramework.Controls.MetroPanel()
+        Me.chemistryPictureBox = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.physicsPictureBox = New System.Windows.Forms.PictureBox()
+        Me.biologyPictureBox = New System.Windows.Forms.PictureBox()
+        Me.englishPictureBox = New System.Windows.Forms.PictureBox()
+        Me.mathsPictureBox = New System.Windows.Forms.PictureBox()
+        Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroTile10 = New MetroFramework.Controls.MetroTile()
+        Me.biologyEvalMetroTile = New MetroFramework.Controls.MetroTile()
+        Me.engEvalMetroTile = New MetroFramework.Controls.MetroTile()
+        Me.chemistryEvalMetroTile = New MetroFramework.Controls.MetroTile()
+        Me.phyEvalMetroTile = New MetroFramework.Controls.MetroTile()
+        Me.mathsEvalMetroTile = New MetroFramework.Controls.MetroTile()
         Me.MenuStrip1.SuspendLayout()
         Me.MetroPanel1.SuspendLayout()
         CType(Me.avatarPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MetroPanel2.SuspendLayout()
         Me.MetroPanel3.SuspendLayout()
         Me.ebooksMetroPanel.SuspendLayout()
-        CType(Me.chemistryEbooksPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.socialEbooksPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.mathsEbooksPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chemistryEbooksPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.physicsEbooksPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.biologyEbooksPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.englishEbooksPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.mathsEbooksPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.videosMetroPanel.SuspendLayout()
         CType(Me.chemistryVideosPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.socialVideosPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -127,6 +141,13 @@ Partial Class mainForm
         CType(Me.mathVideosPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.profilePanel.SuspendLayout()
         CType(Me.profilemagePictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.evaluationMetroPanel.SuspendLayout()
+        CType(Me.chemistryPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.physicsPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.biologyPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.englishPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.mathsPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -527,13 +548,9 @@ Partial Class mainForm
         '
         'ebooksMetroPanel
         '
-        Me.ebooksMetroPanel.BackColor = System.Drawing.Color.Transparent
+        Me.ebooksMetroPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(233, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(27, Byte), Integer))
         Me.ebooksMetroPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ebooksMetroPanel.Controls.Add(Me.chemistryEbooksPictureBox)
         Me.ebooksMetroPanel.Controls.Add(Me.socialEbooksPictureBox)
-        Me.ebooksMetroPanel.Controls.Add(Me.physicsEbooksPictureBox)
-        Me.ebooksMetroPanel.Controls.Add(Me.biologyEbooksPictureBox)
-        Me.ebooksMetroPanel.Controls.Add(Me.englishEbooksPictureBox)
         Me.ebooksMetroPanel.Controls.Add(Me.mathsEbooksPictureBox)
         Me.ebooksMetroPanel.Controls.Add(Me.MetroLabel4)
         Me.ebooksMetroPanel.Controls.Add(Me.socialEbookMetroTile)
@@ -542,6 +559,10 @@ Partial Class mainForm
         Me.ebooksMetroPanel.Controls.Add(Me.chemistryEbookMetroTile)
         Me.ebooksMetroPanel.Controls.Add(Me.physicsEbookMetroTile)
         Me.ebooksMetroPanel.Controls.Add(Me.mathsEbooksMetroTile)
+        Me.ebooksMetroPanel.Controls.Add(Me.chemistryEbooksPictureBox)
+        Me.ebooksMetroPanel.Controls.Add(Me.physicsEbooksPictureBox)
+        Me.ebooksMetroPanel.Controls.Add(Me.biologyEbooksPictureBox)
+        Me.ebooksMetroPanel.Controls.Add(Me.englishEbooksPictureBox)
         Me.ebooksMetroPanel.HorizontalScrollbarBarColor = True
         Me.ebooksMetroPanel.HorizontalScrollbarHighlightOnWheel = False
         Me.ebooksMetroPanel.HorizontalScrollbarSize = 10
@@ -555,16 +576,6 @@ Partial Class mainForm
         Me.ebooksMetroPanel.VerticalScrollbarSize = 10
         Me.ebooksMetroPanel.Visible = False
         '
-        'chemistryEbooksPictureBox
-        '
-        Me.chemistryEbooksPictureBox.BackgroundImage = CType(resources.GetObject("chemistryEbooksPictureBox.BackgroundImage"), System.Drawing.Image)
-        Me.chemistryEbooksPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.chemistryEbooksPictureBox.Location = New System.Drawing.Point(138, 312)
-        Me.chemistryEbooksPictureBox.Name = "chemistryEbooksPictureBox"
-        Me.chemistryEbooksPictureBox.Size = New System.Drawing.Size(211, 161)
-        Me.chemistryEbooksPictureBox.TabIndex = 14
-        Me.chemistryEbooksPictureBox.TabStop = False
-        '
         'socialEbooksPictureBox
         '
         Me.socialEbooksPictureBox.Location = New System.Drawing.Point(677, 312)
@@ -572,36 +583,6 @@ Partial Class mainForm
         Me.socialEbooksPictureBox.Size = New System.Drawing.Size(211, 161)
         Me.socialEbooksPictureBox.TabIndex = 13
         Me.socialEbooksPictureBox.TabStop = False
-        '
-        'physicsEbooksPictureBox
-        '
-        Me.physicsEbooksPictureBox.BackgroundImage = CType(resources.GetObject("physicsEbooksPictureBox.BackgroundImage"), System.Drawing.Image)
-        Me.physicsEbooksPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.physicsEbooksPictureBox.Location = New System.Drawing.Point(677, 96)
-        Me.physicsEbooksPictureBox.Name = "physicsEbooksPictureBox"
-        Me.physicsEbooksPictureBox.Size = New System.Drawing.Size(211, 161)
-        Me.physicsEbooksPictureBox.TabIndex = 12
-        Me.physicsEbooksPictureBox.TabStop = False
-        '
-        'biologyEbooksPictureBox
-        '
-        Me.biologyEbooksPictureBox.BackgroundImage = CType(resources.GetObject("biologyEbooksPictureBox.BackgroundImage"), System.Drawing.Image)
-        Me.biologyEbooksPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.biologyEbooksPictureBox.Location = New System.Drawing.Point(406, 312)
-        Me.biologyEbooksPictureBox.Name = "biologyEbooksPictureBox"
-        Me.biologyEbooksPictureBox.Size = New System.Drawing.Size(211, 161)
-        Me.biologyEbooksPictureBox.TabIndex = 11
-        Me.biologyEbooksPictureBox.TabStop = False
-        '
-        'englishEbooksPictureBox
-        '
-        Me.englishEbooksPictureBox.BackgroundImage = CType(resources.GetObject("englishEbooksPictureBox.BackgroundImage"), System.Drawing.Image)
-        Me.englishEbooksPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.englishEbooksPictureBox.Location = New System.Drawing.Point(406, 96)
-        Me.englishEbooksPictureBox.Name = "englishEbooksPictureBox"
-        Me.englishEbooksPictureBox.Size = New System.Drawing.Size(211, 161)
-        Me.englishEbooksPictureBox.TabIndex = 10
-        Me.englishEbooksPictureBox.TabStop = False
         '
         'mathsEbooksPictureBox
         '
@@ -623,6 +604,7 @@ Partial Class mainForm
         Me.MetroLabel4.Size = New System.Drawing.Size(73, 25)
         Me.MetroLabel4.TabIndex = 8
         Me.MetroLabel4.Text = "Ebooks"
+        Me.MetroLabel4.UseCustomBackColor = True
         '
         'socialEbookMetroTile
         '
@@ -720,9 +702,49 @@ Partial Class mainForm
         Me.mathsEbooksMetroTile.UseSelectable = True
         Me.mathsEbooksMetroTile.UseTileImage = True
         '
+        'chemistryEbooksPictureBox
+        '
+        Me.chemistryEbooksPictureBox.BackgroundImage = CType(resources.GetObject("chemistryEbooksPictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.chemistryEbooksPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.chemistryEbooksPictureBox.Location = New System.Drawing.Point(138, 312)
+        Me.chemistryEbooksPictureBox.Name = "chemistryEbooksPictureBox"
+        Me.chemistryEbooksPictureBox.Size = New System.Drawing.Size(211, 161)
+        Me.chemistryEbooksPictureBox.TabIndex = 14
+        Me.chemistryEbooksPictureBox.TabStop = False
+        '
+        'physicsEbooksPictureBox
+        '
+        Me.physicsEbooksPictureBox.BackgroundImage = CType(resources.GetObject("physicsEbooksPictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.physicsEbooksPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.physicsEbooksPictureBox.Location = New System.Drawing.Point(677, 96)
+        Me.physicsEbooksPictureBox.Name = "physicsEbooksPictureBox"
+        Me.physicsEbooksPictureBox.Size = New System.Drawing.Size(211, 161)
+        Me.physicsEbooksPictureBox.TabIndex = 12
+        Me.physicsEbooksPictureBox.TabStop = False
+        '
+        'biologyEbooksPictureBox
+        '
+        Me.biologyEbooksPictureBox.BackgroundImage = CType(resources.GetObject("biologyEbooksPictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.biologyEbooksPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.biologyEbooksPictureBox.Location = New System.Drawing.Point(406, 312)
+        Me.biologyEbooksPictureBox.Name = "biologyEbooksPictureBox"
+        Me.biologyEbooksPictureBox.Size = New System.Drawing.Size(211, 161)
+        Me.biologyEbooksPictureBox.TabIndex = 11
+        Me.biologyEbooksPictureBox.TabStop = False
+        '
+        'englishEbooksPictureBox
+        '
+        Me.englishEbooksPictureBox.BackgroundImage = CType(resources.GetObject("englishEbooksPictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.englishEbooksPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.englishEbooksPictureBox.Location = New System.Drawing.Point(406, 96)
+        Me.englishEbooksPictureBox.Name = "englishEbooksPictureBox"
+        Me.englishEbooksPictureBox.Size = New System.Drawing.Size(211, 161)
+        Me.englishEbooksPictureBox.TabIndex = 10
+        Me.englishEbooksPictureBox.TabStop = False
+        '
         'videosMetroPanel
         '
-        Me.videosMetroPanel.BackColor = System.Drawing.Color.Transparent
+        Me.videosMetroPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(123, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.videosMetroPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.videosMetroPanel.Controls.Add(Me.chemistryVideosPictureBox)
         Me.videosMetroPanel.Controls.Add(Me.socialVideosPictureBox)
@@ -928,7 +950,7 @@ Partial Class mainForm
         '
         'profilePanel
         '
-        Me.profilePanel.BackColor = System.Drawing.Color.Transparent
+        Me.profilePanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.profilePanel.Controls.Add(Me.browseButton)
         Me.profilePanel.Controls.Add(Me.profilemagePictureBox)
         Me.profilePanel.Controls.Add(Me.profPhotoLabel)
@@ -1196,6 +1218,202 @@ Partial Class mainForm
         Me.updateMetroButton.UseSelectable = True
         Me.updateMetroButton.Visible = False
         '
+        'evaluationMetroPanel
+        '
+        Me.evaluationMetroPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(113, Byte), Integer), CType(CType(184, Byte), Integer))
+        Me.evaluationMetroPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.evaluationMetroPanel.Controls.Add(Me.chemistryPictureBox)
+        Me.evaluationMetroPanel.Controls.Add(Me.PictureBox2)
+        Me.evaluationMetroPanel.Controls.Add(Me.physicsPictureBox)
+        Me.evaluationMetroPanel.Controls.Add(Me.biologyPictureBox)
+        Me.evaluationMetroPanel.Controls.Add(Me.englishPictureBox)
+        Me.evaluationMetroPanel.Controls.Add(Me.mathsPictureBox)
+        Me.evaluationMetroPanel.Controls.Add(Me.MetroLabel6)
+        Me.evaluationMetroPanel.Controls.Add(Me.MetroTile10)
+        Me.evaluationMetroPanel.Controls.Add(Me.biologyEvalMetroTile)
+        Me.evaluationMetroPanel.Controls.Add(Me.engEvalMetroTile)
+        Me.evaluationMetroPanel.Controls.Add(Me.chemistryEvalMetroTile)
+        Me.evaluationMetroPanel.Controls.Add(Me.phyEvalMetroTile)
+        Me.evaluationMetroPanel.Controls.Add(Me.mathsEvalMetroTile)
+        Me.evaluationMetroPanel.HorizontalScrollbarBarColor = True
+        Me.evaluationMetroPanel.HorizontalScrollbarHighlightOnWheel = False
+        Me.evaluationMetroPanel.HorizontalScrollbarSize = 10
+        Me.evaluationMetroPanel.Location = New System.Drawing.Point(212, 78)
+        Me.evaluationMetroPanel.Name = "evaluationMetroPanel"
+        Me.evaluationMetroPanel.Size = New System.Drawing.Size(957, 552)
+        Me.evaluationMetroPanel.TabIndex = 18
+        Me.evaluationMetroPanel.UseCustomBackColor = True
+        Me.evaluationMetroPanel.VerticalScrollbarBarColor = True
+        Me.evaluationMetroPanel.VerticalScrollbarHighlightOnWheel = False
+        Me.evaluationMetroPanel.VerticalScrollbarSize = 10
+        Me.evaluationMetroPanel.Visible = False
+        '
+        'chemistryPictureBox
+        '
+        Me.chemistryPictureBox.BackgroundImage = CType(resources.GetObject("chemistryPictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.chemistryPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.chemistryPictureBox.Location = New System.Drawing.Point(138, 312)
+        Me.chemistryPictureBox.Name = "chemistryPictureBox"
+        Me.chemistryPictureBox.Size = New System.Drawing.Size(211, 161)
+        Me.chemistryPictureBox.TabIndex = 14
+        Me.chemistryPictureBox.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Location = New System.Drawing.Point(677, 312)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(211, 161)
+        Me.PictureBox2.TabIndex = 13
+        Me.PictureBox2.TabStop = False
+        '
+        'physicsPictureBox
+        '
+        Me.physicsPictureBox.BackgroundImage = CType(resources.GetObject("physicsPictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.physicsPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.physicsPictureBox.Location = New System.Drawing.Point(677, 96)
+        Me.physicsPictureBox.Name = "physicsPictureBox"
+        Me.physicsPictureBox.Size = New System.Drawing.Size(211, 161)
+        Me.physicsPictureBox.TabIndex = 12
+        Me.physicsPictureBox.TabStop = False
+        '
+        'biologyPictureBox
+        '
+        Me.biologyPictureBox.BackgroundImage = CType(resources.GetObject("biologyPictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.biologyPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.biologyPictureBox.Location = New System.Drawing.Point(406, 312)
+        Me.biologyPictureBox.Name = "biologyPictureBox"
+        Me.biologyPictureBox.Size = New System.Drawing.Size(211, 161)
+        Me.biologyPictureBox.TabIndex = 11
+        Me.biologyPictureBox.TabStop = False
+        '
+        'englishPictureBox
+        '
+        Me.englishPictureBox.BackgroundImage = CType(resources.GetObject("englishPictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.englishPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.englishPictureBox.Location = New System.Drawing.Point(406, 96)
+        Me.englishPictureBox.Name = "englishPictureBox"
+        Me.englishPictureBox.Size = New System.Drawing.Size(211, 161)
+        Me.englishPictureBox.TabIndex = 10
+        Me.englishPictureBox.TabStop = False
+        '
+        'mathsPictureBox
+        '
+        Me.mathsPictureBox.BackgroundImage = CType(resources.GetObject("mathsPictureBox.BackgroundImage"), System.Drawing.Image)
+        Me.mathsPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.mathsPictureBox.Location = New System.Drawing.Point(138, 96)
+        Me.mathsPictureBox.Name = "mathsPictureBox"
+        Me.mathsPictureBox.Size = New System.Drawing.Size(199, 161)
+        Me.mathsPictureBox.TabIndex = 9
+        Me.mathsPictureBox.TabStop = False
+        '
+        'MetroLabel6
+        '
+        Me.MetroLabel6.AutoSize = True
+        Me.MetroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall
+        Me.MetroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Bold
+        Me.MetroLabel6.Location = New System.Drawing.Point(425, 51)
+        Me.MetroLabel6.Name = "MetroLabel6"
+        Me.MetroLabel6.Size = New System.Drawing.Size(110, 25)
+        Me.MetroLabel6.TabIndex = 8
+        Me.MetroLabel6.Text = "Evaluations"
+        Me.MetroLabel6.UseCustomBackColor = True
+        '
+        'MetroTile10
+        '
+        Me.MetroTile10.ActiveControl = Nothing
+        Me.MetroTile10.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
+        Me.MetroTile10.Location = New System.Drawing.Point(663, 473)
+        Me.MetroTile10.Name = "MetroTile10"
+        Me.MetroTile10.Size = New System.Drawing.Size(263, 49)
+        Me.MetroTile10.TabIndex = 7
+        Me.MetroTile10.Text = "Social"
+        Me.MetroTile10.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.MetroTile10.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall
+        Me.MetroTile10.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold
+        Me.MetroTile10.UseCustomBackColor = True
+        Me.MetroTile10.UseSelectable = True
+        Me.MetroTile10.UseTileImage = True
+        '
+        'biologyEvalMetroTile
+        '
+        Me.biologyEvalMetroTile.ActiveControl = Nothing
+        Me.biologyEvalMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
+        Me.biologyEvalMetroTile.Location = New System.Drawing.Point(389, 473)
+        Me.biologyEvalMetroTile.Name = "biologyEvalMetroTile"
+        Me.biologyEvalMetroTile.Size = New System.Drawing.Size(263, 49)
+        Me.biologyEvalMetroTile.TabIndex = 6
+        Me.biologyEvalMetroTile.Text = "Biology"
+        Me.biologyEvalMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.biologyEvalMetroTile.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall
+        Me.biologyEvalMetroTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold
+        Me.biologyEvalMetroTile.UseCustomBackColor = True
+        Me.biologyEvalMetroTile.UseSelectable = True
+        Me.biologyEvalMetroTile.UseTileImage = True
+        '
+        'engEvalMetroTile
+        '
+        Me.engEvalMetroTile.ActiveControl = Nothing
+        Me.engEvalMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
+        Me.engEvalMetroTile.Location = New System.Drawing.Point(389, 259)
+        Me.engEvalMetroTile.Name = "engEvalMetroTile"
+        Me.engEvalMetroTile.Size = New System.Drawing.Size(263, 50)
+        Me.engEvalMetroTile.TabIndex = 5
+        Me.engEvalMetroTile.Text = "English"
+        Me.engEvalMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.engEvalMetroTile.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall
+        Me.engEvalMetroTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold
+        Me.engEvalMetroTile.UseCustomBackColor = True
+        Me.engEvalMetroTile.UseSelectable = True
+        Me.engEvalMetroTile.UseTileImage = True
+        '
+        'chemistryEvalMetroTile
+        '
+        Me.chemistryEvalMetroTile.ActiveControl = Nothing
+        Me.chemistryEvalMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
+        Me.chemistryEvalMetroTile.Location = New System.Drawing.Point(114, 473)
+        Me.chemistryEvalMetroTile.Name = "chemistryEvalMetroTile"
+        Me.chemistryEvalMetroTile.Size = New System.Drawing.Size(263, 49)
+        Me.chemistryEvalMetroTile.TabIndex = 4
+        Me.chemistryEvalMetroTile.Text = "Chemistry"
+        Me.chemistryEvalMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.chemistryEvalMetroTile.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall
+        Me.chemistryEvalMetroTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold
+        Me.chemistryEvalMetroTile.UseCustomBackColor = True
+        Me.chemistryEvalMetroTile.UseSelectable = True
+        Me.chemistryEvalMetroTile.UseTileImage = True
+        '
+        'phyEvalMetroTile
+        '
+        Me.phyEvalMetroTile.ActiveControl = Nothing
+        Me.phyEvalMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
+        Me.phyEvalMetroTile.Location = New System.Drawing.Point(663, 259)
+        Me.phyEvalMetroTile.Name = "phyEvalMetroTile"
+        Me.phyEvalMetroTile.Size = New System.Drawing.Size(263, 50)
+        Me.phyEvalMetroTile.TabIndex = 3
+        Me.phyEvalMetroTile.Text = "Physics"
+        Me.phyEvalMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.phyEvalMetroTile.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall
+        Me.phyEvalMetroTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold
+        Me.phyEvalMetroTile.UseCustomBackColor = True
+        Me.phyEvalMetroTile.UseSelectable = True
+        Me.phyEvalMetroTile.UseTileImage = True
+        '
+        'mathsEvalMetroTile
+        '
+        Me.mathsEvalMetroTile.ActiveControl = Nothing
+        Me.mathsEvalMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
+        Me.mathsEvalMetroTile.Location = New System.Drawing.Point(114, 259)
+        Me.mathsEvalMetroTile.Name = "mathsEvalMetroTile"
+        Me.mathsEvalMetroTile.Size = New System.Drawing.Size(263, 50)
+        Me.mathsEvalMetroTile.TabIndex = 2
+        Me.mathsEvalMetroTile.Text = "Mathematics"
+        Me.mathsEvalMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.mathsEvalMetroTile.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall
+        Me.mathsEvalMetroTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold
+        Me.mathsEvalMetroTile.UseCustomBackColor = True
+        Me.mathsEvalMetroTile.UseSelectable = True
+        Me.mathsEvalMetroTile.UseTileImage = True
+        '
         'mainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1208,6 +1426,7 @@ Partial Class mainForm
         Me.Controls.Add(Me.exitMetroButton)
         Me.Controls.Add(Me.avatarPictureBox)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.evaluationMetroPanel)
         Me.Controls.Add(Me.ebooksMetroPanel)
         Me.Controls.Add(Me.profilePanel)
         Me.Controls.Add(Me.videosMetroPanel)
@@ -1226,12 +1445,12 @@ Partial Class mainForm
         Me.MetroPanel3.PerformLayout()
         Me.ebooksMetroPanel.ResumeLayout(False)
         Me.ebooksMetroPanel.PerformLayout()
-        CType(Me.chemistryEbooksPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.socialEbooksPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.mathsEbooksPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chemistryEbooksPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.physicsEbooksPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.biologyEbooksPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.englishEbooksPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.mathsEbooksPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.videosMetroPanel.ResumeLayout(False)
         Me.videosMetroPanel.PerformLayout()
         CType(Me.chemistryVideosPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1243,6 +1462,14 @@ Partial Class mainForm
         Me.profilePanel.ResumeLayout(False)
         Me.profilePanel.PerformLayout()
         CType(Me.profilemagePictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.evaluationMetroPanel.ResumeLayout(False)
+        Me.evaluationMetroPanel.PerformLayout()
+        CType(Me.chemistryPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.physicsPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.biologyPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.englishPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.mathsPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1331,4 +1558,18 @@ Partial Class mainForm
     Friend WithEvents profPhotoLabel As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents browseButton As Button
+    Friend WithEvents evaluationMetroPanel As MetroFramework.Controls.MetroPanel
+    Friend WithEvents chemistryPictureBox As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents physicsPictureBox As PictureBox
+    Friend WithEvents biologyPictureBox As PictureBox
+    Friend WithEvents englishPictureBox As PictureBox
+    Friend WithEvents mathsPictureBox As PictureBox
+    Friend WithEvents MetroLabel6 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroTile10 As MetroFramework.Controls.MetroTile
+    Friend WithEvents biologyEvalMetroTile As MetroFramework.Controls.MetroTile
+    Friend WithEvents engEvalMetroTile As MetroFramework.Controls.MetroTile
+    Friend WithEvents chemistryEvalMetroTile As MetroFramework.Controls.MetroTile
+    Friend WithEvents phyEvalMetroTile As MetroFramework.Controls.MetroTile
+    Friend WithEvents mathsEvalMetroTile As MetroFramework.Controls.MetroTile
 End Class

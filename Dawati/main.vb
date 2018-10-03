@@ -13,14 +13,19 @@ Imports System.IO
 Public Class mainForm
     'variable to store whether videos or ebooks the user chose to click
     Public subject As String ' stores subject
+    Public evaluationSubject ' stores subject for evaluation
     Public learningMaterial As String 'stores video or ebook
     Public Shared learningMaterialType As String = "videos" ' stores either value ebook or video
     Public url As String
     Private fname As String
+    Private evaluation As New evaluationForm 'evaluationForm object
     Public Sub initialize()
         videosMetroPanel.Visible = True
         ebooksMetroPanel.Visible = False
         profilePanel.Visible = False
+        evaluationMetroPanel.Visible = False
+
+
 
         'Me.BackColor = Color.FromArgb()
 
@@ -183,6 +188,7 @@ Public Class mainForm
         learningMaterialType = "videos"
         ebooksMetroPanel.Visible = False
         profilePanel.Visible = False
+        evaluationMetroPanel.Visible = False
     End Sub
 
     Private Sub ebooksMetroTile_Click(sender As Object, e As EventArgs) Handles ebooksMetroTile.Click
@@ -190,15 +196,36 @@ Public Class mainForm
         learningMaterialType = "ebooks"
         videosMetroPanel.Visible = False
         profilePanel.Visible = False
+        evaluationMetroPanel.Visible = False
+    End Sub
+    Private Sub evaluationsMetroTile_Click(sender As Object, e As EventArgs) Handles evaluationsMetroTile.Click
+        ebooksMetroPanel.Visible = False
+
+        videosMetroPanel.Visible = False
+        profilePanel.Visible = False
+        evaluationMetroPanel.Visible = True
     End Sub
 
-    Private Sub exitMetroButton_Click(sender As Object, e As EventArgs) Handles exitMetroButton.Click
-
-        Close()
-
+    Private Sub MetroTile1_Click(sender As Object, e As EventArgs) Handles MetroTile1.Click
+        viewProfile()
+        videosMetroPanel.Visible = False
+        ebooksMetroPanel.Visible = False
+        profilePanel.Visible = True
+        evaluationMetroPanel.Visible = False
 
     End Sub
+    Private Sub editMetroButton_Click(sender As Object, e As EventArgs) Handles editMetroButton.Click
+        fnameMetroTextBox.ReadOnly = False
+        lnameMetroTextBox.ReadOnly = False
+        emailMetroTextBox.ReadOnly = False
+        browseButton.Visible = True
 
+        editMetroButton.Visible = False
+        updateMetroButton.Visible = True
+    End Sub
+
+    'Videos MetroTiles OnClick
+    '--------------------------
     Private Sub mathsVideosMetroTile_Click(sender As Object, e As EventArgs) Handles mathsVideosMetroTile.Click
         subject = "Mathematics"
         learningMaterial = "videos"
@@ -241,7 +268,54 @@ Public Class mainForm
         selectStudyLevel.initialize(subject, learningMaterial)
         selectStudyLevel.Show()
     End Sub
+    'End Videos MetroTile Click
+    '----------------------------
+    'Videos PictureBoxes on Click
+    '--------------------------
 
+
+    Private Sub mathVideosPictureBox_Click(sender As Object, e As EventArgs) Handles mathVideosPictureBox.Click
+        subject = "Mathematics"
+        learningMaterial = "videos"
+        selectStudyLevel.initialize(subject, learningMaterial)
+        selectStudyLevel.Show()
+    End Sub
+
+    Private Sub englishVideosPictureBox_Click(sender As Object, e As EventArgs) Handles englishVideosPictureBox.Click
+        subject = "english"
+        learningMaterial = "videos"
+        selectStudyLevel.initialize(subject, learningMaterial)
+        selectStudyLevel.Show()
+    End Sub
+
+    Private Sub physicsVideosPictureBox_Click(sender As Object, e As EventArgs) Handles physicsVideosPictureBox.Click
+
+        subject = "physics"
+        learningMaterial = "videos"
+        selectStudyLevel.initialize(subject, learningMaterial)
+        selectStudyLevel.Show()
+    End Sub
+
+    Private Sub biologyVideosPictureBox_Click(sender As Object, e As EventArgs) Handles biologyVideosPictureBox.Click
+        subject = "biology"
+        learningMaterial = "videos"
+        selectStudyLevel.initialize(subject, learningMaterial)
+        selectStudyLevel.Show()
+    End Sub
+
+    Private Sub chemistryVideosPictureBox_Click(sender As Object, e As EventArgs) Handles chemistryVideosPictureBox.Click
+        subject = "chemistry"
+        learningMaterial = "videos"
+        selectStudyLevel.initialize(subject, learningMaterial)
+        selectStudyLevel.Show()
+    End Sub
+    'End videos pictureBoxes click
+    '--------------------------------
+
+
+
+    'Ebooks MetroTiles on Click
+    '-------------------------
     Private Sub chemistryEbookMetroTile_Click(sender As Object, e As EventArgs) Handles chemistryEbookMetroTile.Click
         subject = "chemistry"
         learningMaterial = "eBook"
@@ -283,7 +357,45 @@ Public Class mainForm
         selectStudyLevel.initialize(subject, learningMaterial)
         selectStudyLevel.Show()
     End Sub
+    'Ebooks PictureBoxes on click
+    '----------------------------
+    Private Sub mathsEbooksPictureBox_Click(sender As Object, e As EventArgs) Handles mathsEbooksPictureBox.Click
+        subject = "Mathematics"
+        learningMaterial = "eBook"
+        selectStudyLevel.initialize(subject, learningMaterial)
+        selectStudyLevel.Show()
+    End Sub
 
+    Private Sub englishEbooksPictureBox_Click(sender As Object, e As EventArgs) Handles englishEbooksPictureBox.Click
+        subject = "english"
+        learningMaterial = "eBook"
+        selectStudyLevel.initialize(subject, learningMaterial)
+        selectStudyLevel.Show()
+    End Sub
+
+    Private Sub physicsEbooksPictureBox_Click(sender As Object, e As EventArgs) Handles physicsEbooksPictureBox.Click
+        subject = "physics"
+        learningMaterial = "eBook"
+        selectStudyLevel.initialize(subject, learningMaterial)
+        selectStudyLevel.Show()
+    End Sub
+
+    Private Sub biologyEbooksPictureBox_Click(sender As Object, e As EventArgs) Handles biologyEbooksPictureBox.Click
+        subject = "biology"
+        learningMaterial = "eBook"
+        selectStudyLevel.initialize(subject, learningMaterial)
+        selectStudyLevel.Show()
+    End Sub
+
+    Private Sub chemistryEbooksPictureBox_Click(sender As Object, e As EventArgs) Handles chemistryEbooksPictureBox.Click
+        subject = "chemistry"
+        learningMaterial = "eBook"
+        selectStudyLevel.initialize(subject, learningMaterial)
+        selectStudyLevel.Show()
+    End Sub
+
+    'View profile panel
+    '--------------------
     Private Sub viewProfile()
         Dim prof_image As String
         Dim dbConnect As New databaseConnection
@@ -302,31 +414,84 @@ Public Class mainForm
         End While
     End Sub
 
-    Private Sub MetroTile1_Click(sender As Object, e As EventArgs) Handles MetroTile1.Click
-        viewProfile()
-        videosMetroPanel.Visible = False
-        ebooksMetroPanel.Visible = False
-        profilePanel.Visible = True
+    'End Profil
+    '----------
 
-    End Sub
+    ' begin evaluation tiles and pictureboxes
+    '------------------------------------------
 
-    Private Sub editMetroButton_Click(sender As Object, e As EventArgs) Handles editMetroButton.Click
-        fnameMetroTextBox.ReadOnly = False
-        lnameMetroTextBox.ReadOnly = False
-        emailMetroTextBox.ReadOnly = False
-        browseButton.Visible = True
+    Private Sub mathsEvalMetroTile_Click(sender As Object, e As EventArgs) Handles mathsEvalMetroTile.Click
 
-        editMetroButton.Visible = False
-        updateMetroButton.Visible = True
-    End Sub
-
-    Private Sub browseButton_Click(sender As Object, e As EventArgs) Handles browseButton.Click
-        ' selectPhotoFolderBrowserDialog.ShowDialog()
-
-    End Sub
-
-    Private Sub evaluationsMetroTile_Click(sender As Object, e As EventArgs) Handles evaluationsMetroTile.Click
+        evaluationForm.databaseReader("Mathematics")
         evaluationForm.Show()
     End Sub
+
+    Private Sub engEvalMetroTile_Click(sender As Object, e As EventArgs) Handles engEvalMetroTile.Click
+        evaluationForm.databaseReader("English")
+        evaluationForm.Show()
+    End Sub
+
+    Private Sub phyEvalMetroTile_Click(sender As Object, e As EventArgs) Handles phyEvalMetroTile.Click
+        evaluationForm.databaseReader("Physics")
+        evaluationForm.Show()
+        'evaluationSubject = "Physics"
+    End Sub
+
+    Private Sub chemistryEvalMetroTile_Click(sender As Object, e As EventArgs) Handles chemistryEvalMetroTile.Click
+        evaluationForm.databaseReader("Chemistry")
+        evaluationForm.Show()
+    End Sub
+
+    Private Sub biologyEvalMetroTile_Click(sender As Object, e As EventArgs) Handles biologyEvalMetroTile.Click
+        evaluationForm.databaseReader("Biology")
+        evaluationForm.Show()
+    End Sub
+
+
+
+
+    'Evaluations Picture Boxes on Click
+    '----------------------------------
+
+    Private Sub mathsPictureBox_Click(sender As Object, e As EventArgs) Handles mathsPictureBox.Click
+
+        evaluationForm.Show()
+        evaluationForm.databaseReader("Mathematics")
+    End Sub
+
+    Private Sub englishPictureBox_Click(sender As Object, e As EventArgs) Handles englishPictureBox.Click
+        evaluationForm.databaseReader("English")
+        evaluationForm.Show()
+    End Sub
+
+    Private Sub physicsPictureBox_Click(sender As Object, e As EventArgs) Handles physicsPictureBox.Click
+        evaluationForm.databaseReader("Physics")
+        evaluationForm.Show()
+    End Sub
+
+    Private Sub chemistryPictureBox_Click(sender As Object, e As EventArgs) Handles chemistryPictureBox.Click
+        evaluationForm.databaseReader("Chemistry")
+        evaluationForm.Show()
+    End Sub
+
+    Private Sub biologyPictureBox_Click(sender As Object, e As EventArgs) Handles biologyPictureBox.Click
+        evaluationForm.databaseReader("Biology")
+        evaluationForm.Show()
+    End Sub
+    'End PictureBoxes Click for evaluations
+    '------------------------------------
+    'Exit Button
+    '-------------
+
+    Private Sub exitMetroButton_Click(sender As Object, e As EventArgs) Handles exitMetroButton.Click
+
+        Close()
+    End Sub
+    'End exit
+    '---------
+
+
+
+
 
 End Class
