@@ -38,7 +38,6 @@
     End Sub
     Public Sub databaseReader(ByVal subject As String)
 
-
         Dim dbConnect As New databaseConnection
         dbConnect.sqlLiteConnection("Evaluations.db")
         Dim selectsql As String = "select exam_name,hours,minutes from exams where subject='" & subject & "'"
