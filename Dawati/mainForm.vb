@@ -79,7 +79,7 @@ Public Class mainForm
         LnameMetroLabel.Text = lname
 
         'checks internet conection, if present syncs
-        Dim materialSync_object = New materialSync
+        Dim materialSync_object = New loading
         materialSync_object.checkConnection()
 
         'encrypts files, if there are any decrypted

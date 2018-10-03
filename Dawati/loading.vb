@@ -1,8 +1,24 @@
 ﻿Imports System.Net
+Imports System.Threading
 Imports System.IO
 Imports System.Net.WebClient.dowloadFile
+Public Class loading
 
-Public Class materialSync
+
+    Public Sub initialize()
+        PictureBox1.Image = Image.FromFile("assets\images\Loading_icon.gif")
+        '= BackgroundImageLayout.Stretch
+
+
+
+    End Sub
+
+    Private Sub loading_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+
+
     'dbConnect is an object of database connection
 
     'global variables
@@ -38,8 +54,15 @@ Public Class materialSync
 
 
         If result = DialogResult.Yes Then
+            Dim thread As New Thread(AddressOf initialize)
+            thread.IsBackground = True
+            thread.SetApartmentState(ApartmentState.MTA)
+            thread.Start()
+            'initialize()
+            Show()
             writeMaterialDetails()
             syncEvaluations()
+            Close()
             counter()
         ElseIf result = DialogResult.No Then
 
@@ -57,8 +80,7 @@ Public Class materialSync
         'get data from remote server
         Dim strSql As String = "Select * FROM multimedia_content ORDER BY file_id ASC"
         dbConnect.selectMySql(strSql)
-        loading.initialize()
-        loading.Show()
+
 
         While dbConnect.MySqlReader.Read
             file_id = dbConnect.MySqlReader("file_id")
@@ -96,7 +118,7 @@ Public Class materialSync
                     Else
                         downloadEbooks(file_id, file_name)
                     End If
-                   
+
                     dbConnect.closeSqlite()
 
                 End If
@@ -107,7 +129,7 @@ Public Class materialSync
             End Try
 
         End While
-        loading.Close()
+
         dbConnect.closeDbConnection() 'close connection
 
 
@@ -316,5 +338,6 @@ Public Class materialSync
 
         End If
     End Sub
+
 
 End Class

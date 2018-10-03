@@ -40,6 +40,8 @@ Public Class classRoom
             multimediaSeries = ""
         End If
 
+
+
         'get level of study the user chose
         If studyLevel = "Form 1" Then
             Me.studyLevel = "level_001"
@@ -58,6 +60,7 @@ Public Class classRoom
 
 
     End Sub
+
     Private Sub loadVideos()
         multimediaType = "1"
         loadLearningMaterials(studyLevel, multimediaType, classWorkListBox)
