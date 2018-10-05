@@ -78,7 +78,7 @@
     End Sub
 
     Private Sub startMetroTile_Click(sender As Object, e As EventArgs) Handles startMetroTile.Click
-        questions.initialize(exam_id)
+        questions.initialize(exam_id, examName, numQuestions)
         questions.Show()
     End Sub
 

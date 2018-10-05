@@ -24,6 +24,7 @@ Public Class mainForm
         ebooksMetroPanel.Visible = False
         profilePanel.Visible = False
         evaluationMetroPanel.Visible = False
+        aboutPanel.Visible = False
 
 
 
@@ -189,6 +190,7 @@ Public Class mainForm
         ebooksMetroPanel.Visible = False
         profilePanel.Visible = False
         evaluationMetroPanel.Visible = False
+        aboutPanel.Visible = False
     End Sub
 
     Private Sub ebooksMetroTile_Click(sender As Object, e As EventArgs) Handles ebooksMetroTile.Click
@@ -197,21 +199,23 @@ Public Class mainForm
         videosMetroPanel.Visible = False
         profilePanel.Visible = False
         evaluationMetroPanel.Visible = False
+        aboutPanel.Visible = False
     End Sub
     Private Sub evaluationsMetroTile_Click(sender As Object, e As EventArgs) Handles evaluationsMetroTile.Click
         ebooksMetroPanel.Visible = False
-
+        aboutPanel.Visible = False
         videosMetroPanel.Visible = False
         profilePanel.Visible = False
         evaluationMetroPanel.Visible = True
     End Sub
 
-    Private Sub MetroTile1_Click(sender As Object, e As EventArgs) Handles MetroTile1.Click
+    Private Sub MetroTile1_Click(sender As Object, e As EventArgs) Handles profileMetroTile.Click
         viewProfile()
         videosMetroPanel.Visible = False
         ebooksMetroPanel.Visible = False
         profilePanel.Visible = True
         evaluationMetroPanel.Visible = False
+        aboutPanel.Visible = False
 
     End Sub
     Private Sub editMetroButton_Click(sender As Object, e As EventArgs) Handles editMetroButton.Click
@@ -219,9 +223,17 @@ Public Class mainForm
         lnameMetroTextBox.ReadOnly = False
         emailMetroTextBox.ReadOnly = False
         browseButton.Visible = True
-
+        aboutPanel.Visible = False
         editMetroButton.Visible = False
         updateMetroButton.Visible = True
+    End Sub
+
+    Private Sub aboutMetroTile_Click(sender As Object, e As EventArgs) Handles aboutMetroTile.Click
+        videosMetroPanel.Visible = False
+        ebooksMetroPanel.Visible = False
+        profilePanel.Visible = False
+        evaluationMetroPanel.Visible = False
+        aboutPanel.Visible = True
     End Sub
 
     'Videos MetroTiles OnClick
@@ -487,6 +499,14 @@ Public Class mainForm
 
         Close()
     End Sub
+
+
+
+    Private Sub logoutMetroTile_Click(sender As Object, e As EventArgs) Handles logoutMetroTile.Click
+        Close()
+    End Sub
+
+
     'End exit
     '---------
 

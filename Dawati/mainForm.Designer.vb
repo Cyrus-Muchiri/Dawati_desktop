@@ -47,9 +47,9 @@ Partial Class mainForm
         Me.emailMetroLabel = New MetroFramework.Controls.MetroLabel()
         Me.avatarPictureBox = New System.Windows.Forms.PictureBox()
         Me.MetroPanel2 = New MetroFramework.Controls.MetroPanel()
-        Me.MetroTile3 = New MetroFramework.Controls.MetroTile()
-        Me.MetroTile2 = New MetroFramework.Controls.MetroTile()
-        Me.MetroTile1 = New MetroFramework.Controls.MetroTile()
+        Me.logoutMetroTile = New MetroFramework.Controls.MetroTile()
+        Me.aboutMetroTile = New MetroFramework.Controls.MetroTile()
+        Me.profileMetroTile = New MetroFramework.Controls.MetroTile()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroPanel3 = New MetroFramework.Controls.MetroPanel()
@@ -120,6 +120,11 @@ Partial Class mainForm
         Me.chemistryEvalMetroTile = New MetroFramework.Controls.MetroTile()
         Me.phyEvalMetroTile = New MetroFramework.Controls.MetroTile()
         Me.mathsEvalMetroTile = New MetroFramework.Controls.MetroTile()
+        Me.aboutPanel = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.MetroPanel1.SuspendLayout()
         CType(Me.avatarPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -148,6 +153,8 @@ Partial Class mainForm
         CType(Me.biologyPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.englishPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mathsPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.aboutPanel.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -347,9 +354,9 @@ Partial Class mainForm
         'MetroPanel2
         '
         Me.MetroPanel2.BackColor = System.Drawing.Color.Transparent
-        Me.MetroPanel2.Controls.Add(Me.MetroTile3)
-        Me.MetroPanel2.Controls.Add(Me.MetroTile2)
-        Me.MetroPanel2.Controls.Add(Me.MetroTile1)
+        Me.MetroPanel2.Controls.Add(Me.logoutMetroTile)
+        Me.MetroPanel2.Controls.Add(Me.aboutMetroTile)
+        Me.MetroPanel2.Controls.Add(Me.profileMetroTile)
         Me.MetroPanel2.Controls.Add(Me.MetroLabel2)
         Me.MetroPanel2.Controls.Add(Me.MetroLabel1)
         Me.MetroPanel2.Controls.Add(Me.evaluationsMetroTile)
@@ -368,44 +375,44 @@ Partial Class mainForm
         Me.MetroPanel2.VerticalScrollbarHighlightOnWheel = False
         Me.MetroPanel2.VerticalScrollbarSize = 10
         '
-        'MetroTile3
+        'logoutMetroTile
         '
-        Me.MetroTile3.ActiveControl = Nothing
-        Me.MetroTile3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.MetroTile3.Location = New System.Drawing.Point(19, 417)
-        Me.MetroTile3.Name = "MetroTile3"
-        Me.MetroTile3.Size = New System.Drawing.Size(83, 38)
-        Me.MetroTile3.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroTile3.TabIndex = 8
-        Me.MetroTile3.Text = "Log out"
-        Me.MetroTile3.UseCustomBackColor = True
-        Me.MetroTile3.UseSelectable = True
+        Me.logoutMetroTile.ActiveControl = Nothing
+        Me.logoutMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
+        Me.logoutMetroTile.Location = New System.Drawing.Point(19, 417)
+        Me.logoutMetroTile.Name = "logoutMetroTile"
+        Me.logoutMetroTile.Size = New System.Drawing.Size(83, 38)
+        Me.logoutMetroTile.Style = MetroFramework.MetroColorStyle.Blue
+        Me.logoutMetroTile.TabIndex = 8
+        Me.logoutMetroTile.Text = "Log out"
+        Me.logoutMetroTile.UseCustomBackColor = True
+        Me.logoutMetroTile.UseSelectable = True
         '
-        'MetroTile2
+        'aboutMetroTile
         '
-        Me.MetroTile2.ActiveControl = Nothing
-        Me.MetroTile2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.MetroTile2.Location = New System.Drawing.Point(19, 357)
-        Me.MetroTile2.Name = "MetroTile2"
-        Me.MetroTile2.Size = New System.Drawing.Size(83, 37)
-        Me.MetroTile2.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroTile2.TabIndex = 7
-        Me.MetroTile2.Text = "About Us"
-        Me.MetroTile2.UseCustomBackColor = True
-        Me.MetroTile2.UseSelectable = True
+        Me.aboutMetroTile.ActiveControl = Nothing
+        Me.aboutMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
+        Me.aboutMetroTile.Location = New System.Drawing.Point(19, 357)
+        Me.aboutMetroTile.Name = "aboutMetroTile"
+        Me.aboutMetroTile.Size = New System.Drawing.Size(83, 37)
+        Me.aboutMetroTile.Style = MetroFramework.MetroColorStyle.Blue
+        Me.aboutMetroTile.TabIndex = 7
+        Me.aboutMetroTile.Text = "About Us"
+        Me.aboutMetroTile.UseCustomBackColor = True
+        Me.aboutMetroTile.UseSelectable = True
         '
-        'MetroTile1
+        'profileMetroTile
         '
-        Me.MetroTile1.ActiveControl = Nothing
-        Me.MetroTile1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.MetroTile1.Location = New System.Drawing.Point(19, 300)
-        Me.MetroTile1.Name = "MetroTile1"
-        Me.MetroTile1.Size = New System.Drawing.Size(83, 37)
-        Me.MetroTile1.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroTile1.TabIndex = 6
-        Me.MetroTile1.Text = "Profile"
-        Me.MetroTile1.UseCustomBackColor = True
-        Me.MetroTile1.UseSelectable = True
+        Me.profileMetroTile.ActiveControl = Nothing
+        Me.profileMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
+        Me.profileMetroTile.Location = New System.Drawing.Point(19, 300)
+        Me.profileMetroTile.Name = "profileMetroTile"
+        Me.profileMetroTile.Size = New System.Drawing.Size(83, 37)
+        Me.profileMetroTile.Style = MetroFramework.MetroColorStyle.Blue
+        Me.profileMetroTile.TabIndex = 6
+        Me.profileMetroTile.Text = "Profile"
+        Me.profileMetroTile.UseCustomBackColor = True
+        Me.profileMetroTile.UseSelectable = True
         '
         'MetroLabel2
         '
@@ -1414,22 +1421,75 @@ Partial Class mainForm
         Me.mathsEvalMetroTile.UseSelectable = True
         Me.mathsEvalMetroTile.UseTileImage = True
         '
+        'aboutPanel
+        '
+        Me.aboutPanel.BackColor = System.Drawing.Color.Silver
+        Me.aboutPanel.Controls.Add(Me.Label8)
+        Me.aboutPanel.Controls.Add(Me.PictureBox1)
+        Me.aboutPanel.Controls.Add(Me.Label7)
+        Me.aboutPanel.Controls.Add(Me.Label6)
+        Me.aboutPanel.Location = New System.Drawing.Point(208, 72)
+        Me.aboutPanel.Name = "aboutPanel"
+        Me.aboutPanel.Size = New System.Drawing.Size(955, 565)
+        Me.aboutPanel.TabIndex = 19
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(459, 493)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(47, 16)
+        Me.Label8.TabIndex = 3
+        Me.Label8.Text = "© 2018"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Location = New System.Drawing.Point(387, 268)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(210, 192)
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(472, 239)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(23, 16)
+        Me.Label7.TabIndex = 1
+        Me.Label7.Text = "by"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(372, 172)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(241, 37)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "Dawati Desktop"
+        '
         'mainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(1335, 673)
+        Me.Controls.Add(Me.aboutPanel)
         Me.Controls.Add(Me.classRoomLabel)
         Me.Controls.Add(Me.MetroPanel1)
         Me.Controls.Add(Me.MetroPanel2)
         Me.Controls.Add(Me.exitMetroButton)
         Me.Controls.Add(Me.avatarPictureBox)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Controls.Add(Me.evaluationMetroPanel)
         Me.Controls.Add(Me.ebooksMetroPanel)
         Me.Controls.Add(Me.profilePanel)
         Me.Controls.Add(Me.videosMetroPanel)
+        Me.Controls.Add(Me.evaluationMetroPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "mainForm"
         Me.Text = "Home"
@@ -1470,6 +1530,9 @@ Partial Class mainForm
         CType(Me.biologyPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.englishPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.mathsPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.aboutPanel.ResumeLayout(False)
+        Me.aboutPanel.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1501,9 +1564,9 @@ Partial Class mainForm
     Friend WithEvents MetroPanel2 As MetroFramework.Controls.MetroPanel
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroTile3 As MetroFramework.Controls.MetroTile
-    Friend WithEvents MetroTile2 As MetroFramework.Controls.MetroTile
-    Friend WithEvents MetroTile1 As MetroFramework.Controls.MetroTile
+    Friend WithEvents logoutMetroTile As MetroFramework.Controls.MetroTile
+    Friend WithEvents aboutMetroTile As MetroFramework.Controls.MetroTile
+    Friend WithEvents profileMetroTile As MetroFramework.Controls.MetroTile
     Friend WithEvents MetroPanel3 As MetroFramework.Controls.MetroPanel
     Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroTile4 As MetroFramework.Controls.MetroTile
@@ -1572,4 +1635,9 @@ Partial Class mainForm
     Friend WithEvents chemistryEvalMetroTile As MetroFramework.Controls.MetroTile
     Friend WithEvents phyEvalMetroTile As MetroFramework.Controls.MetroTile
     Friend WithEvents mathsEvalMetroTile As MetroFramework.Controls.MetroTile
+    Friend WithEvents aboutPanel As Panel
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

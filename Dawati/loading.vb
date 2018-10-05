@@ -2,6 +2,7 @@
 Imports System.Threading
 Imports System.IO
 Imports System.Net.WebClient.dowloadFile
+Imports System.Data.SQLite
 Public Class loading
 
 
@@ -25,7 +26,7 @@ Public Class loading
 
     Public result As DialogResult ' stores dialog result from checkConnection method
     Public count As Integer = 0 ' has 0 if no occurence of the file in database, else >0
-    Private Shared newFields(60000) As Integer  '
+    'Private Shared newFields(60000) As Integer  '
 
 
     'checks internet connectivity
@@ -81,54 +82,64 @@ Public Class loading
         Dim strSql As String = "Select * FROM multimedia_content ORDER BY file_id ASC"
         dbConnect.selectMySql(strSql)
 
+        Try
+            While dbConnect.MySqlReader.Read
+                file_id = dbConnect.MySqlReader("file_id")
+                file_name = dbConnect.MySqlReader("file_name")
+                file_type = dbConnect.MySqlReader("file_type")
+                target = dbConnect.MySqlReader("target")
+                'num_slides = dbConnect.MySqlReader("num_slides")
+                multimedia_series = dbConnect.MySqlReader("multimedia_series")
+                multimedia_type = dbConnect.MySqlReader("multimedia_type")
+                study_level = dbConnect.MySqlReader("study_level")
 
-        While dbConnect.MySqlReader.Read
-            file_id = dbConnect.MySqlReader("file_id")
-            file_name = dbConnect.MySqlReader("file_name")
-            file_type = dbConnect.MySqlReader("file_type")
-            target = dbConnect.MySqlReader("target")
-            'num_slides = dbConnect.MySqlReader("num_slides")
-            multimedia_series = dbConnect.MySqlReader("multimedia_series")
-            multimedia_type = dbConnect.MySqlReader("multimedia_type")
-            study_level = dbConnect.MySqlReader("study_level")
+                'check for existing content in local database
+                dbConnect.sqlLiteConnection("multimedia.db")
+                Try
+                    'sql string
+                    Dim selectStrSql = "select file_id from multimedia_content where file_id ='" & file_id & "'"
+                    dbConnect.selectSqlite(selectStrSql) 'call method selectSqlite and pass sql string as parameter
 
-            'check for existing content in local database
-            dbConnect.sqlLiteConnection("multimedia.db")
-            Try
-                'sql string
-                Dim selectStrSql = "select file_id from multimedia_content where file_id ='" & file_id & "'"
-                dbConnect.selectSqlite(selectStrSql) 'call method selectSqlite and pass sql string as parameter
-
-                If dbConnect.reader.HasRows Then
-                    'do nothing
-                Else
-                    'add counter
-                    count = count + 1
-                    'record doesn't exist
-                    Dim insertstrSql As String = "Insert into multimedia_content (file_id,file_name,file_type,target,num_slides,multimedia_series,
+                    If dbConnect.reader.HasRows Then
+                        'do nothing
+                    Else
+                        'add counter
+                        count = count + 1
+                        'record doesn't exist
+                        Dim insertstrSql As String = "Insert into multimedia_content (file_id,file_name,file_type,target,num_slides,multimedia_series,
                     multimedia_type,study_level ) VALUES( '" & file_id & "','" & file_name & "','" & file_type & "','" & target & "','" & num_slides & "',
                     '" & multimedia_series & "','" & multimedia_type & "','" & study_level & "') "
-                    'download said video
+                        'download said video
 
-                    dbConnect.insertSqlite(insertstrSql)
+                        dbConnect.insertSqlite(insertstrSql)
 
 
-                    If multimedia_type = 1 Then
-                        downloadVideos(file_name, multimedia_series)
-                    Else
-                        downloadEbooks(file_id, file_name)
+                        If multimedia_type = 1 Then
+                            downloadVideos(file_name, multimedia_series)
+                        Else
+                            downloadEbooks(file_id, file_name)
+                        End If
+
+                        dbConnect.closeSqlite()
+
                     End If
 
-                    dbConnect.closeSqlite()
 
-                End If
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message)
+                End Try
 
+            End While
+        Catch ex As Exception
+            Dim result As DialogResult
+            result = MessageBox.Show("Server Refused to connect, Try again later.", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information)
+            If result = DialogResult.Retry Then
+                writeMaterialDetails()
+            ElseIf result = DialogResult.Cancel Then
 
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-            End Try
+            End If
+        End Try
 
-        End While
 
         dbConnect.closeDbConnection() 'close connection
 
@@ -223,7 +234,9 @@ Public Class loading
         End While
         'dbconnect.closeSqlite()
         dbconnect.MySqlReader.Dispose()
+        dbconnect.closeSqlite()
 
+        dbconnect.sqlLiteConnection("Evaluations.db")
         'questions
         dbconnect.selectMySql(questionsStrSql)
         'read while write into sqlite database
@@ -247,12 +260,29 @@ Public Class loading
             If dbconnect.reader.HasRows Then
                 'do nothing
             Else
+
+
                 Dim insertQuestionsSql As String = "insert into questions(question_id, question,type,score,exam_id,attachment)values
                 ('" & questionId & "','" & question & "','" & type & "','" & score & "','" & examId & "','" & attachment & "');"
-
-
+                'Dim insertQuestionsSql As String = "insert into questions(question_id, question,type,score,exam_id,attachment) VALUES(:param1,)"
                 dbconnect.insertSqlite(insertQuestionsSql)
+                'Dim sqliteCommand As New SQLiteCommand(insertQuestionsSql, dbconnect.sqliteConnection)
+                ''parameters
+                ''dbconnect.sqliteCommand.Parameters.Add("param1", questionId)
+                ''dbconnect.sqliteCommand.Parameters.Add("param2", DbType.String).Value = question
+                ''dbconnect.sqliteCommand.Parameters.Add("param3", DbType.String).Value = type
+                ''dbconnect.sqliteCommand.Parameters.Add("param4", DbType.String).Value = score
+                ''dbconnect.sqliteCommand.Parameters.Add("param4", examId)
+                ''dbconnect.sqliteCommand.Parameters.Add("param6", DbType.String).Value = attachment
 
+                'sqliteCommand.Parameters.Add("param1", questionId)
+                'sqliteCommand.Parameters.Add("param2", DbType.String).Value = question
+                'sqliteCommand.Parameters.Add("param3", DbType.String).Value = type
+                'sqliteCommand.Parameters.Add("param4", DbType.String).Value = score
+                'sqliteCommand.Parameters.Add("param4", examId)
+                'sqliteCommand.Parameters.Add("param6", DbType.String).Value = attachment
+
+                'SQLiteCommand.ExecuteNonQuery()
                 count = count + 1
                 dbconnect.reader.Close()
             End If
