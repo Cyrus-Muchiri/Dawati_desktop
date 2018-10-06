@@ -10,7 +10,7 @@ Public Class welcomeForm
         mainPictureBox.BackgroundImageLayout = ImageLayout.Stretch
 
     End Sub
-
+    
 
     Private Sub signUpMetroTile_Click_1(sender As Object, e As EventArgs) Handles signUpMetroTile.Click
         signUpForm.Show()
@@ -34,5 +34,7 @@ Public Class welcomeForm
         ' Panel1.BackColor = Color.FromArgb(30, Color.Blue)
     End Sub
 
-
+    Private Sub welcomeForm_Load(sender As Object, e As EventArgs) Handles MyBase.Closed
+        Application.Exit()
+    End Sub
 End Class

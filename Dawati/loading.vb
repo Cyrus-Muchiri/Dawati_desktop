@@ -176,7 +176,7 @@ Public Class loading
         End If
     End Sub
     Public Sub downloadEbooks(ByVal fileId As Integer, ByVal fileName As String)
-        Dim s As String = "https://www.dawati.co.ke/uploads/multimedia/content/Slides/" & fileId & "/" & fileName & ".pdf"
+        Dim s As String = "https://www.dawati.co.ke/uploads/multimedia/content/slides/" & fileId & "/" & fileName & ".pdf"
         My.Computer.Network.DownloadFile(s,
                                             "assets\ebooks\decrypted\" & fileName & "")
     End Sub
