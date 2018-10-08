@@ -80,8 +80,8 @@ Public Class mainForm
         LnameMetroLabel.Text = lname
 
         'checks internet conection, if present syncs
-        Dim materialSync_object = New loading
-        materialSync_object.checkConnection()
+        Dim loading_object = New loading
+        loading.checkConnection()
 
         'encrypts files, if there are any decrypted
         encrypt()
@@ -426,7 +426,7 @@ Public Class mainForm
         End While
     End Sub
 
-    'End Profil
+    'End Profile
     '----------
 
     ' begin evaluation tiles and pictureboxes
@@ -504,6 +504,28 @@ Public Class mainForm
 
     Private Sub logoutMetroTile_Click(sender As Object, e As EventArgs) Handles logoutMetroTile.Click
         Close()
+    End Sub
+    'updates content
+    Private Sub updateContentMetroTile_Click(sender As Object, e As EventArgs) Handles updateContentMetroTile.Click
+        Dim dialogReslt As DialogResult
+        dialogReslt = MessageBox.Show("Your content will be updated on the background. Click OK to continue", "Update", MessageBoxButtons.OKCancel, MessageBoxIcon.Information)
+        If dialogReslt = DialogResult.OK Then
+            'start
+            BackgroundWorker1.RunWorkerAsync()
+
+        Else
+
+        End If
+    End Sub
+
+    Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
+        System.Threading.Thread.Sleep(10000)
+        loading.updateContent()
+    End Sub
+
+    Private Sub BackgroundWorker1_RunWorkerCompleted(ByVal sender As System.Object,
+                                                     ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker1.RunWorkerCompleted
+        MessageBox.Show("Finished downloading your content")
     End Sub
 
 

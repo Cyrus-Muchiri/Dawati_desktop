@@ -23,23 +23,14 @@ Partial Class ebookViewer
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ebookViewer))
-        Me.ebookAxAcroPDF = New AxAcroPDFLib.AxAcroPDF()
         Me.ebookPlayListBox = New System.Windows.Forms.ListBox()
         Me.playMetroButton = New MetroFramework.Controls.MetroButton()
         Me.exitMetroButton = New MetroFramework.Controls.MetroButton()
         Me.ebookLabel = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ebookAxAcroPDF = New AxAcroPDFLib.AxAcroPDF()
         CType(Me.ebookAxAcroPDF, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'ebookAxAcroPDF
-        '
-        Me.ebookAxAcroPDF.Enabled = True
-        Me.ebookAxAcroPDF.Location = New System.Drawing.Point(12, 52)
-        Me.ebookAxAcroPDF.Name = "ebookAxAcroPDF"
-        Me.ebookAxAcroPDF.OcxState = CType(resources.GetObject("ebookAxAcroPDF.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.ebookAxAcroPDF.Size = New System.Drawing.Size(747, 636)
-        Me.ebookAxAcroPDF.TabIndex = 0
         '
         'ebookPlayListBox
         '
@@ -93,17 +84,26 @@ Partial Class ebookViewer
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Related Books"
         '
+        'ebookAxAcroPDF
+        '
+        Me.ebookAxAcroPDF.Enabled = True
+        Me.ebookAxAcroPDF.Location = New System.Drawing.Point(-1, 52)
+        Me.ebookAxAcroPDF.Name = "ebookAxAcroPDF"
+        Me.ebookAxAcroPDF.OcxState = CType(resources.GetObject("ebookAxAcroPDF.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.ebookAxAcroPDF.Size = New System.Drawing.Size(822, 627)
+        Me.ebookAxAcroPDF.TabIndex = 6
+        '
         'ebookViewer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1300, 675)
+        Me.Controls.Add(Me.ebookAxAcroPDF)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ebookLabel)
         Me.Controls.Add(Me.exitMetroButton)
         Me.Controls.Add(Me.playMetroButton)
         Me.Controls.Add(Me.ebookPlayListBox)
-        Me.Controls.Add(Me.ebookAxAcroPDF)
         Me.Name = "ebookViewer"
         Me.Text = "Ebook Viewer"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -112,11 +112,10 @@ Partial Class ebookViewer
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents ebookAxAcroPDF As AxAcroPDFLib.AxAcroPDF
     Friend WithEvents ebookPlayListBox As ListBox
     Friend WithEvents playMetroButton As MetroFramework.Controls.MetroButton
     Friend WithEvents exitMetroButton As MetroFramework.Controls.MetroButton
     Friend WithEvents ebookLabel As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents ebookAxAcroPDF As AxAcroPDFLib.AxAcroPDF
 End Class

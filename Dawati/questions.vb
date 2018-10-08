@@ -7,7 +7,11 @@
     Private score As String
     Private attachment As String
 
+    Private trueradioButton(30) As RadioButton
+    Private falseradioButton(30) As RadioButton
+
     'global variables for marking
+    ' Private correctAnswer(100) As Label
     ' Private selectedItem(100) As 
 
     'counters
@@ -85,11 +89,11 @@
         'initializing arrays of type control
         Dim questionNo(30) As Control
         Dim questionLabel(30) As Control
-        Dim trueradioButton(30) As Control
-        Dim falseradioButton(30) As Control
+
         Dim insightLabel(30) As Control
         Dim groupBox(30) As Control
         Dim pictureBox(30) As Control
+        Dim correctAnswer(30) As Control
 
         'initializing array indexes as components
         questionLabel(tf) = New Label
@@ -99,6 +103,8 @@
         insightLabel(tf) = New Label
         groupBox(tf) = New GroupBox
         pictureBox(tf) = New PictureBox
+        correctAnswer(tf) = New Label
+
         'question number properties
 
         questionNo(tf).Text = "Question" & questionCounter
@@ -119,7 +125,7 @@
         'increment yCordinate by 30
         yCordinate = yCordinate + 30
 
-
+        'checks for attachments
         If attachment.Equals("") Then
             'do nothing/ skip attachments
         Else
@@ -142,19 +148,44 @@
         yCordinate = yCordinate + 30
 
         'true radioButton properties
-        trueradioButton(tf).Text = "true"
+        trueradioButton(tf).Text = "True"
         trueradioButton(tf).Location = New Point(aXcordinate, aYcordinate)
+        'increment x cordinate
+
+        aXcordinate = aXcordinate + 200
+
+        'Correct answer label
+        correctAnswer(tf).Location = New Point(aXcordinate, aYcordinate)
+        correctAnswer(tf).Visible = True
+        correctAnswer(tf).Text = "correct"
+        correctAnswer(tf).ForeColor = Color.Green
 
         'increment yCordinate by 30
         aYcordinate = aYcordinate + 30
+        aXcordinate = aXcordinate - 200
 
         'false radioButton properties 
-        falseradioButton(tf).Text = "false"
+        falseradioButton(tf).Text = "False"
         falseradioButton(tf).Location = New Point(aXcordinate, aYcordinate)
+        falseradioButton(tf).Select()
+        aXcordinate = aXcordinate + 60
+
+        'AddHandler trueradioButton(tf).checkchanged
 
 
-        'increment yCordinate by 30
+        'Correct answer label
+        correctAnswer(tf).Location = New Point(aXcordinate, aYcordinate)
+        correctAnswer(tf).Visible = True
+
+
+
+
+        'increment yCordinate by 170, size of groupbox
         yCordinate = yCordinate + 170
+
+
+
+
 
         'insight label properties
         insightLabel(tf).Text = "~Answer correctly~"
@@ -171,10 +202,20 @@
         'adding radiobutons to groupbox
         groupBox(tf).Controls.Add(trueradioButton(tf))
         groupBox(tf).Controls.Add(falseradioButton(tf))
+        groupBox(tf).Controls.Add(correctAnswer(tf))
         'adding group box to questions panel
         questionsPanel.Controls.Add(groupBox(tf))
 
-        'questionsPanel.Controls.Add(falseradioButton(tf))
+
+        'getting selected answers
+
+
+        For Each trueradioButton In Me.Controls.OfType(Of RadioButton())
+            AddHandler trueradioButton(tf).CheckedChanged, AddressOf _tchecked
+        Next
+        For Each falseradioButton In Controls.OfType(Of RadioButton())
+            AddHandler falseradioButton(tf).CheckedChanged, AddressOf _fchecked
+        Next
 
         'increment ss
         tf = tf + 1
@@ -357,6 +398,8 @@
             counter = counter + 1
         End While
 
+        'declaring variables for answers 
+        Dim correctAnswer(100)
         'declaring arrays of controls
         Dim pictureBox(30) As Control
         Dim questionNo(30) As Control
@@ -476,12 +519,15 @@
 
         questionsPanel.Controls.Add(insightLabel(MS))
 
-        'increment MS
-        MS = SS + 1
+
 
         'increment question counter
         questionCounter = questionCounter + 1
+        'getting selected answer
 
+
+        'increment MS
+        MS = MS + 1
 
     End Sub
     Private Sub openEndedQuestions(ByVal question As String, ByVal questionId As String, ByVal score As String, ByVal attachment As String)
@@ -549,9 +595,40 @@
         questionCounter = questionCounter + 1
 
 
+
+
+
     End Sub
 
+    Public Function markingQuestions(ByVal questionId, ByVal choice) As String
+        Dim status As String = ""
+        Dim dbconnect As databaseConnection = New databaseConnection
+        dbconnect.sqlLiteConnection("Evaluations.db")
+        Dim strSql As String = "SELECT status from question_answers where question_id='" & questionId & "' AND choice='" & choice & "'"
+        dbconnect.selectSqlite(strSql)
+
+        While dbconnect.reader.Read
+            status = dbconnect.reader("status")
+        End While
+        dbconnect.closeSqlite()
+        Return status
+    End Function
+    Private Sub _tchecked(sender As Object, e As EventArgs)
+        Dim rdbtn = DirectCast(sender, RadioButton)
+        MessageBox.Show("atleast you succeded in thid one")
+    End Sub
+    Private Sub _fchecked(sender As Object, e As EventArgs)
+        Dim rdbtn = DirectCast(sender, RadioButton)
+
+    End Sub
+
+    'Private Sub submitMetroTile_Click(sender As Object, e As EventArgs) Handles submitMetroTile.Click
+    '    For tf = 0 To 30
+    '        correctAnswer(tf).Visible = True
+    '    Next
+    'End Sub
 
 
+    ' WithEvents trueradioButton(30) As Control
 
 End Class

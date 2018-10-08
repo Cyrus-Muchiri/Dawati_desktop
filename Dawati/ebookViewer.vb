@@ -1,9 +1,26 @@
-﻿Public Class ebookViewer
+﻿Imports System.IO
+Imports Apitron.PDF.Rasterizer
+'Imports Apitron.PDF.Rasterizer
+
+Public Class ebookViewer
 
     Public Sub initialize(ByVal url As String)
         Dim ebookName As String = url.Substring(24)
         ebookLabel.Text = ebookName
         ebookAxAcroPDF.LoadFile(url)
+
+        'Using fStream As FileStream = New FileStream(url, FileMode.Open)
+        '    Dim document As Document = New Document(fStream)
+        '    Dim renderingSettings = New Configuration.RenderingSettings()
+        '    For i As Integer = 0 To document.Pages.Count - 1
+        '        Dim currentPage As Page = document.Pages(i)
+
+        '        Using bitmap As Bitmap = currentPage.Render(currentPage.Width, currentPage.Height, renderingSettings)
+        '            bitmap.Save(String.Format("{0}.png", i), Imaging.ImageFormat.Png)
+        '        End Using
+        '    Next
+        '    Process.Start("0.png")
+        'End Using
     End Sub
 
 

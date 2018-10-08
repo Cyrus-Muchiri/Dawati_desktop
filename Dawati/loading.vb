@@ -49,25 +49,32 @@ Public Class loading
         End Try
 
         If connection = True Then
-            result = MessageBox.Show("Internet Connection detected. Do you want to sync videos from dawati server?", "Internet Connection", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
-            'ElseIf connection = False Then
+            mainForm.updateContentMetroTile.Visible = True
+            mainForm.internetConnectionLabel.Visible = True
         End If
 
 
-        If result = DialogResult.Yes Then
-            Dim thread As New Thread(AddressOf initialize)
-            thread.IsBackground = True
-            thread.SetApartmentState(ApartmentState.MTA)
-            thread.Start()
-            'initialize()
-            Show()
-            writeMaterialDetails()
-            syncEvaluations()
-            Close()
-            counter()
-        ElseIf result = DialogResult.No Then
+        'If result = DialogResult.Yes Then
+        '    Dim thread As New Thread(AddressOf initialize)
+        '    thread.IsBackground = True
+        '    thread.SetApartmentState(ApartmentState.MTA)
+        '    thread.Start()
+        '    'initialize()
+        '    Show()
+        '    writeMaterialDetails()
+        '    syncEvaluations()
+        '    Close()
+        '    counter()
+        'ElseIf result = DialogResult.No Then
 
-        End If
+        'End If
+    End Sub
+
+    Public Sub updateContent()
+        writeMaterialDetails()
+        syncEvaluations()
+
+        counter()
     End Sub
 
     'connect to remote sever and write details about the learning materials

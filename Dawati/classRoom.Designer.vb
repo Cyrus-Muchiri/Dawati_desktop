@@ -47,7 +47,7 @@ Partial Class classRoom
         Me.classRoomMetroTabControl.Controls.Add(Me.examsTabPage)
         Me.classRoomMetroTabControl.Location = New System.Drawing.Point(96, 145)
         Me.classRoomMetroTabControl.Name = "classRoomMetroTabControl"
-        Me.classRoomMetroTabControl.SelectedIndex = 0
+        Me.classRoomMetroTabControl.SelectedIndex = 2
         Me.classRoomMetroTabControl.Size = New System.Drawing.Size(1134, 463)
         Me.classRoomMetroTabControl.TabIndex = 0
         Me.classRoomMetroTabControl.UseSelectable = True

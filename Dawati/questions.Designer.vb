@@ -27,6 +27,10 @@ Partial Class questions
         Me.submitMetroTile = New MetroFramework.Controls.MetroTile()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.timeLeftLabel = New System.Windows.Forms.Label()
+        Me.scoreTextLabel = New System.Windows.Forms.Label()
+        Me.scoreLabel = New System.Windows.Forms.Label()
+        Me.commentsTextLabel = New System.Windows.Forms.Label()
+        Me.comentsLabel = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'questionsPanel
@@ -82,11 +86,59 @@ Partial Class questions
         Me.timeLeftLabel.TabIndex = 4
         Me.timeLeftLabel.Text = "time"
         '
+        'scoreTextLabel
+        '
+        Me.scoreTextLabel.AutoSize = True
+        Me.scoreTextLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.scoreTextLabel.Location = New System.Drawing.Point(12, 112)
+        Me.scoreTextLabel.Name = "scoreTextLabel"
+        Me.scoreTextLabel.Size = New System.Drawing.Size(60, 24)
+        Me.scoreTextLabel.TabIndex = 5
+        Me.scoreTextLabel.Text = "Score"
+        Me.scoreTextLabel.Visible = False
+        '
+        'scoreLabel
+        '
+        Me.scoreLabel.AutoSize = True
+        Me.scoreLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.scoreLabel.Location = New System.Drawing.Point(65, 156)
+        Me.scoreLabel.Name = "scoreLabel"
+        Me.scoreLabel.Size = New System.Drawing.Size(49, 16)
+        Me.scoreLabel.TabIndex = 6
+        Me.scoreLabel.Text = "Label3"
+        Me.scoreLabel.Visible = False
+        '
+        'commentsTextLabel
+        '
+        Me.commentsTextLabel.AutoSize = True
+        Me.commentsTextLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.commentsTextLabel.Location = New System.Drawing.Point(13, 191)
+        Me.commentsTextLabel.Name = "commentsTextLabel"
+        Me.commentsTextLabel.Size = New System.Drawing.Size(66, 24)
+        Me.commentsTextLabel.TabIndex = 7
+        Me.commentsTextLabel.Text = "Label4"
+        Me.commentsTextLabel.Visible = False
+        '
+        'comentsLabel
+        '
+        Me.comentsLabel.AutoSize = True
+        Me.comentsLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.comentsLabel.Location = New System.Drawing.Point(68, 235)
+        Me.comentsLabel.Name = "comentsLabel"
+        Me.comentsLabel.Size = New System.Drawing.Size(49, 16)
+        Me.comentsLabel.TabIndex = 8
+        Me.comentsLabel.Text = "Label5"
+        Me.comentsLabel.Visible = False
+        '
         'questions
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1313, 635)
+        Me.Controls.Add(Me.comentsLabel)
+        Me.Controls.Add(Me.commentsTextLabel)
+        Me.Controls.Add(Me.scoreLabel)
+        Me.Controls.Add(Me.scoreTextLabel)
         Me.Controls.Add(Me.timeLeftLabel)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.submitMetroTile)
@@ -105,4 +157,8 @@ Partial Class questions
     Friend WithEvents submitMetroTile As MetroFramework.Controls.MetroTile
     Friend WithEvents Label1 As Label
     Friend WithEvents timeLeftLabel As Label
+    Friend WithEvents scoreTextLabel As Label
+    Friend WithEvents scoreLabel As Label
+    Friend WithEvents commentsTextLabel As Label
+    Friend WithEvents comentsLabel As Label
 End Class
