@@ -267,31 +267,33 @@ Public Class loading
             If dbconnect.reader.HasRows Then
                 'do nothing
             Else
+                Try
 
-
-                Dim insertQuestionsSql As String = "insert into questions(question_id, question,type,score,exam_id,attachment)values
+                    Dim insertQuestionsSql As String = "insert into questions(question_id, question,type,score,exam_id,attachment)values
                 ('" & questionId & "','" & question & "','" & type & "','" & score & "','" & examId & "','" & attachment & "');"
-                'Dim insertQuestionsSql As String = "insert into questions(question_id, question,type,score,exam_id,attachment) VALUES(:param1,)"
-                dbconnect.insertSqlite(insertQuestionsSql)
-                'Dim sqliteCommand As New SQLiteCommand(insertQuestionsSql, dbconnect.sqliteConnection)
-                ''parameters
-                ''dbconnect.sqliteCommand.Parameters.Add("param1", questionId)
-                ''dbconnect.sqliteCommand.Parameters.Add("param2", DbType.String).Value = question
-                ''dbconnect.sqliteCommand.Parameters.Add("param3", DbType.String).Value = type
-                ''dbconnect.sqliteCommand.Parameters.Add("param4", DbType.String).Value = score
-                ''dbconnect.sqliteCommand.Parameters.Add("param4", examId)
-                ''dbconnect.sqliteCommand.Parameters.Add("param6", DbType.String).Value = attachment
+                    'Dim insertQuestionsSql As String = "insert into questions(question_id, question,type,score,exam_id,attachment) VALUES(:param1,)"
+                    dbconnect.insertSqlite(insertQuestionsSql)
+                    'Dim sqliteCommand As New SQLiteCommand(insertQuestionsSql, dbconnect.sqliteConnection)
+                    ''parameters
+                    ''dbconnect.sqliteCommand.Parameters.Add("param1", questionId)
+                    ''dbconnect.sqliteCommand.Parameters.Add("param2", DbType.String).Value = question
+                    ''dbconnect.sqliteCommand.Parameters.Add("param3", DbType.String).Value = type
+                    ''dbconnect.sqliteCommand.Parameters.Add("param4", DbType.String).Value = score
+                    ''dbconnect.sqliteCommand.Parameters.Add("param4", examId)
+                    ''dbconnect.sqliteCommand.Parameters.Add("param6", DbType.String).Value = attachment
 
-                'sqliteCommand.Parameters.Add("param1", questionId)
-                'sqliteCommand.Parameters.Add("param2", DbType.String).Value = question
-                'sqliteCommand.Parameters.Add("param3", DbType.String).Value = type
-                'sqliteCommand.Parameters.Add("param4", DbType.String).Value = score
-                'sqliteCommand.Parameters.Add("param4", examId)
-                'sqliteCommand.Parameters.Add("param6", DbType.String).Value = attachment
+                    'sqliteCommand.Parameters.Add("param1", questionId)
+                    'sqliteCommand.Parameters.Add("param2", DbType.String).Value = question
+                    'sqliteCommand.Parameters.Add("param3", DbType.String).Value = type
+                    'sqliteCommand.Parameters.Add("param4", DbType.String).Value = score
+                    'sqliteCommand.Parameters.Add("param4", examId)
+                    'sqliteCommand.Parameters.Add("param6", DbType.String).Value = attachment
 
-                'SQLiteCommand.ExecuteNonQuery()
-                count = count + 1
-                dbconnect.reader.Close()
+                    'SQLiteCommand.ExecuteNonQuery()
+                    count = count + 1
+                    dbconnect.reader.Close()
+                Catch
+                End Try
             End If
 
 
@@ -318,14 +320,17 @@ Public Class loading
             If dbconnect.reader.HasRows Then
                 'do nothing
             Else
-                Dim insertQuestionAnswersSql As String = "insert into question_answers(choice_id, choice,status,question_id)values
+                Try
+                    Dim insertQuestionAnswersSql As String = "insert into question_answers(choice_id, choice,status,question_id)values
                 ('" & choiceId & "','" & choice & "','" & status & "','" & questionId & "');"
 
 
-                dbconnect.insertSqlite(insertQuestionAnswersSql)
+                    dbconnect.insertSqlite(insertQuestionAnswersSql)
 
-                count = count + 1
-                dbconnect.reader.Close()
+                    count = count + 1
+                    dbconnect.reader.Close()
+                Catch
+                End Try
             End If
 
         End While
@@ -349,14 +354,17 @@ Public Class loading
             If dbconnect.reader.HasRows Then
                 'do nothing
             Else
-                Dim insertQuestionTypeSql As String = "insert into question_type(id, name)values
+                Try
+                    Dim insertQuestionTypeSql As String = "insert into question_type(id, name)values
                 ('" & Id & "','" & name & "');"
 
 
-                dbconnect.insertSqlite(insertQuestionTypeSql)
+                    dbconnect.insertSqlite(insertQuestionTypeSql)
 
-                count = count + 1
-                dbconnect.reader.Close()
+                    count = count + 1
+                    dbconnect.reader.Close()
+                Catch
+                End Try
             End If
 
 
@@ -366,12 +374,16 @@ Public Class loading
 
 
     End Sub
+    Private Sub updateUsers()
+
+    End Sub
     Private Sub counter()
         If count = 0 Then
             MessageBox.Show("Your videos,ebooks and evaluations are up to date", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         ElseIf count > 0 Then
-            MessageBox.Show("" & count & " entries will be added to your offline base", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            'ukora
+            MessageBox.Show("" & count - 6 & " entries will be added to your offline base", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         End If
     End Sub

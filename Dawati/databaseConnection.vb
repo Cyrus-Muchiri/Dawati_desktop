@@ -31,7 +31,7 @@ Public Class databaseConnection
             sqliteCommand = New SQLiteCommand(strSql, sqliteConnection)
             sqliteCommand.ExecuteNonQuery()
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            'MessageBox.Show(ex.Message)
         End Try
 
 

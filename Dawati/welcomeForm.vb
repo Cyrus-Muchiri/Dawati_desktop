@@ -34,7 +34,7 @@ Public Class welcomeForm
         ' Panel1.BackColor = Color.FromArgb(30, Color.Blue)
     End Sub
 
-    Private Sub welcomeForm_Load(sender As Object, e As EventArgs) Handles MyBase.Closed
-        Application.Exit()
-    End Sub
+    'Private Sub welcomeForm_Load(sender As Object, e As EventArgs) Handles MyBase.Closed
+    '    Application.Exit()
+    'End Sub
 End Class

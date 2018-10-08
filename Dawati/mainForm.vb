@@ -498,7 +498,9 @@ Public Class mainForm
     Private Sub exitMetroButton_Click(sender As Object, e As EventArgs) Handles exitMetroButton.Click
 
         Close()
+        Application.Exit()
     End Sub
+
 
 
 
@@ -526,6 +528,10 @@ Public Class mainForm
     Private Sub BackgroundWorker1_RunWorkerCompleted(ByVal sender As System.Object,
                                                      ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker1.RunWorkerCompleted
         MessageBox.Show("Finished downloading your content")
+    End Sub
+
+    Private Sub mainForm_Close(sender As Object, e As EventArgs) Handles MyBase.Closed
+        Application.Exit()
     End Sub
 
 

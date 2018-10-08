@@ -225,19 +225,19 @@ Partial Class mainForm
         'ProfileToolStripMenuItem
         '
         Me.ProfileToolStripMenuItem.Name = "ProfileToolStripMenuItem"
-        Me.ProfileToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
+        Me.ProfileToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ProfileToolStripMenuItem.Text = "Profile"
         '
         'LogOutToolStripMenuItem
         '
         Me.LogOutToolStripMenuItem.Name = "LogOutToolStripMenuItem"
-        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
+        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.LogOutToolStripMenuItem.Text = "Log out"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'ToolStripMenuItem21
@@ -413,7 +413,7 @@ Partial Class mainForm
         '
         Me.MathematicsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Form1ToolStripMenuItem1, Me.Form2ToolStripMenuItem1, Me.Form3ToolStripMenuItem1, Me.Form4ToolStripMenuItem1})
         Me.MathematicsToolStripMenuItem.Name = "MathematicsToolStripMenuItem"
-        Me.MathematicsToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.MathematicsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.MathematicsToolStripMenuItem.Text = "Mathematics"
         '
         'Form1ToolStripMenuItem1
@@ -444,7 +444,7 @@ Partial Class mainForm
         '
         Me.ToolStripMenuItem16.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem17, Me.ToolStripMenuItem18, Me.ToolStripMenuItem19, Me.ToolStripMenuItem20})
         Me.ToolStripMenuItem16.Name = "ToolStripMenuItem16"
-        Me.ToolStripMenuItem16.Size = New System.Drawing.Size(143, 22)
+        Me.ToolStripMenuItem16.Size = New System.Drawing.Size(152, 22)
         Me.ToolStripMenuItem16.Text = "English"
         '
         'ToolStripMenuItem17
@@ -475,7 +475,7 @@ Partial Class mainForm
         '
         Me.ToolStripMenuItem6.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem7, Me.ToolStripMenuItem8, Me.ToolStripMenuItem9, Me.ToolStripMenuItem10})
         Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(143, 22)
+        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(152, 22)
         Me.ToolStripMenuItem6.Text = "Biology"
         '
         'ToolStripMenuItem7
@@ -506,7 +506,7 @@ Partial Class mainForm
         '
         Me.ToolStripMenuItem11.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem12, Me.ToolStripMenuItem13, Me.ToolStripMenuItem14, Me.ToolStripMenuItem15})
         Me.ToolStripMenuItem11.Name = "ToolStripMenuItem11"
-        Me.ToolStripMenuItem11.Size = New System.Drawing.Size(143, 22)
+        Me.ToolStripMenuItem11.Size = New System.Drawing.Size(152, 22)
         Me.ToolStripMenuItem11.Text = "Physics"
         '
         'ToolStripMenuItem12
@@ -537,7 +537,7 @@ Partial Class mainForm
         '
         Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.ToolStripMenuItem4, Me.ToolStripMenuItem5})
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(143, 22)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.ToolStripMenuItem1.Text = "Chemistry"
         '
         'ToolStripMenuItem2

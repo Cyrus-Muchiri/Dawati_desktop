@@ -58,14 +58,17 @@ Public Class signInForm
                     mainForm.initialize()
                     mainForm.Show()
                     Close()
+                    welcomeForm.Close()
                 ElseIf userCategory = 2 Then
                     mainForm.initialize()
                     mainForm.Show()
                     Close()
+                    welcomeForm.Close()
                 ElseIf userCategory = 3 Then
                     mainForm.initialize()
                     mainForm.Show()
                     Close()
+                    welcomeForm.Close()
                 ElseIf userCategory = 4 Then
                     'MessageBox.Show("You will be logged on as a School admin    ")
                 ElseIf userCategory = 5 Then

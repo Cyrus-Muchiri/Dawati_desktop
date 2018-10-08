@@ -303,7 +303,7 @@
         End If
 
         'group box properties
-        groupBox(SS).Size = New Size(201, 180)
+        groupBox(SS).Size = New Size(1000, 180)
         groupBox(SS).Location = New Point(gXCordinate, yCordinate)
         groupBox(SS).Text = ""
 
@@ -311,7 +311,7 @@
         choice1radioButton(SS).Text = choice(0)
         choice1radioButton(SS).Location = New Point(aXcordinate, aYcordinate)
         choice1radioButton(SS).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        choice1radioButton(SS).Size = New Size(300, 21)
+        choice1radioButton(SS).Size = New Size(500, 21)
         'increment yCordinate by 30
         aYcordinate = aYcordinate + 23
 
@@ -319,7 +319,7 @@
         choice2radioButton(SS).Text = choice(1)
         choice2radioButton(SS).Location = New Point(aXcordinate, aYcordinate)
         choice2radioButton(SS).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        choice2radioButton(SS).Size = New Size(300, 21)
+        choice2radioButton(SS).Size = New Size(800, 21)
 
         'increment yCordinate by 30
         aYcordinate = aYcordinate + 23
@@ -328,7 +328,7 @@
         choice3radioButton(SS).Text = choice(2)
         choice3radioButton(SS).Location = New Point(aXcordinate, aYcordinate)
         choice3radioButton(SS).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        choice3radioButton(SS).Size = New Size(300, 21)
+        choice3radioButton(SS).Size = New Size(800, 21)
         'increment yCordinate by 30
         aYcordinate = aYcordinate + 23
 
@@ -336,7 +336,7 @@
         choice4radioButton(SS).Text = choice(3)
         choice4radioButton(SS).Location = New Point(aXcordinate, aYcordinate)
         choice4radioButton(SS).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        choice4radioButton(SS).Size = New Size(300, 21)
+        choice4radioButton(SS).Size = New Size(500, 21)
         'increment yCordinate by 30
         yCordinate = yCordinate + 175
 
@@ -457,7 +457,7 @@
         End If
 
         'group box properties
-        groupBox(MS).Size = New Size(201, 180)
+        groupBox(MS).Size = New Size(1000, 180)
         groupBox(MS).Location = New Point(gXCordinate, yCordinate)
         groupBox(MS).Text = ""
 
@@ -465,7 +465,7 @@
         choice1CheckBox(MS).Text = choice(0)
         choice1CheckBox(MS).Location = New Point(aXcordinate, aYcordinate)
         choice1CheckBox(MS).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        choice1CheckBox(MS).Size = New Size(300, 21)
+        choice1CheckBox(MS).Size = New Size(700, 21)
         'increment yCordinate by 30
         aYcordinate = aYcordinate + 23
 
@@ -473,7 +473,7 @@
         choice2CheckBox(MS).Text = choice(1)
         choice2CheckBox(MS).Location = New Point(aXcordinate, aYcordinate)
         choice2CheckBox(MS).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        choice2CheckBox(MS).Size = New Size(300, 21)
+        choice2CheckBox(MS).Size = New Size(700, 21)
         'increment yCordinate by 30
         aYcordinate = aYcordinate + 23
 
@@ -481,7 +481,7 @@
         choice3CheckBox(MS).Text = choice(2)
         choice3CheckBox(MS).Location = New Point(aXcordinate, aYcordinate)
         choice3CheckBox(MS).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        choice3CheckBox(MS).Size = New Size(300, 21)
+        choice3CheckBox(MS).Size = New Size(700, 21)
         'increment yCordinate by 30
         aYcordinate = aYcordinate + 23
 
@@ -489,7 +489,7 @@
         choice4CheckBox(MS).Text = choice(3)
         choice4CheckBox(MS).Location = New Point(aXcordinate, aYcordinate)
         choice4CheckBox(MS).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        choice4CheckBox(MS).Size = New Size(300, 21)
+        choice4CheckBox(MS).Size = New Size(700, 21)
         'increment yCordinate by 30
         yCordinate = yCordinate + 185
 
