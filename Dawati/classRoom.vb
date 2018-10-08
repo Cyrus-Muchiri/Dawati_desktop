@@ -40,6 +40,8 @@ Public Class classRoom
             multimediaSeries = ""
         End If
 
+
+
         'get level of study the user chose
         If studyLevel = "Form 1" Then
             Me.studyLevel = "level_001"
@@ -58,6 +60,7 @@ Public Class classRoom
 
 
     End Sub
+
     Private Sub loadVideos()
         multimediaType = "1"
         loadLearningMaterials(studyLevel, multimediaType, classWorkListBox)
@@ -126,7 +129,7 @@ Public Class classRoom
         Dim urlToDecrypt = "assets\ebooks\encrypted\" & selectedItem & ""
         mainForm.decryptEbook(urlToDecrypt)
         Dim ebookUrl As String = "assets\ebooks\decrypted\" & selectedItem & ".pdf"
-        MessageBox.Show(ebookUrl)
+        ' MessageBox.Show(ebookUrl)
         playEbook(ebookUrl)
     End Sub
     Private Sub playVideo(ByVal url As String)
@@ -177,21 +180,59 @@ Public Class classRoom
 
 
             ElseIf selectedTab = "                              Class Work                                           |" Then
-                listbox = classWorkListBox
-                getSelectedEbook(listbox)
-                ' videoPlayer.fillListBox()
 
-                ' MessageBox.Show("true")
             ElseIf selectedTab = "                                     Exams                           " Then
-                listbox = examsListBox
-                getSelectedEbook(listbox)
-                'videoPlayer.fillListBox()
+
 
             Else
                 'MessageBox.Show(selectedTab)
             End If
         End If
 
+    End Sub
+    '-----------------------------------------------------------------------
+    'The following event controls handles double clicking of a video to view
+    '-----------------------------------------------------------------------
+    Private Sub classWorkListBox_doubleClick(sender As Object, e As EventArgs) Handles classWorkListBox.DoubleClick
+        Dim listbox As ListBox
+        If mainForm.learningMaterialType = "videos" Then
+            listbox = classWorkListBox
+            getSelectedVideo(listbox)
+            ' videoPlayer.fillListBox()
+        ElseIf mainForm.learningMaterialType = "ebooks" Then
+            listbox = classWorkListBox
+            getSelectedEbook(listbox)
+            ' videoPlayer.fillListBox()
+        End If
+        ' MessageBox.Show("true")
+    End Sub
+
+    Private Sub labListBox_doubleClick(sender As Object, e As EventArgs) Handles labListBox.DoubleClick
+        Dim listbox As ListBox
+        If mainForm.learningMaterialType = "videos" Then
+            listbox = labListBox
+            getSelectedVideo(listbox)
+            'videoPlayer.fillListBox()
+
+        ElseIf mainForm.learningMaterialType = "ebooks" Then
+            listbox = labListBox
+            getSelectedEbook(listbox)
+            'videoPlayer.fillListBox()
+        End If
+    End Sub
+
+    Private Sub examsListBox_doubleCLick(sender As Object, e As EventArgs) Handles examsListBox.DoubleClick
+        Dim listbox As ListBox
+        If mainForm.learningMaterialType = "videos" Then
+            listbox = examsListBox
+            getSelectedVideo(listbox)
+            'videoPlayer.fillListBox()
+
+        ElseIf mainForm.learningMaterialType = "ebooks" Then
+            listbox = examsListBox
+            getSelectedEbook(listbox)
+            'videoPlayer.fillListBox()
+        End If
     End Sub
 
 

@@ -40,7 +40,8 @@
 
         Dim dbConnect As New databaseConnection
         dbConnect.sqlLiteConnection("Evaluations.db")
-        Dim selectsql As String = "select exam_name,hours,minutes from exams where subject='" & subject & "'"
+        'select questions which are not open ended
+        Dim selectsql As String = "select exam_name,hours,minutes from exams where subject='" & subject & "' "
         'Dim selectsql As String = "Select exam_name,hours,minutes from exams where subject='English'"
         dbConnect.selectSqlite(selectsql)
         While dbConnect.reader.Read
@@ -78,8 +79,9 @@
     End Sub
 
     Private Sub startMetroTile_Click(sender As Object, e As EventArgs) Handles startMetroTile.Click
-        questions.initialize(exam_id)
+        questions.initialize(exam_id, examName, numQuestions)
         questions.Show()
+        Close()
     End Sub
 
 

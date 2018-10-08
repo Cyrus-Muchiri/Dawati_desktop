@@ -57,6 +57,8 @@ Public Class materialSync
         'get data from remote server
         Dim strSql As String = "Select * FROM multimedia_content ORDER BY file_id ASC"
         dbConnect.selectMySql(strSql)
+        loading.initialize()
+        loading.Show()
 
         While dbConnect.MySqlReader.Read
             file_id = dbConnect.MySqlReader("file_id")
@@ -85,33 +87,68 @@ Public Class materialSync
                     multimedia_type,study_level ) VALUES( '" & file_id & "','" & file_name & "','" & file_type & "','" & target & "','" & num_slides & "',
                     '" & multimedia_series & "','" & multimedia_type & "','" & study_level & "') "
                     'download said video
-                    downloadVideos(file_name)
+
                     dbConnect.insertSqlite(insertstrSql)
+
+
+                    If multimedia_type = 1 Then
+                        downloadVideos(file_name, multimedia_series)
+                    Else
+                        downloadEbooks(file_id, file_name)
+                    End If
+                   
                     dbConnect.closeSqlite()
 
                 End If
+
 
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
             End Try
 
         End While
+        loading.Close()
         dbConnect.closeDbConnection() 'close connection
 
 
     End Sub
 
-    Private Sub downloadVideos(file_name)
-        If (File.Exists("https://www.dawati.co.ke/uploads/multimedia/content/video/Biology/" & file_name & "")) Then
-            MessageBox.Show("You are lucky mf")
-            'My.Computer.Network.DownloadFile("https://dawati.co.ke/uploads/")
-        Else
-            MessageBox.Show("unlucky bro")
+    'downloads videos 
 
+    Private Sub downloadVideos(ByVal filename As String, ByVal multimediaSeries As String)
 
+        If multimediaSeries = "3" Then
+            'Mathematics
+            My.Computer.Network.DownloadFile("https://www.dawati.co.ke/uploads/multimedia/content/video/Mathematics/" & filename & "",
+                                             "assets\videos\decrypted\" & filename & "")
+
+        ElseIf multimediaSeries = "2" Then
+            'Chemistry
+            My.Computer.Network.DownloadFile("https://www.dawati.co.ke/uploads/multimedia/content/Chemistry/" & filename & "",
+                                             "assets\videos\decrypted\" & filename & "")
+
+        ElseIf multimediaSeries = "1" Then
+            'English
+            My.Computer.Network.DownloadFile("https://www.dawati.co.ke/uploads/multimedia/content/video/English/" & filename & "",
+                                             "assets\videos\decrypted\" & filename & "")
+        ElseIf multimediaSeries = "12" Then
+            'Physics
+            My.Computer.Network.DownloadFile("https://www.dawati.co.ke/uploads/multimedia/content/video/Physics/" & filename & "",
+                                             "assets\videos\decrypted\" & filename & "")
+            'Biology
+        ElseIf multimediaSeries = "5" Then
+
+            My.Computer.Network.DownloadFile("https://www.dawati.co.ke/uploads/multimedia/content/video/Biology/" & filename & "",
+                                             "assets\videos\decrypted\" & filename & "")
         End If
     End Sub
+    Public Sub downloadEbooks(ByVal fileId As Integer, ByVal fileName As String)
+        Dim s As String = "https://www.dawati.co.ke/uploads/multimedia/content/Slides/" & fileId & "/" & fileName & ".pdf"
+        My.Computer.Network.DownloadFile(s,
+                                            "assets\ebooks\decrypted\" & fileName & "")
+    End Sub
 
+    'sends analytics to remote server
     Private Sub sendAnalytics()
 
     End Sub
@@ -126,14 +163,11 @@ Public Class materialSync
         Dim questionTypeSql As String = "select * from question_type"
 
         'read and write to variables
-
         'exams
         dbconnect.selectMySql(examsStrSql)
         'read while write into sqlite database
         dbconnect.sqlLiteConnection("Evaluations.db")
         While dbconnect.MySqlReader.Read
-
-
 
             Dim examId As Integer = dbconnect.MySqlReader("exam_id")
             Dim examName As String = dbconnect.MySqlReader("exam_name")
@@ -205,10 +239,6 @@ Public Class materialSync
         End While
         'dbconnect.closeSqlite()
         dbconnect.MySqlReader.Dispose()
-
-
-
-
 
         'question answers
         dbconnect.selectMySql(questionAnswersSql)

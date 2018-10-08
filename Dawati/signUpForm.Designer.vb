@@ -441,6 +441,7 @@ Partial Class signUpForm
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "signUpForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.TransparencyKey = System.Drawing.Color.MidnightBlue
         Me.detailsMetroPanel.ResumeLayout(False)
         Me.detailsMetroPanel.PerformLayout()

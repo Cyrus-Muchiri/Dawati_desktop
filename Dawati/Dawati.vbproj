@@ -73,6 +73,14 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Apitron.PDF.Controls, Version=1.0.122.0, Culture=neutral, PublicKeyToken=6e759dbb0039406e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Apitron.PDF.Controls.1.0.122\lib\net451\Apitron.PDF.Controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Apitron.PDF.Rasterizer, Version=3.0.122.0, Culture=neutral, PublicKeyToken=6e759dbb0039406e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Apitron.PDF.Controls.1.0.122\lib\net451\Apitron.PDF.Rasterizer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="BCrypt.Net, Version=0.1.4141.31969, Culture=neutral, PublicKeyToken=f3bc8f8c31beeb49, processorArchitecture=MSIL">
       <HintPath>..\packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
       <Private>True</Private>
@@ -169,6 +177,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="attemptReports.Designer.vb">
+      <DependentUpon>attemptReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="attemptReports.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="classRoom.Designer.vb">
       <DependentUpon>classRoom.vb</DependentUpon>
     </Compile>
@@ -191,10 +205,16 @@
     <Compile Include="folderEncryption.vb" />
     <Compile Include="formValidation.vb" />
     <Compile Include="hashingClass.vb" />
-    <Compile Include="main.Designer.vb">
-      <DependentUpon>main.vb</DependentUpon>
+    <Compile Include="loading.Designer.vb">
+      <DependentUpon>loading.vb</DependentUpon>
     </Compile>
-    <Compile Include="main.vb">
+    <Compile Include="loading.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainForm.Designer.vb">
+      <DependentUpon>mainForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="mainForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="questions.Designer.vb">
@@ -249,7 +269,6 @@
     <Compile Include="videoPlayer.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="materialSync.vb" />
     <Compile Include="welcomeForm.Designer.vb">
       <DependentUpon>welcomeForm.vb</DependentUpon>
     </Compile>
@@ -258,6 +277,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="attemptReports.resx">
+      <DependentUpon>attemptReports.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="classRoom.resx">
       <DependentUpon>classRoom.vb</DependentUpon>
     </EmbeddedResource>
@@ -267,8 +289,11 @@
     <EmbeddedResource Include="evaluationForm.resx">
       <DependentUpon>evaluationForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="main.resx">
-      <DependentUpon>main.vb</DependentUpon>
+    <EmbeddedResource Include="loading.resx">
+      <DependentUpon>loading.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainForm.resx">
+      <DependentUpon>mainForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="questions.resx">
       <DependentUpon>questions.vb</DependentUpon>

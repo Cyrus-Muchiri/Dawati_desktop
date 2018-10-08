@@ -31,7 +31,7 @@ Public Class databaseConnection
             sqliteCommand = New SQLiteCommand(strSql, sqliteConnection)
             sqliteCommand.ExecuteNonQuery()
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            'MessageBox.Show(ex.Message)
         End Try
 
 
@@ -52,7 +52,7 @@ Public Class databaseConnection
 
     Public Sub dbConnection()
 
-        'myConnectionString = " SERVER=127.0.0.1; database=dawatico_dawati; uid=root; pwd=''; SslMode= none; charset=UTF8 "
+        ' myConnectionString = " SERVER=127.0.0.1; database=dawatico_dawati; uid=root; pwd=''; SslMode= none; charset=UTF8 "
         myConnectionString = "  SERVER=192.185.17.39; database=dawatico_dawati; uid=dawatico_dawati; pwd='@dawati2016'; charset=UTF8 "
 
         Try

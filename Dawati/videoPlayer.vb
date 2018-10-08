@@ -16,4 +16,8 @@
         classRoom.getSelectedVideo(playListListBox)
 
     End Sub
+
+    Private Sub playListListBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles playListListBox.DoubleClick
+        classRoom.getSelectedVideo(playListListBox)
+    End Sub
 End Class
