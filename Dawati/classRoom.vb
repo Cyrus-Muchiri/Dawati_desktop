@@ -95,9 +95,11 @@ Public Class classRoom
 
         While dbConnect.reader.Read
             listBox.Items.Add(dbConnect.reader("file_name"))
-            ebookViewer.ebookPlayListBox.Items.Add(dbConnect.reader("file_name"))
-            videoPlayer.playListListBox.Items.Add(dbConnect.reader("file_name"))
+            ' ebookViewer.ebookPlayListBox.Items.Add(dbConnect.reader("file_name"))
+            ' videoPlayer.playListListBox.Items.Add(dbConnect.reader("file_name"))
         End While
+        ebookViewer.getters(multimediaSeries, studyLevel)
+        videoPlayer.getters(multimediaSeries, studyLevel)
         dbConnect.closeSqlite()
     End Sub
     'get the selected videos and call player
@@ -134,12 +136,18 @@ Public Class classRoom
     End Sub
     Private Sub playVideo(ByVal url As String)
         videoPlayer.initialize(url)
+        Hide()
+        videoPlayer.MdiParent = ParentForm
         'MessageBox.Show(url)
         videoPlayer.Show()
     End Sub
     Private Sub playEbook(ByVal url As String)
-        ebookViewer.Show()
         ebookViewer.initialize(url)
+        Hide()
+        ebookViewer.MdiParent = ParentForm
+        ebookViewer.Show()
+
+
 
     End Sub
 
@@ -238,6 +246,8 @@ Public Class classRoom
 
     Private Sub exitMetroButton_Click(sender As Object, e As EventArgs) Handles exitMetroButton.Click
         Close()
+        mainForm.MdiParent = dawatiParent
+        mainForm.Show()
     End Sub
 
 

@@ -23,66 +23,6 @@ Partial Class mainForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mainForm))
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem21 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem22 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem23 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem24 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem25 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem26 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem27 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem28 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem29 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem30 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem31 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem32 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem33 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem34 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem35 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem36 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem37 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem38 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem39 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem40 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem41 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem42 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem43 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem44 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem45 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem46 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.VideosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MathematicsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Form1ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Form2ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Form3ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Form4ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem16 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem17 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem18 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem19 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem20 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem7 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem8 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem9 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem10 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem11 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem12 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem13 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem14 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem15 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EvaluationsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AttemptToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ResultsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.videosMetroTile = New MetroFramework.Controls.MetroTile()
         Me.ebooksMetroTile = New MetroFramework.Controls.MetroTile()
         Me.evaluationsMetroTile = New MetroFramework.Controls.MetroTile()
@@ -174,7 +114,6 @@ Partial Class mainForm
         Me.internetConnectionLabel = New System.Windows.Forms.Label()
         Me.updateContentMetroTile = New MetroFramework.Controls.MetroTile()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.MenuStrip1.SuspendLayout()
         Me.MetroPanel1.SuspendLayout()
         CType(Me.avatarPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MetroPanel2.SuspendLayout()
@@ -205,383 +144,6 @@ Partial Class mainForm
         Me.aboutPanel.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.ToolStripMenuItem21, Me.VideosToolStripMenuItem, Me.EvaluationsToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1335, 24)
-        Me.MenuStrip1.TabIndex = 0
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'FileToolStripMenuItem
-        '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProfileToolStripMenuItem, Me.LogOutToolStripMenuItem, Me.ExitToolStripMenuItem})
-        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
-        Me.FileToolStripMenuItem.Text = "Home"
-        '
-        'ProfileToolStripMenuItem
-        '
-        Me.ProfileToolStripMenuItem.Name = "ProfileToolStripMenuItem"
-        Me.ProfileToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ProfileToolStripMenuItem.Text = "Profile"
-        '
-        'LogOutToolStripMenuItem
-        '
-        Me.LogOutToolStripMenuItem.Name = "LogOutToolStripMenuItem"
-        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.LogOutToolStripMenuItem.Text = "Log out"
-        '
-        'ExitToolStripMenuItem
-        '
-        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ExitToolStripMenuItem.Text = "Exit"
-        '
-        'ToolStripMenuItem21
-        '
-        Me.ToolStripMenuItem21.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem22, Me.ToolStripMenuItem27, Me.ToolStripMenuItem32, Me.ToolStripMenuItem37, Me.ToolStripMenuItem42})
-        Me.ToolStripMenuItem21.Name = "ToolStripMenuItem21"
-        Me.ToolStripMenuItem21.Size = New System.Drawing.Size(54, 20)
-        Me.ToolStripMenuItem21.Text = "Videos"
-        '
-        'ToolStripMenuItem22
-        '
-        Me.ToolStripMenuItem22.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem23, Me.ToolStripMenuItem24, Me.ToolStripMenuItem25, Me.ToolStripMenuItem26})
-        Me.ToolStripMenuItem22.Name = "ToolStripMenuItem22"
-        Me.ToolStripMenuItem22.Size = New System.Drawing.Size(143, 22)
-        Me.ToolStripMenuItem22.Text = "Mathematics"
-        '
-        'ToolStripMenuItem23
-        '
-        Me.ToolStripMenuItem23.Name = "ToolStripMenuItem23"
-        Me.ToolStripMenuItem23.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem23.Text = "Form 1"
-        '
-        'ToolStripMenuItem24
-        '
-        Me.ToolStripMenuItem24.Name = "ToolStripMenuItem24"
-        Me.ToolStripMenuItem24.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem24.Text = "Form 2"
-        '
-        'ToolStripMenuItem25
-        '
-        Me.ToolStripMenuItem25.Name = "ToolStripMenuItem25"
-        Me.ToolStripMenuItem25.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem25.Text = "Form 3"
-        '
-        'ToolStripMenuItem26
-        '
-        Me.ToolStripMenuItem26.Name = "ToolStripMenuItem26"
-        Me.ToolStripMenuItem26.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem26.Text = "Form 4"
-        '
-        'ToolStripMenuItem27
-        '
-        Me.ToolStripMenuItem27.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem28, Me.ToolStripMenuItem29, Me.ToolStripMenuItem30, Me.ToolStripMenuItem31})
-        Me.ToolStripMenuItem27.Name = "ToolStripMenuItem27"
-        Me.ToolStripMenuItem27.Size = New System.Drawing.Size(143, 22)
-        Me.ToolStripMenuItem27.Text = "English"
-        '
-        'ToolStripMenuItem28
-        '
-        Me.ToolStripMenuItem28.Name = "ToolStripMenuItem28"
-        Me.ToolStripMenuItem28.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem28.Text = "Form 1"
-        '
-        'ToolStripMenuItem29
-        '
-        Me.ToolStripMenuItem29.Name = "ToolStripMenuItem29"
-        Me.ToolStripMenuItem29.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem29.Text = "Form 2"
-        '
-        'ToolStripMenuItem30
-        '
-        Me.ToolStripMenuItem30.Name = "ToolStripMenuItem30"
-        Me.ToolStripMenuItem30.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem30.Text = "Form 3"
-        '
-        'ToolStripMenuItem31
-        '
-        Me.ToolStripMenuItem31.Name = "ToolStripMenuItem31"
-        Me.ToolStripMenuItem31.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem31.Text = "Form 4"
-        '
-        'ToolStripMenuItem32
-        '
-        Me.ToolStripMenuItem32.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem33, Me.ToolStripMenuItem34, Me.ToolStripMenuItem35, Me.ToolStripMenuItem36})
-        Me.ToolStripMenuItem32.Name = "ToolStripMenuItem32"
-        Me.ToolStripMenuItem32.Size = New System.Drawing.Size(143, 22)
-        Me.ToolStripMenuItem32.Text = "Biology"
-        '
-        'ToolStripMenuItem33
-        '
-        Me.ToolStripMenuItem33.Name = "ToolStripMenuItem33"
-        Me.ToolStripMenuItem33.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem33.Text = "Form 1"
-        '
-        'ToolStripMenuItem34
-        '
-        Me.ToolStripMenuItem34.Name = "ToolStripMenuItem34"
-        Me.ToolStripMenuItem34.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem34.Text = "Form 2"
-        '
-        'ToolStripMenuItem35
-        '
-        Me.ToolStripMenuItem35.Name = "ToolStripMenuItem35"
-        Me.ToolStripMenuItem35.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem35.Text = "Form 3"
-        '
-        'ToolStripMenuItem36
-        '
-        Me.ToolStripMenuItem36.Name = "ToolStripMenuItem36"
-        Me.ToolStripMenuItem36.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem36.Text = "Form 4"
-        '
-        'ToolStripMenuItem37
-        '
-        Me.ToolStripMenuItem37.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem38, Me.ToolStripMenuItem39, Me.ToolStripMenuItem40, Me.ToolStripMenuItem41})
-        Me.ToolStripMenuItem37.Name = "ToolStripMenuItem37"
-        Me.ToolStripMenuItem37.Size = New System.Drawing.Size(143, 22)
-        Me.ToolStripMenuItem37.Text = "Physics"
-        '
-        'ToolStripMenuItem38
-        '
-        Me.ToolStripMenuItem38.Name = "ToolStripMenuItem38"
-        Me.ToolStripMenuItem38.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem38.Text = "Form 1"
-        '
-        'ToolStripMenuItem39
-        '
-        Me.ToolStripMenuItem39.Name = "ToolStripMenuItem39"
-        Me.ToolStripMenuItem39.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem39.Text = "Form 2"
-        '
-        'ToolStripMenuItem40
-        '
-        Me.ToolStripMenuItem40.Name = "ToolStripMenuItem40"
-        Me.ToolStripMenuItem40.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem40.Text = "Form 3"
-        '
-        'ToolStripMenuItem41
-        '
-        Me.ToolStripMenuItem41.Name = "ToolStripMenuItem41"
-        Me.ToolStripMenuItem41.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem41.Text = "Form 4"
-        '
-        'ToolStripMenuItem42
-        '
-        Me.ToolStripMenuItem42.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem43, Me.ToolStripMenuItem44, Me.ToolStripMenuItem45, Me.ToolStripMenuItem46})
-        Me.ToolStripMenuItem42.Name = "ToolStripMenuItem42"
-        Me.ToolStripMenuItem42.Size = New System.Drawing.Size(143, 22)
-        Me.ToolStripMenuItem42.Text = "Chemistry"
-        '
-        'ToolStripMenuItem43
-        '
-        Me.ToolStripMenuItem43.Name = "ToolStripMenuItem43"
-        Me.ToolStripMenuItem43.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem43.Text = "Form 1"
-        '
-        'ToolStripMenuItem44
-        '
-        Me.ToolStripMenuItem44.Name = "ToolStripMenuItem44"
-        Me.ToolStripMenuItem44.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem44.Text = "Form 2"
-        '
-        'ToolStripMenuItem45
-        '
-        Me.ToolStripMenuItem45.Name = "ToolStripMenuItem45"
-        Me.ToolStripMenuItem45.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem45.Text = "Form 3"
-        '
-        'ToolStripMenuItem46
-        '
-        Me.ToolStripMenuItem46.Name = "ToolStripMenuItem46"
-        Me.ToolStripMenuItem46.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem46.Text = "Form 4"
-        '
-        'VideosToolStripMenuItem
-        '
-        Me.VideosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MathematicsToolStripMenuItem, Me.ToolStripMenuItem16, Me.ToolStripMenuItem6, Me.ToolStripMenuItem11, Me.ToolStripMenuItem1})
-        Me.VideosToolStripMenuItem.Name = "VideosToolStripMenuItem"
-        Me.VideosToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
-        Me.VideosToolStripMenuItem.Text = "Ebooks"
-        '
-        'MathematicsToolStripMenuItem
-        '
-        Me.MathematicsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Form1ToolStripMenuItem1, Me.Form2ToolStripMenuItem1, Me.Form3ToolStripMenuItem1, Me.Form4ToolStripMenuItem1})
-        Me.MathematicsToolStripMenuItem.Name = "MathematicsToolStripMenuItem"
-        Me.MathematicsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.MathematicsToolStripMenuItem.Text = "Mathematics"
-        '
-        'Form1ToolStripMenuItem1
-        '
-        Me.Form1ToolStripMenuItem1.Name = "Form1ToolStripMenuItem1"
-        Me.Form1ToolStripMenuItem1.Size = New System.Drawing.Size(111, 22)
-        Me.Form1ToolStripMenuItem1.Text = "Form 1"
-        '
-        'Form2ToolStripMenuItem1
-        '
-        Me.Form2ToolStripMenuItem1.Name = "Form2ToolStripMenuItem1"
-        Me.Form2ToolStripMenuItem1.Size = New System.Drawing.Size(111, 22)
-        Me.Form2ToolStripMenuItem1.Text = "Form 2"
-        '
-        'Form3ToolStripMenuItem1
-        '
-        Me.Form3ToolStripMenuItem1.Name = "Form3ToolStripMenuItem1"
-        Me.Form3ToolStripMenuItem1.Size = New System.Drawing.Size(111, 22)
-        Me.Form3ToolStripMenuItem1.Text = "Form 3"
-        '
-        'Form4ToolStripMenuItem1
-        '
-        Me.Form4ToolStripMenuItem1.Name = "Form4ToolStripMenuItem1"
-        Me.Form4ToolStripMenuItem1.Size = New System.Drawing.Size(111, 22)
-        Me.Form4ToolStripMenuItem1.Text = "Form 4"
-        '
-        'ToolStripMenuItem16
-        '
-        Me.ToolStripMenuItem16.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem17, Me.ToolStripMenuItem18, Me.ToolStripMenuItem19, Me.ToolStripMenuItem20})
-        Me.ToolStripMenuItem16.Name = "ToolStripMenuItem16"
-        Me.ToolStripMenuItem16.Size = New System.Drawing.Size(152, 22)
-        Me.ToolStripMenuItem16.Text = "English"
-        '
-        'ToolStripMenuItem17
-        '
-        Me.ToolStripMenuItem17.Name = "ToolStripMenuItem17"
-        Me.ToolStripMenuItem17.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem17.Text = "Form 1"
-        '
-        'ToolStripMenuItem18
-        '
-        Me.ToolStripMenuItem18.Name = "ToolStripMenuItem18"
-        Me.ToolStripMenuItem18.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem18.Text = "Form 2"
-        '
-        'ToolStripMenuItem19
-        '
-        Me.ToolStripMenuItem19.Name = "ToolStripMenuItem19"
-        Me.ToolStripMenuItem19.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem19.Text = "Form 3"
-        '
-        'ToolStripMenuItem20
-        '
-        Me.ToolStripMenuItem20.Name = "ToolStripMenuItem20"
-        Me.ToolStripMenuItem20.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem20.Text = "Form 4"
-        '
-        'ToolStripMenuItem6
-        '
-        Me.ToolStripMenuItem6.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem7, Me.ToolStripMenuItem8, Me.ToolStripMenuItem9, Me.ToolStripMenuItem10})
-        Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(152, 22)
-        Me.ToolStripMenuItem6.Text = "Biology"
-        '
-        'ToolStripMenuItem7
-        '
-        Me.ToolStripMenuItem7.Name = "ToolStripMenuItem7"
-        Me.ToolStripMenuItem7.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem7.Text = "Form 1"
-        '
-        'ToolStripMenuItem8
-        '
-        Me.ToolStripMenuItem8.Name = "ToolStripMenuItem8"
-        Me.ToolStripMenuItem8.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem8.Text = "Form 2"
-        '
-        'ToolStripMenuItem9
-        '
-        Me.ToolStripMenuItem9.Name = "ToolStripMenuItem9"
-        Me.ToolStripMenuItem9.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem9.Text = "Form 3"
-        '
-        'ToolStripMenuItem10
-        '
-        Me.ToolStripMenuItem10.Name = "ToolStripMenuItem10"
-        Me.ToolStripMenuItem10.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem10.Text = "Form 4"
-        '
-        'ToolStripMenuItem11
-        '
-        Me.ToolStripMenuItem11.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem12, Me.ToolStripMenuItem13, Me.ToolStripMenuItem14, Me.ToolStripMenuItem15})
-        Me.ToolStripMenuItem11.Name = "ToolStripMenuItem11"
-        Me.ToolStripMenuItem11.Size = New System.Drawing.Size(152, 22)
-        Me.ToolStripMenuItem11.Text = "Physics"
-        '
-        'ToolStripMenuItem12
-        '
-        Me.ToolStripMenuItem12.Name = "ToolStripMenuItem12"
-        Me.ToolStripMenuItem12.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem12.Text = "Form 1"
-        '
-        'ToolStripMenuItem13
-        '
-        Me.ToolStripMenuItem13.Name = "ToolStripMenuItem13"
-        Me.ToolStripMenuItem13.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem13.Text = "Form 2"
-        '
-        'ToolStripMenuItem14
-        '
-        Me.ToolStripMenuItem14.Name = "ToolStripMenuItem14"
-        Me.ToolStripMenuItem14.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem14.Text = "Form 3"
-        '
-        'ToolStripMenuItem15
-        '
-        Me.ToolStripMenuItem15.Name = "ToolStripMenuItem15"
-        Me.ToolStripMenuItem15.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem15.Text = "Form 4"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.ToolStripMenuItem4, Me.ToolStripMenuItem5})
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
-        Me.ToolStripMenuItem1.Text = "Chemistry"
-        '
-        'ToolStripMenuItem2
-        '
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem2.Text = "Form 1"
-        '
-        'ToolStripMenuItem3
-        '
-        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem3.Text = "Form 2"
-        '
-        'ToolStripMenuItem4
-        '
-        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem4.Text = "Form 3"
-        '
-        'ToolStripMenuItem5
-        '
-        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(111, 22)
-        Me.ToolStripMenuItem5.Text = "Form 4"
-        '
-        'EvaluationsToolStripMenuItem
-        '
-        Me.EvaluationsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AttemptToolStripMenuItem, Me.ResultsToolStripMenuItem})
-        Me.EvaluationsToolStripMenuItem.Name = "EvaluationsToolStripMenuItem"
-        Me.EvaluationsToolStripMenuItem.Size = New System.Drawing.Size(79, 20)
-        Me.EvaluationsToolStripMenuItem.Text = "Evaluations"
-        '
-        'AttemptToolStripMenuItem
-        '
-        Me.AttemptToolStripMenuItem.Name = "AttemptToolStripMenuItem"
-        Me.AttemptToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
-        Me.AttemptToolStripMenuItem.Text = "Attempt"
-        '
-        'ResultsToolStripMenuItem
-        '
-        Me.ResultsToolStripMenuItem.Name = "ResultsToolStripMenuItem"
-        Me.ResultsToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
-        Me.ResultsToolStripMenuItem.Text = "Results"
         '
         'videosMetroTile
         '
@@ -625,7 +187,7 @@ Partial Class mainForm
         '
         'exitMetroButton
         '
-        Me.exitMetroButton.Location = New System.Drawing.Point(1212, 624)
+        Me.exitMetroButton.Location = New System.Drawing.Point(1248, 585)
         Me.exitMetroButton.Name = "exitMetroButton"
         Me.exitMetroButton.Size = New System.Drawing.Size(75, 38)
         Me.exitMetroButton.TabIndex = 6
@@ -640,7 +202,7 @@ Partial Class mainForm
         Me.MetroPanel1.HorizontalScrollbarBarColor = True
         Me.MetroPanel1.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.HorizontalScrollbarSize = 10
-        Me.MetroPanel1.Location = New System.Drawing.Point(1169, 217)
+        Me.MetroPanel1.Location = New System.Drawing.Point(1215, 221)
         Me.MetroPanel1.Name = "MetroPanel1"
         Me.MetroPanel1.Size = New System.Drawing.Size(160, 52)
         Me.MetroPanel1.TabIndex = 7
@@ -652,7 +214,7 @@ Partial Class mainForm
         'LnameMetroLabel
         '
         Me.LnameMetroLabel.AutoSize = True
-        Me.LnameMetroLabel.Location = New System.Drawing.Point(71, 4)
+        Me.LnameMetroLabel.Location = New System.Drawing.Point(93, 4)
         Me.LnameMetroLabel.Name = "LnameMetroLabel"
         Me.LnameMetroLabel.Size = New System.Drawing.Size(48, 19)
         Me.LnameMetroLabel.TabIndex = 5
@@ -681,7 +243,7 @@ Partial Class mainForm
         '
         'avatarPictureBox
         '
-        Me.avatarPictureBox.Location = New System.Drawing.Point(1169, 81)
+        Me.avatarPictureBox.Location = New System.Drawing.Point(1202, 85)
         Me.avatarPictureBox.Name = "avatarPictureBox"
         Me.avatarPictureBox.Size = New System.Drawing.Size(160, 124)
         Me.avatarPictureBox.TabIndex = 3
@@ -702,7 +264,7 @@ Partial Class mainForm
         Me.MetroPanel2.HorizontalScrollbarBarColor = True
         Me.MetroPanel2.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroPanel2.HorizontalScrollbarSize = 10
-        Me.MetroPanel2.Location = New System.Drawing.Point(26, 81)
+        Me.MetroPanel2.Location = New System.Drawing.Point(26, 67)
         Me.MetroPanel2.Name = "MetroPanel2"
         Me.MetroPanel2.Size = New System.Drawing.Size(177, 552)
         Me.MetroPanel2.TabIndex = 8
@@ -909,7 +471,7 @@ Partial Class mainForm
         Me.ebooksMetroPanel.HorizontalScrollbarBarColor = True
         Me.ebooksMetroPanel.HorizontalScrollbarHighlightOnWheel = False
         Me.ebooksMetroPanel.HorizontalScrollbarSize = 10
-        Me.ebooksMetroPanel.Location = New System.Drawing.Point(209, 81)
+        Me.ebooksMetroPanel.Location = New System.Drawing.Point(232, 98)
         Me.ebooksMetroPanel.Name = "ebooksMetroPanel"
         Me.ebooksMetroPanel.Size = New System.Drawing.Size(957, 552)
         Me.ebooksMetroPanel.TabIndex = 9
@@ -1105,7 +667,7 @@ Partial Class mainForm
         Me.videosMetroPanel.HorizontalScrollbarBarColor = True
         Me.videosMetroPanel.HorizontalScrollbarHighlightOnWheel = False
         Me.videosMetroPanel.HorizontalScrollbarSize = 10
-        Me.videosMetroPanel.Location = New System.Drawing.Point(205, 81)
+        Me.videosMetroPanel.Location = New System.Drawing.Point(228, 98)
         Me.videosMetroPanel.Name = "videosMetroPanel"
         Me.videosMetroPanel.Size = New System.Drawing.Size(957, 549)
         Me.videosMetroPanel.TabIndex = 15
@@ -1285,7 +847,7 @@ Partial Class mainForm
         Me.classRoomLabel.AutoSize = True
         Me.classRoomLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.classRoomLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.classRoomLabel.Location = New System.Drawing.Point(454, 35)
+        Me.classRoomLabel.Location = New System.Drawing.Point(501, 36)
         Me.classRoomLabel.Name = "classRoomLabel"
         Me.classRoomLabel.Size = New System.Drawing.Size(289, 33)
         Me.classRoomLabel.TabIndex = 16
@@ -1310,7 +872,7 @@ Partial Class mainForm
         Me.profilePanel.Controls.Add(Me.Label2)
         Me.profilePanel.Controls.Add(Me.Label1)
         Me.profilePanel.Controls.Add(Me.updateMetroButton)
-        Me.profilePanel.Location = New System.Drawing.Point(205, 81)
+        Me.profilePanel.Location = New System.Drawing.Point(228, 98)
         Me.profilePanel.Name = "profilePanel"
         Me.profilePanel.Size = New System.Drawing.Size(961, 559)
         Me.profilePanel.TabIndex = 17
@@ -1587,7 +1149,7 @@ Partial Class mainForm
         Me.evaluationMetroPanel.HorizontalScrollbarBarColor = True
         Me.evaluationMetroPanel.HorizontalScrollbarHighlightOnWheel = False
         Me.evaluationMetroPanel.HorizontalScrollbarSize = 10
-        Me.evaluationMetroPanel.Location = New System.Drawing.Point(212, 78)
+        Me.evaluationMetroPanel.Location = New System.Drawing.Point(235, 95)
         Me.evaluationMetroPanel.Name = "evaluationMetroPanel"
         Me.evaluationMetroPanel.Size = New System.Drawing.Size(957, 552)
         Me.evaluationMetroPanel.TabIndex = 18
@@ -1770,7 +1332,7 @@ Partial Class mainForm
         Me.aboutPanel.Controls.Add(Me.PictureBox1)
         Me.aboutPanel.Controls.Add(Me.Label7)
         Me.aboutPanel.Controls.Add(Me.Label6)
-        Me.aboutPanel.Location = New System.Drawing.Point(208, 72)
+        Me.aboutPanel.Location = New System.Drawing.Point(231, 89)
         Me.aboutPanel.Name = "aboutPanel"
         Me.aboutPanel.Size = New System.Drawing.Size(955, 565)
         Me.aboutPanel.TabIndex = 19
@@ -1819,7 +1381,7 @@ Partial Class mainForm
         '
         Me.internetConnectionLabel.AutoSize = True
         Me.internetConnectionLabel.ForeColor = System.Drawing.Color.Green
-        Me.internetConnectionLabel.Location = New System.Drawing.Point(1182, 337)
+        Me.internetConnectionLabel.Location = New System.Drawing.Point(1215, 313)
         Me.internetConnectionLabel.Name = "internetConnectionLabel"
         Me.internetConnectionLabel.Size = New System.Drawing.Size(147, 13)
         Me.internetConnectionLabel.TabIndex = 20
@@ -1829,7 +1391,7 @@ Partial Class mainForm
         'updateContentMetroTile
         '
         Me.updateContentMetroTile.ActiveControl = Nothing
-        Me.updateContentMetroTile.Location = New System.Drawing.Point(1185, 359)
+        Me.updateContentMetroTile.Location = New System.Drawing.Point(1218, 335)
         Me.updateContentMetroTile.Name = "updateContentMetroTile"
         Me.updateContentMetroTile.Size = New System.Drawing.Size(138, 91)
         Me.updateContentMetroTile.TabIndex = 21
@@ -1845,7 +1407,8 @@ Partial Class mainForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(1335, 673)
+        Me.ClientSize = New System.Drawing.Size(1364, 684)
+        Me.ControlBox = False
         Me.Controls.Add(Me.updateContentMetroTile)
         Me.Controls.Add(Me.internetConnectionLabel)
         Me.Controls.Add(Me.classRoomLabel)
@@ -1853,18 +1416,16 @@ Partial Class mainForm
         Me.Controls.Add(Me.MetroPanel2)
         Me.Controls.Add(Me.exitMetroButton)
         Me.Controls.Add(Me.avatarPictureBox)
-        Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.videosMetroPanel)
+        Me.Controls.Add(Me.evaluationMetroPanel)
         Me.Controls.Add(Me.aboutPanel)
         Me.Controls.Add(Me.ebooksMetroPanel)
         Me.Controls.Add(Me.profilePanel)
-        Me.Controls.Add(Me.videosMetroPanel)
-        Me.Controls.Add(Me.evaluationMetroPanel)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "mainForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Home"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         Me.MetroPanel1.ResumeLayout(False)
         Me.MetroPanel1.PerformLayout()
         CType(Me.avatarPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1906,15 +1467,6 @@ Partial Class mainForm
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EvaluationsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ProfileToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LogOutToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AttemptToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ResultsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents videosMetroTile As MetroFramework.Controls.MetroTile
     Friend WithEvents ebooksMetroTile As MetroFramework.Controls.MetroTile
     Friend WithEvents evaluationsMetroTile As MetroFramework.Controls.MetroTile
@@ -2005,57 +1557,5 @@ Partial Class mainForm
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents internetConnectionLabel As Label
     Friend WithEvents updateContentMetroTile As MetroFramework.Controls.MetroTile
-    Friend WithEvents ToolStripMenuItem21 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem22 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem23 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem24 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem25 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem26 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem27 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem28 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem29 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem30 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem31 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem32 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem33 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem34 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem35 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem36 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem37 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem38 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem39 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem40 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem41 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem42 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem43 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem44 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem45 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem46 As ToolStripMenuItem
-    Friend WithEvents VideosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MathematicsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Form1ToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents Form2ToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents Form3ToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents Form4ToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem16 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem17 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem18 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem19 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem20 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem6 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem7 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem8 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem9 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem10 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem11 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem12 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem13 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem14 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem15 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem5 As ToolStripMenuItem
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 End Class

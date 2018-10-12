@@ -73,7 +73,7 @@ Public Class loading
     Public Sub updateContent()
         writeMaterialDetails()
         syncEvaluations()
-
+        updateUsers()
         counter()
     End Sub
 
@@ -375,6 +375,52 @@ Public Class loading
 
     End Sub
     Private Sub updateUsers()
+        Dim dbConnect As New databaseConnection
+        dbConnect.dbConnection()
+        Dim strSql As String = "Select * from users where user_status ='confirmed'"
+        dbConnect.selectMySql(strSql)
+
+        While dbConnect.MySqlReader.Read
+
+
+            Dim userId As Integer = dbConnect.MySqlReader("user_id")
+            Dim fname As String = dbConnect.MySqlReader("fname")
+            Dim lname As String = dbConnect.MySqlReader("lname")
+            Dim email As String = dbConnect.MySqlReader("email")
+            Dim hash As String = dbConnect.MySqlReader("hash")
+            'Dim username As String = dbConnect.MySqlReader("username")
+            Dim password As String = dbConnect.MySqlReader("password")
+            Dim gender As String = dbConnect.MySqlReader("gender")
+            Dim user_type As Integer = dbConnect.MySqlReader("user_type")
+            Dim date_joined As String = dbConnect.MySqlReader("date_joined")
+            Dim user_status As String = dbConnect.MySqlReader("user_status")
+            Dim prof_img As String = "avatar.jpg"
+            Dim about_me As String = dbConnect.MySqlReader("about_me")
+            Dim online_status As Integer = dbConnect.MySqlReader("online_status")
+            'Dim last_seen As String = dbConnect.MySqlReader("last_seen")
+
+            dbConnect.sqlLiteConnection("dawatico_dawati.db")
+            Dim liteSql As String = "select * from users where email='" & email & "' "
+            dbConnect.selectSqlite(liteSql)
+
+            If dbConnect.reader.HasRows Then 'update existing user
+                'write update statement here
+            Else 'insert new record
+                Dim insertLiteSql = "Insert into users(user_id,fname,lname,email,
+                 hash,password,gender,user_type,date_joined,user_status,prof_img,about_me,online_status)VALUES ('" & userId & "','" & fname & "',
+                    '" & lname & "','" & email & "','" & hash & "','" & password & "','" & gender & "','" & user_type & "',
+                    '" & date_joined & "','" & user_status & "','" & prof_img & "','" & about_me & "','" & online_status & "');"
+
+                dbConnect.insertSqlite(insertLiteSql)
+
+                dbConnect.closeSqlite()
+            End If
+        End While
+
+        dbConnect.closeDbConnection()
+
+
+        count = count + 1
 
     End Sub
     Private Sub counter()
@@ -383,7 +429,7 @@ Public Class loading
 
         ElseIf count > 0 Then
             'ukora
-            MessageBox.Show("" & count - 6 & " entries will be added to your offline base", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ' MessageBox.Show("" & count - 6", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         End If
     End Sub

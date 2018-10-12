@@ -190,6 +190,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="databaseConnection.vb" />
+    <Compile Include="dawatiParent.Designer.vb">
+      <DependentUpon>dawatiParent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dawatiParent.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ebookViewer.Designer.vb">
       <DependentUpon>ebookViewer.vb</DependentUpon>
     </Compile>
@@ -282,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="classRoom.resx">
       <DependentUpon>classRoom.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dawatiParent.resx">
+      <DependentUpon>dawatiParent.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ebookViewer.resx">
       <DependentUpon>ebookViewer.vb</DependentUpon>

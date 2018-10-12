@@ -55,20 +55,37 @@ Public Class signInForm
             If BCrypt.Net.BCrypt.Verify(password, dbPassword) Then
                 'getting user category
                 If userCategory = 1 Then
+                    'mainForm.initialize()
+                    'mainForm.Show()
+                    'Close()
+                    ''welcomeForm.Hide()
+                    'Dim main As New mainForm
                     mainForm.initialize()
-                    mainForm.Show()
+                    'main.MdiParent = dawatiParent
+                    'mainForm.Show()
+                    dawatiParent.Show()
                     Close()
-                    welcomeForm.Close()
+                    welcomeForm.Hide()
                 ElseIf userCategory = 2 Then
+                    'mainForm.initialize()
+                    'mainForm.Show()
+                    'Close()
+                    'welcomeForm.Hide()
+                    'Dim main As New mainForm
                     mainForm.initialize()
-                    mainForm.Show()
+                    'main.MdiParent = dawatiParent
+                    'mainForm.Show()
+                    dawatiParent.Show()
                     Close()
-                    welcomeForm.Close()
+                    welcomeForm.Hide()
                 ElseIf userCategory = 3 Then
+                    'Dim main As New mainForm
                     mainForm.initialize()
-                    mainForm.Show()
+                    'main.MdiParent = dawatiParent
+                    'mainForm.Show()
+                    dawatiParent.Show()
                     Close()
-                    welcomeForm.Close()
+                    welcomeForm.Hide()
                 ElseIf userCategory = 4 Then
                     'MessageBox.Show("You will be logged on as a School admin    ")
                 ElseIf userCategory = 5 Then

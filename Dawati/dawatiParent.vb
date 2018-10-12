@@ -1,95 +1,45 @@
-﻿Public Class evaluationForm
+﻿Imports System.Windows.Forms
 
-    Public rowCount As Integer = 0
-    Public exam_id As Integer
-    Public hours As String
-    Public minutes As String
-    Public numQuestions As Integer
-    Public examName As String
-    Public subject As String
-    'Public mainObject As New mainForm 'mainForm Object
+Public Class dawatiParent
 
-    Public Sub initialize()
+    Private Sub ShowNewForm(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+        ' Create a new instance of the child form.
+        ' Dim ChildForm As New System.Windows.Forms.Form
+        ' Make it a child of this MDI form before showing it.
+        mainForm.initialize()
+        mainForm.MdiParent = Me
 
-    End Sub
-    Public Sub showExamDetails()
-        Dim selectedExam As String = evaluationsListBox.SelectedItem
-        Dim dbConnect As New databaseConnection
-        dbConnect.sqlLiteConnection("Evaluations.db")
-        Dim strSql As String = "select exam_id, exam_name, hours, minutes,description,num_of_questions, subject from exams where exam_name = '" & selectedExam & "';"
-        dbConnect.selectSqlite(strSql)
+        ' m_ChildFormNumber += 1
+        ' ChildForm.Text = "Window " & m_ChildFormNumber
 
-        While dbConnect.reader.Read
-            exam_id = dbConnect.reader("exam_id")
-            hours = dbConnect.reader("hours")
-            numQuestions = dbConnect.reader("num_of_questions")
-            minutes = dbConnect.reader("minutes")
-            examName = dbConnect.reader("exam_name")
-
-            examNameLabel.Text = examName
-            subjectLabel.Text = dbConnect.reader("subject")
-            descriptionLabel.Text = dbConnect.reader("description")
-            noOfQuestionsLabel.Text = numQuestions
-            hoursLabel.Text = hours
-            hoursNameLabel.Visible = True
-            minutesLabel.Text = minutes
-            MinutesNameLabel.Visible = True
-        End While
-        questions.getter(exam_id, examName, numQuestions)
-    End Sub
-    Public Sub databaseReader(ByVal subject As String)
-
-        Dim dbConnect As New databaseConnection
-        dbConnect.sqlLiteConnection("Evaluations.db")
-        'select questions which are not open ended
-        Dim selectsql As String = "select exam_name,hours,minutes from exams where subject='" & subject & "' "
-        'Dim selectsql As String = "Select exam_name,hours,minutes from exams where subject='English'"
-        dbConnect.selectSqlite(selectsql)
-        While dbConnect.reader.Read
-            evaluationsListBox.Items.Add(dbConnect.reader("exam_name"))
-        End While
-        dbConnect.closeSqlite()
-
-
-
+        mainForm.Show()
     End Sub
 
-
-    'Public Sub trueOrFalseQuestions()
-    '    'initialize components
-    '    Dim varTest = New System.Windows.Forms.Label()
-
-    'End Sub
-
-    ''single select questions
-    'Private Sub singleSelectQuestion()
-
-    'End Sub
-
-    ''multiple select questions
-    'Private Sub multipleSelectQuestion()
-
-    'End Sub
-    ''open ended questions
-    'Public Sub openEndedQuestion()
-
-    'End Sub
-
-
-
-    Private Sub evaluationsListBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles evaluationsListBox.SelectedIndexChanged
-        showExamDetails()
+    Private Sub CascadeToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
+        Me.LayoutMdi(MdiLayout.Cascade)
     End Sub
 
-    Private Sub startMetroTile_Click(sender As Object, e As EventArgs) Handles startMetroTile.Click
-        questions.initialize(exam_id, examName, numQuestions)
+    Private Sub TileVerticalToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
+        Me.LayoutMdi(MdiLayout.TileVertical)
+    End Sub
 
-        questions.Show()
-        Close()
+    Private Sub TileHorizontalToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
+        Me.LayoutMdi(MdiLayout.TileHorizontal)
+    End Sub
+
+    Private Sub ArrangeIconsToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
+        Me.LayoutMdi(MdiLayout.ArrangeIcons)
+    End Sub
+
+    Private Sub CloseAllToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
+        ' Close all child forms of the parent.
+        For Each ChildForm As Form In Me.MdiChildren
+            ChildForm.Close()
+        Next
     End Sub
 #Region "menu strips"
     Private Sub AttemptToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AttemptToolStripMenuItem.Click
-        Close()
+
         mainForm.ebooksMetroPanel.Visible = False
         mainForm.aboutPanel.Visible = False
         mainForm.videosMetroPanel.Visible = False
@@ -178,6 +128,19 @@
         selectStudyLevel.initialize(subject, learningMaterial)
         selectStudyLevel.Show()
     End Sub
+
 #End Region
 
+    Private m_ChildFormNumber As Integer
+
+    Private Sub FileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FileToolStripMenuItem.Click
+        classRoom.Close()
+        videoPlayer.Close()
+        ebookViewer.Close()
+        evaluationForm.Close()
+        attemptReports.Close()
+        mainForm.Hide()
+        mainForm.MdiParent = Me
+        mainForm.Show()
+    End Sub
 End Class

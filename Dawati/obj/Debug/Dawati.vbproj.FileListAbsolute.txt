@@ -56,3 +56,4 @@ C:\Users\Carrel-PC\documents\visual studio 2015\Projects\Dawati\Dawati\bin\Debug
 C:\Users\Carrel-PC\documents\visual studio 2015\Projects\Dawati\Dawati\bin\Debug\Apitron.PDF.Controls.xml
 C:\Users\Carrel-PC\documents\visual studio 2015\Projects\Dawati\Dawati\bin\Debug\Apitron.PDF.Rasterizer.xml
 C:\Users\Carrel-PC\documents\visual studio 2015\Projects\Dawati\Dawati\obj\Debug\Dawati.attemptReports.resources
+C:\Users\Carrel-PC\documents\visual studio 2015\Projects\Dawati\Dawati\obj\Debug\Dawati.dawatiParent.resources
