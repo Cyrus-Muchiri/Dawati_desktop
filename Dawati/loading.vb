@@ -71,9 +71,10 @@ Public Class loading
     End Sub
 
     Public Sub updateContent()
+        updateUsers()
         writeMaterialDetails()
         syncEvaluations()
-        updateUsers()
+
         counter()
     End Sub
 
@@ -369,7 +370,7 @@ Public Class loading
 
 
         End While
-        'dbconnect.closeSqlite()
+        dbconnect.closeSqlite()
         dbconnect.MySqlReader.Dispose()
 
 

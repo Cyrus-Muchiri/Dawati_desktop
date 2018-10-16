@@ -18,6 +18,7 @@ Public Class mainForm
     Public Shared learningMaterialType As String = "videos" ' stores either value ebook or video
     Public url As String
     Private fname As String
+    Private userId As Integer
     Private evaluation As New evaluationForm 'evaluationForm object
     Public Sub initialize()
         videosMetroPanel.Visible = True
@@ -42,7 +43,7 @@ Public Class mainForm
         dbConnect.sqlLiteConnection("dawatico_dawati.db")
         Try
             Dim email As String = signInForm.email
-            Dim strSQL As String = "SELECT fname, lname, prof_img from users WHERE email='" & email & "' ;"
+            Dim strSQL As String = "SELECT user_id,fname, lname, prof_img from users WHERE email='" & email & "' ;"
 
             'REMOTE CONNECTION, NOT USED NOW
             'Dim sqlCommand As New MySqlCommand(strSQL, dbConnect.conn)
@@ -55,7 +56,7 @@ Public Class mainForm
                 prof_pic = dbConnect.reader("prof_img")
                 fname = dbConnect.reader("fname")
                 lname = dbConnect.reader("lname")
-
+                userId = dbConnect.reader("user_id")
 
             End If
 
@@ -85,6 +86,8 @@ Public Class mainForm
 
         'encrypts files, if there are any decrypted
         encrypt()
+
+        questions.getUserId(userId)
 
 
     End Sub

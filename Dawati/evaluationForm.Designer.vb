@@ -41,27 +41,6 @@ Partial Class evaluationForm
         Me.Label3 = New System.Windows.Forms.Label()
         Me.startMetroTile = New MetroFramework.Controls.MetroTile()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem21 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mathsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.englishToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.biologyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.physicsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.chemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.VideosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ebooksMathsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ebookEngToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EbookBioToolStripMenuIte = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EbookPhyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EbookChemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EvaluationsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AttemptToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ResultsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'evaluationsListBox
@@ -298,141 +277,11 @@ Partial Class evaluationForm
         Me.Label5.TabIndex = 25
         Me.Label5.Text = "Click START to begin"
         '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.ToolStripMenuItem21, Me.VideosToolStripMenuItem, Me.EvaluationsToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1752, 28)
-        Me.MenuStrip1.TabIndex = 26
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'FileToolStripMenuItem
-        '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProfileToolStripMenuItem, Me.LogOutToolStripMenuItem, Me.ExitToolStripMenuItem})
-        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(62, 24)
-        Me.FileToolStripMenuItem.Text = "Home"
-        '
-        'ProfileToolStripMenuItem
-        '
-        Me.ProfileToolStripMenuItem.Name = "ProfileToolStripMenuItem"
-        Me.ProfileToolStripMenuItem.Size = New System.Drawing.Size(135, 26)
-        Me.ProfileToolStripMenuItem.Text = "Profile"
-        '
-        'LogOutToolStripMenuItem
-        '
-        Me.LogOutToolStripMenuItem.Name = "LogOutToolStripMenuItem"
-        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(135, 26)
-        Me.LogOutToolStripMenuItem.Text = "Log out"
-        '
-        'ExitToolStripMenuItem
-        '
-        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(135, 26)
-        Me.ExitToolStripMenuItem.Text = "Exit"
-        '
-        'ToolStripMenuItem21
-        '
-        Me.ToolStripMenuItem21.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mathsToolStripMenuItem, Me.englishToolStripMenuItem, Me.biologyToolStripMenuItem, Me.physicsToolStripMenuItem, Me.chemToolStripMenuItem})
-        Me.ToolStripMenuItem21.Name = "ToolStripMenuItem21"
-        Me.ToolStripMenuItem21.Size = New System.Drawing.Size(66, 24)
-        Me.ToolStripMenuItem21.Text = "Videos"
-        '
-        'mathsToolStripMenuItem
-        '
-        Me.mathsToolStripMenuItem.Name = "mathsToolStripMenuItem"
-        Me.mathsToolStripMenuItem.Size = New System.Drawing.Size(169, 26)
-        Me.mathsToolStripMenuItem.Text = "Mathematics"
-        '
-        'englishToolStripMenuItem
-        '
-        Me.englishToolStripMenuItem.Name = "englishToolStripMenuItem"
-        Me.englishToolStripMenuItem.Size = New System.Drawing.Size(169, 26)
-        Me.englishToolStripMenuItem.Text = "English"
-        '
-        'biologyToolStripMenuItem
-        '
-        Me.biologyToolStripMenuItem.Name = "biologyToolStripMenuItem"
-        Me.biologyToolStripMenuItem.Size = New System.Drawing.Size(169, 26)
-        Me.biologyToolStripMenuItem.Text = "Biology"
-        '
-        'physicsToolStripMenuItem
-        '
-        Me.physicsToolStripMenuItem.Name = "physicsToolStripMenuItem"
-        Me.physicsToolStripMenuItem.Size = New System.Drawing.Size(169, 26)
-        Me.physicsToolStripMenuItem.Text = "Physics"
-        '
-        'chemToolStripMenuItem
-        '
-        Me.chemToolStripMenuItem.Name = "chemToolStripMenuItem"
-        Me.chemToolStripMenuItem.Size = New System.Drawing.Size(169, 26)
-        Me.chemToolStripMenuItem.Text = "Chemistry"
-        '
-        'VideosToolStripMenuItem
-        '
-        Me.VideosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ebooksMathsToolStripMenuItem, Me.ebookEngToolStripMenuItem, Me.EbookBioToolStripMenuIte, Me.EbookPhyToolStripMenuItem, Me.EbookChemToolStripMenuItem})
-        Me.VideosToolStripMenuItem.Name = "VideosToolStripMenuItem"
-        Me.VideosToolStripMenuItem.Size = New System.Drawing.Size(69, 24)
-        Me.VideosToolStripMenuItem.Text = "Ebooks"
-        '
-        'ebooksMathsToolStripMenuItem
-        '
-        Me.ebooksMathsToolStripMenuItem.Name = "ebooksMathsToolStripMenuItem"
-        Me.ebooksMathsToolStripMenuItem.Size = New System.Drawing.Size(169, 26)
-        Me.ebooksMathsToolStripMenuItem.Text = "Mathematics"
-        '
-        'ebookEngToolStripMenuItem
-        '
-        Me.ebookEngToolStripMenuItem.Name = "ebookEngToolStripMenuItem"
-        Me.ebookEngToolStripMenuItem.Size = New System.Drawing.Size(169, 26)
-        Me.ebookEngToolStripMenuItem.Text = "English"
-        '
-        'EbookBioToolStripMenuIte
-        '
-        Me.EbookBioToolStripMenuIte.Name = "EbookBioToolStripMenuIte"
-        Me.EbookBioToolStripMenuIte.Size = New System.Drawing.Size(169, 26)
-        Me.EbookBioToolStripMenuIte.Text = "Biology"
-        '
-        'EbookPhyToolStripMenuItem
-        '
-        Me.EbookPhyToolStripMenuItem.Name = "EbookPhyToolStripMenuItem"
-        Me.EbookPhyToolStripMenuItem.Size = New System.Drawing.Size(169, 26)
-        Me.EbookPhyToolStripMenuItem.Text = "Physics"
-        '
-        'EbookChemToolStripMenuItem
-        '
-        Me.EbookChemToolStripMenuItem.Name = "EbookChemToolStripMenuItem"
-        Me.EbookChemToolStripMenuItem.Size = New System.Drawing.Size(169, 26)
-        Me.EbookChemToolStripMenuItem.Text = "Chemistry"
-        '
-        'EvaluationsToolStripMenuItem
-        '
-        Me.EvaluationsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AttemptToolStripMenuItem, Me.ResultsToolStripMenuItem})
-        Me.EvaluationsToolStripMenuItem.Name = "EvaluationsToolStripMenuItem"
-        Me.EvaluationsToolStripMenuItem.Size = New System.Drawing.Size(96, 24)
-        Me.EvaluationsToolStripMenuItem.Text = "Evaluations"
-        '
-        'AttemptToolStripMenuItem
-        '
-        Me.AttemptToolStripMenuItem.Name = "AttemptToolStripMenuItem"
-        Me.AttemptToolStripMenuItem.Size = New System.Drawing.Size(139, 26)
-        Me.AttemptToolStripMenuItem.Text = "Attempt"
-        '
-        'ResultsToolStripMenuItem
-        '
-        Me.ResultsToolStripMenuItem.Name = "ResultsToolStripMenuItem"
-        Me.ResultsToolStripMenuItem.Size = New System.Drawing.Size(139, 26)
-        Me.ResultsToolStripMenuItem.Text = "Results"
-        '
         'evaluationForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1752, 777)
-        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.startMetroTile)
         Me.Controls.Add(Me.Label3)
@@ -456,8 +305,6 @@ Partial Class evaluationForm
         Me.Name = "evaluationForm"
         Me.Text = "evaluationForm"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -482,24 +329,4 @@ Partial Class evaluationForm
     Friend WithEvents Label3 As Label
     Friend WithEvents startMetroTile As MetroFramework.Controls.MetroTile
     Friend WithEvents Label5 As Label
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ProfileToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LogOutToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem21 As ToolStripMenuItem
-    Friend WithEvents mathsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents englishToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents biologyToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents physicsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents chemToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents VideosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ebooksMathsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ebookEngToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EbookBioToolStripMenuIte As ToolStripMenuItem
-    Friend WithEvents EbookPhyToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EbookChemToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EvaluationsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AttemptToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ResultsToolStripMenuItem As ToolStripMenuItem
 End Class
