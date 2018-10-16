@@ -136,10 +136,10 @@ Public Class classRoom
     End Sub
     Private Sub playVideo(ByVal url As String)
         videoPlayer.initialize(url)
-        Hide()
-        videoPlayer.MdiParent = ParentForm
+        ' Hide()
+        'videoPlayer.MdiParent = ParentForm
         'MessageBox.Show(url)
-        videoPlayer.Show()
+        videoPlayer.ShowDialog()
     End Sub
     Private Sub playEbook(ByVal url As String)
         ebookViewer.initialize(url)
@@ -248,6 +248,7 @@ Public Class classRoom
         Close()
         mainForm.MdiParent = dawatiParent
         mainForm.Show()
+        mainForm.WindowState = FormWindowState.Maximized
     End Sub
 
 

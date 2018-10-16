@@ -11,9 +11,18 @@ Public Class dawatiParent
 
         ' m_ChildFormNumber += 1
         ' ChildForm.Text = "Window " & m_ChildFormNumber
-
         mainForm.Show()
     End Sub
+    Private Sub closeform(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Closed
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want exit dawati", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+        If result = DialogResult.Yes Then
+            Application.Exit()
+
+        ElseIf result = DialogResult.No Then
+            'make sure user doesnt exit
+        End If
+    End Sub
+
 
     Private Sub CascadeToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         Me.LayoutMdi(MdiLayout.Cascade)
@@ -139,8 +148,10 @@ Public Class dawatiParent
         ebookViewer.Close()
         evaluationForm.Close()
         attemptReports.Close()
+        questions.Close()
         mainForm.Hide()
         mainForm.MdiParent = Me
         mainForm.Show()
+        mainForm.WindowState = FormWindowState.Maximized
     End Sub
 End Class

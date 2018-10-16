@@ -83,101 +83,17 @@
 
     Private Sub startMetroTile_Click(sender As Object, e As EventArgs) Handles startMetroTile.Click
         questions.initialize(exam_id, examName, numQuestions)
-
+        questions.MdiParent = dawatiParent
+        Me.Hide()
         questions.Show()
-        Close()
-    End Sub
-#Region "menu strips"
-    Private Sub AttemptToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AttemptToolStripMenuItem.Click
-        Close()
-        mainForm.ebooksMetroPanel.Visible = False
-        mainForm.aboutPanel.Visible = False
-        mainForm.videosMetroPanel.Visible = False
-        mainForm.profilePanel.Visible = False
-        mainForm.evaluationMetroPanel.Visible = True
-    End Sub
-
-    Private Sub mathsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles mathsToolStripMenuItem.Click
-        Close()
-        Dim subject As String = "Mathematics"
-        Dim learningMaterial As String = "videos"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-
-    Private Sub englishToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles englishToolStripMenuItem.Click
-        Close()
-        Dim subject As String = "english"
-        Dim learningMaterial As String = "videos"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-
-    Private Sub biologyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles biologyToolStripMenuItem.Click
-        Close()
-        Dim subject As String = "biology"
-        Dim learningMaterial As String = "videos"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-
-    Private Sub physicsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles physicsToolStripMenuItem.Click
+        questions.WindowState = FormWindowState.Maximized
 
         Close()
-        Dim subject As String = "physics"
-        Dim learningMaterial As String = "videos"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
     End Sub
 
-    Private Sub chemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles chemToolStripMenuItem.Click
-        Close()
-        Dim subject As String = "chemistry"
-        Dim learningMaterial As String = "videos"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+    Private Sub evaluationForm_Load(sender As Object, e As EventArgs) Handles MyBase.Closed
+        mainForm.MdiParent = dawatiParent
+        mainForm.WindowState = FormWindowState.Maximized
+        mainForm.Show()
     End Sub
-
-    Private Sub ebooksMathsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ebooksMathsToolStripMenuItem.Click
-
-        Close()
-        Dim subject As String = "Mathematics"
-        Dim learningMaterial As String = "eBook"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-
-    Private Sub ebookEngToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ebookEngToolStripMenuItem.Click
-        Close()
-        Dim subject As String = "english"
-        Dim learningMaterial As String = "eBook"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-
-    Private Sub EbookBioToolStripMenuIte_Click(sender As Object, e As EventArgs) Handles EbookBioToolStripMenuIte.Click
-        Close()
-        Dim subject As String = "biology"
-        Dim learningMaterial As String = "eBook"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-
-    Private Sub EbookPhyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EbookPhyToolStripMenuItem.Click
-        Close()
-        Dim subject As String = "physics"
-        Dim learningMaterial As String = "eBook"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-
-    Private Sub EbookChemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EbookChemToolStripMenuItem.Click
-        Close()
-        Dim subject As String = "chemistry"
-        Dim learningMaterial As String = "eBook"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-#End Region
-
 End Class

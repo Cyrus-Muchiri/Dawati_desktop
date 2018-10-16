@@ -447,28 +447,42 @@ Public Class mainForm
     Private Sub mathsEvalMetroTile_Click(sender As Object, e As EventArgs) Handles mathsEvalMetroTile.Click
 
         evaluationForm.databaseReader("Mathematics")
+        evaluationForm.MdiParent = dawatiParent
+        Me.Hide()
         evaluationForm.Show()
+        evaluationForm.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub engEvalMetroTile_Click(sender As Object, e As EventArgs) Handles engEvalMetroTile.Click
         evaluationForm.databaseReader("English")
+        evaluationForm.MdiParent = dawatiParent
+        Me.Hide()
         evaluationForm.Show()
+        evaluationForm.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub phyEvalMetroTile_Click(sender As Object, e As EventArgs) Handles phyEvalMetroTile.Click
         evaluationForm.databaseReader("Physics")
+        evaluationForm.MdiParent = dawatiParent
+        Me.Hide()
         evaluationForm.Show()
-        'evaluationSubject = "Physics"
+        evaluationForm.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub chemistryEvalMetroTile_Click(sender As Object, e As EventArgs) Handles chemistryEvalMetroTile.Click
         evaluationForm.databaseReader("Chemistry")
+        evaluationForm.MdiParent = dawatiParent
+        Me.Hide()
         evaluationForm.Show()
+        evaluationForm.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub biologyEvalMetroTile_Click(sender As Object, e As EventArgs) Handles biologyEvalMetroTile.Click
         evaluationForm.databaseReader("Biology")
+        evaluationForm.MdiParent = dawatiParent
+        Me.Hide()
         evaluationForm.Show()
+        evaluationForm.WindowState = FormWindowState.Maximized
     End Sub
 
 
@@ -479,28 +493,43 @@ Public Class mainForm
 
     Private Sub mathsPictureBox_Click(sender As Object, e As EventArgs) Handles mathsPictureBox.Click
 
+        evaluationForm.MdiParent = dawatiParent
+        Me.Hide()
         evaluationForm.Show()
+        evaluationForm.WindowState = FormWindowState.Maximized
         evaluationForm.databaseReader("Mathematics")
     End Sub
 
     Private Sub englishPictureBox_Click(sender As Object, e As EventArgs) Handles englishPictureBox.Click
         evaluationForm.databaseReader("English")
+        evaluationForm.MdiParent = dawatiParent
+        Me.Hide()
         evaluationForm.Show()
+        evaluationForm.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub physicsPictureBox_Click(sender As Object, e As EventArgs) Handles physicsPictureBox.Click
         evaluationForm.databaseReader("Physics")
+        evaluationForm.MdiParent = dawatiParent
+        Me.Hide()
         evaluationForm.Show()
+        evaluationForm.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub chemistryPictureBox_Click(sender As Object, e As EventArgs) Handles chemistryPictureBox.Click
         evaluationForm.databaseReader("Chemistry")
+        evaluationForm.MdiParent = dawatiParent
+        Me.Hide()
         evaluationForm.Show()
+        evaluationForm.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub biologyPictureBox_Click(sender As Object, e As EventArgs) Handles biologyPictureBox.Click
         evaluationForm.databaseReader("Biology")
+        evaluationForm.MdiParent = dawatiParent
+        Me.Hide()
         evaluationForm.Show()
+        evaluationForm.WindowState = FormWindowState.Maximized
     End Sub
     'End PictureBoxes Click for evaluations
     '------------------------------------

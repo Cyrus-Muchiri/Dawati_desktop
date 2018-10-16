@@ -69,10 +69,11 @@ Partial Class evaluationForm
         Me.evaluationsListBox.ColumnWidth = 10
         Me.evaluationsListBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.evaluationsListBox.FormattingEnabled = True
-        Me.evaluationsListBox.ItemHeight = 24
-        Me.evaluationsListBox.Location = New System.Drawing.Point(12, 77)
+        Me.evaluationsListBox.ItemHeight = 29
+        Me.evaluationsListBox.Location = New System.Drawing.Point(16, 95)
+        Me.evaluationsListBox.Margin = New System.Windows.Forms.Padding(4)
         Me.evaluationsListBox.Name = "evaluationsListBox"
-        Me.evaluationsListBox.Size = New System.Drawing.Size(419, 340)
+        Me.evaluationsListBox.Size = New System.Drawing.Size(557, 410)
         Me.evaluationsListBox.TabIndex = 0
         '
         'Label1
@@ -80,171 +81,205 @@ Partial Class evaluationForm
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(62, 33)
+        Me.Label1.Location = New System.Drawing.Point(83, 41)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(277, 25)
+        Me.Label1.Size = New System.Drawing.Size(341, 31)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Select Evaluation to start"
         '
         'examDetailsLabel
         '
+        Me.examDetailsLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.examDetailsLabel.AutoSize = True
         Me.examDetailsLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.examDetailsLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.examDetailsLabel.Location = New System.Drawing.Point(643, 34)
+        Me.examDetailsLabel.Location = New System.Drawing.Point(857, 42)
+        Me.examDetailsLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.examDetailsLabel.Name = "examDetailsLabel"
-        Me.examDetailsLabel.Size = New System.Drawing.Size(131, 24)
+        Me.examDetailsLabel.Size = New System.Drawing.Size(165, 29)
         Me.examDetailsLabel.TabIndex = 3
         Me.examDetailsLabel.Text = "Exam Details"
         '
         'Label2
         '
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(648, 271)
+        Me.Label2.Location = New System.Drawing.Point(864, 334)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(89, 20)
+        Me.Label2.Size = New System.Drawing.Size(109, 25)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Description"
         '
         'hoursLabel
         '
+        Me.hoursLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.hoursLabel.AutoSize = True
         Me.hoursLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.hoursLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.hoursLabel.Location = New System.Drawing.Point(770, 483)
+        Me.hoursLabel.Location = New System.Drawing.Point(1027, 594)
+        Me.hoursLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.hoursLabel.Name = "hoursLabel"
-        Me.hoursLabel.Size = New System.Drawing.Size(0, 20)
+        Me.hoursLabel.Size = New System.Drawing.Size(0, 25)
         Me.hoursLabel.TabIndex = 7
         '
         'Label7
         '
+        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(648, 353)
+        Me.Label7.Location = New System.Drawing.Point(864, 434)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(159, 20)
+        Me.Label7.Size = New System.Drawing.Size(196, 25)
         Me.Label7.TabIndex = 9
         Me.Label7.Text = "Number of Questions"
         '
         'Label6
         '
+        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(648, 435)
+        Me.Label6.Location = New System.Drawing.Point(864, 535)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(70, 20)
+        Me.Label6.Size = New System.Drawing.Size(85, 25)
         Me.Label6.TabIndex = 10
         Me.Label6.Text = "Duration"
         '
         'noOfQuestionsLabel
         '
+        Me.noOfQuestionsLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.noOfQuestionsLabel.AutoSize = True
         Me.noOfQuestionsLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.noOfQuestionsLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.noOfQuestionsLabel.Location = New System.Drawing.Point(770, 399)
+        Me.noOfQuestionsLabel.Location = New System.Drawing.Point(1027, 491)
+        Me.noOfQuestionsLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.noOfQuestionsLabel.Name = "noOfQuestionsLabel"
-        Me.noOfQuestionsLabel.Size = New System.Drawing.Size(0, 20)
+        Me.noOfQuestionsLabel.Size = New System.Drawing.Size(0, 25)
         Me.noOfQuestionsLabel.TabIndex = 15
         '
         'minutesLabel
         '
+        Me.minutesLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.minutesLabel.AutoSize = True
         Me.minutesLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.minutesLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.minutesLabel.Location = New System.Drawing.Point(864, 483)
+        Me.minutesLabel.Location = New System.Drawing.Point(1152, 594)
+        Me.minutesLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.minutesLabel.Name = "minutesLabel"
-        Me.minutesLabel.Size = New System.Drawing.Size(0, 20)
+        Me.minutesLabel.Size = New System.Drawing.Size(0, 25)
         Me.minutesLabel.TabIndex = 16
         '
         'descriptionLabel
         '
+        Me.descriptionLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.descriptionLabel.AutoSize = True
         Me.descriptionLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.descriptionLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.descriptionLabel.Location = New System.Drawing.Point(770, 315)
+        Me.descriptionLabel.Location = New System.Drawing.Point(1027, 388)
+        Me.descriptionLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.descriptionLabel.Name = "descriptionLabel"
-        Me.descriptionLabel.Size = New System.Drawing.Size(0, 20)
+        Me.descriptionLabel.Size = New System.Drawing.Size(0, 25)
         Me.descriptionLabel.TabIndex = 18
         '
         'hoursNameLabel
         '
+        Me.hoursNameLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.hoursNameLabel.AutoSize = True
-        Me.hoursNameLabel.Location = New System.Drawing.Point(806, 488)
+        Me.hoursNameLabel.Location = New System.Drawing.Point(1075, 601)
+        Me.hoursNameLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.hoursNameLabel.Name = "hoursNameLabel"
-        Me.hoursNameLabel.Size = New System.Drawing.Size(35, 13)
+        Me.hoursNameLabel.Size = New System.Drawing.Size(46, 17)
         Me.hoursNameLabel.TabIndex = 19
         Me.hoursNameLabel.Text = "Hours"
         Me.hoursNameLabel.Visible = False
         '
         'MinutesNameLabel
         '
+        Me.MinutesNameLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MinutesNameLabel.AutoSize = True
-        Me.MinutesNameLabel.Location = New System.Drawing.Point(900, 488)
+        Me.MinutesNameLabel.Location = New System.Drawing.Point(1200, 601)
+        Me.MinutesNameLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.MinutesNameLabel.Name = "MinutesNameLabel"
-        Me.MinutesNameLabel.Size = New System.Drawing.Size(44, 13)
+        Me.MinutesNameLabel.Size = New System.Drawing.Size(57, 17)
         Me.MinutesNameLabel.TabIndex = 20
         Me.MinutesNameLabel.Text = "Minutes"
         Me.MinutesNameLabel.Visible = False
         '
         'Label4
         '
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(648, 107)
+        Me.Label4.Location = New System.Drawing.Point(864, 132)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(93, 20)
+        Me.Label4.Size = New System.Drawing.Size(116, 25)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Exam name"
         '
         'examNameLabel
         '
+        Me.examNameLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.examNameLabel.AutoSize = True
         Me.examNameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.examNameLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.examNameLabel.Location = New System.Drawing.Point(770, 147)
+        Me.examNameLabel.Location = New System.Drawing.Point(1027, 181)
+        Me.examNameLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.examNameLabel.Name = "examNameLabel"
-        Me.examNameLabel.Size = New System.Drawing.Size(0, 20)
+        Me.examNameLabel.Size = New System.Drawing.Size(0, 25)
         Me.examNameLabel.TabIndex = 17
         '
         'subjectLabel
         '
+        Me.subjectLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.subjectLabel.AutoSize = True
         Me.subjectLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.subjectLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.subjectLabel.Location = New System.Drawing.Point(770, 231)
+        Me.subjectLabel.Location = New System.Drawing.Point(1027, 284)
+        Me.subjectLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.subjectLabel.Name = "subjectLabel"
-        Me.subjectLabel.Size = New System.Drawing.Size(0, 20)
+        Me.subjectLabel.Size = New System.Drawing.Size(0, 25)
         Me.subjectLabel.TabIndex = 22
         '
         'Label9
         '
+        Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(648, 189)
+        Me.Label9.Location = New System.Drawing.Point(864, 233)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(63, 20)
+        Me.Label9.Size = New System.Drawing.Size(78, 25)
         Me.Label9.TabIndex = 21
         Me.Label9.Text = "Subject"
         '
         'Label3
         '
+        Me.Label3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Red
-        Me.Label3.Location = New System.Drawing.Point(148, 455)
+        Me.Label3.Location = New System.Drawing.Point(11, 535)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(283, 24)
+        Me.Label3.Size = New System.Drawing.Size(365, 29)
         Me.Label3.TabIndex = 23
         Me.Label3.Text = "Select an exam to view its details"
         '
         'startMetroTile
         '
         Me.startMetroTile.ActiveControl = Nothing
+        Me.startMetroTile.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.startMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.startMetroTile.Location = New System.Drawing.Point(1077, 508)
+        Me.startMetroTile.Location = New System.Drawing.Point(1436, 625)
+        Me.startMetroTile.Margin = New System.Windows.Forms.Padding(4)
         Me.startMetroTile.Name = "startMetroTile"
-        Me.startMetroTile.Size = New System.Drawing.Size(129, 79)
+        Me.startMetroTile.Size = New System.Drawing.Size(172, 97)
         Me.startMetroTile.TabIndex = 24
         Me.startMetroTile.Text = "Start Test"
         Me.startMetroTile.UseCustomBackColor = True
@@ -252,21 +287,25 @@ Partial Class evaluationForm
         '
         'Label5
         '
+        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Red
-        Me.Label5.Location = New System.Drawing.Point(648, 567)
+        Me.Label5.Location = New System.Drawing.Point(864, 698)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(190, 24)
+        Me.Label5.Size = New System.Drawing.Size(245, 29)
         Me.Label5.TabIndex = 25
         Me.Label5.Text = "Click START to begin"
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.ToolStripMenuItem21, Me.VideosToolStripMenuItem, Me.EvaluationsToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1314, 24)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1752, 28)
         Me.MenuStrip1.TabIndex = 26
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -274,125 +313,125 @@ Partial Class evaluationForm
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProfileToolStripMenuItem, Me.LogOutToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(62, 24)
         Me.FileToolStripMenuItem.Text = "Home"
         '
         'ProfileToolStripMenuItem
         '
         Me.ProfileToolStripMenuItem.Name = "ProfileToolStripMenuItem"
-        Me.ProfileToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
+        Me.ProfileToolStripMenuItem.Size = New System.Drawing.Size(135, 26)
         Me.ProfileToolStripMenuItem.Text = "Profile"
         '
         'LogOutToolStripMenuItem
         '
         Me.LogOutToolStripMenuItem.Name = "LogOutToolStripMenuItem"
-        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
+        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(135, 26)
         Me.LogOutToolStripMenuItem.Text = "Log out"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(135, 26)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'ToolStripMenuItem21
         '
         Me.ToolStripMenuItem21.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mathsToolStripMenuItem, Me.englishToolStripMenuItem, Me.biologyToolStripMenuItem, Me.physicsToolStripMenuItem, Me.chemToolStripMenuItem})
         Me.ToolStripMenuItem21.Name = "ToolStripMenuItem21"
-        Me.ToolStripMenuItem21.Size = New System.Drawing.Size(54, 20)
+        Me.ToolStripMenuItem21.Size = New System.Drawing.Size(66, 24)
         Me.ToolStripMenuItem21.Text = "Videos"
         '
         'mathsToolStripMenuItem
         '
         Me.mathsToolStripMenuItem.Name = "mathsToolStripMenuItem"
-        Me.mathsToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.mathsToolStripMenuItem.Size = New System.Drawing.Size(169, 26)
         Me.mathsToolStripMenuItem.Text = "Mathematics"
         '
         'englishToolStripMenuItem
         '
         Me.englishToolStripMenuItem.Name = "englishToolStripMenuItem"
-        Me.englishToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.englishToolStripMenuItem.Size = New System.Drawing.Size(169, 26)
         Me.englishToolStripMenuItem.Text = "English"
         '
         'biologyToolStripMenuItem
         '
         Me.biologyToolStripMenuItem.Name = "biologyToolStripMenuItem"
-        Me.biologyToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.biologyToolStripMenuItem.Size = New System.Drawing.Size(169, 26)
         Me.biologyToolStripMenuItem.Text = "Biology"
         '
         'physicsToolStripMenuItem
         '
         Me.physicsToolStripMenuItem.Name = "physicsToolStripMenuItem"
-        Me.physicsToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.physicsToolStripMenuItem.Size = New System.Drawing.Size(169, 26)
         Me.physicsToolStripMenuItem.Text = "Physics"
         '
         'chemToolStripMenuItem
         '
         Me.chemToolStripMenuItem.Name = "chemToolStripMenuItem"
-        Me.chemToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.chemToolStripMenuItem.Size = New System.Drawing.Size(169, 26)
         Me.chemToolStripMenuItem.Text = "Chemistry"
         '
         'VideosToolStripMenuItem
         '
         Me.VideosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ebooksMathsToolStripMenuItem, Me.ebookEngToolStripMenuItem, Me.EbookBioToolStripMenuIte, Me.EbookPhyToolStripMenuItem, Me.EbookChemToolStripMenuItem})
         Me.VideosToolStripMenuItem.Name = "VideosToolStripMenuItem"
-        Me.VideosToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
+        Me.VideosToolStripMenuItem.Size = New System.Drawing.Size(69, 24)
         Me.VideosToolStripMenuItem.Text = "Ebooks"
         '
         'ebooksMathsToolStripMenuItem
         '
         Me.ebooksMathsToolStripMenuItem.Name = "ebooksMathsToolStripMenuItem"
-        Me.ebooksMathsToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.ebooksMathsToolStripMenuItem.Size = New System.Drawing.Size(169, 26)
         Me.ebooksMathsToolStripMenuItem.Text = "Mathematics"
         '
         'ebookEngToolStripMenuItem
         '
         Me.ebookEngToolStripMenuItem.Name = "ebookEngToolStripMenuItem"
-        Me.ebookEngToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.ebookEngToolStripMenuItem.Size = New System.Drawing.Size(169, 26)
         Me.ebookEngToolStripMenuItem.Text = "English"
         '
         'EbookBioToolStripMenuIte
         '
         Me.EbookBioToolStripMenuIte.Name = "EbookBioToolStripMenuIte"
-        Me.EbookBioToolStripMenuIte.Size = New System.Drawing.Size(143, 22)
+        Me.EbookBioToolStripMenuIte.Size = New System.Drawing.Size(169, 26)
         Me.EbookBioToolStripMenuIte.Text = "Biology"
         '
         'EbookPhyToolStripMenuItem
         '
         Me.EbookPhyToolStripMenuItem.Name = "EbookPhyToolStripMenuItem"
-        Me.EbookPhyToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.EbookPhyToolStripMenuItem.Size = New System.Drawing.Size(169, 26)
         Me.EbookPhyToolStripMenuItem.Text = "Physics"
         '
         'EbookChemToolStripMenuItem
         '
         Me.EbookChemToolStripMenuItem.Name = "EbookChemToolStripMenuItem"
-        Me.EbookChemToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.EbookChemToolStripMenuItem.Size = New System.Drawing.Size(169, 26)
         Me.EbookChemToolStripMenuItem.Text = "Chemistry"
         '
         'EvaluationsToolStripMenuItem
         '
         Me.EvaluationsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AttemptToolStripMenuItem, Me.ResultsToolStripMenuItem})
         Me.EvaluationsToolStripMenuItem.Name = "EvaluationsToolStripMenuItem"
-        Me.EvaluationsToolStripMenuItem.Size = New System.Drawing.Size(79, 20)
+        Me.EvaluationsToolStripMenuItem.Size = New System.Drawing.Size(96, 24)
         Me.EvaluationsToolStripMenuItem.Text = "Evaluations"
         '
         'AttemptToolStripMenuItem
         '
         Me.AttemptToolStripMenuItem.Name = "AttemptToolStripMenuItem"
-        Me.AttemptToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
+        Me.AttemptToolStripMenuItem.Size = New System.Drawing.Size(139, 26)
         Me.AttemptToolStripMenuItem.Text = "Attempt"
         '
         'ResultsToolStripMenuItem
         '
         Me.ResultsToolStripMenuItem.Name = "ResultsToolStripMenuItem"
-        Me.ResultsToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
+        Me.ResultsToolStripMenuItem.Size = New System.Drawing.Size(139, 26)
         Me.ResultsToolStripMenuItem.Text = "Results"
         '
         'evaluationForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1314, 631)
+        Me.ClientSize = New System.Drawing.Size(1752, 777)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.startMetroTile)
@@ -413,6 +452,7 @@ Partial Class evaluationForm
         Me.Controls.Add(Me.examDetailsLabel)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.evaluationsListBox)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "evaluationForm"
         Me.Text = "evaluationForm"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

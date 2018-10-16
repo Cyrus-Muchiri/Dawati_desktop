@@ -7,8 +7,13 @@
         videoLabel.Text = url.Substring(24)
         AxWindowsMediaPlayer.URL = url
         '   videoPath = url
-        AxWindowsMediaPlayer.Height = 550
-        AxWindowsMediaPlayer.Width = 891
+        If AxWindowsMediaPlayer.playState = WMPLib.WMPPlayState.wmppsPlaying Then
+            AxWindowsMediaPlayer.Height = 400
+            AxWindowsMediaPlayer.Width = 891
+            AxWindowsMediaPlayer.Size = New Size(550, 891)
+
+        End If
+
         AxWindowsMediaPlayer.windowlessVideo = False
         playListListBox.Items.Clear()
         fillOtherListBox()
@@ -38,7 +43,7 @@
     Public Sub fillOtherListBox()
         Dim dbConnect As New databaseConnection
         dbConnect.sqlLiteConnection("multimedia.db")
-        Dim strSql As String = "Select file_name from multimedia_content where multimedia_series ='" & multimediaSeries & "' and file_type='videos' and study_level='" & studylevel & "'"
+        Dim strSql As String = "Select file_name from multimedia_content where multimedia_series ='" & multimediaSeries & "' and file_type='video' and study_level='" & studylevel & "'"
         dbConnect.selectSqlite(strSql)
 
         While dbConnect.reader.Read

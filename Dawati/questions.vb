@@ -13,6 +13,11 @@
     Private exam_id As String
 
     'stores answers
+    Public userChoice(30) As String
+    Public questionidentification(30) As Integer
+    Public userchoiceCounter As Integer = 0
+
+
     'multidimensional
     Public userChoices(30, 3) As String
 
@@ -98,6 +103,9 @@
         Dim groupBox(30) As GroupBox
         Dim pictureBox(30) As PictureBox
 
+
+
+
         'initializing array indexes as components
         questionLabel(tf) = New Label
         trueradioButton(tf) = New RadioButton
@@ -161,7 +169,7 @@
 
 
         'increment yCordinate by 30
-        yCordinate = yCordinate + 170
+        yCordinate = yCordinate + 1
 
         'insight label properties
         insightLabel(tf).Text = "~Answer correctly~"
@@ -178,22 +186,46 @@
         'adding radiobutons to groupbox
         groupBox(tf).Controls.Add(trueradioButton(tf))
         groupBox(tf).Controls.Add(falseradioButton(tf))
+        groupBox(tf).Controls.Add(insightLabel(tf))
         'adding group box to questions panel
         questionsPanel.Controls.Add(groupBox(tf))
 
         AddHandler trueradioButton(tf).CheckedChanged, Sub(sender As Object, e As EventArgs)
-                                                           userChoices(UC, 0) = "true"
+                                                           'getting selected answer
+                                                           '--------------------------
+
+                                                           For Each control As RadioButton In groupBox(tf).Controls
+                                                               If trueradioButton(tf).Checked Then
+                                                                   userChoice(userchoiceCounter) = "true"
+                                                                   questionidentification(userchoiceCounter) = questionId
+                                                               ElseIf falseradioButton(tf).Checked Then
+                                                                   userChoice(userchoiceCounter) = "false"
+                                                               End If
+                                                           Next
+                                                           userchoiceCounter = userchoiceCounter + 1
+
                                                        End Sub
 
         AddHandler falseradioButton(tf).CheckedChanged, Sub(sender As Object, e As EventArgs)
-                                                            userChoices(UC, 0) = "false"
+                                                            'getting selected answer
+                                                            '--------------------------
+
+                                                            For Each control As RadioButton In groupBox(tf).Controls
+                                                                If trueradioButton(tf).Checked Then
+                                                                    userChoice(userchoiceCounter) = "true"
+                                                                    questionidentification(userchoiceCounter) = questionId
+                                                                ElseIf falseradioButton(tf).Checked Then
+                                                                    userChoice(userchoiceCounter) = "false"
+                                                                End If
+                                                            Next
+                                                            userchoiceCounter = userchoiceCounter + 1
+
                                                         End Sub
         'increment ss
         tf = tf + 1
         UC = UC + 1
         'increment question counter
         questionCounter = questionCounter + 1
-
 
     End Sub
     Private Sub singleSelectQuestions(ByVal question As String, ByVal questionId As String, ByVal score As String, ByVal attachment As String)
@@ -556,7 +588,7 @@
         'question number properties
 
         questionNo(OE).Text = "Question" & questionCounter
-        questionNo(OE).Location = New Point(qxCordinate, yCordinate)
+        questionNo(OE).Location = New Point(qxCordinate - 30, yCordinate)
         questionNo(OE).Anchor = AnchorStyles.Top
         questionNo(OE).Size = New Size(300, 30)
         questionNo(OE).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -611,99 +643,32 @@
     End Sub
 
     Private Sub submitMetroTile_Click(sender As Object, e As EventArgs) Handles submitMetroTile.Click
-        attemptReports.initialize(exam_id, examName, numOfQuestions)
-        attemptReports.Show()
-    End Sub
-#Region "menu strips"
-    Private Sub AttemptToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AttemptToolStripMenuItem.Click
-        Close()
-        mainForm.ebooksMetroPanel.Visible = False
-        mainForm.aboutPanel.Visible = False
-        mainForm.videosMetroPanel.Visible = False
-        mainForm.profilePanel.Visible = False
-        mainForm.evaluationMetroPanel.Visible = True
+        insertAnswer()
+        'attemptReports.initialize(exam_id, examName, numOfQuestions)
+        'attemptReports.Show()
     End Sub
 
-    Private Sub mathsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles mathsToolStripMenuItem.Click
-        Close()
-        Dim subject As String = "Mathematics"
-        Dim learningMaterial As String = "videos"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+    Private Sub insertAnswer()
+        For i As Integer = 0 To 30
+            Dim dbConnect As New databaseConnection
+            dbConnect.sqlLiteConnection("Evaluation.db")
+
+            Dim strSql As String = "Insert into respondent_attempts (question_id,choice) VALUES ('" & questionidentification(i) & "','" & userChoice(userchoiceCounter & "'")
+            dbConnect.insertSqlite(strSql)
+            dbConnect.closeSqlite()
+        Next
     End Sub
 
-    Private Sub englishToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles englishToolStripMenuItem.Click
-        Close()
-        Dim subject As String = "english"
-        Dim learningMaterial As String = "videos"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+    Private Sub questions_closed(sender As Object, e As EventArgs) Handles MyBase.Closed
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to cancel the test", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+        If result = DialogResult.Yes Then
+            Me.Close()
+            mainForm.MdiParent = dawatiParent
+            mainForm.Show()
+            mainForm.WindowState = FormWindowState.Maximized
+
+        ElseIf result = DialogResult.No Then
+            Exit Sub
+        End If
     End Sub
-
-    Private Sub biologyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles biologyToolStripMenuItem.Click
-        Close()
-        Dim subject As String = "biology"
-        Dim learningMaterial As String = "videos"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-
-    Private Sub physicsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles physicsToolStripMenuItem.Click
-
-        Close()
-        Dim subject As String = "physics"
-        Dim learningMaterial As String = "videos"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-
-    Private Sub chemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles chemToolStripMenuItem.Click
-        Close()
-        Dim subject As String = "chemistry"
-        Dim learningMaterial As String = "videos"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-
-    Private Sub ebooksMathsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ebooksMathsToolStripMenuItem.Click
-
-        Close()
-        Dim subject As String = "Mathematics"
-        Dim learningMaterial As String = "eBook"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-
-    Private Sub ebookEngToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ebookEngToolStripMenuItem.Click
-        Close()
-        Dim subject As String = "english"
-        Dim learningMaterial As String = "eBook"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-
-    Private Sub EbookBioToolStripMenuIte_Click(sender As Object, e As EventArgs) Handles EbookBioToolStripMenuIte.Click
-        Close()
-        Dim subject As String = "biology"
-        Dim learningMaterial As String = "eBook"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-
-    Private Sub EbookPhyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EbookPhyToolStripMenuItem.Click
-        Close()
-        Dim subject As String = "physics"
-        Dim learningMaterial As String = "eBook"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-
-    Private Sub EbookChemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EbookChemToolStripMenuItem.Click
-        Close()
-        Dim subject As String = "chemistry"
-        Dim learningMaterial As String = "eBook"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-#End Region
 End Class

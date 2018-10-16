@@ -34,39 +34,49 @@ Partial Class videoPlayer
         '
         'AxWindowsMediaPlayer
         '
+        Me.AxWindowsMediaPlayer.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.AxWindowsMediaPlayer.Enabled = True
         Me.AxWindowsMediaPlayer.Location = New System.Drawing.Point(31, 90)
-        Me.AxWindowsMediaPlayer.MaximumSize = New System.Drawing.Size(891, 550)
+        Me.AxWindowsMediaPlayer.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.AxWindowsMediaPlayer.MaximumSize = New System.Drawing.Size(1188, 677)
         Me.AxWindowsMediaPlayer.Name = "AxWindowsMediaPlayer"
         Me.AxWindowsMediaPlayer.OcxState = CType(resources.GetObject("AxWindowsMediaPlayer.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxWindowsMediaPlayer.Size = New System.Drawing.Size(891, 550)
+        Me.AxWindowsMediaPlayer.Size = New System.Drawing.Size(924, 595)
         Me.AxWindowsMediaPlayer.TabIndex = 0
         '
         'playListListBox
         '
+        Me.playListListBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.playListListBox.BackColor = System.Drawing.SystemColors.ControlLight
         Me.playListListBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.playListListBox.FormattingEnabled = True
-        Me.playListListBox.ItemHeight = 24
-        Me.playListListBox.Location = New System.Drawing.Point(1017, 88)
+        Me.playListListBox.ItemHeight = 29
+        Me.playListListBox.Location = New System.Drawing.Point(1356, 108)
+        Me.playListListBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.playListListBox.Name = "playListListBox"
-        Me.playListListBox.Size = New System.Drawing.Size(333, 340)
+        Me.playListListBox.Size = New System.Drawing.Size(443, 410)
         Me.playListListBox.TabIndex = 1
         '
         'playMetroButton
         '
-        Me.playMetroButton.Location = New System.Drawing.Point(1266, 490)
+        Me.playMetroButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.playMetroButton.Location = New System.Drawing.Point(1688, 603)
+        Me.playMetroButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.playMetroButton.Name = "playMetroButton"
-        Me.playMetroButton.Size = New System.Drawing.Size(84, 44)
+        Me.playMetroButton.Size = New System.Drawing.Size(112, 54)
         Me.playMetroButton.TabIndex = 2
         Me.playMetroButton.Text = "Play"
         Me.playMetroButton.UseSelectable = True
         '
         'exitMetroButton
         '
-        Me.exitMetroButton.Location = New System.Drawing.Point(1201, 644)
+        Me.exitMetroButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.exitMetroButton.Location = New System.Drawing.Point(1664, 800)
+        Me.exitMetroButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.exitMetroButton.Name = "exitMetroButton"
-        Me.exitMetroButton.Size = New System.Drawing.Size(101, 35)
+        Me.exitMetroButton.Size = New System.Drawing.Size(135, 43)
         Me.exitMetroButton.TabIndex = 3
         Me.exitMetroButton.Text = "Exit"
         Me.exitMetroButton.UseSelectable = True
@@ -76,9 +86,10 @@ Partial Class videoPlayer
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(1100, 49)
+        Me.Label1.Location = New System.Drawing.Point(1467, 60)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(172, 25)
+        Me.Label1.Size = New System.Drawing.Size(212, 31)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Related Videos"
         '
@@ -87,17 +98,18 @@ Partial Class videoPlayer
         Me.videoLabel.AutoSize = True
         Me.videoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.videoLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.videoLabel.Location = New System.Drawing.Point(315, 33)
+        Me.videoLabel.Location = New System.Drawing.Point(420, 41)
+        Me.videoLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.videoLabel.Name = "videoLabel"
-        Me.videoLabel.Size = New System.Drawing.Size(95, 31)
+        Me.videoLabel.Size = New System.Drawing.Size(120, 39)
         Me.videoLabel.TabIndex = 7
         Me.videoLabel.Text = "Label1"
         '
         'videoPlayer
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1362, 728)
+        Me.ClientSize = New System.Drawing.Size(1816, 896)
         Me.ControlBox = False
         Me.Controls.Add(Me.videoLabel)
         Me.Controls.Add(Me.Label1)
@@ -105,7 +117,8 @@ Partial Class videoPlayer
         Me.Controls.Add(Me.playMetroButton)
         Me.Controls.Add(Me.playListListBox)
         Me.Controls.Add(Me.AxWindowsMediaPlayer)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "videoPlayer"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Videos"

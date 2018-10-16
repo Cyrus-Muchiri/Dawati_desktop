@@ -149,9 +149,10 @@ Partial Class mainForm
         '
         Me.videosMetroTile.ActiveControl = Nothing
         Me.videosMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(123, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(88, Byte), Integer))
-        Me.videosMetroTile.Location = New System.Drawing.Point(16, 80)
+        Me.videosMetroTile.Location = New System.Drawing.Point(21, 98)
+        Me.videosMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.videosMetroTile.Name = "videosMetroTile"
-        Me.videosMetroTile.Size = New System.Drawing.Size(83, 37)
+        Me.videosMetroTile.Size = New System.Drawing.Size(111, 46)
         Me.videosMetroTile.Style = MetroFramework.MetroColorStyle.Blue
         Me.videosMetroTile.TabIndex = 3
         Me.videosMetroTile.Text = "Videos"
@@ -162,9 +163,10 @@ Partial Class mainForm
         '
         Me.ebooksMetroTile.ActiveControl = Nothing
         Me.ebooksMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(233, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(27, Byte), Integer))
-        Me.ebooksMetroTile.Location = New System.Drawing.Point(16, 145)
+        Me.ebooksMetroTile.Location = New System.Drawing.Point(21, 178)
+        Me.ebooksMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ebooksMetroTile.Name = "ebooksMetroTile"
-        Me.ebooksMetroTile.Size = New System.Drawing.Size(83, 37)
+        Me.ebooksMetroTile.Size = New System.Drawing.Size(111, 46)
         Me.ebooksMetroTile.Style = MetroFramework.MetroColorStyle.Blue
         Me.ebooksMetroTile.TabIndex = 4
         Me.ebooksMetroTile.Text = "Ebooks"
@@ -176,9 +178,10 @@ Partial Class mainForm
         '
         Me.evaluationsMetroTile.ActiveControl = Nothing
         Me.evaluationsMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(113, Byte), Integer), CType(CType(184, Byte), Integer))
-        Me.evaluationsMetroTile.Location = New System.Drawing.Point(16, 204)
+        Me.evaluationsMetroTile.Location = New System.Drawing.Point(21, 251)
+        Me.evaluationsMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.evaluationsMetroTile.Name = "evaluationsMetroTile"
-        Me.evaluationsMetroTile.Size = New System.Drawing.Size(83, 37)
+        Me.evaluationsMetroTile.Size = New System.Drawing.Size(111, 46)
         Me.evaluationsMetroTile.Style = MetroFramework.MetroColorStyle.Blue
         Me.evaluationsMetroTile.TabIndex = 5
         Me.evaluationsMetroTile.Text = "Evaluation"
@@ -187,36 +190,41 @@ Partial Class mainForm
         '
         'exitMetroButton
         '
-        Me.exitMetroButton.Location = New System.Drawing.Point(1248, 585)
+        Me.exitMetroButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.exitMetroButton.Location = New System.Drawing.Point(1678, 720)
+        Me.exitMetroButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.exitMetroButton.Name = "exitMetroButton"
-        Me.exitMetroButton.Size = New System.Drawing.Size(75, 38)
+        Me.exitMetroButton.Size = New System.Drawing.Size(100, 47)
         Me.exitMetroButton.TabIndex = 6
         Me.exitMetroButton.Text = "Exit"
         Me.exitMetroButton.UseSelectable = True
         '
         'MetroPanel1
         '
+        Me.MetroPanel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroPanel1.Controls.Add(Me.LnameMetroLabel)
         Me.MetroPanel1.Controls.Add(Me.fnameMetroLabel)
         Me.MetroPanel1.Controls.Add(Me.emailMetroLabel)
         Me.MetroPanel1.HorizontalScrollbarBarColor = True
         Me.MetroPanel1.HorizontalScrollbarHighlightOnWheel = False
-        Me.MetroPanel1.HorizontalScrollbarSize = 10
-        Me.MetroPanel1.Location = New System.Drawing.Point(1215, 221)
+        Me.MetroPanel1.HorizontalScrollbarSize = 12
+        Me.MetroPanel1.Location = New System.Drawing.Point(1634, 272)
+        Me.MetroPanel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MetroPanel1.Name = "MetroPanel1"
-        Me.MetroPanel1.Size = New System.Drawing.Size(160, 52)
+        Me.MetroPanel1.Size = New System.Drawing.Size(213, 64)
         Me.MetroPanel1.TabIndex = 7
         Me.MetroPanel1.UseCustomBackColor = True
         Me.MetroPanel1.VerticalScrollbarBarColor = True
         Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
-        Me.MetroPanel1.VerticalScrollbarSize = 10
+        Me.MetroPanel1.VerticalScrollbarSize = 13
         '
         'LnameMetroLabel
         '
         Me.LnameMetroLabel.AutoSize = True
-        Me.LnameMetroLabel.Location = New System.Drawing.Point(93, 4)
+        Me.LnameMetroLabel.Location = New System.Drawing.Point(124, 5)
+        Me.LnameMetroLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LnameMetroLabel.Name = "LnameMetroLabel"
-        Me.LnameMetroLabel.Size = New System.Drawing.Size(48, 19)
+        Me.LnameMetroLabel.Size = New System.Drawing.Size(51, 20)
         Me.LnameMetroLabel.TabIndex = 5
         Me.LnameMetroLabel.Text = "Lname"
         Me.LnameMetroLabel.UseCustomBackColor = True
@@ -224,9 +232,10 @@ Partial Class mainForm
         'fnameMetroLabel
         '
         Me.fnameMetroLabel.AutoSize = True
-        Me.fnameMetroLabel.Location = New System.Drawing.Point(16, 4)
+        Me.fnameMetroLabel.Location = New System.Drawing.Point(21, 5)
+        Me.fnameMetroLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.fnameMetroLabel.Name = "fnameMetroLabel"
-        Me.fnameMetroLabel.Size = New System.Drawing.Size(49, 19)
+        Me.fnameMetroLabel.Size = New System.Drawing.Size(51, 20)
         Me.fnameMetroLabel.TabIndex = 4
         Me.fnameMetroLabel.Text = "Fname"
         Me.fnameMetroLabel.UseCustomBackColor = True
@@ -234,18 +243,21 @@ Partial Class mainForm
         'emailMetroLabel
         '
         Me.emailMetroLabel.AutoSize = True
-        Me.emailMetroLabel.Location = New System.Drawing.Point(16, 27)
+        Me.emailMetroLabel.Location = New System.Drawing.Point(21, 33)
+        Me.emailMetroLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.emailMetroLabel.Name = "emailMetroLabel"
-        Me.emailMetroLabel.Size = New System.Drawing.Size(102, 19)
+        Me.emailMetroLabel.Size = New System.Drawing.Size(105, 20)
         Me.emailMetroLabel.TabIndex = 2
         Me.emailMetroLabel.Text = "my@gmail.com"
         Me.emailMetroLabel.UseCustomBackColor = True
         '
         'avatarPictureBox
         '
-        Me.avatarPictureBox.Location = New System.Drawing.Point(1202, 85)
+        Me.avatarPictureBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.avatarPictureBox.Location = New System.Drawing.Point(1617, 105)
+        Me.avatarPictureBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.avatarPictureBox.Name = "avatarPictureBox"
-        Me.avatarPictureBox.Size = New System.Drawing.Size(160, 124)
+        Me.avatarPictureBox.Size = New System.Drawing.Size(213, 153)
         Me.avatarPictureBox.TabIndex = 3
         Me.avatarPictureBox.TabStop = False
         '
@@ -263,23 +275,25 @@ Partial Class mainForm
         Me.MetroPanel2.Controls.Add(Me.videosMetroTile)
         Me.MetroPanel2.HorizontalScrollbarBarColor = True
         Me.MetroPanel2.HorizontalScrollbarHighlightOnWheel = False
-        Me.MetroPanel2.HorizontalScrollbarSize = 10
-        Me.MetroPanel2.Location = New System.Drawing.Point(26, 67)
+        Me.MetroPanel2.HorizontalScrollbarSize = 12
+        Me.MetroPanel2.Location = New System.Drawing.Point(35, 82)
+        Me.MetroPanel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MetroPanel2.Name = "MetroPanel2"
-        Me.MetroPanel2.Size = New System.Drawing.Size(177, 552)
+        Me.MetroPanel2.Size = New System.Drawing.Size(236, 679)
         Me.MetroPanel2.TabIndex = 8
         Me.MetroPanel2.UseCustomBackColor = True
         Me.MetroPanel2.VerticalScrollbarBarColor = True
         Me.MetroPanel2.VerticalScrollbarHighlightOnWheel = False
-        Me.MetroPanel2.VerticalScrollbarSize = 10
+        Me.MetroPanel2.VerticalScrollbarSize = 13
         '
         'logoutMetroTile
         '
         Me.logoutMetroTile.ActiveControl = Nothing
         Me.logoutMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.logoutMetroTile.Location = New System.Drawing.Point(19, 417)
+        Me.logoutMetroTile.Location = New System.Drawing.Point(25, 513)
+        Me.logoutMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.logoutMetroTile.Name = "logoutMetroTile"
-        Me.logoutMetroTile.Size = New System.Drawing.Size(83, 38)
+        Me.logoutMetroTile.Size = New System.Drawing.Size(111, 47)
         Me.logoutMetroTile.Style = MetroFramework.MetroColorStyle.Blue
         Me.logoutMetroTile.TabIndex = 8
         Me.logoutMetroTile.Text = "Log out"
@@ -290,9 +304,10 @@ Partial Class mainForm
         '
         Me.aboutMetroTile.ActiveControl = Nothing
         Me.aboutMetroTile.BackColor = System.Drawing.Color.Silver
-        Me.aboutMetroTile.Location = New System.Drawing.Point(19, 357)
+        Me.aboutMetroTile.Location = New System.Drawing.Point(25, 439)
+        Me.aboutMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.aboutMetroTile.Name = "aboutMetroTile"
-        Me.aboutMetroTile.Size = New System.Drawing.Size(83, 37)
+        Me.aboutMetroTile.Size = New System.Drawing.Size(111, 46)
         Me.aboutMetroTile.Style = MetroFramework.MetroColorStyle.Blue
         Me.aboutMetroTile.TabIndex = 7
         Me.aboutMetroTile.Text = "About Us"
@@ -303,9 +318,10 @@ Partial Class mainForm
         '
         Me.profileMetroTile.ActiveControl = Nothing
         Me.profileMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.profileMetroTile.Location = New System.Drawing.Point(19, 300)
+        Me.profileMetroTile.Location = New System.Drawing.Point(25, 369)
+        Me.profileMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.profileMetroTile.Name = "profileMetroTile"
-        Me.profileMetroTile.Size = New System.Drawing.Size(83, 37)
+        Me.profileMetroTile.Size = New System.Drawing.Size(111, 46)
         Me.profileMetroTile.Style = MetroFramework.MetroColorStyle.Blue
         Me.profileMetroTile.TabIndex = 6
         Me.profileMetroTile.Text = "Profile"
@@ -317,9 +333,10 @@ Partial Class mainForm
         Me.MetroLabel2.AutoSize = True
         Me.MetroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.MetroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel2.Location = New System.Drawing.Point(19, 256)
+        Me.MetroLabel2.Location = New System.Drawing.Point(25, 315)
+        Me.MetroLabel2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.MetroLabel2.Name = "MetroLabel2"
-        Me.MetroLabel2.Size = New System.Drawing.Size(61, 25)
+        Me.MetroLabel2.Size = New System.Drawing.Size(62, 25)
         Me.MetroLabel2.TabIndex = 3
         Me.MetroLabel2.Text = "Other"
         Me.MetroLabel2.UseCustomBackColor = True
@@ -329,9 +346,10 @@ Partial Class mainForm
         Me.MetroLabel1.AutoSize = True
         Me.MetroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.MetroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel1.Location = New System.Drawing.Point(4, 33)
+        Me.MetroLabel1.Location = New System.Drawing.Point(5, 41)
+        Me.MetroLabel1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.MetroLabel1.Name = "MetroLabel1"
-        Me.MetroLabel1.Size = New System.Drawing.Size(170, 25)
+        Me.MetroLabel1.Size = New System.Drawing.Size(177, 25)
         Me.MetroLabel1.TabIndex = 2
         Me.MetroLabel1.Text = "Learning Materials"
         Me.MetroLabel1.UseCustomBackColor = True
@@ -347,32 +365,35 @@ Partial Class mainForm
         Me.MetroPanel3.Controls.Add(Me.MetroTile9)
         Me.MetroPanel3.HorizontalScrollbarBarColor = True
         Me.MetroPanel3.HorizontalScrollbarHighlightOnWheel = False
-        Me.MetroPanel3.HorizontalScrollbarSize = 10
-        Me.MetroPanel3.Location = New System.Drawing.Point(176, 15)
+        Me.MetroPanel3.HorizontalScrollbarSize = 12
+        Me.MetroPanel3.Location = New System.Drawing.Point(235, 18)
+        Me.MetroPanel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MetroPanel3.Name = "MetroPanel3"
-        Me.MetroPanel3.Size = New System.Drawing.Size(1007, 525)
+        Me.MetroPanel3.Size = New System.Drawing.Size(1343, 646)
         Me.MetroPanel3.TabIndex = 9
         Me.MetroPanel3.VerticalScrollbarBarColor = True
         Me.MetroPanel3.VerticalScrollbarHighlightOnWheel = False
-        Me.MetroPanel3.VerticalScrollbarSize = 10
+        Me.MetroPanel3.VerticalScrollbarSize = 13
         '
         'MetroLabel3
         '
         Me.MetroLabel3.AutoSize = True
         Me.MetroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.MetroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel3.Location = New System.Drawing.Point(425, 51)
+        Me.MetroLabel3.Location = New System.Drawing.Point(567, 63)
+        Me.MetroLabel3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.MetroLabel3.Name = "MetroLabel3"
-        Me.MetroLabel3.Size = New System.Drawing.Size(69, 25)
+        Me.MetroLabel3.Size = New System.Drawing.Size(72, 25)
         Me.MetroLabel3.TabIndex = 8
         Me.MetroLabel3.Text = "Videos"
         '
         'MetroTile4
         '
         Me.MetroTile4.ActiveControl = Nothing
-        Me.MetroTile4.Location = New System.Drawing.Point(663, 306)
+        Me.MetroTile4.Location = New System.Drawing.Point(884, 377)
+        Me.MetroTile4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MetroTile4.Name = "MetroTile4"
-        Me.MetroTile4.Size = New System.Drawing.Size(263, 177)
+        Me.MetroTile4.Size = New System.Drawing.Size(351, 218)
         Me.MetroTile4.TabIndex = 7
         Me.MetroTile4.Text = "Social"
         Me.MetroTile4.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -384,9 +405,10 @@ Partial Class mainForm
         'MetroTile5
         '
         Me.MetroTile5.ActiveControl = Nothing
-        Me.MetroTile5.Location = New System.Drawing.Point(389, 306)
+        Me.MetroTile5.Location = New System.Drawing.Point(519, 377)
+        Me.MetroTile5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MetroTile5.Name = "MetroTile5"
-        Me.MetroTile5.Size = New System.Drawing.Size(263, 177)
+        Me.MetroTile5.Size = New System.Drawing.Size(351, 218)
         Me.MetroTile5.TabIndex = 6
         Me.MetroTile5.Text = "Biology"
         Me.MetroTile5.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -398,9 +420,10 @@ Partial Class mainForm
         'MetroTile6
         '
         Me.MetroTile6.ActiveControl = Nothing
-        Me.MetroTile6.Location = New System.Drawing.Point(389, 123)
+        Me.MetroTile6.Location = New System.Drawing.Point(519, 151)
+        Me.MetroTile6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MetroTile6.Name = "MetroTile6"
-        Me.MetroTile6.Size = New System.Drawing.Size(263, 177)
+        Me.MetroTile6.Size = New System.Drawing.Size(351, 218)
         Me.MetroTile6.TabIndex = 5
         Me.MetroTile6.Text = "English"
         Me.MetroTile6.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -412,9 +435,10 @@ Partial Class mainForm
         'MetroTile7
         '
         Me.MetroTile7.ActiveControl = Nothing
-        Me.MetroTile7.Location = New System.Drawing.Point(114, 306)
+        Me.MetroTile7.Location = New System.Drawing.Point(152, 377)
+        Me.MetroTile7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MetroTile7.Name = "MetroTile7"
-        Me.MetroTile7.Size = New System.Drawing.Size(263, 177)
+        Me.MetroTile7.Size = New System.Drawing.Size(351, 218)
         Me.MetroTile7.TabIndex = 4
         Me.MetroTile7.Text = "Chemistry"
         Me.MetroTile7.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -426,9 +450,10 @@ Partial Class mainForm
         'MetroTile8
         '
         Me.MetroTile8.ActiveControl = Nothing
-        Me.MetroTile8.Location = New System.Drawing.Point(663, 123)
+        Me.MetroTile8.Location = New System.Drawing.Point(884, 151)
+        Me.MetroTile8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MetroTile8.Name = "MetroTile8"
-        Me.MetroTile8.Size = New System.Drawing.Size(263, 177)
+        Me.MetroTile8.Size = New System.Drawing.Size(351, 218)
         Me.MetroTile8.TabIndex = 3
         Me.MetroTile8.Text = "Physics"
         Me.MetroTile8.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -440,9 +465,10 @@ Partial Class mainForm
         'MetroTile9
         '
         Me.MetroTile9.ActiveControl = Nothing
-        Me.MetroTile9.Location = New System.Drawing.Point(114, 123)
+        Me.MetroTile9.Location = New System.Drawing.Point(152, 151)
+        Me.MetroTile9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MetroTile9.Name = "MetroTile9"
-        Me.MetroTile9.Size = New System.Drawing.Size(263, 177)
+        Me.MetroTile9.Size = New System.Drawing.Size(351, 218)
         Me.MetroTile9.TabIndex = 2
         Me.MetroTile9.Text = "Mathematics"
         Me.MetroTile9.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -453,6 +479,8 @@ Partial Class mainForm
         '
         'ebooksMetroPanel
         '
+        Me.ebooksMetroPanel.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ebooksMetroPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(233, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(27, Byte), Integer))
         Me.ebooksMetroPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ebooksMetroPanel.Controls.Add(Me.socialEbooksPictureBox)
@@ -470,22 +498,24 @@ Partial Class mainForm
         Me.ebooksMetroPanel.Controls.Add(Me.englishEbooksPictureBox)
         Me.ebooksMetroPanel.HorizontalScrollbarBarColor = True
         Me.ebooksMetroPanel.HorizontalScrollbarHighlightOnWheel = False
-        Me.ebooksMetroPanel.HorizontalScrollbarSize = 10
-        Me.ebooksMetroPanel.Location = New System.Drawing.Point(232, 98)
+        Me.ebooksMetroPanel.HorizontalScrollbarSize = 12
+        Me.ebooksMetroPanel.Location = New System.Drawing.Point(309, 121)
+        Me.ebooksMetroPanel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ebooksMetroPanel.Name = "ebooksMetroPanel"
-        Me.ebooksMetroPanel.Size = New System.Drawing.Size(957, 552)
+        Me.ebooksMetroPanel.Size = New System.Drawing.Size(1290, 679)
         Me.ebooksMetroPanel.TabIndex = 9
         Me.ebooksMetroPanel.UseCustomBackColor = True
         Me.ebooksMetroPanel.VerticalScrollbarBarColor = True
         Me.ebooksMetroPanel.VerticalScrollbarHighlightOnWheel = False
-        Me.ebooksMetroPanel.VerticalScrollbarSize = 10
+        Me.ebooksMetroPanel.VerticalScrollbarSize = 13
         Me.ebooksMetroPanel.Visible = False
         '
         'socialEbooksPictureBox
         '
-        Me.socialEbooksPictureBox.Location = New System.Drawing.Point(677, 312)
+        Me.socialEbooksPictureBox.Location = New System.Drawing.Point(903, 384)
+        Me.socialEbooksPictureBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.socialEbooksPictureBox.Name = "socialEbooksPictureBox"
-        Me.socialEbooksPictureBox.Size = New System.Drawing.Size(211, 161)
+        Me.socialEbooksPictureBox.Size = New System.Drawing.Size(281, 198)
         Me.socialEbooksPictureBox.TabIndex = 13
         Me.socialEbooksPictureBox.TabStop = False
         '
@@ -493,9 +523,10 @@ Partial Class mainForm
         '
         Me.mathsEbooksPictureBox.BackgroundImage = CType(resources.GetObject("mathsEbooksPictureBox.BackgroundImage"), System.Drawing.Image)
         Me.mathsEbooksPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.mathsEbooksPictureBox.Location = New System.Drawing.Point(138, 96)
+        Me.mathsEbooksPictureBox.Location = New System.Drawing.Point(184, 118)
+        Me.mathsEbooksPictureBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.mathsEbooksPictureBox.Name = "mathsEbooksPictureBox"
-        Me.mathsEbooksPictureBox.Size = New System.Drawing.Size(199, 161)
+        Me.mathsEbooksPictureBox.Size = New System.Drawing.Size(265, 198)
         Me.mathsEbooksPictureBox.TabIndex = 9
         Me.mathsEbooksPictureBox.TabStop = False
         '
@@ -504,9 +535,10 @@ Partial Class mainForm
         Me.MetroLabel4.AutoSize = True
         Me.MetroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.MetroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel4.Location = New System.Drawing.Point(425, 51)
+        Me.MetroLabel4.Location = New System.Drawing.Point(567, 63)
+        Me.MetroLabel4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.MetroLabel4.Name = "MetroLabel4"
-        Me.MetroLabel4.Size = New System.Drawing.Size(73, 25)
+        Me.MetroLabel4.Size = New System.Drawing.Size(77, 25)
         Me.MetroLabel4.TabIndex = 8
         Me.MetroLabel4.Text = "Ebooks"
         Me.MetroLabel4.UseCustomBackColor = True
@@ -515,9 +547,10 @@ Partial Class mainForm
         '
         Me.socialEbookMetroTile.ActiveControl = Nothing
         Me.socialEbookMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.socialEbookMetroTile.Location = New System.Drawing.Point(663, 473)
+        Me.socialEbookMetroTile.Location = New System.Drawing.Point(884, 582)
+        Me.socialEbookMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.socialEbookMetroTile.Name = "socialEbookMetroTile"
-        Me.socialEbookMetroTile.Size = New System.Drawing.Size(263, 49)
+        Me.socialEbookMetroTile.Size = New System.Drawing.Size(351, 60)
         Me.socialEbookMetroTile.TabIndex = 7
         Me.socialEbookMetroTile.Text = "Social"
         Me.socialEbookMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -531,9 +564,10 @@ Partial Class mainForm
         '
         Me.biologyEbookMetroTile.ActiveControl = Nothing
         Me.biologyEbookMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.biologyEbookMetroTile.Location = New System.Drawing.Point(389, 473)
+        Me.biologyEbookMetroTile.Location = New System.Drawing.Point(519, 582)
+        Me.biologyEbookMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.biologyEbookMetroTile.Name = "biologyEbookMetroTile"
-        Me.biologyEbookMetroTile.Size = New System.Drawing.Size(263, 49)
+        Me.biologyEbookMetroTile.Size = New System.Drawing.Size(351, 60)
         Me.biologyEbookMetroTile.TabIndex = 6
         Me.biologyEbookMetroTile.Text = "Biology"
         Me.biologyEbookMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -547,9 +581,10 @@ Partial Class mainForm
         '
         Me.englishEbooksMetroTile.ActiveControl = Nothing
         Me.englishEbooksMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.englishEbooksMetroTile.Location = New System.Drawing.Point(389, 259)
+        Me.englishEbooksMetroTile.Location = New System.Drawing.Point(519, 319)
+        Me.englishEbooksMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.englishEbooksMetroTile.Name = "englishEbooksMetroTile"
-        Me.englishEbooksMetroTile.Size = New System.Drawing.Size(263, 50)
+        Me.englishEbooksMetroTile.Size = New System.Drawing.Size(351, 62)
         Me.englishEbooksMetroTile.TabIndex = 5
         Me.englishEbooksMetroTile.Text = "English"
         Me.englishEbooksMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -563,9 +598,10 @@ Partial Class mainForm
         '
         Me.chemistryEbookMetroTile.ActiveControl = Nothing
         Me.chemistryEbookMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.chemistryEbookMetroTile.Location = New System.Drawing.Point(114, 473)
+        Me.chemistryEbookMetroTile.Location = New System.Drawing.Point(152, 582)
+        Me.chemistryEbookMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chemistryEbookMetroTile.Name = "chemistryEbookMetroTile"
-        Me.chemistryEbookMetroTile.Size = New System.Drawing.Size(263, 49)
+        Me.chemistryEbookMetroTile.Size = New System.Drawing.Size(351, 60)
         Me.chemistryEbookMetroTile.TabIndex = 4
         Me.chemistryEbookMetroTile.Text = "Chemistry"
         Me.chemistryEbookMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -579,9 +615,10 @@ Partial Class mainForm
         '
         Me.physicsEbookMetroTile.ActiveControl = Nothing
         Me.physicsEbookMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.physicsEbookMetroTile.Location = New System.Drawing.Point(663, 259)
+        Me.physicsEbookMetroTile.Location = New System.Drawing.Point(884, 319)
+        Me.physicsEbookMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.physicsEbookMetroTile.Name = "physicsEbookMetroTile"
-        Me.physicsEbookMetroTile.Size = New System.Drawing.Size(263, 50)
+        Me.physicsEbookMetroTile.Size = New System.Drawing.Size(351, 62)
         Me.physicsEbookMetroTile.TabIndex = 3
         Me.physicsEbookMetroTile.Text = "Physics"
         Me.physicsEbookMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -595,9 +632,10 @@ Partial Class mainForm
         '
         Me.mathsEbooksMetroTile.ActiveControl = Nothing
         Me.mathsEbooksMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.mathsEbooksMetroTile.Location = New System.Drawing.Point(114, 259)
+        Me.mathsEbooksMetroTile.Location = New System.Drawing.Point(152, 319)
+        Me.mathsEbooksMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.mathsEbooksMetroTile.Name = "mathsEbooksMetroTile"
-        Me.mathsEbooksMetroTile.Size = New System.Drawing.Size(263, 50)
+        Me.mathsEbooksMetroTile.Size = New System.Drawing.Size(351, 62)
         Me.mathsEbooksMetroTile.TabIndex = 2
         Me.mathsEbooksMetroTile.Text = "Mathematics"
         Me.mathsEbooksMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -611,9 +649,10 @@ Partial Class mainForm
         '
         Me.chemistryEbooksPictureBox.BackgroundImage = CType(resources.GetObject("chemistryEbooksPictureBox.BackgroundImage"), System.Drawing.Image)
         Me.chemistryEbooksPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.chemistryEbooksPictureBox.Location = New System.Drawing.Point(138, 312)
+        Me.chemistryEbooksPictureBox.Location = New System.Drawing.Point(184, 384)
+        Me.chemistryEbooksPictureBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chemistryEbooksPictureBox.Name = "chemistryEbooksPictureBox"
-        Me.chemistryEbooksPictureBox.Size = New System.Drawing.Size(211, 161)
+        Me.chemistryEbooksPictureBox.Size = New System.Drawing.Size(281, 198)
         Me.chemistryEbooksPictureBox.TabIndex = 14
         Me.chemistryEbooksPictureBox.TabStop = False
         '
@@ -621,9 +660,10 @@ Partial Class mainForm
         '
         Me.physicsEbooksPictureBox.BackgroundImage = CType(resources.GetObject("physicsEbooksPictureBox.BackgroundImage"), System.Drawing.Image)
         Me.physicsEbooksPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.physicsEbooksPictureBox.Location = New System.Drawing.Point(677, 96)
+        Me.physicsEbooksPictureBox.Location = New System.Drawing.Point(903, 118)
+        Me.physicsEbooksPictureBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.physicsEbooksPictureBox.Name = "physicsEbooksPictureBox"
-        Me.physicsEbooksPictureBox.Size = New System.Drawing.Size(211, 161)
+        Me.physicsEbooksPictureBox.Size = New System.Drawing.Size(281, 198)
         Me.physicsEbooksPictureBox.TabIndex = 12
         Me.physicsEbooksPictureBox.TabStop = False
         '
@@ -631,9 +671,10 @@ Partial Class mainForm
         '
         Me.biologyEbooksPictureBox.BackgroundImage = CType(resources.GetObject("biologyEbooksPictureBox.BackgroundImage"), System.Drawing.Image)
         Me.biologyEbooksPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.biologyEbooksPictureBox.Location = New System.Drawing.Point(406, 312)
+        Me.biologyEbooksPictureBox.Location = New System.Drawing.Point(541, 384)
+        Me.biologyEbooksPictureBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.biologyEbooksPictureBox.Name = "biologyEbooksPictureBox"
-        Me.biologyEbooksPictureBox.Size = New System.Drawing.Size(211, 161)
+        Me.biologyEbooksPictureBox.Size = New System.Drawing.Size(281, 198)
         Me.biologyEbooksPictureBox.TabIndex = 11
         Me.biologyEbooksPictureBox.TabStop = False
         '
@@ -641,14 +682,17 @@ Partial Class mainForm
         '
         Me.englishEbooksPictureBox.BackgroundImage = CType(resources.GetObject("englishEbooksPictureBox.BackgroundImage"), System.Drawing.Image)
         Me.englishEbooksPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.englishEbooksPictureBox.Location = New System.Drawing.Point(406, 96)
+        Me.englishEbooksPictureBox.Location = New System.Drawing.Point(541, 118)
+        Me.englishEbooksPictureBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.englishEbooksPictureBox.Name = "englishEbooksPictureBox"
-        Me.englishEbooksPictureBox.Size = New System.Drawing.Size(211, 161)
+        Me.englishEbooksPictureBox.Size = New System.Drawing.Size(281, 198)
         Me.englishEbooksPictureBox.TabIndex = 10
         Me.englishEbooksPictureBox.TabStop = False
         '
         'videosMetroPanel
         '
+        Me.videosMetroPanel.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.videosMetroPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(123, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.videosMetroPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.videosMetroPanel.Controls.Add(Me.chemistryVideosPictureBox)
@@ -666,31 +710,34 @@ Partial Class mainForm
         Me.videosMetroPanel.Controls.Add(Me.mathsVideosMetroTile)
         Me.videosMetroPanel.HorizontalScrollbarBarColor = True
         Me.videosMetroPanel.HorizontalScrollbarHighlightOnWheel = False
-        Me.videosMetroPanel.HorizontalScrollbarSize = 10
-        Me.videosMetroPanel.Location = New System.Drawing.Point(228, 98)
+        Me.videosMetroPanel.HorizontalScrollbarSize = 12
+        Me.videosMetroPanel.Location = New System.Drawing.Point(304, 121)
+        Me.videosMetroPanel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.videosMetroPanel.Name = "videosMetroPanel"
-        Me.videosMetroPanel.Size = New System.Drawing.Size(957, 549)
+        Me.videosMetroPanel.Size = New System.Drawing.Size(1290, 676)
         Me.videosMetroPanel.TabIndex = 15
         Me.videosMetroPanel.UseCustomBackColor = True
         Me.videosMetroPanel.VerticalScrollbarBarColor = True
         Me.videosMetroPanel.VerticalScrollbarHighlightOnWheel = False
-        Me.videosMetroPanel.VerticalScrollbarSize = 10
+        Me.videosMetroPanel.VerticalScrollbarSize = 13
         '
         'chemistryVideosPictureBox
         '
         Me.chemistryVideosPictureBox.BackgroundImage = CType(resources.GetObject("chemistryVideosPictureBox.BackgroundImage"), System.Drawing.Image)
         Me.chemistryVideosPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.chemistryVideosPictureBox.Location = New System.Drawing.Point(138, 312)
+        Me.chemistryVideosPictureBox.Location = New System.Drawing.Point(184, 384)
+        Me.chemistryVideosPictureBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chemistryVideosPictureBox.Name = "chemistryVideosPictureBox"
-        Me.chemistryVideosPictureBox.Size = New System.Drawing.Size(211, 161)
+        Me.chemistryVideosPictureBox.Size = New System.Drawing.Size(281, 198)
         Me.chemistryVideosPictureBox.TabIndex = 14
         Me.chemistryVideosPictureBox.TabStop = False
         '
         'socialVideosPictureBox
         '
-        Me.socialVideosPictureBox.Location = New System.Drawing.Point(677, 312)
+        Me.socialVideosPictureBox.Location = New System.Drawing.Point(903, 384)
+        Me.socialVideosPictureBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.socialVideosPictureBox.Name = "socialVideosPictureBox"
-        Me.socialVideosPictureBox.Size = New System.Drawing.Size(211, 161)
+        Me.socialVideosPictureBox.Size = New System.Drawing.Size(281, 198)
         Me.socialVideosPictureBox.TabIndex = 13
         Me.socialVideosPictureBox.TabStop = False
         '
@@ -698,9 +745,10 @@ Partial Class mainForm
         '
         Me.physicsVideosPictureBox.BackgroundImage = CType(resources.GetObject("physicsVideosPictureBox.BackgroundImage"), System.Drawing.Image)
         Me.physicsVideosPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.physicsVideosPictureBox.Location = New System.Drawing.Point(677, 96)
+        Me.physicsVideosPictureBox.Location = New System.Drawing.Point(903, 118)
+        Me.physicsVideosPictureBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.physicsVideosPictureBox.Name = "physicsVideosPictureBox"
-        Me.physicsVideosPictureBox.Size = New System.Drawing.Size(211, 161)
+        Me.physicsVideosPictureBox.Size = New System.Drawing.Size(281, 198)
         Me.physicsVideosPictureBox.TabIndex = 12
         Me.physicsVideosPictureBox.TabStop = False
         '
@@ -708,9 +756,10 @@ Partial Class mainForm
         '
         Me.biologyVideosPictureBox.BackgroundImage = CType(resources.GetObject("biologyVideosPictureBox.BackgroundImage"), System.Drawing.Image)
         Me.biologyVideosPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.biologyVideosPictureBox.Location = New System.Drawing.Point(406, 312)
+        Me.biologyVideosPictureBox.Location = New System.Drawing.Point(541, 384)
+        Me.biologyVideosPictureBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.biologyVideosPictureBox.Name = "biologyVideosPictureBox"
-        Me.biologyVideosPictureBox.Size = New System.Drawing.Size(211, 161)
+        Me.biologyVideosPictureBox.Size = New System.Drawing.Size(281, 198)
         Me.biologyVideosPictureBox.TabIndex = 11
         Me.biologyVideosPictureBox.TabStop = False
         '
@@ -718,9 +767,10 @@ Partial Class mainForm
         '
         Me.englishVideosPictureBox.BackgroundImage = CType(resources.GetObject("englishVideosPictureBox.BackgroundImage"), System.Drawing.Image)
         Me.englishVideosPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.englishVideosPictureBox.Location = New System.Drawing.Point(406, 96)
+        Me.englishVideosPictureBox.Location = New System.Drawing.Point(541, 118)
+        Me.englishVideosPictureBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.englishVideosPictureBox.Name = "englishVideosPictureBox"
-        Me.englishVideosPictureBox.Size = New System.Drawing.Size(211, 161)
+        Me.englishVideosPictureBox.Size = New System.Drawing.Size(281, 198)
         Me.englishVideosPictureBox.TabIndex = 10
         Me.englishVideosPictureBox.TabStop = False
         '
@@ -728,9 +778,10 @@ Partial Class mainForm
         '
         Me.mathVideosPictureBox.BackgroundImage = CType(resources.GetObject("mathVideosPictureBox.BackgroundImage"), System.Drawing.Image)
         Me.mathVideosPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.mathVideosPictureBox.Location = New System.Drawing.Point(138, 96)
+        Me.mathVideosPictureBox.Location = New System.Drawing.Point(184, 118)
+        Me.mathVideosPictureBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.mathVideosPictureBox.Name = "mathVideosPictureBox"
-        Me.mathVideosPictureBox.Size = New System.Drawing.Size(199, 161)
+        Me.mathVideosPictureBox.Size = New System.Drawing.Size(265, 198)
         Me.mathVideosPictureBox.TabIndex = 9
         Me.mathVideosPictureBox.TabStop = False
         '
@@ -739,9 +790,10 @@ Partial Class mainForm
         Me.MetroLabel5.AutoSize = True
         Me.MetroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.MetroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel5.Location = New System.Drawing.Point(425, 51)
+        Me.MetroLabel5.Location = New System.Drawing.Point(567, 63)
+        Me.MetroLabel5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.MetroLabel5.Name = "MetroLabel5"
-        Me.MetroLabel5.Size = New System.Drawing.Size(69, 25)
+        Me.MetroLabel5.Size = New System.Drawing.Size(72, 25)
         Me.MetroLabel5.TabIndex = 8
         Me.MetroLabel5.Text = "Videos"
         Me.MetroLabel5.UseCustomBackColor = True
@@ -750,9 +802,10 @@ Partial Class mainForm
         '
         Me.socialVideosMetroTile.ActiveControl = Nothing
         Me.socialVideosMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.socialVideosMetroTile.Location = New System.Drawing.Point(663, 473)
+        Me.socialVideosMetroTile.Location = New System.Drawing.Point(884, 582)
+        Me.socialVideosMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.socialVideosMetroTile.Name = "socialVideosMetroTile"
-        Me.socialVideosMetroTile.Size = New System.Drawing.Size(263, 49)
+        Me.socialVideosMetroTile.Size = New System.Drawing.Size(351, 60)
         Me.socialVideosMetroTile.TabIndex = 7
         Me.socialVideosMetroTile.Text = "Social"
         Me.socialVideosMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -766,9 +819,10 @@ Partial Class mainForm
         '
         Me.biologyVideosMetroTile.ActiveControl = Nothing
         Me.biologyVideosMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.biologyVideosMetroTile.Location = New System.Drawing.Point(389, 473)
+        Me.biologyVideosMetroTile.Location = New System.Drawing.Point(519, 582)
+        Me.biologyVideosMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.biologyVideosMetroTile.Name = "biologyVideosMetroTile"
-        Me.biologyVideosMetroTile.Size = New System.Drawing.Size(263, 49)
+        Me.biologyVideosMetroTile.Size = New System.Drawing.Size(351, 60)
         Me.biologyVideosMetroTile.TabIndex = 6
         Me.biologyVideosMetroTile.Text = "Biology"
         Me.biologyVideosMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -782,9 +836,10 @@ Partial Class mainForm
         '
         Me.englishVideosMetroTile.ActiveControl = Nothing
         Me.englishVideosMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.englishVideosMetroTile.Location = New System.Drawing.Point(389, 259)
+        Me.englishVideosMetroTile.Location = New System.Drawing.Point(519, 319)
+        Me.englishVideosMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.englishVideosMetroTile.Name = "englishVideosMetroTile"
-        Me.englishVideosMetroTile.Size = New System.Drawing.Size(263, 50)
+        Me.englishVideosMetroTile.Size = New System.Drawing.Size(351, 62)
         Me.englishVideosMetroTile.TabIndex = 5
         Me.englishVideosMetroTile.Text = "English"
         Me.englishVideosMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -798,9 +853,10 @@ Partial Class mainForm
         '
         Me.chemistryVideosMetroTile.ActiveControl = Nothing
         Me.chemistryVideosMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.chemistryVideosMetroTile.Location = New System.Drawing.Point(114, 473)
+        Me.chemistryVideosMetroTile.Location = New System.Drawing.Point(152, 582)
+        Me.chemistryVideosMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chemistryVideosMetroTile.Name = "chemistryVideosMetroTile"
-        Me.chemistryVideosMetroTile.Size = New System.Drawing.Size(263, 49)
+        Me.chemistryVideosMetroTile.Size = New System.Drawing.Size(351, 60)
         Me.chemistryVideosMetroTile.TabIndex = 4
         Me.chemistryVideosMetroTile.Text = "Chemistry"
         Me.chemistryVideosMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -814,9 +870,10 @@ Partial Class mainForm
         '
         Me.physicsVideosMetroTile.ActiveControl = Nothing
         Me.physicsVideosMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.physicsVideosMetroTile.Location = New System.Drawing.Point(663, 259)
+        Me.physicsVideosMetroTile.Location = New System.Drawing.Point(884, 319)
+        Me.physicsVideosMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.physicsVideosMetroTile.Name = "physicsVideosMetroTile"
-        Me.physicsVideosMetroTile.Size = New System.Drawing.Size(263, 50)
+        Me.physicsVideosMetroTile.Size = New System.Drawing.Size(351, 62)
         Me.physicsVideosMetroTile.TabIndex = 3
         Me.physicsVideosMetroTile.Text = "Physics"
         Me.physicsVideosMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -830,9 +887,10 @@ Partial Class mainForm
         '
         Me.mathsVideosMetroTile.ActiveControl = Nothing
         Me.mathsVideosMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.mathsVideosMetroTile.Location = New System.Drawing.Point(114, 259)
+        Me.mathsVideosMetroTile.Location = New System.Drawing.Point(152, 319)
+        Me.mathsVideosMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.mathsVideosMetroTile.Name = "mathsVideosMetroTile"
-        Me.mathsVideosMetroTile.Size = New System.Drawing.Size(263, 50)
+        Me.mathsVideosMetroTile.Size = New System.Drawing.Size(351, 62)
         Me.mathsVideosMetroTile.TabIndex = 2
         Me.mathsVideosMetroTile.Text = "Mathematics"
         Me.mathsVideosMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -844,17 +902,22 @@ Partial Class mainForm
         '
         'classRoomLabel
         '
+        Me.classRoomLabel.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.classRoomLabel.AutoSize = True
         Me.classRoomLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.classRoomLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.classRoomLabel.Location = New System.Drawing.Point(501, 36)
+        Me.classRoomLabel.Location = New System.Drawing.Point(668, 44)
+        Me.classRoomLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.classRoomLabel.Name = "classRoomLabel"
-        Me.classRoomLabel.Size = New System.Drawing.Size(289, 33)
+        Me.classRoomLabel.Size = New System.Drawing.Size(362, 42)
         Me.classRoomLabel.TabIndex = 16
         Me.classRoomLabel.Text = "Dawati Class Room"
         '
         'profilePanel
         '
+        Me.profilePanel.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.profilePanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.profilePanel.Controls.Add(Me.browseButton)
         Me.profilePanel.Controls.Add(Me.profilemagePictureBox)
@@ -872,16 +935,18 @@ Partial Class mainForm
         Me.profilePanel.Controls.Add(Me.Label2)
         Me.profilePanel.Controls.Add(Me.Label1)
         Me.profilePanel.Controls.Add(Me.updateMetroButton)
-        Me.profilePanel.Location = New System.Drawing.Point(228, 98)
+        Me.profilePanel.Location = New System.Drawing.Point(304, 121)
+        Me.profilePanel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.profilePanel.Name = "profilePanel"
-        Me.profilePanel.Size = New System.Drawing.Size(961, 559)
+        Me.profilePanel.Size = New System.Drawing.Size(1295, 688)
         Me.profilePanel.TabIndex = 17
         '
         'browseButton
         '
-        Me.browseButton.Location = New System.Drawing.Point(845, 256)
+        Me.browseButton.Location = New System.Drawing.Point(1127, 315)
+        Me.browseButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.browseButton.Name = "browseButton"
-        Me.browseButton.Size = New System.Drawing.Size(75, 23)
+        Me.browseButton.Size = New System.Drawing.Size(100, 28)
         Me.browseButton.TabIndex = 20
         Me.browseButton.Text = "Browse"
         Me.browseButton.UseVisualStyleBackColor = True
@@ -889,9 +954,10 @@ Partial Class mainForm
         '
         'profilemagePictureBox
         '
-        Me.profilemagePictureBox.Location = New System.Drawing.Point(760, 113)
+        Me.profilemagePictureBox.Location = New System.Drawing.Point(1013, 139)
+        Me.profilemagePictureBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.profilemagePictureBox.Name = "profilemagePictureBox"
-        Me.profilemagePictureBox.Size = New System.Drawing.Size(160, 124)
+        Me.profilemagePictureBox.Size = New System.Drawing.Size(213, 153)
         Me.profilemagePictureBox.TabIndex = 19
         Me.profilemagePictureBox.TabStop = False
         '
@@ -899,9 +965,10 @@ Partial Class mainForm
         '
         Me.profPhotoLabel.AutoSize = True
         Me.profPhotoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.profPhotoLabel.Location = New System.Drawing.Point(674, 85)
+        Me.profPhotoLabel.Location = New System.Drawing.Point(899, 105)
+        Me.profPhotoLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.profPhotoLabel.Name = "profPhotoLabel"
-        Me.profPhotoLabel.Size = New System.Drawing.Size(94, 18)
+        Me.profPhotoLabel.Size = New System.Drawing.Size(116, 24)
         Me.profPhotoLabel.TabIndex = 18
         Me.profPhotoLabel.Text = "Profile Photo"
         '
@@ -910,17 +977,19 @@ Partial Class mainForm
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label4.Location = New System.Drawing.Point(445, 35)
+        Me.Label4.Location = New System.Drawing.Point(593, 43)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(69, 24)
+        Me.Label4.Size = New System.Drawing.Size(90, 29)
         Me.Label4.TabIndex = 17
         Me.Label4.Text = "Profile"
         '
         'editMetroButton
         '
-        Me.editMetroButton.Location = New System.Drawing.Point(760, 417)
+        Me.editMetroButton.Location = New System.Drawing.Point(1013, 513)
+        Me.editMetroButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.editMetroButton.Name = "editMetroButton"
-        Me.editMetroButton.Size = New System.Drawing.Size(93, 37)
+        Me.editMetroButton.Size = New System.Drawing.Size(124, 46)
         Me.editMetroButton.TabIndex = 15
         Me.editMetroButton.Text = "Edit"
         Me.editMetroButton.UseSelectable = True
@@ -928,11 +997,12 @@ Partial Class mainForm
         'genderMetroComboBox
         '
         Me.genderMetroComboBox.FormattingEnabled = True
-        Me.genderMetroComboBox.ItemHeight = 23
+        Me.genderMetroComboBox.ItemHeight = 24
         Me.genderMetroComboBox.Items.AddRange(New Object() {"Male", "Female"})
-        Me.genderMetroComboBox.Location = New System.Drawing.Point(420, 345)
+        Me.genderMetroComboBox.Location = New System.Drawing.Point(560, 425)
+        Me.genderMetroComboBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.genderMetroComboBox.Name = "genderMetroComboBox"
-        Me.genderMetroComboBox.Size = New System.Drawing.Size(159, 29)
+        Me.genderMetroComboBox.Size = New System.Drawing.Size(211, 30)
         Me.genderMetroComboBox.TabIndex = 14
         Me.genderMetroComboBox.UseSelectable = True
         '
@@ -942,16 +1012,18 @@ Partial Class mainForm
         '
         '
         Me.userTypeMetroTextBox.CustomButton.Image = Nothing
-        Me.userTypeMetroTextBox.CustomButton.Location = New System.Drawing.Point(133, 2)
+        Me.userTypeMetroTextBox.CustomButton.Location = New System.Drawing.Point(240, 2)
+        Me.userTypeMetroTextBox.CustomButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.userTypeMetroTextBox.CustomButton.Name = ""
-        Me.userTypeMetroTextBox.CustomButton.Size = New System.Drawing.Size(23, 23)
+        Me.userTypeMetroTextBox.CustomButton.Size = New System.Drawing.Size(39, 36)
         Me.userTypeMetroTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.userTypeMetroTextBox.CustomButton.TabIndex = 1
         Me.userTypeMetroTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.userTypeMetroTextBox.CustomButton.UseSelectable = True
         Me.userTypeMetroTextBox.CustomButton.Visible = False
         Me.userTypeMetroTextBox.Lines = New String() {"MetroTextBox4"}
-        Me.userTypeMetroTextBox.Location = New System.Drawing.Point(420, 278)
+        Me.userTypeMetroTextBox.Location = New System.Drawing.Point(560, 342)
+        Me.userTypeMetroTextBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.userTypeMetroTextBox.MaxLength = 32767
         Me.userTypeMetroTextBox.Name = "userTypeMetroTextBox"
         Me.userTypeMetroTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -961,7 +1033,7 @@ Partial Class mainForm
         Me.userTypeMetroTextBox.SelectionLength = 0
         Me.userTypeMetroTextBox.SelectionStart = 0
         Me.userTypeMetroTextBox.ShortcutsEnabled = True
-        Me.userTypeMetroTextBox.Size = New System.Drawing.Size(159, 28)
+        Me.userTypeMetroTextBox.Size = New System.Drawing.Size(212, 34)
         Me.userTypeMetroTextBox.TabIndex = 13
         Me.userTypeMetroTextBox.Text = "MetroTextBox4"
         Me.userTypeMetroTextBox.UseSelectable = True
@@ -974,16 +1046,18 @@ Partial Class mainForm
         '
         '
         Me.emailMetroTextBox.CustomButton.Image = Nothing
-        Me.emailMetroTextBox.CustomButton.Location = New System.Drawing.Point(133, 2)
+        Me.emailMetroTextBox.CustomButton.Location = New System.Drawing.Point(240, 2)
+        Me.emailMetroTextBox.CustomButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.emailMetroTextBox.CustomButton.Name = ""
-        Me.emailMetroTextBox.CustomButton.Size = New System.Drawing.Size(23, 23)
+        Me.emailMetroTextBox.CustomButton.Size = New System.Drawing.Size(39, 36)
         Me.emailMetroTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.emailMetroTextBox.CustomButton.TabIndex = 1
         Me.emailMetroTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.emailMetroTextBox.CustomButton.UseSelectable = True
         Me.emailMetroTextBox.CustomButton.Visible = False
         Me.emailMetroTextBox.Lines = New String() {"MetroTextBox3"}
-        Me.emailMetroTextBox.Location = New System.Drawing.Point(420, 215)
+        Me.emailMetroTextBox.Location = New System.Drawing.Point(560, 265)
+        Me.emailMetroTextBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.emailMetroTextBox.MaxLength = 32767
         Me.emailMetroTextBox.Name = "emailMetroTextBox"
         Me.emailMetroTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -993,7 +1067,7 @@ Partial Class mainForm
         Me.emailMetroTextBox.SelectionLength = 0
         Me.emailMetroTextBox.SelectionStart = 0
         Me.emailMetroTextBox.ShortcutsEnabled = True
-        Me.emailMetroTextBox.Size = New System.Drawing.Size(159, 28)
+        Me.emailMetroTextBox.Size = New System.Drawing.Size(212, 34)
         Me.emailMetroTextBox.TabIndex = 12
         Me.emailMetroTextBox.Text = "MetroTextBox3"
         Me.emailMetroTextBox.UseSelectable = True
@@ -1006,16 +1080,18 @@ Partial Class mainForm
         '
         '
         Me.lnameMetroTextBox.CustomButton.Image = Nothing
-        Me.lnameMetroTextBox.CustomButton.Location = New System.Drawing.Point(133, 2)
+        Me.lnameMetroTextBox.CustomButton.Location = New System.Drawing.Point(240, 2)
+        Me.lnameMetroTextBox.CustomButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.lnameMetroTextBox.CustomButton.Name = ""
-        Me.lnameMetroTextBox.CustomButton.Size = New System.Drawing.Size(23, 23)
+        Me.lnameMetroTextBox.CustomButton.Size = New System.Drawing.Size(39, 36)
         Me.lnameMetroTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.lnameMetroTextBox.CustomButton.TabIndex = 1
         Me.lnameMetroTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.lnameMetroTextBox.CustomButton.UseSelectable = True
         Me.lnameMetroTextBox.CustomButton.Visible = False
         Me.lnameMetroTextBox.Lines = New String() {"MetroTextBox2"}
-        Me.lnameMetroTextBox.Location = New System.Drawing.Point(420, 152)
+        Me.lnameMetroTextBox.Location = New System.Drawing.Point(560, 187)
+        Me.lnameMetroTextBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.lnameMetroTextBox.MaxLength = 32767
         Me.lnameMetroTextBox.Name = "lnameMetroTextBox"
         Me.lnameMetroTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -1025,7 +1101,7 @@ Partial Class mainForm
         Me.lnameMetroTextBox.SelectionLength = 0
         Me.lnameMetroTextBox.SelectionStart = 0
         Me.lnameMetroTextBox.ShortcutsEnabled = True
-        Me.lnameMetroTextBox.Size = New System.Drawing.Size(159, 28)
+        Me.lnameMetroTextBox.Size = New System.Drawing.Size(212, 34)
         Me.lnameMetroTextBox.TabIndex = 11
         Me.lnameMetroTextBox.Text = "MetroTextBox2"
         Me.lnameMetroTextBox.UseSelectable = True
@@ -1038,16 +1114,18 @@ Partial Class mainForm
         '
         '
         Me.fnameMetroTextBox.CustomButton.Image = Nothing
-        Me.fnameMetroTextBox.CustomButton.Location = New System.Drawing.Point(133, 2)
+        Me.fnameMetroTextBox.CustomButton.Location = New System.Drawing.Point(240, 2)
+        Me.fnameMetroTextBox.CustomButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fnameMetroTextBox.CustomButton.Name = ""
-        Me.fnameMetroTextBox.CustomButton.Size = New System.Drawing.Size(23, 23)
+        Me.fnameMetroTextBox.CustomButton.Size = New System.Drawing.Size(39, 36)
         Me.fnameMetroTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.fnameMetroTextBox.CustomButton.TabIndex = 1
         Me.fnameMetroTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.fnameMetroTextBox.CustomButton.UseSelectable = True
         Me.fnameMetroTextBox.CustomButton.Visible = False
         Me.fnameMetroTextBox.Lines = New String() {"MetroTextBox1"}
-        Me.fnameMetroTextBox.Location = New System.Drawing.Point(420, 89)
+        Me.fnameMetroTextBox.Location = New System.Drawing.Point(560, 110)
+        Me.fnameMetroTextBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fnameMetroTextBox.MaxLength = 32767
         Me.fnameMetroTextBox.Name = "fnameMetroTextBox"
         Me.fnameMetroTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -1057,7 +1135,7 @@ Partial Class mainForm
         Me.fnameMetroTextBox.SelectionLength = 0
         Me.fnameMetroTextBox.SelectionStart = 0
         Me.fnameMetroTextBox.ShortcutsEnabled = True
-        Me.fnameMetroTextBox.Size = New System.Drawing.Size(159, 28)
+        Me.fnameMetroTextBox.Size = New System.Drawing.Size(212, 34)
         Me.fnameMetroTextBox.TabIndex = 10
         Me.fnameMetroTextBox.Text = "MetroTextBox1"
         Me.fnameMetroTextBox.UseSelectable = True
@@ -1069,9 +1147,10 @@ Partial Class mainForm
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label10.Location = New System.Drawing.Point(194, 162)
+        Me.Label10.Location = New System.Drawing.Point(259, 199)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(80, 18)
+        Me.Label10.Size = New System.Drawing.Size(99, 24)
         Me.Label10.TabIndex = 9
         Me.Label10.Text = "Last Name"
         '
@@ -1080,9 +1159,10 @@ Partial Class mainForm
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label5.Location = New System.Drawing.Point(194, 351)
+        Me.Label5.Location = New System.Drawing.Point(259, 432)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(57, 18)
+        Me.Label5.Size = New System.Drawing.Size(74, 24)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "Gender"
         '
@@ -1091,9 +1171,10 @@ Partial Class mainForm
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label3.Location = New System.Drawing.Point(194, 288)
+        Me.Label3.Location = New System.Drawing.Point(259, 354)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(76, 18)
+        Me.Label3.Size = New System.Drawing.Size(97, 24)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "User Type"
         '
@@ -1102,9 +1183,10 @@ Partial Class mainForm
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label2.Location = New System.Drawing.Point(194, 225)
+        Me.Label2.Location = New System.Drawing.Point(259, 277)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(45, 18)
+        Me.Label2.Size = New System.Drawing.Size(57, 24)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Email"
         '
@@ -1113,17 +1195,19 @@ Partial Class mainForm
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label1.Location = New System.Drawing.Point(194, 99)
+        Me.Label1.Location = New System.Drawing.Point(259, 122)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(81, 18)
+        Me.Label1.Size = New System.Drawing.Size(101, 24)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "First Name"
         '
         'updateMetroButton
         '
-        Me.updateMetroButton.Location = New System.Drawing.Point(760, 417)
+        Me.updateMetroButton.Location = New System.Drawing.Point(1013, 513)
+        Me.updateMetroButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.updateMetroButton.Name = "updateMetroButton"
-        Me.updateMetroButton.Size = New System.Drawing.Size(91, 38)
+        Me.updateMetroButton.Size = New System.Drawing.Size(121, 47)
         Me.updateMetroButton.TabIndex = 16
         Me.updateMetroButton.Text = "Save"
         Me.updateMetroButton.UseSelectable = True
@@ -1131,6 +1215,8 @@ Partial Class mainForm
         '
         'evaluationMetroPanel
         '
+        Me.evaluationMetroPanel.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.evaluationMetroPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(113, Byte), Integer), CType(CType(184, Byte), Integer))
         Me.evaluationMetroPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.evaluationMetroPanel.Controls.Add(Me.chemistryPictureBox)
@@ -1148,32 +1234,35 @@ Partial Class mainForm
         Me.evaluationMetroPanel.Controls.Add(Me.mathsEvalMetroTile)
         Me.evaluationMetroPanel.HorizontalScrollbarBarColor = True
         Me.evaluationMetroPanel.HorizontalScrollbarHighlightOnWheel = False
-        Me.evaluationMetroPanel.HorizontalScrollbarSize = 10
-        Me.evaluationMetroPanel.Location = New System.Drawing.Point(235, 95)
+        Me.evaluationMetroPanel.HorizontalScrollbarSize = 12
+        Me.evaluationMetroPanel.Location = New System.Drawing.Point(313, 117)
+        Me.evaluationMetroPanel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.evaluationMetroPanel.Name = "evaluationMetroPanel"
-        Me.evaluationMetroPanel.Size = New System.Drawing.Size(957, 552)
+        Me.evaluationMetroPanel.Size = New System.Drawing.Size(1290, 679)
         Me.evaluationMetroPanel.TabIndex = 18
         Me.evaluationMetroPanel.UseCustomBackColor = True
         Me.evaluationMetroPanel.VerticalScrollbarBarColor = True
         Me.evaluationMetroPanel.VerticalScrollbarHighlightOnWheel = False
-        Me.evaluationMetroPanel.VerticalScrollbarSize = 10
+        Me.evaluationMetroPanel.VerticalScrollbarSize = 13
         Me.evaluationMetroPanel.Visible = False
         '
         'chemistryPictureBox
         '
         Me.chemistryPictureBox.BackgroundImage = CType(resources.GetObject("chemistryPictureBox.BackgroundImage"), System.Drawing.Image)
         Me.chemistryPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.chemistryPictureBox.Location = New System.Drawing.Point(138, 312)
+        Me.chemistryPictureBox.Location = New System.Drawing.Point(184, 384)
+        Me.chemistryPictureBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chemistryPictureBox.Name = "chemistryPictureBox"
-        Me.chemistryPictureBox.Size = New System.Drawing.Size(211, 161)
+        Me.chemistryPictureBox.Size = New System.Drawing.Size(281, 198)
         Me.chemistryPictureBox.TabIndex = 14
         Me.chemistryPictureBox.TabStop = False
         '
         'PictureBox2
         '
-        Me.PictureBox2.Location = New System.Drawing.Point(677, 312)
+        Me.PictureBox2.Location = New System.Drawing.Point(903, 384)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(211, 161)
+        Me.PictureBox2.Size = New System.Drawing.Size(281, 198)
         Me.PictureBox2.TabIndex = 13
         Me.PictureBox2.TabStop = False
         '
@@ -1181,9 +1270,10 @@ Partial Class mainForm
         '
         Me.physicsPictureBox.BackgroundImage = CType(resources.GetObject("physicsPictureBox.BackgroundImage"), System.Drawing.Image)
         Me.physicsPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.physicsPictureBox.Location = New System.Drawing.Point(677, 96)
+        Me.physicsPictureBox.Location = New System.Drawing.Point(903, 118)
+        Me.physicsPictureBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.physicsPictureBox.Name = "physicsPictureBox"
-        Me.physicsPictureBox.Size = New System.Drawing.Size(211, 161)
+        Me.physicsPictureBox.Size = New System.Drawing.Size(281, 198)
         Me.physicsPictureBox.TabIndex = 12
         Me.physicsPictureBox.TabStop = False
         '
@@ -1191,9 +1281,10 @@ Partial Class mainForm
         '
         Me.biologyPictureBox.BackgroundImage = CType(resources.GetObject("biologyPictureBox.BackgroundImage"), System.Drawing.Image)
         Me.biologyPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.biologyPictureBox.Location = New System.Drawing.Point(406, 312)
+        Me.biologyPictureBox.Location = New System.Drawing.Point(541, 384)
+        Me.biologyPictureBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.biologyPictureBox.Name = "biologyPictureBox"
-        Me.biologyPictureBox.Size = New System.Drawing.Size(211, 161)
+        Me.biologyPictureBox.Size = New System.Drawing.Size(281, 198)
         Me.biologyPictureBox.TabIndex = 11
         Me.biologyPictureBox.TabStop = False
         '
@@ -1201,9 +1292,10 @@ Partial Class mainForm
         '
         Me.englishPictureBox.BackgroundImage = CType(resources.GetObject("englishPictureBox.BackgroundImage"), System.Drawing.Image)
         Me.englishPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.englishPictureBox.Location = New System.Drawing.Point(406, 96)
+        Me.englishPictureBox.Location = New System.Drawing.Point(541, 118)
+        Me.englishPictureBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.englishPictureBox.Name = "englishPictureBox"
-        Me.englishPictureBox.Size = New System.Drawing.Size(211, 161)
+        Me.englishPictureBox.Size = New System.Drawing.Size(281, 198)
         Me.englishPictureBox.TabIndex = 10
         Me.englishPictureBox.TabStop = False
         '
@@ -1211,9 +1303,10 @@ Partial Class mainForm
         '
         Me.mathsPictureBox.BackgroundImage = CType(resources.GetObject("mathsPictureBox.BackgroundImage"), System.Drawing.Image)
         Me.mathsPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.mathsPictureBox.Location = New System.Drawing.Point(138, 96)
+        Me.mathsPictureBox.Location = New System.Drawing.Point(184, 118)
+        Me.mathsPictureBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.mathsPictureBox.Name = "mathsPictureBox"
-        Me.mathsPictureBox.Size = New System.Drawing.Size(199, 161)
+        Me.mathsPictureBox.Size = New System.Drawing.Size(265, 198)
         Me.mathsPictureBox.TabIndex = 9
         Me.mathsPictureBox.TabStop = False
         '
@@ -1222,9 +1315,10 @@ Partial Class mainForm
         Me.MetroLabel6.AutoSize = True
         Me.MetroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall
         Me.MetroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel6.Location = New System.Drawing.Point(425, 51)
+        Me.MetroLabel6.Location = New System.Drawing.Point(567, 63)
+        Me.MetroLabel6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.MetroLabel6.Name = "MetroLabel6"
-        Me.MetroLabel6.Size = New System.Drawing.Size(110, 25)
+        Me.MetroLabel6.Size = New System.Drawing.Size(113, 25)
         Me.MetroLabel6.TabIndex = 8
         Me.MetroLabel6.Text = "Evaluations"
         Me.MetroLabel6.UseCustomBackColor = True
@@ -1233,9 +1327,10 @@ Partial Class mainForm
         '
         Me.MetroTile10.ActiveControl = Nothing
         Me.MetroTile10.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.MetroTile10.Location = New System.Drawing.Point(663, 473)
+        Me.MetroTile10.Location = New System.Drawing.Point(884, 582)
+        Me.MetroTile10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MetroTile10.Name = "MetroTile10"
-        Me.MetroTile10.Size = New System.Drawing.Size(263, 49)
+        Me.MetroTile10.Size = New System.Drawing.Size(351, 60)
         Me.MetroTile10.TabIndex = 7
         Me.MetroTile10.Text = "Social"
         Me.MetroTile10.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1249,9 +1344,10 @@ Partial Class mainForm
         '
         Me.biologyEvalMetroTile.ActiveControl = Nothing
         Me.biologyEvalMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.biologyEvalMetroTile.Location = New System.Drawing.Point(389, 473)
+        Me.biologyEvalMetroTile.Location = New System.Drawing.Point(519, 582)
+        Me.biologyEvalMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.biologyEvalMetroTile.Name = "biologyEvalMetroTile"
-        Me.biologyEvalMetroTile.Size = New System.Drawing.Size(263, 49)
+        Me.biologyEvalMetroTile.Size = New System.Drawing.Size(351, 60)
         Me.biologyEvalMetroTile.TabIndex = 6
         Me.biologyEvalMetroTile.Text = "Biology"
         Me.biologyEvalMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1265,9 +1361,10 @@ Partial Class mainForm
         '
         Me.engEvalMetroTile.ActiveControl = Nothing
         Me.engEvalMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.engEvalMetroTile.Location = New System.Drawing.Point(389, 259)
+        Me.engEvalMetroTile.Location = New System.Drawing.Point(519, 319)
+        Me.engEvalMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.engEvalMetroTile.Name = "engEvalMetroTile"
-        Me.engEvalMetroTile.Size = New System.Drawing.Size(263, 50)
+        Me.engEvalMetroTile.Size = New System.Drawing.Size(351, 62)
         Me.engEvalMetroTile.TabIndex = 5
         Me.engEvalMetroTile.Text = "English"
         Me.engEvalMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1281,9 +1378,10 @@ Partial Class mainForm
         '
         Me.chemistryEvalMetroTile.ActiveControl = Nothing
         Me.chemistryEvalMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.chemistryEvalMetroTile.Location = New System.Drawing.Point(114, 473)
+        Me.chemistryEvalMetroTile.Location = New System.Drawing.Point(152, 582)
+        Me.chemistryEvalMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chemistryEvalMetroTile.Name = "chemistryEvalMetroTile"
-        Me.chemistryEvalMetroTile.Size = New System.Drawing.Size(263, 49)
+        Me.chemistryEvalMetroTile.Size = New System.Drawing.Size(351, 60)
         Me.chemistryEvalMetroTile.TabIndex = 4
         Me.chemistryEvalMetroTile.Text = "Chemistry"
         Me.chemistryEvalMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1297,9 +1395,10 @@ Partial Class mainForm
         '
         Me.phyEvalMetroTile.ActiveControl = Nothing
         Me.phyEvalMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.phyEvalMetroTile.Location = New System.Drawing.Point(663, 259)
+        Me.phyEvalMetroTile.Location = New System.Drawing.Point(884, 319)
+        Me.phyEvalMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.phyEvalMetroTile.Name = "phyEvalMetroTile"
-        Me.phyEvalMetroTile.Size = New System.Drawing.Size(263, 50)
+        Me.phyEvalMetroTile.Size = New System.Drawing.Size(351, 62)
         Me.phyEvalMetroTile.TabIndex = 3
         Me.phyEvalMetroTile.Text = "Physics"
         Me.phyEvalMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1313,9 +1412,10 @@ Partial Class mainForm
         '
         Me.mathsEvalMetroTile.ActiveControl = Nothing
         Me.mathsEvalMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.mathsEvalMetroTile.Location = New System.Drawing.Point(114, 259)
+        Me.mathsEvalMetroTile.Location = New System.Drawing.Point(152, 319)
+        Me.mathsEvalMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.mathsEvalMetroTile.Name = "mathsEvalMetroTile"
-        Me.mathsEvalMetroTile.Size = New System.Drawing.Size(263, 50)
+        Me.mathsEvalMetroTile.Size = New System.Drawing.Size(351, 62)
         Me.mathsEvalMetroTile.TabIndex = 2
         Me.mathsEvalMetroTile.Text = "Mathematics"
         Me.mathsEvalMetroTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1327,23 +1427,27 @@ Partial Class mainForm
         '
         'aboutPanel
         '
+        Me.aboutPanel.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.aboutPanel.BackColor = System.Drawing.Color.Silver
         Me.aboutPanel.Controls.Add(Me.Label8)
         Me.aboutPanel.Controls.Add(Me.PictureBox1)
         Me.aboutPanel.Controls.Add(Me.Label7)
         Me.aboutPanel.Controls.Add(Me.Label6)
-        Me.aboutPanel.Location = New System.Drawing.Point(231, 89)
+        Me.aboutPanel.Location = New System.Drawing.Point(308, 110)
+        Me.aboutPanel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.aboutPanel.Name = "aboutPanel"
-        Me.aboutPanel.Size = New System.Drawing.Size(955, 565)
+        Me.aboutPanel.Size = New System.Drawing.Size(1287, 695)
         Me.aboutPanel.TabIndex = 19
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(459, 493)
+        Me.Label8.Location = New System.Drawing.Point(612, 607)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(47, 16)
+        Me.Label8.Size = New System.Drawing.Size(62, 20)
         Me.Label8.TabIndex = 3
         Me.Label8.Text = "© 2018"
         '
@@ -1351,9 +1455,10 @@ Partial Class mainForm
         '
         Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(387, 268)
+        Me.PictureBox1.Location = New System.Drawing.Point(516, 330)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(210, 192)
+        Me.PictureBox1.Size = New System.Drawing.Size(280, 236)
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
         '
@@ -1361,9 +1466,10 @@ Partial Class mainForm
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(472, 239)
+        Me.Label7.Location = New System.Drawing.Point(629, 294)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(23, 16)
+        Me.Label7.Size = New System.Drawing.Size(26, 20)
         Me.Label7.TabIndex = 1
         Me.Label7.Text = "by"
         '
@@ -1371,19 +1477,22 @@ Partial Class mainForm
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(372, 172)
+        Me.Label6.Location = New System.Drawing.Point(496, 212)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(241, 37)
+        Me.Label6.Size = New System.Drawing.Size(300, 46)
         Me.Label6.TabIndex = 0
         Me.Label6.Text = "Dawati Desktop"
         '
         'internetConnectionLabel
         '
+        Me.internetConnectionLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.internetConnectionLabel.AutoSize = True
         Me.internetConnectionLabel.ForeColor = System.Drawing.Color.Green
-        Me.internetConnectionLabel.Location = New System.Drawing.Point(1215, 313)
+        Me.internetConnectionLabel.Location = New System.Drawing.Point(1634, 385)
+        Me.internetConnectionLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.internetConnectionLabel.Name = "internetConnectionLabel"
-        Me.internetConnectionLabel.Size = New System.Drawing.Size(147, 13)
+        Me.internetConnectionLabel.Size = New System.Drawing.Size(192, 17)
         Me.internetConnectionLabel.TabIndex = 20
         Me.internetConnectionLabel.Text = "Internet Connection Detected"
         Me.internetConnectionLabel.Visible = False
@@ -1391,9 +1500,11 @@ Partial Class mainForm
         'updateContentMetroTile
         '
         Me.updateContentMetroTile.ActiveControl = Nothing
-        Me.updateContentMetroTile.Location = New System.Drawing.Point(1218, 335)
+        Me.updateContentMetroTile.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.updateContentMetroTile.Location = New System.Drawing.Point(1638, 412)
+        Me.updateContentMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.updateContentMetroTile.Name = "updateContentMetroTile"
-        Me.updateContentMetroTile.Size = New System.Drawing.Size(138, 91)
+        Me.updateContentMetroTile.Size = New System.Drawing.Size(184, 112)
         Me.updateContentMetroTile.TabIndex = 21
         Me.updateContentMetroTile.Text = "Update Content"
         Me.updateContentMetroTile.UseSelectable = True
@@ -1404,16 +1515,15 @@ Partial Class mainForm
         '
         'mainForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(1364, 684)
+        Me.ClientSize = New System.Drawing.Size(1833, 842)
         Me.ControlBox = False
         Me.Controls.Add(Me.updateContentMetroTile)
         Me.Controls.Add(Me.internetConnectionLabel)
         Me.Controls.Add(Me.classRoomLabel)
         Me.Controls.Add(Me.MetroPanel1)
-        Me.Controls.Add(Me.MetroPanel2)
         Me.Controls.Add(Me.exitMetroButton)
         Me.Controls.Add(Me.avatarPictureBox)
         Me.Controls.Add(Me.videosMetroPanel)
@@ -1421,7 +1531,9 @@ Partial Class mainForm
         Me.Controls.Add(Me.aboutPanel)
         Me.Controls.Add(Me.ebooksMetroPanel)
         Me.Controls.Add(Me.profilePanel)
+        Me.Controls.Add(Me.MetroPanel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "mainForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Home"
