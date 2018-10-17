@@ -11,7 +11,15 @@
     Private numOfQuestions As Integer
     Private examName As String
     Private exam_id As String
-    Private x As Integer = 0
+
+    'x counter for true and false
+    Private xTF As Integer = 0
+    'x counter for single select
+    Private xSS As Integer = 0
+    'x counter for multiple select
+    Private xMS As Integer = 0
+    'x counter for open ended
+    Private xOE As Integer = 0
     'stores answers
     Public userChoice(30) As String
     Public questionidentification(30) As Integer
@@ -91,9 +99,9 @@
         ElseIf questionType = 2 Then
             singleSelectQuestions(question, questionId, score, attachment)
         ElseIf questionType = 3 Then
-            'multipleSelectQuestion(question, questionId, score, attachment)
+            multipleSelectQuestion(question, questionId, score, attachment)
         ElseIf questionType = 4 Then
-            openEndedQuestions(question, questionId, score, attachment)
+            'openEndedQuestions(question, questionId, score, attachment)
         End If
     End Sub
     Public Sub trueFalseQuestions(ByVal question As String, ByVal questionId As String, ByVal score As String, ByVal attachment As String)
@@ -101,7 +109,7 @@
         Dim aYcordinate As Integer = 31
 
 
-        Dim localAnswerCounter As Integer = x
+        Dim localAnswerCounter As Integer = xTF
         'initializing arrays of type control
         Dim questionNo(30) As Label
         Dim questionLabel(30) As Label
@@ -157,7 +165,7 @@
         End If
 
         'group box properties
-        groupBox(tf).Size = New Size(201, 180)
+        groupBox(tf).Size = New Size(201, 80)
         groupBox(tf).Location = New Point(gXCordinate, yCordinate)
         groupBox(tf).Text = ""
 
@@ -177,11 +185,14 @@
 
 
         'increment yCordinate by 30
-        yCordinate = yCordinate + 30
+        yCordinate = yCordinate + 80
 
         'insight label properties
         insightLabel(tf).Text = "~Answer correctly~"
         insightLabel(tf).Location = New Point(qxCordinate, yCordinate)
+
+        'increment yCordinate by 30
+        yCordinate = yCordinate + 30
 
         'adding controls to panel
         questionsPanel.Controls.Add(questionNo(tf))
@@ -194,25 +205,27 @@
         'adding radiobutons to groupbox
         groupBox(tf).Controls.Add(trueradioButton(tf))
         groupBox(tf).Controls.Add(falseradioButton(tf))
-        groupBox(tf).Controls.Add(insightLabel(tf))
+
         'adding group box to questions panel
         questionsPanel.Controls.Add(groupBox(tf))
+        questionsPanel.Controls.Add(insightLabel(tf))
 
         AddHandler trueradioButton(tf).CheckedChanged, Sub(sender As Object, e As EventArgs)
                                                            'getting selected answer
                                                            '--------------------------
 
-                                                           For Each trueradiobutto As RadioButton In groupBox(localAnswerCounter).Controls.OfType(Of RadioButton)
-                                                               If trueradioButton(localAnswerCounter).Checked Then
-                                                                   userChoice(userchoiceCounter) = "true"
-                                                                   questionidentification(userchoiceCounter) = questionId
-                                                                   userchoiceCounter = userchoiceCounter + 1
-                                                               ElseIf falseradioButton(localAnswerCounter).Checked Then
-                                                                   userChoice(userchoiceCounter) = "false"
-                                                                   questionidentification(userchoiceCounter) = questionId
-                                                                   userchoiceCounter = userchoiceCounter + 1
-                                                               End If
-                                                           Next
+                                                           ' For Each trueradiobutto As RadioButton In groupBox(localAnswerCounter).Controls.OfType(Of RadioButton)
+                                                           If trueradioButton(localAnswerCounter).Checked Then
+                                                               userchoiceCounter = userchoiceCounter + 1
+                                                               userChoice(userchoiceCounter) = "true"
+                                                               questionidentification(userchoiceCounter) = questionId
+
+                                                               'ElseIf falseradioButton(localAnswerCounter).Checked Then
+                                                               '    userChoice(userchoiceCounter) = "false"
+                                                               '    questionidentification(userchoiceCounter) = questionId
+                                                               '    userchoiceCounter = userchoiceCounter + 1
+                                                           End If
+                                                           ' Next
 
 
                                                        End Sub
@@ -222,17 +235,19 @@
                                                             '--------------------------
 
 
-                                                            For Each trueradiobutto As RadioButton In groupBox(localAnswerCounter).Controls.OfType(Of RadioButton)
-                                                                If trueradioButton(localAnswerCounter).Checked Then
-                                                                    userChoice(userchoiceCounter) = "true"
-                                                                    questionidentification(userchoiceCounter) = questionId
-                                                                    userchoiceCounter = userchoiceCounter + 1
-                                                                ElseIf falseradioButton(localAnswerCounter).Checked Then
-                                                                    userChoice(userchoiceCounter) = "false"
-                                                                    questionidentification(userchoiceCounter) = questionId
-                                                                    userchoiceCounter = userchoiceCounter + 1
-                                                                End If
-                                                            Next
+                                                            'For Each trueradiobutto As RadioButton In groupBox(localAnswerCounter).Controls.OfType(Of RadioButton)
+                                                            '    If trueradioButton(localAnswerCounter).Checked Then
+                                                            '        userChoice(userchoiceCounter) = "true"
+                                                            '        questionidentification(userchoiceCounter) = questionId
+                                                            '        userchoiceCounter = userchoiceCounter + 1
+                                                            '    Else
+                                                            If falseradioButton(localAnswerCounter).Checked Then
+                                                                userchoiceCounter = userchoiceCounter + 1
+                                                                userChoice(userchoiceCounter) = "false"
+                                                                questionidentification(userchoiceCounter) = questionId
+
+                                                            End If
+                                                            ' Next
                                                         End Sub
         'increment ss
         tf = tf + 1
@@ -240,14 +255,14 @@
         'increment question counter
         questionCounter = questionCounter + 1
         'increment answer counter
-        X = x + 1
+        xTF = xTF + 1
 
     End Sub
     Private Sub singleSelectQuestions(ByVal question As String, ByVal questionId As String, ByVal score As String, ByVal attachment As String)
         ' stores the ycordinate of the answers
         Dim aYcordinate As Integer = 31
         'x holds the value zero to make sure every time the methode invokes, local answer counter is always 0
-        Dim localAnswerCounter As Integer = x
+        Dim localAnswerCounter As Integer = xSS
         'select answers and strore them in variables
         '-------------------------------------------
 
@@ -322,7 +337,7 @@
         End If
 
         'group box properties
-        groupBox(SS).Size = New Size(201, 180)
+        groupBox(SS).Size = New Size(1000, 180)
         groupBox(SS).Location = New Point(gXCordinate, yCordinate)
         groupBox(SS).Text = ""
 
@@ -330,7 +345,7 @@
         choice1radioButton(SS).Text = choice(0)
         choice1radioButton(SS).Location = New Point(aXcordinate, aYcordinate)
         choice1radioButton(SS).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-
+        choice1radioButton(SS).Size = New Size(800, 21)
         'increment yCordinate by 30
         aYcordinate = aYcordinate + 23
 
@@ -338,7 +353,7 @@
         choice2radioButton(SS).Text = choice(1)
         choice2radioButton(SS).Location = New Point(aXcordinate, aYcordinate)
         choice2radioButton(SS).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-
+        choice2radioButton(SS).Size = New Size(800, 21)
         'increment yCordinate by 30
         aYcordinate = aYcordinate + 23
 
@@ -346,7 +361,7 @@
         choice3radioButton(SS).Text = choice(2)
         choice3radioButton(SS).Location = New Point(aXcordinate, aYcordinate)
         choice3radioButton(SS).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-
+        choice3radioButton(SS).Size = New Size(800, 21)
         'increment yCordinate by 30
         aYcordinate = aYcordinate + 23
 
@@ -354,7 +369,7 @@
         choice4radioButton(SS).Text = choice(3)
         choice4radioButton(SS).Location = New Point(aXcordinate, aYcordinate)
         choice4radioButton(SS).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-
+        choice4radioButton(SS).Size = New Size(800, 21)
         'increment yCordinate by 30
         yCordinate = yCordinate + 175
 
@@ -391,104 +406,112 @@
         Dim choice3 = choice3radioButton(SS).Text
         Dim choice4 = choice4radioButton(SS).Text
 
+
         'lambda notation for event handling
         AddHandler choice1radioButton(SS).CheckedChanged, Sub(sender As Object, e As EventArgs)
 
-                                                              For Each trueradiobutto As RadioButton In groupBox(localAnswerCounter).Controls.OfType(Of RadioButton)
-                                                                  If choice1radioButton(localAnswerCounter).Checked Then
-                                                                      userChoice(userchoiceCounter) = choice1radioButton(localAnswerCounter).Text
-                                                                      questionidentification(userchoiceCounter) = questionId
-                                                                      userchoiceCounter = userchoiceCounter + 1
-                                                                  ElseIf choice2radioButton(localAnswerCounter).Checked Then
-                                                                      userChoice(userchoiceCounter) = choice2radioButton(localAnswerCounter).Text
-                                                                      questionidentification(userchoiceCounter) = questionId
-                                                                      userchoiceCounter = userchoiceCounter + 1
-                                                                  ElseIf choice3radioButton(localAnswerCounter).Checked Then
-                                                                      userChoice(userchoiceCounter) = choice3radioButton(localAnswerCounter).Text
-                                                                      questionidentification(userchoiceCounter) = questionId
-                                                                      userchoiceCounter = userchoiceCounter + 1
-                                                                      questionidentification(userchoiceCounter) = questionId
-                                                                  ElseIf choice4radioButton(localAnswerCounter).Checked Then
-                                                                      userChoice(userchoiceCounter) = choice4radioButton(localAnswerCounter).Text
-                                                                      questionidentification(userchoiceCounter) = questionId
-                                                                      userchoiceCounter = userchoiceCounter + 1
+                                                              '   For Each trueradiobutto As RadioButton In groupBox(localAnswerCounter).Controls.OfType(Of RadioButton)
+                                                              If choice1radioButton(localAnswerCounter).Checked Then
+                                                                  userchoiceCounter = userchoiceCounter + 1
+                                                                  userChoice(userchoiceCounter) = choice1radioButton(localAnswerCounter).Text
+                                                                  questionidentification(userchoiceCounter) = questionId
 
-                                                                  End If
-                                                              Next
+                                                                  'ElseIf choice2radioButton(localAnswerCounter).Checked Then
+                                                                  '    userChoice(userchoiceCounter) = choice2radioButton(localAnswerCounter).Text
+                                                                  '    questionidentification(userchoiceCounter) = questionId
+                                                                  '    userchoiceCounter = userchoiceCounter + 1
+                                                                  'ElseIf choice3radioButton(localAnswerCounter).Checked Then
+                                                                  '    userChoice(userchoiceCounter) = choice3radioButton(localAnswerCounter).Text
+                                                                  '    questionidentification(userchoiceCounter) = questionId
+                                                                  '    userchoiceCounter = userchoiceCounter + 1
+                                                                  '    questionidentification(userchoiceCounter) = questionId
+                                                                  'ElseIf choice4radioButton(localAnswerCounter).Checked Then
+                                                                  '    userChoice(userchoiceCounter) = choice4radioButton(localAnswerCounter).Text
+                                                                  '    questionidentification(userchoiceCounter) = questionId
+                                                                  '    userchoiceCounter = userchoiceCounter + 1
+
+                                                              End If
+                                                              'Next
 
                                                           End Sub
         AddHandler choice2radioButton(SS).CheckedChanged, Sub(sender As Object, e As EventArgs)
 
-                                                              For Each trueradiobutto As RadioButton In groupBox(localAnswerCounter).Controls.OfType(Of RadioButton)
-                                                                  If choice1radioButton(localAnswerCounter).Checked Then
-                                                                      userChoice(userchoiceCounter) = choice1radioButton(localAnswerCounter).Text
-                                                                      questionidentification(userchoiceCounter) = questionId
-                                                                      userchoiceCounter = userchoiceCounter + 1
-                                                                  ElseIf choice2radioButton(localAnswerCounter).Checked Then
-                                                                      userChoice(userchoiceCounter) = choice2radioButton(localAnswerCounter).Text
-                                                                      questionidentification(userchoiceCounter) = questionId
-                                                                      userchoiceCounter = userchoiceCounter + 1
-                                                                  ElseIf choice3radioButton(localAnswerCounter).Checked Then
-                                                                      userChoice(userchoiceCounter) = choice3radioButton(localAnswerCounter).Text
-                                                                      questionidentification(userchoiceCounter) = questionId
-                                                                      userchoiceCounter = userchoiceCounter + 1
-                                                                      questionidentification(userchoiceCounter) = questionId
-                                                                  ElseIf choice4radioButton(localAnswerCounter).Checked Then
-                                                                      userChoice(userchoiceCounter) = choice4radioButton(localAnswerCounter).Text
-                                                                      questionidentification(userchoiceCounter) = questionId
-                                                                      userchoiceCounter = userchoiceCounter + 1
+                                                              '  For Each trueradiobutto As RadioButton In groupBox(localAnswerCounter).Controls.OfType(Of RadioButton)
+                                                              'If choice1radioButton(localAnswerCounter).Checked Then
+                                                              '        userChoice(userchoiceCounter) = choice1radioButton(localAnswerCounter).Text
+                                                              '        questionidentification(userchoiceCounter) = questionId
+                                                              '        userchoiceCounter = userchoiceCounter + 1
+                                                              'Else
+                                                              If choice2radioButton(localAnswerCounter).Checked Then
+                                                                  userchoiceCounter = userchoiceCounter + 1
+                                                                  userChoice(userchoiceCounter) = choice2radioButton(localAnswerCounter).Text
+                                                                  questionidentification(userchoiceCounter) = questionId
+                                                                  ' userchoiceCounter = userchoiceCounter + 1
+                                                                  'ElseIf choice3radioButton(localAnswerCounter).Checked Then
+                                                                  '    userChoice(userchoiceCounter) = choice3radioButton(localAnswerCounter).Text
+                                                                  '    questionidentification(userchoiceCounter) = questionId
+                                                                  '    userchoiceCounter = userchoiceCounter + 1
+                                                                  '    questionidentification(userchoiceCounter) = questionId
+                                                                  'ElseIf choice4radioButton(localAnswerCounter).Checked Then
+                                                                  '    userChoice(userchoiceCounter) = choice4radioButton(localAnswerCounter).Text
+                                                                  '    questionidentification(userchoiceCounter) = questionId
+                                                                  '    userchoiceCounter = userchoiceCounter + 1
 
-                                                                  End If
-                                                              Next
+                                                              End If
+                                                              'Next
                                                           End Sub
 
         AddHandler choice3radioButton(SS).CheckedChanged, Sub(sender As Object, e As EventArgs)
 
-                                                              For Each trueradiobutto As RadioButton In groupBox(localAnswerCounter).Controls.OfType(Of RadioButton)
-                                                                  If choice1radioButton(localAnswerCounter).Checked Then
-                                                                      userChoice(userchoiceCounter) = choice1radioButton(localAnswerCounter).Text
-                                                                      questionidentification(userchoiceCounter) = questionId
-                                                                      userchoiceCounter = userchoiceCounter + 1
-                                                                  ElseIf choice2radioButton(localAnswerCounter).Checked Then
-                                                                      userChoice(userchoiceCounter) = choice2radioButton(localAnswerCounter).Text
-                                                                      questionidentification(userchoiceCounter) = questionId
-                                                                      userchoiceCounter = userchoiceCounter + 1
-                                                                  ElseIf choice3radioButton(localAnswerCounter).Checked Then
-                                                                      userChoice(userchoiceCounter) = choice3radioButton(localAnswerCounter).Text
-                                                                      questionidentification(userchoiceCounter) = questionId
-                                                                      userchoiceCounter = userchoiceCounter + 1
-                                                                      questionidentification(userchoiceCounter) = questionId
-                                                                  ElseIf choice4radioButton(localAnswerCounter).Checked Then
-                                                                      userChoice(userchoiceCounter) = choice4radioButton(localAnswerCounter).Text
-                                                                      questionidentification(userchoiceCounter) = questionId
-                                                                      userchoiceCounter = userchoiceCounter + 1
+                                                              '    For Each trueradiobutto As RadioButton In groupBox(localAnswerCounter).Controls.OfType(Of RadioButton)
+                                                              '   If choice1radioButton(localAnswerCounter).Checked Then
+                                                              'userChoice(userchoiceCounter) = choice1radioButton(localAnswerCounter).Text
+                                                              '    questionidentification(userchoiceCounter) = questionId
+                                                              '    userchoiceCounter = userchoiceCounter + 1
+                                                              'ElseIf choice2radioButton(localAnswerCounter).Checked Then
+                                                              '    userChoice(userchoiceCounter) = choice2radioButton(localAnswerCounter).Text
+                                                              '    questionidentification(userchoiceCounter) = questionId
+                                                              '    userchoiceCounter = userchoiceCounter + 1
+                                                              'Else
+                                                              If choice3radioButton(localAnswerCounter).Checked Then
+                                                                  userchoiceCounter = userchoiceCounter + 1
+                                                                  userChoice(userchoiceCounter) = choice3radioButton(localAnswerCounter).Text
+                                                                  questionidentification(userchoiceCounter) = questionId
+                                                                  '  userchoiceCounter = userchoiceCounter + 1
+                                                                  '   questionidentification(userchoiceCounter) = questionId
+                                                                  'ElseIf choice4radioButton(localAnswerCounter).Checked Then
+                                                                  '    userChoice(userchoiceCounter) = choice4radioButton(localAnswerCounter).Text
+                                                                  '    questionidentification(userchoiceCounter) = questionId
+                                                                  '    userchoiceCounter = userchoiceCounter + 1
 
-                                                                  End If
-                                                              Next
+                                                              End If
+                                                              'Next
                                                           End Sub
         AddHandler choice4radioButton(SS).CheckedChanged, Sub(sender As Object, e As EventArgs)
 
-                                                              For Each trueradiobutto As RadioButton In groupBox(localAnswerCounter).Controls.OfType(Of RadioButton)
-                                                                  If choice1radioButton(localAnswerCounter).Checked Then
-                                                                      userChoice(userchoiceCounter) = choice1radioButton(localAnswerCounter).Text
-                                                                      questionidentification(userchoiceCounter) = questionId
-                                                                      userchoiceCounter = userchoiceCounter + 1
-                                                                  ElseIf choice2radioButton(localAnswerCounter).Checked Then
-                                                                      userChoice(userchoiceCounter) = choice2radioButton(localAnswerCounter).Text
-                                                                      questionidentification(userchoiceCounter) = questionId
-                                                                      userchoiceCounter = userchoiceCounter + 1
-                                                                  ElseIf choice3radioButton(localAnswerCounter).Checked Then
-                                                                      userChoice(userchoiceCounter) = choice3radioButton(localAnswerCounter).Text
-                                                                      questionidentification(userchoiceCounter) = questionId
-                                                                      userchoiceCounter = userchoiceCounter + 1
-                                                                      questionidentification(userchoiceCounter) = questionId
-                                                                  ElseIf choice4radioButton(localAnswerCounter).Checked Then
-                                                                      userChoice(userchoiceCounter) = choice4radioButton(localAnswerCounter).Text
-                                                                      questionidentification(userchoiceCounter) = questionId
-                                                                      userchoiceCounter = userchoiceCounter + 1
+                                                              ' For Each trueradiobutto As RadioButton In groupBox(localAnswerCounter).Controls.OfType(Of RadioButton)
+                                                              'If choice1radioButton(localAnswerCounter).Checked Then
+                                                              '        userChoice(userchoiceCounter) = choice1radioButton(localAnswerCounter).Text
+                                                              '        questionidentification(userchoiceCounter) = questionId
+                                                              '        userchoiceCounter = userchoiceCounter + 1
+                                                              'ElseIf choice2radioButton(localAnswerCounter).Checked Then
+                                                              '    userChoice(userchoiceCounter) = choice2radioButton(localAnswerCounter).Text
+                                                              '    questionidentification(userchoiceCounter) = questionId
+                                                              '    userchoiceCounter = userchoiceCounter + 1
+                                                              'ElseIf choice3radioButton(localAnswerCounter).Checked Then
+                                                              '    userChoice(userchoiceCounter) = choice3radioButton(localAnswerCounter).Text
+                                                              '    questionidentification(userchoiceCounter) = questionId
+                                                              '    userchoiceCounter = userchoiceCounter + 1
+                                                              '    questionidentification(userchoiceCounter) = questionId
+                                                              'Else
+                                                              If choice4radioButton(localAnswerCounter).Checked Then
+                                                                  userchoiceCounter = userchoiceCounter + 1
+                                                                  userChoice(userchoiceCounter) = choice4radioButton(localAnswerCounter).Text
+                                                                  questionidentification(userchoiceCounter) = questionId
+                                                                  '  userchoiceCounter = userchoiceCounter + 1
 
-                                                                  End If
-                                                              Next
+                                                              End If
+                                                              'Next
                                                           End Sub
 
         'increment ss
@@ -499,14 +522,14 @@
         questionCounter = questionCounter + 1
 
         'increment answer counter
-        x = x + 1
+        xSS = xSS + 1
 
     End Sub
     Private Sub multipleSelectQuestion(ByVal question As String, ByVal questionId As String, ByVal score As String, ByVal attachment As String)
         ' stores the ycordinate of the answers
         Dim aYcordinate As Integer = 31
 
-        Dim localAnswerCounter As Integer = x
+        Dim localAnswerCounter As Integer = xMS
         'select answers and strore them in variables
         '-------------------------------------------
 
@@ -652,89 +675,96 @@
 
         'lambda notation for event handling
         AddHandler choice1CheckBox(MS).CheckedChanged, Sub(sender As Object, e As EventArgs)
-                                                           For Each trueradiobutto As RadioButton In groupBox(localAnswerCounter).Controls.OfType(Of RadioButton)
-                                                               If choice1CheckBox(localAnswerCounter).Checked Then
-                                                                   userChoice(userchoiceCounter) = choice1CheckBox(localAnswerCounter).Text
-                                                                   questionidentification(userchoiceCounter) = questionId
-                                                                   userchoiceCounter = userchoiceCounter + 1
-                                                               ElseIf choice2CheckBox(localAnswerCounter).Checked Then
-                                                                   userChoice(userchoiceCounter) = choice2CheckBox(localAnswerCounter).Text
-                                                                   questionidentification(userchoiceCounter) = questionId
-                                                                   userchoiceCounter = userchoiceCounter + 1
-                                                               ElseIf choice3CheckBox(localAnswerCounter).Checked Then
-                                                                   userChoice(userchoiceCounter) = choice3CheckBox(localAnswerCounter).Text
-                                                                   questionidentification(userchoiceCounter) = questionId
-                                                                   userchoiceCounter = userchoiceCounter + 1
-                                                               ElseIf choice4CheckBox(localAnswerCounter).Checked Then
-                                                                   userChoice(userchoiceCounter) = choice4CheckBox(localAnswerCounter).Text
-                                                                   questionidentification(userchoiceCounter) = questionId
-                                                                   userchoiceCounter = userchoiceCounter + 1
-                                                               End If
-                                                           Next
+                                                           '   For Each trueradiobutto As RadioButton In groupBox(localAnswerCounter).Controls.OfType(Of RadioButton)
+                                                           If choice1CheckBox(localAnswerCounter).Checked Then
+                                                               userchoiceCounter = userchoiceCounter + 1
+                                                               userChoice(userchoiceCounter) = choice1CheckBox(localAnswerCounter).Text
+                                                               questionidentification(userchoiceCounter) = questionId
+
+                                                               'ElseIf choice2CheckBox(localAnswerCounter).Checked Then
+                                                               '    userChoice(userchoiceCounter) = choice2CheckBox(localAnswerCounter).Text
+                                                               '    questionidentification(userchoiceCounter) = questionId
+                                                               '    userchoiceCounter = userchoiceCounter + 1
+                                                               'ElseIf choice3CheckBox(localAnswerCounter).Checked Then
+                                                               '    userChoice(userchoiceCounter) = choice3CheckBox(localAnswerCounter).Text
+                                                               '    questionidentification(userchoiceCounter) = questionId
+                                                               '    userchoiceCounter = userchoiceCounter + 1
+                                                               'ElseIf choice4CheckBox(localAnswerCounter).Checked Then
+                                                               '    userChoice(userchoiceCounter) = choice4CheckBox(localAnswerCounter).Text
+                                                               '    questionidentification(userchoiceCounter) = questionId
+                                                               '    userchoiceCounter = userchoiceCounter + 1
+                                                           End If
+                                                           ' Next
                                                        End Sub
         AddHandler choice2CheckBox(MS).CheckedChanged, Sub(sender As Object, e As EventArgs)
-                                                           For Each trueradiobutto As RadioButton In groupBox(localAnswerCounter).Controls.OfType(Of RadioButton)
-                                                               If choice1CheckBox(localAnswerCounter).Checked Then
-                                                                   userChoice(userchoiceCounter) = choice1CheckBox(localAnswerCounter).Text
-                                                                   questionidentification(userchoiceCounter) = questionId
-                                                                   userchoiceCounter = userchoiceCounter + 1
-                                                               ElseIf choice2CheckBox(localAnswerCounter).Checked Then
-                                                                   userChoice(userchoiceCounter) = choice2CheckBox(localAnswerCounter).Text
-                                                                   questionidentification(userchoiceCounter) = questionId
-                                                                   userchoiceCounter = userchoiceCounter + 1
-                                                               ElseIf choice3CheckBox(localAnswerCounter).Checked Then
-                                                                   userChoice(userchoiceCounter) = choice3CheckBox(localAnswerCounter).Text
-                                                                   questionidentification(userchoiceCounter) = questionId
-                                                                   userchoiceCounter = userchoiceCounter + 1
-                                                               ElseIf choice4CheckBox(localAnswerCounter).Checked Then
-                                                                   userChoice(userchoiceCounter) = choice4CheckBox(localAnswerCounter).Text
-                                                                   questionidentification(userchoiceCounter) = questionId
-                                                                   userchoiceCounter = userchoiceCounter + 1
-                                                               End If
-                                                           Next
+                                                           'For Each trueradiobutto As RadioButton In groupBox(localAnswerCounter).Controls.OfType(Of RadioButton)
+                                                           '    If choice1CheckBox(localAnswerCounter).Checked Then
+                                                           '        userChoice(userchoiceCounter) = choice1CheckBox(localAnswerCounter).Text
+                                                           '        questionidentification(userchoiceCounter) = questionId
+                                                           '        userchoiceCounter = userchoiceCounter + 1
+                                                           '    Else
+                                                           If choice2CheckBox(localAnswerCounter).Checked Then
+                                                               userchoiceCounter = userchoiceCounter + 1
+                                                               userChoice(userchoiceCounter) = choice2CheckBox(localAnswerCounter).Text
+                                                               questionidentification(userchoiceCounter) = questionId
+
+                                                               'ElseIf choice3CheckBox(localAnswerCounter).Checked Then
+                                                               '    userChoice(userchoiceCounter) = choice3CheckBox(localAnswerCounter).Text
+                                                               '    questionidentification(userchoiceCounter) = questionId
+                                                               '    userchoiceCounter = userchoiceCounter + 1
+                                                               'ElseIf choice4CheckBox(localAnswerCounter).Checked Then
+                                                               '    userChoice(userchoiceCounter) = choice4CheckBox(localAnswerCounter).Text
+                                                               '        questionidentification(userchoiceCounter) = questionId
+                                                               '        userchoiceCounter = userchoiceCounter + 1
+                                                           End If
+                                                           ' Next
                                                        End Sub
 
         AddHandler choice3CheckBox(MS).CheckedChanged, Sub(sender As Object, e As EventArgs)
-                                                           For Each trueradiobutto As RadioButton In groupBox(localAnswerCounter).Controls.OfType(Of RadioButton)
-                                                               If choice1CheckBox(localAnswerCounter).Checked Then
-                                                                   userChoice(userchoiceCounter) = choice1CheckBox(localAnswerCounter).Text
-                                                                   questionidentification(userchoiceCounter) = questionId
-                                                                   userchoiceCounter = userchoiceCounter + 1
-                                                               ElseIf choice2CheckBox(localAnswerCounter).Checked Then
-                                                                   userChoice(userchoiceCounter) = choice2CheckBox(localAnswerCounter).Text
-                                                                   questionidentification(userchoiceCounter) = questionId
-                                                                   userchoiceCounter = userchoiceCounter + 1
-                                                               ElseIf choice3CheckBox(localAnswerCounter).Checked Then
-                                                                   userChoice(userchoiceCounter) = choice3CheckBox(localAnswerCounter).Text
-                                                                   questionidentification(userchoiceCounter) = questionId
-                                                                   userchoiceCounter = userchoiceCounter + 1
-                                                               ElseIf choice4CheckBox(localAnswerCounter).Checked Then
-                                                                   userChoice(userchoiceCounter) = choice4CheckBox(localAnswerCounter).Text
-                                                                   questionidentification(userchoiceCounter) = questionId
-                                                                   userchoiceCounter = userchoiceCounter + 1
-                                                               End If
-                                                           Next
+                                                           'For Each trueradiobutto As RadioButton In groupBox(localAnswerCounter).Controls.OfType(Of RadioButton)
+                                                           '    If choice1CheckBox(localAnswerCounter).Checked Then
+                                                           '        userChoice(userchoiceCounter) = choice1CheckBox(localAnswerCounter).Text
+                                                           '        questionidentification(userchoiceCounter) = questionId
+                                                           '        userchoiceCounter = userchoiceCounter + 1
+                                                           '    ElseIf choice2CheckBox(localAnswerCounter).Checked Then
+                                                           '        userChoice(userchoiceCounter) = choice2CheckBox(localAnswerCounter).Text
+                                                           '        questionidentification(userchoiceCounter) = questionId
+                                                           '        userchoiceCounter = userchoiceCounter + 1
+                                                           '    Else
+                                                           If choice3CheckBox(localAnswerCounter).Checked Then
+                                                               userchoiceCounter = userchoiceCounter + 1
+                                                               userChoice(userchoiceCounter) = choice3CheckBox(localAnswerCounter).Text
+                                                               questionidentification(userchoiceCounter) = questionId
+
+                                                               'ElseIf choice4CheckBox(localAnswerCounter).Checked Then
+                                                               '    userChoice(userchoiceCounter) = choice4CheckBox(localAnswerCounter).Text
+                                                               '        questionidentification(userchoiceCounter) = questionId
+                                                               '        userchoiceCounter = userchoiceCounter + 1
+                                                           End If
+                                                           ' Next
                                                        End Sub
         AddHandler choice4CheckBox(MS).CheckedChanged, Sub(sender As Object, e As EventArgs)
-                                                           For Each trueradiobutto As RadioButton In groupBox(localAnswerCounter).Controls.OfType(Of RadioButton)
-                                                               If choice1CheckBox(localAnswerCounter).Checked Then
-                                                                   userChoice(userchoiceCounter) = choice1CheckBox(localAnswerCounter).Text
-                                                                   questionidentification(userchoiceCounter) = questionId
-                                                                   userchoiceCounter = userchoiceCounter + 1
-                                                               ElseIf choice2CheckBox(localAnswerCounter).Checked Then
-                                                                   userChoice(userchoiceCounter) = choice2CheckBox(localAnswerCounter).Text
-                                                                   questionidentification(userchoiceCounter) = questionId
-                                                                   userchoiceCounter = userchoiceCounter + 1
-                                                               ElseIf choice3CheckBox(localAnswerCounter).Checked Then
-                                                                   userChoice(userchoiceCounter) = choice3CheckBox(localAnswerCounter).Text
-                                                                   questionidentification(userchoiceCounter) = questionId
-                                                                   userchoiceCounter = userchoiceCounter + 1
-                                                               ElseIf choice4CheckBox(localAnswerCounter).Checked Then
-                                                                   userChoice(userchoiceCounter) = choice4CheckBox(localAnswerCounter).Text
-                                                                   questionidentification(userchoiceCounter) = questionId
-                                                                   userchoiceCounter = userchoiceCounter + 1
-                                                               End If
-                                                           Next
+                                                           'For Each trueradiobutto As RadioButton In groupBox(localAnswerCounter).Controls.OfType(Of RadioButton)
+                                                           '    If choice1CheckBox(localAnswerCounter).Checked Then
+                                                           '        userChoice(userchoiceCounter) = choice1CheckBox(localAnswerCounter).Text
+                                                           '        questionidentification(userchoiceCounter) = questionId
+                                                           '        userchoiceCounter = userchoiceCounter + 1
+                                                           '    ElseIf choice2CheckBox(localAnswerCounter).Checked Then
+                                                           '        userChoice(userchoiceCounter) = choice2CheckBox(localAnswerCounter).Text
+                                                           '        questionidentification(userchoiceCounter) = questionId
+                                                           '        userchoiceCounter = userchoiceCounter + 1
+                                                           '    ElseIf choice3CheckBox(localAnswerCounter).Checked Then
+                                                           '        userChoice(userchoiceCounter) = choice3CheckBox(localAnswerCounter).Text
+                                                           '        questionidentification(userchoiceCounter) = questionId
+                                                           '        userchoiceCounter = userchoiceCounter + 1
+                                                           '    Else
+                                                           If choice4CheckBox(localAnswerCounter).Checked Then
+                                                               userchoiceCounter = userchoiceCounter + 1
+                                                               userChoice(userchoiceCounter) = choice4CheckBox(localAnswerCounter).Text
+                                                               questionidentification(userchoiceCounter) = questionId
+
+                                                           End If
+                                                           ' Next
                                                        End Sub
 
 
@@ -743,7 +773,7 @@
 
         'increment question counter
         questionCounter = questionCounter + 1
-        x = x + 1
+        xMS = xMS + 1
 
 
     End Sub
@@ -827,7 +857,7 @@
 
     Private Sub insertAnswer()
         Dim dbConnect As New databaseConnection
-        For i As Integer = 0 To userchoiceCounter
+        For i As Integer = 1 To userchoiceCounter
 
             dbConnect.sqlLiteConnection("Evaluations.db")
 
@@ -836,18 +866,28 @@
         Next
 
         dbConnect.closeSqlite()
+
+        Dim result As DialogResult = MessageBox.Show("Your exam has been submitted, do you want to view results now", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+        If result = DialogResult.Yes Then
+            attemptReports.initialize(exam_id, examName, numOfQuestions)
+            attemptReports.MdiParent = dawatiParent
+            attemptReports.WindowState = FormWindowState.Maximized
+            Hide()
+            attemptReports.Show()
+        End If
     End Sub
 
     Private Sub questions_closed(sender As Object, e As EventArgs) Handles MyBase.Closed
-        Dim result As DialogResult = MessageBox.Show("Are you sure you want to cancel the test", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
-        If result = DialogResult.Yes Then
+        'Dim result As DialogResult = MessageBox.Show("Are you sure you want to cancel the test", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+        'If result = DialogResult.Yes Then
 
-            mainForm.MdiParent = dawatiParent
-            mainForm.Show()
-            mainForm.WindowState = FormWindowState.Maximized
-            Me.Close()
-        ElseIf result = DialogResult.No Then
-            Exit Sub
-        End If
+        '    mainForm.MdiParent = dawatiParent
+        '    mainForm.Show()
+        '    mainForm.WindowState = FormWindowState.Maximized
+        '    Me.Close()
+        'ElseIf result = DialogResult.No Then
+        '    Hide()
+        '    Show()
+        'End If
     End Sub
 End Class

@@ -2,19 +2,13 @@
 
 
 
-    'test variables
+    'users variables
+    Private userid As Integer
     'initializing arrays of type control
     Private questionNo(30) As Label
-        Private questionLabel(30) As Label
-        Private trueradioButton(30) As RadioButton
-        Private falseradioButton(30) As RadioButton
-        Private insightLabel(30) As Label
-        Private groupBox(30) As GroupBox
-        Private pictureBox(30) As PictureBox
-        Private correctAnswer(30) As Label
 
-        'global variables
-        Private question As String
+    'global variables
+    Private question As String
         Private questionId As String
         Private questionType As String
         Private score As String
@@ -41,6 +35,10 @@
 
         Private questionCounter As Integer = 1
     Private obj As New questions
+
+    Public Sub getUserId(ByVal userId As Integer)
+        Me.userid = userId
+    End Sub
 
     Public Sub initialize(ByVal exam_id As Integer, ByVal examName As String, ByVal numOfQuestions As Integer)
             Dim evaluation = New evaluationForm 'evaluationForm object
@@ -83,158 +81,227 @@
             Next
         End Sub
 
-        Private Sub displayQuestion(ByVal question As String, ByVal questionId As String, ByVal questionType As String, ByVal score As String, ByVal attachment As String)
-            If questionType = 1 Then
-            MessageBox.Show(obj.userChoices(0, 0))
+    Private Sub displayQuestion(ByVal question As String, ByVal questionId As String, ByVal questionType As String, ByVal score As String, ByVal attachment As String)
+        If questionType = 1 Then
+            '  MessageBox.Show(obj.userChoices(0, 0))
             trueFalseQuestions(question, questionId, score, attachment)
-            ElseIf questionType = 2 Then
-                singleSelectQuestions(question, questionId, score, attachment)
-            ElseIf questionType = 3 Then
-                multipleSelectQuestion(question, questionId, score, attachment)
-            ElseIf questionType = 4 Then
-                openEndedQuestions(question, questionId, score, attachment)
-            End If
-        End Sub
-        Private Sub trueFalseQuestions(ByVal question As String, ByVal questionId As String, ByVal score As String, ByVal attachment As String)
-            ' stores the ycordinate of the answers
-            Dim aYcordinate As Integer = 31
+        ElseIf questionType = 2 Then
+            singleSelectQuestions(question, questionId, score, attachment)
+        ElseIf questionType = 3 Then
+            multipleSelectQuestion(question, questionId, score, attachment)
+        ElseIf questionType = 4 Then
+            openEndedQuestions(question, questionId, score, attachment)
+        End If
+    End Sub
+
+    ' this function will return the answer, as string, the specified user returned for a particular string
+    Private Function showSelectedAnswer(ByVal questionId As Integer, ByVal userId As Integer) As String
+        Dim dbConnect As New databaseConnection
+        'local variable to store choice
+        Dim choice As String = ""
+        dbConnect.sqlLiteConnection("Evaluations.db")
+        Dim strSql As String = " Select choice from respondent_attempts where question_id='" & questionId & "'  AND user_id='" & userId & "'"
+        dbConnect.selectSqlite(strSql)
+        While dbConnect.reader.Read
+            choice = dbConnect.reader("choice")
+        End While
+
+        Return Choice
+    End Function
+    Private Sub trueFalseQuestions(ByVal question As String, ByVal questionId As String, ByVal score As Integer, ByVal attachment As String)
+        'local variable to store users answer
+        Dim myChoice = showSelectedAnswer(questionId, userid)
 
 
-            ''initializing arrays of type control
-            'Dim questionNo(30) As Control
-            'Dim questionLabel(30) As Control
-
-            'Dim insightLabel(30) As Control
-            'Dim groupBox(30) As Control
-            'Dim pictureBox(30) As Control
-            'Dim correctAnswer(30) As Control
-
-            'initializing array indexes as components
-            questionLabel(tf) = New Label
-            trueradioButton(tf) = New RadioButton
-            falseradioButton(tf) = New RadioButton
-            questionNo(tf) = New Label
-            insightLabel(tf) = New Label
-            groupBox(tf) = New GroupBox
-            pictureBox(tf) = New PictureBox
-            correctAnswer(tf) = New Label
-
-            'question number properties
-
-            questionNo(tf).Text = "Question" & questionCounter
-            questionNo(tf).Location = New Point(qxCordinate, yCordinate)
-            questionNo(tf).Anchor = AnchorStyles.Top
-            questionNo(tf).Size = New Size(300, 30)
-            questionNo(tf).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-
-            'increment yCordinate by 30
-            yCordinate = yCordinate + 30
-
-            'questions properties
-            questionLabel(tf).Text = question
-            questionLabel(tf).Location = New Point(qxCordinate, yCordinate)
-            questionLabel(tf).Size = New Size(500, 60)
-            questionLabel(tf).Font = New Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-
-            'increment yCordinate by 30
-            yCordinate = yCordinate + 30
-
-            'checks for attachments
-            If attachment.Equals("") Then
-                'do nothing/ skip attachments
-            Else
-                'picture properties
-                pictureBox(tf).Size = New Size(617, 197)
-                pictureBox(tf).Location = New Point(qxCordinate, yCordinate)
-                pictureBox(tf).BackgroundImage = Image.FromFile("assets\question_attachments\" & attachment & "")
-                pictureBox(tf).BackgroundImageLayout = ImageLayout.Center
-
-                'increment ycordinate
-                yCordinate = yCordinate + 200
-            End If
-
-            'group box properties
-            groupBox(tf).Size = New Size(201, 180)
-            groupBox(tf).Location = New Point(gXCordinate, yCordinate)
-            groupBox(tf).Text = ""
-
-            'increment yCordinate by 30
-            yCordinate = yCordinate + 30
-
-            'true radioButton properties
-            trueradioButton(tf).Text = "True"
-            trueradioButton(tf).Location = New Point(aXcordinate, aYcordinate)
-            'increment x cordinate
-
-            aXcordinate = aXcordinate + 600
-
-            'Correct answer label
-            correctAnswer(tf).Location = New Point(aXcordinate, aYcordinate)
-            correctAnswer(tf).Visible = True
-            correctAnswer(tf).Text = "correct"
-            correctAnswer(tf).ForeColor = Color.Green
-
-            'increment yCordinate by 30
-            aYcordinate = aYcordinate + 30
-            aXcordinate = aXcordinate - 600
-
-            'false radioButton properties 
-            falseradioButton(tf).Text = "False"
-            falseradioButton(tf).Location = New Point(aXcordinate, aYcordinate)
-
-            aXcordinate = aXcordinate + 60
-
-            'AddHandler trueradioButton(tf).checkchanged
+        ' stores the ycordinate of the answers
+        Dim aYcordinate As Integer = 31
 
 
-            'increment yCordinate by 170, size of groupbox
-            yCordinate = yCordinate + 170
+        ''initializing arrays of type control
+        Dim questionLabel(30) As Label
+        Dim trueradioButton(30) As RadioButton
+        Dim falseradioButton(30) As RadioButton
+        Dim insightLabel(30) As Label
+        Dim groupBox(30) As GroupBox
+        Dim pictureBox(30) As PictureBox
+        Dim correctAnswer(30) As Label
+        Dim statusPanel(30) As Panel
+        Dim scorelabel(30) As Label
+        Dim statuslabel(30) As Label ' store correct or wrong  variables
+        Dim correctAnswerlabel(30) As Label
+
+        'initializing array indexes as components
+        questionLabel(tf) = New Label
+        trueradioButton(tf) = New RadioButton
+        falseradioButton(tf) = New RadioButton
+        questionNo(tf) = New Label
+        insightLabel(tf) = New Label
+        groupBox(tf) = New GroupBox
+        pictureBox(tf) = New PictureBox
+        statuslabel(tf) = New Label
+        scorelabel(tf) = New Label
+        statusPanel(tf) = New Panel
+        correctAnswerlabel(tf) = New Label
+
+        'question number properties
+
+        questionNo(tf).Text = "Question" & questionCounter
+        questionNo(tf).Location = New Point(qxCordinate, yCordinate)
+        questionNo(tf).Anchor = AnchorStyles.Top
+        questionNo(tf).Size = New Size(300, 30)
+        questionNo(tf).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+
+        'increment yCordinate by 30
+        yCordinate = yCordinate + 30
+
+        'questions properties
+        questionLabel(tf).Text = question
+        questionLabel(tf).Location = New Point(qxCordinate, yCordinate)
+        questionLabel(tf).Size = New Size(500, 60)
+        questionLabel(tf).Font = New Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+
+        'increment yCordinate by 30
+        yCordinate = yCordinate + 30
+
+        'checks for attachments
+        If attachment.Equals("") Then
+            'do nothing/ skip attachments
+        Else
+            'picture properties
+            pictureBox(tf).Size = New Size(617, 197)
+            pictureBox(tf).Location = New Point(qxCordinate, yCordinate)
+            pictureBox(tf).BackgroundImage = Image.FromFile("assets\question_attachments\" & attachment & "")
+            pictureBox(tf).BackgroundImageLayout = ImageLayout.Center
+
+            'increment ycordinate
+            yCordinate = yCordinate + 200
+        End If
+
+        'group box properties
+        groupBox(tf).Size = New Size(201, 80)
+        groupBox(tf).Location = New Point(gXCordinate, yCordinate)
+        groupBox(tf).Text = ""
+
+        'increment yCordinate by 30
+        yCordinate = yCordinate + 30
+
+        'true radioButton properties
+        trueradioButton(tf).Text = "true"
+        Dim trueRBtext As String = trueradioButton(tf).Text 'RB stands for radiobutton
+        trueradioButton(tf).Location = New Point(aXcordinate, aYcordinate)
+        If myChoice = trueRBtext Then
+            trueradioButton(tf).Checked = True
+        End If
+
+        'increment yCordinate by 30
+        aYcordinate = aYcordinate + 30
+
+        'false radioButton properties 
+        falseradioButton(tf).Text = "false"
+        Dim falseRBtext As String = falseradioButton(tf).Text
+        falseradioButton(tf).Location = New Point(aXcordinate, aYcordinate)
+        If myChoice = falseRBtext Then
+            falseradioButton(tf).Checked = True
+        End If
+
+        'increment yCordinate by 80, size of groupbox
+        yCordinate = yCordinate + 80
+        '-----------------------------------------------------------'
+        'Section to Show whether the user answered correctly or not '
+        '---------------------------------------------------------- '
+        Dim status As String = markingQuestions(questionId, myChoice)
+        'status panel and its component
+        'status panel
 
 
-            'insight label properties
-            insightLabel(tf).Text = "~Answer correctly~"
-            insightLabel(tf).Location = New Point(qxCordinate, yCordinate)
-
-            'adding controls to panel
-            questionsPanel.Controls.Add(questionNo(tf))
-            questionsPanel.Controls.Add(questionLabel(tf))
-            If attachment.Equals("") Then
-                'do nothing
-            Else
-                questionsPanel.Controls.Add(pictureBox(tf))
-            End If
-            'adding radiobutons to groupbox
-            groupBox(tf).Controls.Add(trueradioButton(tf))
-            groupBox(tf).Controls.Add(falseradioButton(tf))
-            groupBox(tf).Controls.Add(correctAnswer(tf))
-            'adding group box to questions panel
-            questionsPanel.Controls.Add(groupBox(tf))
+        statusPanel(tf).Size = New Size(400, 90)
+        statusPanel(tf).Name = "statuspanel"
+        statusPanel(tf).Margin = New Padding(4)
+        statusPanel(tf).Location = New Point(qxCordinate, yCordinate)
+        If status = "Correct" Then
+            statusPanel(tf).BackColor = Color.FromArgb(112, 219, 112)
 
 
-            'getting selected answers
+        Else
+            statusPanel(tf).BackColor = Color.FromArgb(255, 102, 102)
+        End If
+
+        'staus label
+        Dim ycord = 50
+        statuslabel(tf).Location = New Point(34, 21)
+        If status = "Correct" Then
+            statuslabel(tf).Text = "correct"
+
+        Else
+            statuslabel(tf).Text = "incorrect"
+
+            'correctanswer label
+            ycord = 50
+            correctAnswerlabel(tf).Text = "Correct answer : " & correctAnswers(questionId)
+            correctAnswerlabel(tf).Location = New Point(34, ycord)
+            ycord += 20
+        End If
+        'score label
+        If status = "Correct" Then
+            scorelabel(tf).Text = score & "  marks"
+
+        Else
+            scorelabel(tf).Text = 0 & "  marks"
+        End If
+
+        scorelabel(tf).Location = New Point(34, ycord)
+
+        'add items to status panel
+        statusPanel(tf).Controls.Add(statuslabel(tf))
+        statusPanel(tf).Controls.Add(scorelabel(tf))
+        statusPanel(tf).Controls.Add(correctAnswerlabel(tf))
+
+        '----------------
+        'end status panel
+        '----------------
 
 
 
+        'increment yCordinate by 30
+        yCordinate = yCordinate + 95
 
-            'increment ss
-            tf = tf + 1
+        'adding controls to panel
+        questionsPanel.Controls.Add(questionNo(tf))
+        questionsPanel.Controls.Add(questionLabel(tf))
+        If attachment.Equals("") Then
+            'do nothing
+        Else
+            questionsPanel.Controls.Add(pictureBox(tf))
+        End If
+        'adding radiobutons to groupbox
+        groupBox(tf).Controls.Add(trueradioButton(tf))
+        groupBox(tf).Controls.Add(falseradioButton(tf))
 
-            'increment question counter
-            questionCounter = questionCounter + 1
+        'groupBox(tf).Controls.Add(correctAnswer(tf))
+        'adding group box to questions panel
+        questionsPanel.Controls.Add(groupBox(tf))
+        questionsPanel.Controls.Add(statusPanel(tf))
 
 
-        End Sub
-        Private Sub singleSelectQuestions(ByVal question As String, ByVal questionId As String, ByVal score As String, ByVal attachment As String)
-            'stores the value stating whether a question is correct or not
-            Dim status As String
-            ' stores the ycordinate of the answers
-            Dim aYcordinate As Integer = 31
+        'increment ss
+        tf = tf + 1
 
-            'select answers and strore them in variables
-            '-------------------------------------------
+        'increment question counter
+        questionCounter = questionCounter + 1
 
-            'array of choices
-            Dim choice(4) As String
+
+    End Sub
+    Private Sub singleSelectQuestions(ByVal question As String, ByVal questionId As String, ByVal score As String, ByVal attachment As String)
+
+        'select answers and strore them in variables
+        '-------------------------------------------
+        Dim myChoice = showSelectedAnswer(questionId, userid)
+
+        ' stores the ycordinate of the answers
+        Dim aYcordinate As Integer = 31
+
+        'array of choices
+        Dim choice(4) As String
 
             'select questions from database
             Dim dbConnect As New databaseConnection
@@ -244,8 +311,8 @@
             Dim strSql As String = "select choice from question_answers where question_id ='" & questionId & "'"
             dbConnect.selectSqlite(strSql)
             While dbConnect.reader.Read
-                choice(counter) = dbConnect.reader("choice")
-                counter = counter + 1
+            choice(counter) = dbConnect.reader("choice") 'brilliant
+            counter = counter + 1
             End While
 
             'declaring arrays of controls
@@ -258,11 +325,12 @@
             Dim groupBox(30) As Control
             Dim insightLabel(30) As Control
             Dim picturebox(30) As Control
+        Dim statusPanel(30) As Panel
+        Dim scorelabel(30) As Label
+        Dim statuslabel(30) As Label ' store correct or wrong  variables
 
-            Dim correctAnswer(30) As Label
-
-            'initializing controls
-            questionNo(SS) = New Label
+        'initializing controls
+        questionNo(SS) = New Label
             questionLabel(SS) = New Label
             choice1radioButton(SS) = New RadioButton
             choice2radioButton(SS) = New RadioButton
@@ -271,11 +339,13 @@
             insightLabel(SS) = New Label
             groupBox(SS) = New GroupBox ' used for grouping radio buttons
             picturebox(SS) = New PictureBox
+        statusPanel(SS) = New Panel
+        scorelabel(SS) = New Label
+        statuslabel(SS) = New Label
 
-            correctAnswer(SS) = New Label
 
-            'question NO properties
-            questionNo(SS).Text = "Question" & questionCounter
+        'question NO properties
+        questionNo(SS).Text = "Question" & questionCounter
             questionNo(SS).Location = New Point(qxCordinate, yCordinate)
             questionNo(SS).Anchor = AnchorStyles.Top
             questionNo(SS).Size = New Size(300, 30)
@@ -287,33 +357,11 @@
             Dim choice2 = choice2radioButton(SS).Text
             Dim choice3 = choice3radioButton(SS).Text
             Dim choice4 = choice4radioButton(SS).Text
-            'lambda notation for event handling
-            AddHandler choice1radioButton(SS).CheckedChanged, Sub(sender As Object, e As EventArgs)
-                                                                  status = markingQuestions(questionId, choice1)
-                                                              End Sub
-            AddHandler choice2radioButton(SS).CheckedChanged, Sub(sender As Object, e As EventArgs)
-                                                                  status = markingQuestions(questionId, choice2)
-                                                              End Sub
 
-            AddHandler choice3radioButton(SS).CheckedChanged, Sub(sender As Object, e As EventArgs)
-                                                                  status = markingQuestions(questionId, choice3)
-                                                              End Sub
-            AddHandler choice4radioButton(SS).CheckedChanged, Sub(sender As Object, e As EventArgs)
-                                                                  status = markingQuestions(questionId, choice4)
-                                                              End Sub
-            If status = "Correct" Then
-                correctAnswer(SS).Text = "Correct"
-                correctAnswer(SS).ForeColor = Color.Green
-
-
-            ElseIf status = "Incorrect" Then
-                correctAnswer(SS).Text = "InCorrect"
-                correctAnswer(SS).ForeColor = Color.Red
-            End If
-            'end
-            '-------------------------------
-            'increment yCordinate by 30
-            yCordinate = yCordinate + 30
+        'end
+        '-------------------------------
+        'increment yCordinate by 30
+        yCordinate = yCordinate + 30
 
             'question properties
             questionLabel(SS).Text = question
@@ -322,8 +370,8 @@
             questionLabel(SS).Size = New Size(800, 60)
             questionLabel(SS).Font = New Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 
-            'increment yCordinate by 30
-            yCordinate = yCordinate + 30
+        'increment yCordinate by 30
+        yCordinate = yCordinate + 30
 
             If attachment.Equals("") Then
                 'do nothing/ skip attachments
@@ -338,64 +386,120 @@
                 yCordinate = yCordinate + 200
             End If
 
-            'group box properties
-            groupBox(SS).Size = New Size(1000, 180)
-            groupBox(SS).Location = New Point(gXCordinate, yCordinate)
+        'group box properties
+        groupBox(SS).Size = New Size(1000, 120)
+        groupBox(SS).Location = New Point(gXCordinate, yCordinate)
             groupBox(SS).Text = ""
 
             'choice1radioButton properties
             choice1radioButton(SS).Text = choice(0)
             choice1radioButton(SS).Location = New Point(aXcordinate, aYcordinate)
             choice1radioButton(SS).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            choice1radioButton(SS).Size = New Size(500, 21)
+        choice1radioButton(SS).Size = New Size(800, 21)
+        Dim choice1Text As String = choice1radioButton(SS).Text
+        If myChoice = choice1Text Then
+            choice1radioButton(SS).Checked = True
 
-            aYcordinate = aYcordinate + 21
-
-
-            'correctanswer property
-
-            correctAnswer(SS).Location = New Point(aXcordinate, aYcordinate)
-            'correctAnswer(SS).Text = "Correct"
-            'correctAnswer(SS).ForeColor = Color.Green
+        End If
 
 
-            'increment yCordinate by 30
-            aYcordinate = aYcordinate + 23
+        aYcordinate = aYcordinate + 21
 
-            'choice2radioButton properties
-            choice2radioButton(SS).Text = choice(1)
+        'choice2radioButton properties
+        choice2radioButton(SS).Text = choice(1)
             choice2radioButton(SS).Location = New Point(aXcordinate, aYcordinate)
             choice2radioButton(SS).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            choice2radioButton(SS).Size = New Size(800, 21)
+        choice2radioButton(SS).Size = New Size(800, 21)
+        Dim choice2Text As String = choice2radioButton(SS).Text
+        If myChoice = choice2Text Then
+            choice2radioButton(SS).Checked = True
 
-            'increment yCordinate by 30
-            aYcordinate = aYcordinate + 23
+        End If
+
+        'increment yCordinate by 30
+        aYcordinate = aYcordinate + 23
 
             'choice3radioButton properties
             choice3radioButton(SS).Text = choice(2)
             choice3radioButton(SS).Location = New Point(aXcordinate, aYcordinate)
             choice3radioButton(SS).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            choice3radioButton(SS).Size = New Size(800, 21)
-            'increment yCordinate by 30
-            aYcordinate = aYcordinate + 23
+        choice3radioButton(SS).Size = New Size(800, 21)
+        'check user selected answer
+        Dim choice3Text As String = choice3radioButton(SS).Text
+        If myChoice = choice3Text Then
+            choice3radioButton(SS).Checked = True
+
+        End If
+        'increment yCordinate by 30
+        aYcordinate = aYcordinate + 23
 
             'choice4radioButton properties
             choice4radioButton(SS).Text = choice(3)
             choice4radioButton(SS).Location = New Point(aXcordinate, aYcordinate)
             choice4radioButton(SS).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            choice4radioButton(SS).Size = New Size(500, 21)
-            'increment yCordinate by 30
-            yCordinate = yCordinate + 175
+        choice4radioButton(SS).Size = New Size(500, 21)
+        'check user selected answer
+        Dim choice4Text As String = choice4radioButton(SS).Text
+        If myChoice = choice4Text Then
+            choice4radioButton(SS).Checked = True
 
-            'insight label properties
-            insightLabel(SS).Text = "~Answer correctly~"
-            insightLabel(SS).Location = New Point(qxCordinate, yCordinate)
+        End If
+        'increment yCordinate by 180
+        yCordinate = yCordinate + 120
 
-            'increment yCordinate by 30
-            yCordinate = yCordinate + 30
+        '-----------------------------------------------------------'
+        'Section to Show whether the user answered correctly or not '
+        '---------------------------------------------------------- '
+        Dim status As String = markingQuestions(questionId, myChoice)
+        'status panel and its component
+        'status panel
 
-            'adding controls to panel
-            questionsPanel.Controls.Add(questionNo(SS))
+
+        statusPanel(SS).Size = New Size(400, 90)
+        statusPanel(SS).Name = "statuspanel"
+        statusPanel(SS).Margin = New Padding(4)
+        statusPanel(SS).Location = New Point(qxCordinate, yCordinate)
+        If status = "Correct" Then
+            statusPanel(SS).BackColor = Color.FromArgb(112, 219, 112)
+
+
+        Else
+            statusPanel(SS).BackColor = Color.FromArgb(255, 102, 102)
+        End If
+
+        'staus label
+        statuslabel(SS).Location = New Point(34, 21)
+        If status = "Correct" Then
+            statuslabel(SS).Text = "correct"
+
+        Else
+            statuslabel(SS).Text = "incorrect"
+        End If
+        'score label
+        If status = "Correct" Then
+            scorelabel(SS).Text = score & "  marks"
+
+        Else
+            scorelabel(SS).Text = 0 & "  marks"
+        End If
+
+        scorelabel(SS).Location = New Point(34, 50)
+
+        'add items to status panel
+        statusPanel(SS).Controls.Add(statuslabel(SS))
+        statusPanel(SS).Controls.Add(scorelabel(SS))
+
+        '----------------
+        'end status panel
+        '----------------
+
+
+
+        'increment yCordinate by 30
+        yCordinate = yCordinate + 90
+
+        'adding controls to panel
+        questionsPanel.Controls.Add(questionNo(SS))
             questionsPanel.Controls.Add(questionLabel(SS))
 
             If attachment.Equals("") Then
@@ -412,14 +516,14 @@
             groupBox(SS).Controls.Add(choice2radioButton(SS))
             groupBox(SS).Controls.Add(choice3radioButton(SS))
             groupBox(SS).Controls.Add(choice4radioButton(SS))
-            groupBox(SS).Controls.Add(correctAnswer(SS))
 
-            questionsPanel.Controls.Add(groupBox(SS))
 
-            questionsPanel.Controls.Add(insightLabel(SS))
+        questionsPanel.Controls.Add(groupBox(SS))
 
-            'increment ss
-            SS = SS + 1
+        questionsPanel.Controls.Add(statusPanel(SS))
+
+        'increment ss
+        SS = SS + 1
 
             'increment question counter
             questionCounter = questionCounter + 1
@@ -428,8 +532,12 @@
 
         End Sub
         Private Sub multipleSelectQuestion(ByVal question As String, ByVal questionId As String, ByVal score As String, ByVal attachment As String)
-            ' stores the ycordinate of the answers
-            Dim aYcordinate As Integer = 31
+        'users choice
+        Dim myChoice As String = ""
+        myChoice = showSelectedAnswer(questionId, userid)
+
+        ' stores the ycordinate of the answers
+        Dim aYcordinate As Integer = 31
 
             'select answers and strore them in variables
             '-------------------------------------------
@@ -455,22 +563,26 @@
             Dim pictureBox(30) As Control
             Dim questionNo(30) As Control
             Dim questionLabel(30) As Control
-            Dim choice1CheckBox(30) As Control
-            Dim choice2CheckBox(30) As Control
-            Dim choice3CheckBox(30) As Control
-            Dim choice4CheckBox(30) As Control
-            Dim groupBox(30) As Control
-            Dim insightLabel(30) As Control
+        Dim choice1CheckBox(30) As CheckBox
+        Dim choice2CheckBox(30) As CheckBox
+        Dim choice3CheckBox(30) As CheckBox
+        Dim choice4CheckBox(30) As CheckBox
+        Dim groupBox(30) As Control
+        Dim statusPanel(30) As Panel
+        Dim scorelabel(30) As Label
+        Dim statuslabel(30) As Label ' store correct or wrong  variables
 
-            'initializing controls
-            questionNo(MS) = New Label
+        'initializing controls
+        questionNo(MS) = New Label
             questionLabel(MS) = New Label
             choice1CheckBox(MS) = New CheckBox
             choice2CheckBox(MS) = New CheckBox
             choice3CheckBox(MS) = New CheckBox
             choice4CheckBox(MS) = New CheckBox
-            insightLabel(MS) = New Label
-            groupBox(MS) = New GroupBox ' used for grouping radio buttons
+        statusPanel(MS) = New Panel
+        scorelabel(MS) = New Label
+        statuslabel(MS) = New Label
+        groupBox(MS) = New GroupBox ' used for grouping radio buttons
 
 
             pictureBox(MS) = New PictureBox
@@ -507,53 +619,131 @@
                 yCordinate = yCordinate + 200
             End If
 
-            'group box properties
-            groupBox(MS).Size = New Size(1000, 180)
-            groupBox(MS).Location = New Point(gXCordinate, yCordinate)
+        'group box properties
+        groupBox(MS).Size = New Size(1000, 150)
+        groupBox(MS).Location = New Point(gXCordinate, yCordinate)
             groupBox(MS).Text = ""
 
             'choice1CheckBox properties
             choice1CheckBox(MS).Text = choice(0)
             choice1CheckBox(MS).Location = New Point(aXcordinate, aYcordinate)
             choice1CheckBox(MS).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            choice1CheckBox(MS).Size = New Size(700, 21)
-            'increment yCordinate by 30
-            aYcordinate = aYcordinate + 23
+        choice1CheckBox(MS).Size = New Size(700, 21)
 
-            'choice2CheckBox properties
-            choice2CheckBox(MS).Text = choice(1)
+
+        'check user selected answer
+        Dim choice1Text As String = choice1CheckBox(MS).Text
+        If myChoice = choice1Text Then
+            choice1CheckBox(MS).Checked = True
+            choice1CheckBox(MS).CheckState = CheckState.Checked
+
+        End If
+
+        'increment yCordinate by 30
+        aYcordinate = aYcordinate + 23
+
+        'choice2CheckBox properties
+        choice2CheckBox(MS).Text = choice(1)
             choice2CheckBox(MS).Location = New Point(aXcordinate, aYcordinate)
             choice2CheckBox(MS).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            choice2CheckBox(MS).Size = New Size(700, 21)
-            'increment yCordinate by 30
-            aYcordinate = aYcordinate + 23
+        choice2CheckBox(MS).Size = New Size(700, 21)
 
-            'choice3CheckBox properties
-            choice3CheckBox(MS).Text = choice(2)
+        'check user selected answer
+        Dim choice2Text As String = choice2CheckBox(MS).Text
+        If myChoice = choice2Text Then
+            choice2CheckBox(MS).Checked = True
+            choice2CheckBox(MS).CheckState = CheckState.Checked
+
+        End If
+        'increment yCordinate by 30
+        aYcordinate = aYcordinate + 23
+
+
+        'choice3CheckBox properties
+        choice3CheckBox(MS).Text = choice(2)
             choice3CheckBox(MS).Location = New Point(aXcordinate, aYcordinate)
             choice3CheckBox(MS).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            choice3CheckBox(MS).Size = New Size(700, 21)
-            'increment yCordinate by 30
-            aYcordinate = aYcordinate + 23
+        choice3CheckBox(MS).Size = New Size(700, 21)
 
-            'choice4CheckBox properties
-            choice4CheckBox(MS).Text = choice(3)
+        'check user selected answer
+        Dim choice3Text As String = choice3CheckBox(MS).Text
+        If myChoice = choice3Text Then
+            choice3CheckBox(MS).Checked = True
+            choice3CheckBox(MS).CheckState = CheckState.Checked
+
+        End If
+        'increment yCordinate by 30
+        aYcordinate = aYcordinate + 23
+
+
+        'choice4CheckBox properties
+        choice4CheckBox(MS).Text = choice(3)
             choice4CheckBox(MS).Location = New Point(aXcordinate, aYcordinate)
             choice4CheckBox(MS).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            choice4CheckBox(MS).Size = New Size(700, 21)
-            'increment yCordinate by 30
-            yCordinate = yCordinate + 185
+        choice4CheckBox(MS).Size = New Size(700, 21)
+        'check user selected answer
+        Dim choice4Text As String = choice4CheckBox(MS).Text
+        If myChoice = choice4Text Then
+            choice4CheckBox(MS).Checked = True
+            choice4CheckBox(MS).CheckState = CheckState.Checked
 
-            'insight label properties
-            insightLabel(MS).Text = "~Answer correctly~"
-            insightLabel(MS).Location = New Point(qxCordinate, yCordinate)
+        End If
+        'increment yCordinate by 180
+        yCordinate = yCordinate + 150
 
-            'increment yCordinate by 30
-            yCordinate = yCordinate + 30
+        '-----------------------------------------------------------'
+        'Section to Show whether the user answered correctly or not '
+        '---------------------------------------------------------- '
+        Dim status As String = markingQuestions(questionId, myChoice)
+        'status panel and its component
+        'status panel
 
-            'adding controls to panel
 
-            questionsPanel.Controls.Add(questionNo(MS))
+        statusPanel(MS).Size = New Size(400, 90)
+        statusPanel(MS).Name = "statuspanel"
+        statusPanel(MS).Margin = New Padding(4)
+        statusPanel(MS).Location = New Point(qxCordinate, yCordinate)
+        If status = "Correct" Then
+            statusPanel(MS).BackColor = Color.FromArgb(112, 219, 112)
+
+
+        Else
+            statusPanel(MS).BackColor = Color.FromArgb(255, 102, 102)
+        End If
+
+        'staus label
+        statuslabel(MS).Location = New Point(34, 21)
+        If status = "Correct" Then
+            statuslabel(MS).Text = "correct"
+
+        Else
+            statuslabel(MS).Text = "incorrect"
+        End If
+        'score label
+        If status = "Correct" Then
+            scorelabel(MS).Text = score & "  marks"
+
+        Else
+            scorelabel(MS).Text = 0 & "  marks"
+        End If
+
+        scorelabel(MS).Location = New Point(34, 50)
+
+        'add items to status panel
+        statusPanel(MS).Controls.Add(statuslabel(MS))
+        statusPanel(MS).Controls.Add(scorelabel(MS))
+
+        '----------------
+        'end status panel
+        '----------------
+
+
+        'increment yCordinate by 30
+        yCordinate = yCordinate + 90
+
+        'adding controls to panel
+
+        questionsPanel.Controls.Add(questionNo(MS))
             questionsPanel.Controls.Add(questionLabel(MS))
             If attachment.Equals("") Then
                 'do nothing
@@ -568,12 +758,12 @@
 
             questionsPanel.Controls.Add(groupBox(MS))
 
-            questionsPanel.Controls.Add(insightLabel(MS))
+        questionsPanel.Controls.Add(statusPanel(MS))
 
 
 
-            'increment question counter
-            questionCounter = questionCounter + 1
+        'increment question counter
+        questionCounter = questionCounter + 1
             'getting selected answer
 
 
@@ -651,121 +841,34 @@
 
         End Sub
 
-        Public Function markingQuestions(ByVal questionId, ByVal choice) As String
-            Dim status As String = ""
-            Dim dbconnect As databaseConnection = New databaseConnection
-            dbconnect.sqlLiteConnection("Evaluations.db")
-            Dim strSql As String = "SELECT status from question_answers where question_id='" & questionId & "' AND choice='" & choice & "'"
-            dbconnect.selectSqlite(strSql)
+    Public Function markingQuestions(ByVal questionId, ByVal choice) As String
+        Dim status As String = ""
+        Dim dbconnect As databaseConnection = New databaseConnection
+        dbconnect.sqlLiteConnection("Evaluations.db")
+        Dim strSql As String = "SELECT status from question_answers where question_id='" & questionId & "' AND choice='" & choice & "'"
+        dbconnect.selectSqlite(strSql)
 
-            While dbconnect.reader.Read
-                status = dbconnect.reader("status")
-            End While
-            dbconnect.closeSqlite()
-            Return status
-        End Function
+        While dbconnect.reader.Read
+            status = dbconnect.reader("status")
+        End While
+        dbconnect.closeSqlite()
+        Return status
+    End Function
+    Public Function correctAnswers(ByVal questionId) As String
+        Dim correctChoice As String = ""
+        Dim dbconnect As databaseConnection = New databaseConnection
+        dbconnect.sqlLiteConnection("Evaluations.db")
+        Dim strSql As String = "SELECT status from question_answers where question_id='" & questionId & "' AND status='Correct'"
+        dbconnect.selectSqlite(strSql)
+
+        While dbconnect.reader.Read
+            correctChoice = dbconnect.reader("status")
+        End While
+        dbconnect.closeSqlite()
+        Return correctChoice
+    End Function
 
 
-    Private Sub submitMetroTile_Click(sender As Object, e As EventArgs)
-        For tf = 0 To 30
-            correctAnswer(tf).Visible = True
-        Next
-    End Sub
-
-
-    ' WithEvents trueradioButton(30) As Control
-#Region "menu strips"
-    Private Sub AttemptToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AttemptToolStripMenuItem.Click
-        Close()
-        mainForm.ebooksMetroPanel.Visible = False
-        mainForm.aboutPanel.Visible = False
-        mainForm.videosMetroPanel.Visible = False
-        mainForm.profilePanel.Visible = False
-        mainForm.evaluationMetroPanel.Visible = True
-    End Sub
-
-    Private Sub mathsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles mathsToolStripMenuItem.Click
-        Close()
-        Dim subject As String = "Mathematics"
-        Dim learningMaterial As String = "videos"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-
-    Private Sub englishToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles englishToolStripMenuItem.Click
-        Close()
-        Dim subject As String = "english"
-        Dim learningMaterial As String = "videos"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-
-    Private Sub biologyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles biologyToolStripMenuItem.Click
-        Close()
-        Dim subject As String = "biology"
-        Dim learningMaterial As String = "videos"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-
-    Private Sub physicsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles physicsToolStripMenuItem.Click
-
-        Close()
-        Dim subject As String = "physics"
-        Dim learningMaterial As String = "videos"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-
-    Private Sub chemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles chemToolStripMenuItem.Click
-        Close()
-        Dim subject As String = "chemistry"
-        Dim learningMaterial As String = "videos"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-
-    Private Sub ebooksMathsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ebooksMathsToolStripMenuItem.Click
-
-        Close()
-        Dim subject As String = "Mathematics"
-        Dim learningMaterial As String = "eBook"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-
-    Private Sub ebookEngToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ebookEngToolStripMenuItem.Click
-        Close()
-        Dim subject As String = "english"
-        Dim learningMaterial As String = "eBook"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-
-    Private Sub EbookBioToolStripMenuIte_Click(sender As Object, e As EventArgs) Handles EbookBioToolStripMenuIte.Click
-        Close()
-        Dim subject As String = "biology"
-        Dim learningMaterial As String = "eBook"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-
-    Private Sub EbookPhyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EbookPhyToolStripMenuItem.Click
-        Close()
-        Dim subject As String = "physics"
-        Dim learningMaterial As String = "eBook"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-
-    Private Sub EbookChemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EbookChemToolStripMenuItem.Click
-        Close()
-        Dim subject As String = "chemistry"
-        Dim learningMaterial As String = "eBook"
-        selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
-    End Sub
-#End Region
 
 
 End Class

@@ -88,6 +88,7 @@ Public Class mainForm
         encrypt()
 
         questions.getUserId(userId)
+        attemptReports.getUserId(userId)
 
 
     End Sub

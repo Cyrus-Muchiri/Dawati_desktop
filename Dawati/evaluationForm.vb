@@ -36,6 +36,7 @@
             MinutesNameLabel.Visible = True
         End While
         questions.getter(exam_id, examName, numQuestions)
+
     End Sub
     Public Sub databaseReader(ByVal subject As String)
 
