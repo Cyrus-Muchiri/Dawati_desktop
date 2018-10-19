@@ -247,6 +247,7 @@
 
         Else
             scorelabel(tf).Text = 0 & "  marks"
+            statusPanel(tf).Controls.Add(correctAnswerlabel(tf))
         End If
 
         scorelabel(tf).Location = New Point(34, ycord)
@@ -328,6 +329,7 @@
         Dim statusPanel(30) As Panel
         Dim scorelabel(30) As Label
         Dim statuslabel(30) As Label ' store correct or wrong  variables
+        Dim correctAnswerlabel(30) As Label
 
         'initializing controls
         questionNo(SS) = New Label
@@ -342,6 +344,7 @@
         statusPanel(SS) = New Panel
         scorelabel(SS) = New Label
         statuslabel(SS) = New Label
+        correctAnswerlabel(SS) = New Label
 
 
         'question NO properties
@@ -468,7 +471,23 @@
         End If
 
         'staus label
+        'staus label
+        Dim ycord = 50
         statuslabel(SS).Location = New Point(34, 21)
+        If status = "Correct" Then
+            statuslabel(SS).Text = "correct"
+
+        Else
+            statuslabel(SS).Text = "incorrect"
+
+            'correctanswer label
+            ycord = 50
+            correctAnswerlabel(SS).Text = "Correct answer : " & correctAnswers(questionId)
+            correctAnswerlabel(SS).Location = New Point(34, ycord)
+            ycord += 20
+        End If
+        'score label
+        statuslabel(SS).Location = New Point(34, ycord)
         If status = "Correct" Then
             statuslabel(SS).Text = "correct"
 
@@ -481,6 +500,7 @@
 
         Else
             scorelabel(SS).Text = 0 & "  marks"
+            statusPanel(SS).Controls.Add(correctAnswerlabel(SS))
         End If
 
         scorelabel(SS).Location = New Point(34, 50)
@@ -488,7 +508,7 @@
         'add items to status panel
         statusPanel(SS).Controls.Add(statuslabel(SS))
         statusPanel(SS).Controls.Add(scorelabel(SS))
-
+        statusPanel(SS).Controls.Add(correctAnswerlabel(SS))
         '----------------
         'end status panel
         '----------------

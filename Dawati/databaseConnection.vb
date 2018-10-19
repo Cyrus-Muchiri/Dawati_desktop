@@ -27,14 +27,22 @@ Public Class databaseConnection
     ' used for all insert statements
     Public Sub insertSqlite(ByVal strSql As String)
 
-        Try
-            sqliteCommand = New SQLiteCommand(strSql, sqliteConnection)
-            sqliteCommand.ExecuteNonQuery()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
+        'Try
+        sqliteCommand = New SQLiteCommand(strSql, sqliteConnection)
+        loading.getSqliteCommand(sqliteCommand)
+        sqliteCommand.ExecuteNonQuery()
+        'Catch ex As Exception
+        '    MessageBox.Show(ex.Message)
+        'End Try
 
 
+    End Sub
+    Public Sub insertWithParams(ByVal strsql As String, ByVal database As String)
+        Dim connstring As String = "Data Source=" & database & "; version=3;"
+        Dim conn = New SQLiteConnection(connstring)
+        sqliteCommand = New SQLiteCommand(strsql, conn)
+        loading.getSqliteCommand(sqliteCommand)
+        sqliteCommand.ExecuteNonQuery()
     End Sub
     ' used for all select statements
     Public Sub selectSqlite(ByVal strsql As String)
