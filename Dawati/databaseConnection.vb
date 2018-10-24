@@ -26,8 +26,9 @@ Public Class databaseConnection
 
     ' used for all insert statements
     Public Sub insertSqlite(ByVal strSql As String)
-
+        closeSqlite()
         'Try
+        sqliteConnection.Open()
         sqliteCommand = New SQLiteCommand(strSql, sqliteConnection)
         loading.getSqliteCommand(sqliteCommand)
         sqliteCommand.ExecuteNonQuery()
@@ -66,6 +67,7 @@ Public Class databaseConnection
         Try
             conn.ConnectionString = myConnectionString
             conn.Open()
+
             ' MessageBox.Show("Success")
 
 
@@ -74,23 +76,23 @@ Public Class databaseConnection
         End Try
     End Sub
     Public Sub insertMySql(ByVal strSql As String)
-        Try
-            Dim sqlCommand As New MySqlCommand(strSql, conn)
+        ' Try
+        Dim sqlCommand As New MySqlCommand(strSql, conn)
             sqlCommand.CommandText = strSql
             sqlCommand.ExecuteNonQuery()
-        Catch ex As Exception
-            'MessageBox.Show(ex.Message)
-        End Try
+        '  Catch ex As Exception
+        ' MessageBox.Show(ex.Message)
+        '  End Try
     End Sub
     Public Sub selectMySql(ByVal strSql As String)
-        Try
-            Dim sqlCommand As New MySqlCommand(strSql, conn)
+        '   Try
+        Dim sqlCommand As New MySqlCommand(strSql, conn)
 
             sqlCommand.CommandText = strSql
             MySqlReader = sqlCommand.ExecuteReader
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
+        '   Catch ex As Exception
+        'MessageBox.Show(ex.Message)
+        ' End Try
 
     End Sub
     Public Sub closeDbConnection()

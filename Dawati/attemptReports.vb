@@ -90,7 +90,7 @@
         ElseIf questionType = 3 Then
             multipleSelectQuestion(question, questionId, score, attachment)
         ElseIf questionType = 4 Then
-            openEndedQuestions(question, questionId, score, attachment)
+            'openEndedQuestions(question, questionId, score, attachment)
         End If
     End Sub
 
@@ -214,7 +214,7 @@
         'status panel
 
 
-        statusPanel(tf).Size = New Size(400, 90)
+        statusPanel(tf).Size = New Size(1000, 80)
         statusPanel(tf).Name = "statuspanel"
         statusPanel(tf).Margin = New Padding(4)
         statusPanel(tf).Location = New Point(qxCordinate, yCordinate)
@@ -222,24 +222,28 @@
             statusPanel(tf).BackColor = Color.FromArgb(112, 219, 112)
 
 
-        Else
+        ElseIf status = "Incorrect" Then
             statusPanel(tf).BackColor = Color.FromArgb(255, 102, 102)
+        Else
+            statusPanel(tf).BackColor = Color.FromArgb(153, 77, 0)
         End If
 
         'staus label
         Dim ycord = 50
-        statuslabel(tf).Location = New Point(34, 21)
+        statuslabel(tf).Location = New Point(34, 10)
         If status = "Correct" Then
             statuslabel(tf).Text = "correct"
 
-        Else
+        ElseIf status = "Incorrect" Then
             statuslabel(tf).Text = "incorrect"
-
             'correctanswer label
-            ycord = 50
+            ycord = 35
             correctAnswerlabel(tf).Text = "Correct answer : " & correctAnswers(questionId)
             correctAnswerlabel(tf).Location = New Point(34, ycord)
             ycord += 20
+        Else
+            statuslabel(tf).Text = "The answer to this question is not provided"
+            statuslabel(tf).Size = New Size(500, 20)
         End If
         'score label
         If status = "Correct" Then
@@ -458,7 +462,7 @@
         'status panel
 
 
-        statusPanel(SS).Size = New Size(400, 90)
+        statusPanel(SS).Size = New Size(1000, 80)
         statusPanel(SS).Name = "statuspanel"
         statusPanel(SS).Margin = New Padding(4)
         statusPanel(SS).Location = New Point(qxCordinate, yCordinate)
@@ -466,28 +470,35 @@
             statusPanel(SS).BackColor = Color.FromArgb(112, 219, 112)
 
 
-        Else
+        ElseIf status = "Incorrect" Then
             statusPanel(SS).BackColor = Color.FromArgb(255, 102, 102)
+        Else
+            statusPanel(SS).BackColor = Color.FromArgb(153, 77, 0)
         End If
 
         'staus label
         'staus label
-        Dim ycord = 50
-        statuslabel(SS).Location = New Point(34, 21)
+        Dim ycord = 10
+
         If status = "Correct" Then
             statuslabel(SS).Text = "correct"
 
-        Else
+        ElseIf status = "Incorrect" Then
             statuslabel(SS).Text = "incorrect"
-
-            'correctanswer label
-            ycord = 50
-            correctAnswerlabel(SS).Text = "Correct answer : " & correctAnswers(questionId)
+            statuslabel(SS).Location = New Point(34, ycord)
             correctAnswerlabel(SS).Location = New Point(34, ycord)
-            ycord += 20
+            'correctanswer label
+            ycord += 21
+            Dim answer As String = correctAnswers(questionId) ' will store the correct answer of the particular question
+            correctAnswerlabel(SS).Text = "Correct answer : " & answer
+            correctAnswerlabel(SS).Size = New Size(700, 21)
+            correctAnswerlabel(SS).Location = New Point(34, ycord)
+
+        Else
+            statuslabel(SS).Text = "The answer to this question is not provided"
+            statuslabel(SS).Size = New Size(500, 21)
         End If
         'score label
-        statuslabel(SS).Location = New Point(34, ycord)
         If status = "Correct" Then
             statuslabel(SS).Text = "correct"
 
@@ -495,15 +506,15 @@
             statuslabel(SS).Text = "incorrect"
         End If
         'score label
+        ycord += 25
         If status = "Correct" Then
             scorelabel(SS).Text = score & "  marks"
 
         Else
             scorelabel(SS).Text = 0 & "  marks"
-            statusPanel(SS).Controls.Add(correctAnswerlabel(SS))
+            ' statusPanel(SS).Controls.Add(correctAnswerlabel(SS))
         End If
-
-        scorelabel(SS).Location = New Point(34, 50)
+        scorelabel(SS).Location = New Point(34, ycord)
 
         'add items to status panel
         statusPanel(SS).Controls.Add(statuslabel(SS))
@@ -591,6 +602,7 @@
         Dim statusPanel(30) As Panel
         Dim scorelabel(30) As Label
         Dim statuslabel(30) As Label ' store correct or wrong  variables
+        Dim correctAnswerlabel(30) As Label ' stores correct answer after marking
 
         'initializing controls
         questionNo(MS) = New Label
@@ -603,9 +615,9 @@
         scorelabel(MS) = New Label
         statuslabel(MS) = New Label
         groupBox(MS) = New GroupBox ' used for grouping radio buttons
+        correctAnswerlabel(MS) = New Label
 
-
-            pictureBox(MS) = New PictureBox
+        pictureBox(MS) = New PictureBox
 
             'question NO properties
             questionNo(MS).Text = "Question" & questionCounter
@@ -719,7 +731,7 @@
         'status panel
 
 
-        statusPanel(MS).Size = New Size(400, 90)
+        statusPanel(MS).Size = New Size(1000, 80)
         statusPanel(MS).Name = "statuspanel"
         statusPanel(MS).Margin = New Padding(4)
         statusPanel(MS).Location = New Point(qxCordinate, yCordinate)
@@ -727,12 +739,35 @@
             statusPanel(MS).BackColor = Color.FromArgb(112, 219, 112)
 
 
-        Else
+        ElseIf status = "Incorrect" Then
             statusPanel(MS).BackColor = Color.FromArgb(255, 102, 102)
+        Else
+            statusPanel(MS).BackColor = Color.FromArgb(153, 77, 0)
         End If
 
         'staus label
-        statuslabel(MS).Location = New Point(34, 21)
+        'staus label
+        Dim ycord = 10
+
+        If status = "Correct" Then
+            statuslabel(MS).Text = "correct"
+
+        ElseIf status = "Incorrect" Then
+            statuslabel(MS).Text = "incorrect"
+            statuslabel(MS).Location = New Point(34, ycord)
+            correctAnswerlabel(MS).Location = New Point(34, ycord)
+            'correctanswer label
+            ycord += 21
+            Dim answer As String = correctAnswers(questionId) ' will store the correct answer of the particular question
+            correctAnswerlabel(MS).Text = "Correct answer : " & answer
+            correctAnswerlabel(MS).Size = New Size(700, 21)
+            correctAnswerlabel(MS).Location = New Point(34, ycord)
+
+        Else
+            statuslabel(MS).Text = "The answer to this question is not provided"
+            statuslabel(MS).Size = New Size(500, 21)
+        End If
+        'score label
         If status = "Correct" Then
             statuslabel(MS).Text = "correct"
 
@@ -740,19 +775,20 @@
             statuslabel(MS).Text = "incorrect"
         End If
         'score label
+        ycord += 25
         If status = "Correct" Then
             scorelabel(MS).Text = score & "  marks"
 
         Else
             scorelabel(MS).Text = 0 & "  marks"
+            ' statusPanel(MS).Controls.Add(correctAnswerlabel(MS))
         End If
-
-        scorelabel(MS).Location = New Point(34, 50)
+        scorelabel(MS).Location = New Point(34, ycord)
 
         'add items to status panel
         statusPanel(MS).Controls.Add(statuslabel(MS))
         statusPanel(MS).Controls.Add(scorelabel(MS))
-
+        statusPanel(MS).Controls.Add(correctAnswerlabel(MS))
         '----------------
         'end status panel
         '----------------
@@ -862,7 +898,7 @@
         End Sub
 
     Public Function markingQuestions(ByVal questionId, ByVal choice) As String
-        Dim status As String = ""
+        Dim status As String
         Dim dbconnect As databaseConnection = New databaseConnection
         dbconnect.sqlLiteConnection("Evaluations.db")
         Dim strSql As String = "SELECT status from question_answers where question_id='" & questionId & "' AND choice='" & choice & "'"
@@ -874,21 +910,35 @@
         dbconnect.closeSqlite()
         Return status
     End Function
-    Public Function correctAnswers(ByVal questionId) As String
+    Public Function correctAnswers(ByVal questionId As String) As String
         Dim correctChoice As String = ""
         Dim dbconnect As databaseConnection = New databaseConnection
         dbconnect.sqlLiteConnection("Evaluations.db")
-        Dim strSql As String = "SELECT status from question_answers where question_id='" & questionId & "' AND status='Correct'"
+        Dim strSql As String = "SELECT choice from question_answers where question_id='" & questionId & "' AND status='Correct'"
         dbconnect.selectSqlite(strSql)
 
         While dbconnect.reader.Read
-            correctChoice = dbconnect.reader("status")
+            correctChoice = dbconnect.reader("choice")
         End While
         dbconnect.closeSqlite()
         Return correctChoice
     End Function
 
+    'Public Function correctAnswersMS(ByVal questionId As String) As String()
+    '    Dim correctChoice(4) As String
+    '    Dim dbconnect As databaseConnection = New databaseConnection
+    '    dbconnect.sqlLiteConnection("Evaluations.db")
+    '    Dim strSql As String = "SELECT choice from question_answers where question_id='" & questionId & "' AND status='Correct'"
+    '    dbconnect.selectSqlite(strSql)
+    '    Dim count As Integer = 0
+    '    While dbconnect.reader.Read
+    '        correctChoice(count) = dbconnect.reader("choice")
+    '        count += 1
+    '    End While
+    '    dbconnect.closeSqlite()
+    '    Return correctChoice(4)
 
+    'End Function
 
 
 End Class

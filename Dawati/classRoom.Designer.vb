@@ -23,10 +23,10 @@ Partial Class classRoom
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.classRoomMetroTabControl = New MetroFramework.Controls.MetroTabControl()
-        Me.classWorkTabPage = New MetroFramework.Controls.MetroTabPage()
-        Me.classWorkListBox = New System.Windows.Forms.ListBox()
         Me.labsTabPage = New MetroFramework.Controls.MetroTabPage()
         Me.labListBox = New System.Windows.Forms.ListBox()
+        Me.classWorkTabPage = New MetroFramework.Controls.MetroTabPage()
+        Me.classWorkListBox = New System.Windows.Forms.ListBox()
         Me.examsTabPage = New MetroFramework.Controls.MetroTabPage()
         Me.examsListBox = New System.Windows.Forms.ListBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -35,8 +35,8 @@ Partial Class classRoom
         Me.subjectLabel = New System.Windows.Forms.Label()
         Me.studyLevelLabel = New System.Windows.Forms.Label()
         Me.classRoomMetroTabControl.SuspendLayout()
-        Me.classWorkTabPage.SuspendLayout()
         Me.labsTabPage.SuspendLayout()
+        Me.classWorkTabPage.SuspendLayout()
         Me.examsTabPage.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -45,49 +45,16 @@ Partial Class classRoom
         Me.classRoomMetroTabControl.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.classRoomMetroTabControl.Controls.Add(Me.labsTabPage)
         Me.classRoomMetroTabControl.Controls.Add(Me.classWorkTabPage)
+        Me.classRoomMetroTabControl.Controls.Add(Me.labsTabPage)
         Me.classRoomMetroTabControl.Controls.Add(Me.examsTabPage)
         Me.classRoomMetroTabControl.Location = New System.Drawing.Point(141, 133)
-        Me.classRoomMetroTabControl.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.classRoomMetroTabControl.Margin = New System.Windows.Forms.Padding(4)
         Me.classRoomMetroTabControl.Name = "classRoomMetroTabControl"
         Me.classRoomMetroTabControl.SelectedIndex = 0
         Me.classRoomMetroTabControl.Size = New System.Drawing.Size(1512, 570)
         Me.classRoomMetroTabControl.TabIndex = 0
         Me.classRoomMetroTabControl.UseSelectable = True
-        '
-        'classWorkTabPage
-        '
-        Me.classWorkTabPage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.classWorkTabPage.Controls.Add(Me.classWorkListBox)
-        Me.classWorkTabPage.HorizontalScrollbarBarColor = True
-        Me.classWorkTabPage.HorizontalScrollbarHighlightOnWheel = False
-        Me.classWorkTabPage.HorizontalScrollbarSize = 12
-        Me.classWorkTabPage.Location = New System.Drawing.Point(4, 38)
-        Me.classWorkTabPage.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.classWorkTabPage.Name = "classWorkTabPage"
-        Me.classWorkTabPage.Size = New System.Drawing.Size(1504, 528)
-        Me.classWorkTabPage.TabIndex = 0
-        Me.classWorkTabPage.Text = "                              Class Work                                         " &
-    "  |"
-        Me.classWorkTabPage.VerticalScrollbarBarColor = True
-        Me.classWorkTabPage.VerticalScrollbarHighlightOnWheel = False
-        Me.classWorkTabPage.VerticalScrollbarSize = 13
-        '
-        'classWorkListBox
-        '
-        Me.classWorkListBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.classWorkListBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(233, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(27, Byte), Integer))
-        Me.classWorkListBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.classWorkListBox.FormattingEnabled = True
-        Me.classWorkListBox.ItemHeight = 30
-        Me.classWorkListBox.Location = New System.Drawing.Point(1, 1)
-        Me.classWorkListBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.classWorkListBox.Name = "classWorkListBox"
-        Me.classWorkListBox.Size = New System.Drawing.Size(1489, 604)
-        Me.classWorkListBox.TabIndex = 2
         '
         'labsTabPage
         '
@@ -97,7 +64,7 @@ Partial Class classRoom
         Me.labsTabPage.HorizontalScrollbarHighlightOnWheel = False
         Me.labsTabPage.HorizontalScrollbarSize = 12
         Me.labsTabPage.Location = New System.Drawing.Point(4, 38)
-        Me.labsTabPage.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.labsTabPage.Margin = New System.Windows.Forms.Padding(4)
         Me.labsTabPage.Name = "labsTabPage"
         Me.labsTabPage.Size = New System.Drawing.Size(1504, 528)
         Me.labsTabPage.TabIndex = 1
@@ -117,10 +84,43 @@ Partial Class classRoom
         Me.labListBox.FormattingEnabled = True
         Me.labListBox.ItemHeight = 30
         Me.labListBox.Location = New System.Drawing.Point(4, 4)
-        Me.labListBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.labListBox.Margin = New System.Windows.Forms.Padding(4)
         Me.labListBox.Name = "labListBox"
         Me.labListBox.Size = New System.Drawing.Size(1491, 604)
         Me.labListBox.TabIndex = 2
+        '
+        'classWorkTabPage
+        '
+        Me.classWorkTabPage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.classWorkTabPage.Controls.Add(Me.classWorkListBox)
+        Me.classWorkTabPage.HorizontalScrollbarBarColor = True
+        Me.classWorkTabPage.HorizontalScrollbarHighlightOnWheel = False
+        Me.classWorkTabPage.HorizontalScrollbarSize = 12
+        Me.classWorkTabPage.Location = New System.Drawing.Point(4, 38)
+        Me.classWorkTabPage.Margin = New System.Windows.Forms.Padding(4)
+        Me.classWorkTabPage.Name = "classWorkTabPage"
+        Me.classWorkTabPage.Size = New System.Drawing.Size(1504, 528)
+        Me.classWorkTabPage.TabIndex = 0
+        Me.classWorkTabPage.Text = "                              Class Work                                         " &
+    "  |"
+        Me.classWorkTabPage.VerticalScrollbarBarColor = True
+        Me.classWorkTabPage.VerticalScrollbarHighlightOnWheel = False
+        Me.classWorkTabPage.VerticalScrollbarSize = 13
+        '
+        'classWorkListBox
+        '
+        Me.classWorkListBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.classWorkListBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(233, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(27, Byte), Integer))
+        Me.classWorkListBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.classWorkListBox.FormattingEnabled = True
+        Me.classWorkListBox.ItemHeight = 30
+        Me.classWorkListBox.Location = New System.Drawing.Point(1, 1)
+        Me.classWorkListBox.Margin = New System.Windows.Forms.Padding(4)
+        Me.classWorkListBox.Name = "classWorkListBox"
+        Me.classWorkListBox.Size = New System.Drawing.Size(1489, 604)
+        Me.classWorkListBox.TabIndex = 2
         '
         'examsTabPage
         '
@@ -130,7 +130,7 @@ Partial Class classRoom
         Me.examsTabPage.HorizontalScrollbarHighlightOnWheel = False
         Me.examsTabPage.HorizontalScrollbarSize = 12
         Me.examsTabPage.Location = New System.Drawing.Point(4, 38)
-        Me.examsTabPage.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.examsTabPage.Margin = New System.Windows.Forms.Padding(4)
         Me.examsTabPage.Name = "examsTabPage"
         Me.examsTabPage.Size = New System.Drawing.Size(1504, 528)
         Me.examsTabPage.TabIndex = 2
@@ -149,7 +149,7 @@ Partial Class classRoom
         Me.examsListBox.FormattingEnabled = True
         Me.examsListBox.ItemHeight = 30
         Me.examsListBox.Location = New System.Drawing.Point(4, 2)
-        Me.examsListBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.examsListBox.Margin = New System.Windows.Forms.Padding(4)
         Me.examsListBox.Name = "examsListBox"
         Me.examsListBox.Size = New System.Drawing.Size(1487, 574)
         Me.examsListBox.TabIndex = 2
@@ -169,7 +169,7 @@ Partial Class classRoom
         '
         Me.viewMetroButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.viewMetroButton.Location = New System.Drawing.Point(139, 711)
-        Me.viewMetroButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.viewMetroButton.Margin = New System.Windows.Forms.Padding(4)
         Me.viewMetroButton.Name = "viewMetroButton"
         Me.viewMetroButton.Size = New System.Drawing.Size(100, 44)
         Me.viewMetroButton.TabIndex = 3
@@ -180,7 +180,7 @@ Partial Class classRoom
         '
         Me.exitMetroButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.exitMetroButton.Location = New System.Drawing.Point(1540, 711)
-        Me.exitMetroButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.exitMetroButton.Margin = New System.Windows.Forms.Padding(4)
         Me.exitMetroButton.Name = "exitMetroButton"
         Me.exitMetroButton.Size = New System.Drawing.Size(113, 44)
         Me.exitMetroButton.TabIndex = 5
@@ -223,7 +223,7 @@ Partial Class classRoom
         Me.Controls.Add(Me.viewMetroButton)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.classRoomMetroTabControl)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "classRoom"
@@ -231,8 +231,8 @@ Partial Class classRoom
         Me.Text = "classRoom"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.classRoomMetroTabControl.ResumeLayout(False)
-        Me.classWorkTabPage.ResumeLayout(False)
         Me.labsTabPage.ResumeLayout(False)
+        Me.classWorkTabPage.ResumeLayout(False)
         Me.examsTabPage.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()

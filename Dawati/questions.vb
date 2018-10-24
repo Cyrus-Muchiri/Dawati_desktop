@@ -89,6 +89,7 @@
                 displayQuestion(question, questionId, questionType, score, attachment)
 
             End While
+
         Next
     End Sub
 
@@ -101,7 +102,7 @@
         ElseIf questionType = 3 Then
             multipleSelectQuestion(question, questionId, score, attachment)
         ElseIf questionType = 4 Then
-            'openEndedQuestions(question, questionId, score, attachment)
+            openEndedQuestions(question, questionId, score, attachment)
         End If
     End Sub
     Public Sub trueFalseQuestions(ByVal question As String, ByVal questionId As String, ByVal score As String, ByVal attachment As String)
@@ -133,7 +134,7 @@
         'question number properties
 
         questionNo(tf).Text = "Question" & questionCounter
-        questionNo(tf).Location = New Point(qxCordinate, yCordinate)
+        questionNo(tf).Location = New Point(10, yCordinate)
         questionNo(tf).Anchor = AnchorStyles.Top
         questionNo(tf).Size = New Size(300, 30)
         questionNo(tf).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -762,7 +763,7 @@
                                                                userchoiceCounter = userchoiceCounter + 1
                                                                userChoice(userchoiceCounter) = choice4CheckBox(localAnswerCounter).Text
                                                                questionidentification(userchoiceCounter) = questionId
-
+                                                               userchoiceCounter += 1
                                                            End If
                                                            ' Next
                                                        End Sub
@@ -783,6 +784,7 @@
         Dim questionLabel(30) As Label
         Dim richtextbox(30) As Control
         Dim insightLabel(30) As Label
+        Dim alertLabel(30) As Label
 
 
 
@@ -791,7 +793,7 @@
         questionLabel(OE) = New Label
         richtextbox(OE) = New RichTextBox
         insightLabel(OE) = New Label
-
+        alertLabel(OE) = New Label
         'question number properties
 
         questionNo(OE).Text = "Question" & questionCounter
@@ -803,6 +805,15 @@
         'increment yCordinate by 30
         yCordinate = yCordinate + 30
 
+        'alert properties
+        alertLabel(OE).Text = "This question is for revision purposes only, Marking is only available for the Web version of dawati"
+        alertLabel(OE).Location = New Point(qxCordinate, yCordinate)
+        alertLabel(OE).Anchor = AnchorStyles.Top
+        alertLabel(OE).Size = New Size(800, 30)
+        alertLabel(OE).Font = New Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        alertLabel(OE).ForeColor = Color.FromArgb(255, 51, 0)
+        'increment yCordinate by 30
+        yCordinate = yCordinate + 40
 
         'question properties
         questionLabel(OE).Text = question
@@ -834,6 +845,7 @@
 
         'adding controls to panel
         questionsPanel.Controls.Add(questionNo(OE))
+        questionsPanel.Controls.Add(alertLabel(OE))
         questionsPanel.Controls.Add(questionLabel(OE))
         questionsPanel.Controls.Add(richtextbox(OE))
         questionsPanel.Controls.Add(insightLabel(OE))

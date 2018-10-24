@@ -52,18 +52,18 @@ Partial Class signInForm
         '
         '
         Me.emailMetroTextBox.CustomButton.Image = Nothing
-        Me.emailMetroTextBox.CustomButton.Location = New System.Drawing.Point(243, 2)
-        Me.emailMetroTextBox.CustomButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.emailMetroTextBox.CustomButton.Location = New System.Drawing.Point(182, 2)
+        Me.emailMetroTextBox.CustomButton.Margin = New System.Windows.Forms.Padding(4)
         Me.emailMetroTextBox.CustomButton.Name = ""
-        Me.emailMetroTextBox.CustomButton.Size = New System.Drawing.Size(31, 28)
+        Me.emailMetroTextBox.CustomButton.Size = New System.Drawing.Size(23, 23)
         Me.emailMetroTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.emailMetroTextBox.CustomButton.TabIndex = 1
         Me.emailMetroTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.emailMetroTextBox.CustomButton.UseSelectable = True
         Me.emailMetroTextBox.CustomButton.Visible = False
-        Me.emailMetroTextBox.Lines = New String() {"rusrus844@gmail.com"}
+        Me.emailMetroTextBox.Lines = New String(-1) {}
         Me.emailMetroTextBox.Location = New System.Drawing.Point(625, 102)
-        Me.emailMetroTextBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.emailMetroTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.emailMetroTextBox.MaxLength = 32767
         Me.emailMetroTextBox.Name = "emailMetroTextBox"
         Me.emailMetroTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -74,7 +74,6 @@ Partial Class signInForm
         Me.emailMetroTextBox.ShortcutsEnabled = True
         Me.emailMetroTextBox.Size = New System.Drawing.Size(208, 28)
         Me.emailMetroTextBox.TabIndex = 1
-        Me.emailMetroTextBox.Text = "rusrus844@gmail.com"
         Me.emailMetroTextBox.UseSelectable = True
         Me.emailMetroTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.emailMetroTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
@@ -85,18 +84,18 @@ Partial Class signInForm
         '
         '
         Me.passwordMetroTextBox.CustomButton.Image = Nothing
-        Me.passwordMetroTextBox.CustomButton.Location = New System.Drawing.Point(243, 2)
-        Me.passwordMetroTextBox.CustomButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.passwordMetroTextBox.CustomButton.Location = New System.Drawing.Point(182, 2)
+        Me.passwordMetroTextBox.CustomButton.Margin = New System.Windows.Forms.Padding(4)
         Me.passwordMetroTextBox.CustomButton.Name = ""
-        Me.passwordMetroTextBox.CustomButton.Size = New System.Drawing.Size(31, 28)
+        Me.passwordMetroTextBox.CustomButton.Size = New System.Drawing.Size(23, 23)
         Me.passwordMetroTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.passwordMetroTextBox.CustomButton.TabIndex = 1
         Me.passwordMetroTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.passwordMetroTextBox.CustomButton.UseSelectable = True
         Me.passwordMetroTextBox.CustomButton.Visible = False
-        Me.passwordMetroTextBox.Lines = New String() {"12345"}
+        Me.passwordMetroTextBox.Lines = New String(-1) {}
         Me.passwordMetroTextBox.Location = New System.Drawing.Point(625, 164)
-        Me.passwordMetroTextBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.passwordMetroTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.passwordMetroTextBox.MaxLength = 32767
         Me.passwordMetroTextBox.Name = "passwordMetroTextBox"
         Me.passwordMetroTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -107,7 +106,6 @@ Partial Class signInForm
         Me.passwordMetroTextBox.ShortcutsEnabled = True
         Me.passwordMetroTextBox.Size = New System.Drawing.Size(208, 28)
         Me.passwordMetroTextBox.TabIndex = 2
-        Me.passwordMetroTextBox.Text = "12345"
         Me.passwordMetroTextBox.UseSelectable = True
         Me.passwordMetroTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.passwordMetroTextBox.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
@@ -116,7 +114,7 @@ Partial Class signInForm
         '
         Me.signInMetroButton.BackColor = System.Drawing.Color.Navy
         Me.signInMetroButton.Location = New System.Drawing.Point(688, 258)
-        Me.signInMetroButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.signInMetroButton.Margin = New System.Windows.Forms.Padding(4)
         Me.signInMetroButton.Name = "signInMetroButton"
         Me.signInMetroButton.Size = New System.Drawing.Size(145, 46)
         Me.signInMetroButton.TabIndex = 4
@@ -147,7 +145,7 @@ Partial Class signInForm
         'closeMetroButton
         '
         Me.closeMetroButton.Location = New System.Drawing.Point(452, 258)
-        Me.closeMetroButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.closeMetroButton.Margin = New System.Windows.Forms.Padding(4)
         Me.closeMetroButton.Name = "closeMetroButton"
         Me.closeMetroButton.Size = New System.Drawing.Size(113, 44)
         Me.closeMetroButton.TabIndex = 3
@@ -159,7 +157,7 @@ Partial Class signInForm
         Me.logoPanel.BackgroundImage = CType(resources.GetObject("logoPanel.BackgroundImage"), System.Drawing.Image)
         Me.logoPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.logoPanel.Location = New System.Drawing.Point(0, -1)
-        Me.logoPanel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.logoPanel.Margin = New System.Windows.Forms.Padding(4)
         Me.logoPanel.Name = "logoPanel"
         Me.logoPanel.Size = New System.Drawing.Size(395, 389)
         Me.logoPanel.TabIndex = 6
@@ -182,7 +180,7 @@ Partial Class signInForm
         Me.Controls.Add(Me.emailMetroTextBox)
         Me.Controls.Add(Me.titleMetroLabel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "signInForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

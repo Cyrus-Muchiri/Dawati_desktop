@@ -251,5 +251,10 @@ Public Class classRoom
         mainForm.WindowState = FormWindowState.Maximized
     End Sub
 
-
+    Private Sub classRoom_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        classRoomMetroTabControl.HideTab(labsTabPage)
+        If multimediaSeries = 2 Or 6 Or 12 Or 9 Or 5 Then
+            classRoomMetroTabControl.ShowTab(labsTabPage)
+        End If
+    End Sub
 End Class

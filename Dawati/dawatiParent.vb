@@ -14,13 +14,13 @@ Public Class dawatiParent
         mainForm.Show()
     End Sub
     Private Sub closeform(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Closed
-        Dim result As DialogResult = MessageBox.Show("Are you sure you want exit dawati", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
-        If result = DialogResult.Yes Then
-            Application.Exit()
+        'Dim result As DialogResult = MessageBox.Show("Are you sure you want exit dawati", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+        'If result = DialogResult.Yes Then
+        Application.Exit()
 
-        ElseIf result = DialogResult.No Then
-            'make sure user doesnt exit
-        End If
+        'ElseIf result = DialogResult.No Then
+        '    'make sure user doesnt exit
+        'End If
     End Sub
 
 
@@ -57,7 +57,7 @@ Public Class dawatiParent
     End Sub
 
     Private Sub mathsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles mathsToolStripMenuItem.Click
-        Close()
+
         Dim subject As String = "Mathematics"
         Dim learningMaterial As String = "videos"
         selectStudyLevel.initialize(subject, learningMaterial)
@@ -65,7 +65,7 @@ Public Class dawatiParent
     End Sub
 
     Private Sub englishToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles englishToolStripMenuItem.Click
-        Close()
+
         Dim subject As String = "english"
         Dim learningMaterial As String = "videos"
         selectStudyLevel.initialize(subject, learningMaterial)
@@ -73,7 +73,7 @@ Public Class dawatiParent
     End Sub
 
     Private Sub biologyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles biologyToolStripMenuItem.Click
-        Close()
+
         Dim subject As String = "biology"
         Dim learningMaterial As String = "videos"
         selectStudyLevel.initialize(subject, learningMaterial)
@@ -82,7 +82,7 @@ Public Class dawatiParent
 
     Private Sub physicsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles physicsToolStripMenuItem.Click
 
-        Close()
+
         Dim subject As String = "physics"
         Dim learningMaterial As String = "videos"
         selectStudyLevel.initialize(subject, learningMaterial)
@@ -90,7 +90,7 @@ Public Class dawatiParent
     End Sub
 
     Private Sub chemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles chemToolStripMenuItem.Click
-        Close()
+
         Dim subject As String = "chemistry"
         Dim learningMaterial As String = "videos"
         selectStudyLevel.initialize(subject, learningMaterial)
@@ -99,7 +99,7 @@ Public Class dawatiParent
 
     Private Sub ebooksMathsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ebooksMathsToolStripMenuItem.Click
 
-        Close()
+
         Dim subject As String = "Mathematics"
         Dim learningMaterial As String = "eBook"
         selectStudyLevel.initialize(subject, learningMaterial)
@@ -107,7 +107,7 @@ Public Class dawatiParent
     End Sub
 
     Private Sub ebookEngToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ebookEngToolStripMenuItem.Click
-        Close()
+
         Dim subject As String = "english"
         Dim learningMaterial As String = "eBook"
         selectStudyLevel.initialize(subject, learningMaterial)
@@ -115,7 +115,7 @@ Public Class dawatiParent
     End Sub
 
     Private Sub EbookBioToolStripMenuIte_Click(sender As Object, e As EventArgs) Handles EbookBioToolStripMenuIte.Click
-        Close()
+
         Dim subject As String = "biology"
         Dim learningMaterial As String = "eBook"
         selectStudyLevel.initialize(subject, learningMaterial)
@@ -123,7 +123,7 @@ Public Class dawatiParent
     End Sub
 
     Private Sub EbookPhyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EbookPhyToolStripMenuItem.Click
-        Close()
+
         Dim subject As String = "physics"
         Dim learningMaterial As String = "eBook"
         selectStudyLevel.initialize(subject, learningMaterial)
@@ -131,7 +131,7 @@ Public Class dawatiParent
     End Sub
 
     Private Sub EbookChemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EbookChemToolStripMenuItem.Click
-        Close()
+
         Dim subject As String = "chemistry"
         Dim learningMaterial As String = "eBook"
         selectStudyLevel.initialize(subject, learningMaterial)
@@ -149,7 +149,7 @@ Public Class dawatiParent
         evaluationForm.Close()
         attemptReports.Close()
         questions.Close()
-        mainForm.Hide()
+
         mainForm.MdiParent = Me
         mainForm.Show()
         mainForm.WindowState = FormWindowState.Maximized

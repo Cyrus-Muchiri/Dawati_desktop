@@ -65,6 +65,9 @@ Public Class mainForm
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+
+        'set decrypted folders to hidden
+
         'loading image from file manager
 
         'This was used to get profile image from remote server, not useful now
@@ -559,7 +562,8 @@ Public Class mainForm
         If dialogReslt = DialogResult.OK Then
             'start
             BackgroundWorker1.RunWorkerAsync()
-
+            updateContentMetroTile.Visible = False
+            updatingMetroTile.Visible = True
         Else
 
         End If
@@ -573,6 +577,10 @@ Public Class mainForm
     Private Sub BackgroundWorker1_RunWorkerCompleted(ByVal sender As System.Object,
                                                      ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker1.RunWorkerCompleted
         MessageBox.Show("Finished downloading your content")
+        updatingMetroTile.Visible = False
+        updateContentMetroTile.Visible = True
+
+
     End Sub
 
     Private Sub mainForm_Close(sender As Object, e As EventArgs) Handles MyBase.Closed

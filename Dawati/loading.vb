@@ -47,10 +47,10 @@ Public Class loading
         updateUsers()
 
         writeMaterialDetails()
+        reverseUpdateUsers()
 
 
 
-        counter()
     End Sub
 
     'connect to remote sever and write details about the learning materials
@@ -180,6 +180,158 @@ Public Class loading
 
         'read and write to variables
         '--------------
+
+        'questions
+        '----------
+        dbconnect.selectMySql(questionsStrSql)
+        'read while write into sqlite database
+        While dbconnect.MySqlReader.Read
+
+            Dim questionId As Integer = dbconnect.MySqlReader("question_id")
+            Dim question As String = dbconnect.MySqlReader("question")
+            Dim type As String = dbconnect.MySqlReader("type")
+            ' Dim studyLevel As String = dbconnect.MySqlReader("")
+            Dim score As String = dbconnect.MySqlReader("score")
+            ' Dim date_updated As String = dbconnect.MySqlReader("date_updated").ToString
+            Dim examId As Integer = dbconnect.MySqlReader("exam_id")
+            Dim attachment As String = dbconnect.MySqlReader("attachment")
+            'Dim numOfAnswers As String = dbconnect.MySqlReader("num_answers")
+
+            'check if file exists
+            'sqlite connection done manually
+            Dim dbLocation As String = "evaluations.db"
+            Dim sqliteConnectionString As String = "Data Source=" & dbLocation & "; version=3;"
+            Dim SQLiteConnection = New SQLiteConnection(sqliteConnectionString)
+            SQLiteConnection.Open()
+            'reading from database
+            Dim existsStrSql As String = "select question_id from questions where question_id ='" & questionId & "'"
+            Dim sqliteCommand As New SQLiteCommand(existsStrSql, SQLiteConnection)
+            Dim reader As SQLiteDataReader
+
+            Try
+                reader = sqliteCommand.ExecuteReader()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+
+            Dim exists As Boolean = False
+            If reader.HasRows Then
+                exists = True
+                reader.Close()
+                SQLiteConnection.Close()
+                'update
+            Else
+                exists = False
+                reader.Close()
+                SQLiteConnection.Close()
+            End If
+            If exists = False Then
+                SQLiteConnection.Open()
+                Dim insertQuestionsSql As String = "insert into questions(question_id, question,type,score,exam_id,attachment)values (?,?,?,?,?,?);"
+
+                Dim sqliteCommandQuestions = New SQLiteCommand(insertQuestionsSql, SQLiteConnection)
+
+                'sqliteCommand.Connection.Open()
+
+                sqliteCommandQuestions.Parameters.AddWithValue("@questionId", questionId)
+                sqliteCommandQuestions.Parameters.AddWithValue("@question", question)
+                sqliteCommandQuestions.Parameters.AddWithValue("@type", type)
+                sqliteCommandQuestions.Parameters.AddWithValue("@score", score)
+                sqliteCommandQuestions.Parameters.AddWithValue("@exaam_id", examId)
+                sqliteCommandQuestions.Parameters.AddWithValue("@atachment", attachment)
+
+                'Try
+                sqliteCommandQuestions.ExecuteNonQuery()
+                '  Catch ex As Exception
+                MessageBox.Show("It was a success")
+                ' End Try
+                SQLiteConnection.Close()
+                count = count + 1
+
+            ElseIf exists = True Then
+                'updaate
+            End If
+
+
+        End While
+
+        dbconnect.MySqlReader.Dispose()
+        'end questions
+        '-------------
+        'question answers
+        '---------------
+        dbconnect.selectMySql(questionAnswersSql)
+        'read while write into sqlite database
+        While dbconnect.MySqlReader.Read
+
+            Dim choiceId As Integer = dbconnect.MySqlReader("choice_id")
+            Dim choice As String = dbconnect.MySqlReader("choice")
+            Dim status As String = dbconnect.MySqlReader("status")
+            Dim questionId As String = dbconnect.MySqlReader("question_id")
+
+            dbconnect.sqlLiteConnection("Evaluations.db")
+            'check if file exists
+            'sqlite connection done manually
+            Dim dbLocation As String = "evaluations.db"
+            Dim sqliteConnectionString As String = "Data Source=" & dbLocation & "; version=3;"
+            Dim SQLiteConnection = New SQLiteConnection(sqliteConnectionString)
+            SQLiteConnection.Open()
+            'reading from database
+            Dim existsStrSql As String = "select choice_id from question_answers where choice_id ='" & choiceId & "'"
+
+            Dim sqliteCommand As New SQLiteCommand(existsStrSql, SQLiteConnection)
+            Dim reader As SQLiteDataReader
+
+            Try
+                reader = sqliteCommand.ExecuteReader()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+
+            Dim exists As Boolean = False
+            If reader.HasRows Then
+                'do nothing
+                'update
+                exists = True
+                reader.Close()
+                SQLiteConnection.Close()
+            Else
+                exists = False
+                reader.Close()
+                SQLiteConnection.Close()
+            End If
+            If exists = False Then
+                SQLiteConnection.Open()
+                Dim insertQuestionAnswersSql As String = "insert into question_answers(choice_id, choice,status,question_id)values
+                (?,?,?,?);"
+                Dim sqliteCommandQA = New SQLiteCommand(insertQuestionAnswersSql, SQLiteConnection)
+
+                'sqliteCommandQA.Connection.Open()
+
+                sqliteCommandQA.Parameters.AddWithValue("@choiceId", choiceId)
+                sqliteCommandQA.Parameters.AddWithValue("@choice", choice)
+                sqliteCommandQA.Parameters.AddWithValue("@status", status)
+                sqliteCommandQA.Parameters.AddWithValue("@questionId", questionId)
+
+
+                Try
+                    sqliteCommandQA.ExecuteNonQuery()
+                    MessageBox.Show("This is also working")
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message)
+                End Try
+
+                count = count + 1
+                SQLiteConnection.Close()
+            ElseIf exists = True Then
+
+            End If
+
+        End While
+
+        dbconnect.MySqlReader.Dispose()
+        'end question answers
+        '-------------------
         'exams
         '--------------
         dbconnect.selectMySql(examsStrSql)
@@ -216,11 +368,19 @@ Public Class loading
             'End Try
 
 
-
+            Dim exists As Boolean = False
             If reader.HasRows Then
                 'do nothing
                 'update
+                exists = True
             Else
+                exists = False
+                SQLiteConnection.Close()
+            End If
+            If exists = True Then
+
+            ElseIf exists = False Then
+                SQLiteConnection.Open()
                 'Dim insertExamsSql As String = "insert into exams(exam_id, exam_name,subject,description,num_of_questions,hours,minutes)values
                 '('" & examId & "','" & examName & "','" & subject & "','" & description & "','" & numOfQuestions & "','" & hours & "','" & minutes & "');"
 
@@ -244,7 +404,7 @@ Public Class loading
                 count = count + 1
                 SQLiteConnection.Close()
             End If
-
+            SQLiteConnection.Close()
 
         End While
         'dbconnect.closeSqlite()
@@ -254,136 +414,7 @@ Public Class loading
         'end exams
         '---------
 
-        'questions
-        '----------
-        dbconnect.selectMySql(questionsStrSql)
-        'read while write into sqlite database
-        While dbconnect.MySqlReader.Read
 
-            Dim questionId As Integer = dbconnect.MySqlReader("question_id")
-            Dim question As String = dbconnect.MySqlReader("question")
-            Dim type As String = dbconnect.MySqlReader("type")
-            ' Dim studyLevel As String = dbconnect.MySqlReader("")
-            Dim score As String = dbconnect.MySqlReader("score")
-            ' Dim date_updated As String = dbconnect.MySqlReader("date_updated").ToString
-            Dim examId As Integer = dbconnect.MySqlReader("exam_id")
-            Dim attachment As String = dbconnect.MySqlReader("attachment")
-            'Dim numOfAnswers As String = dbconnect.MySqlReader("num_answers")
-
-            'check if file exists
-            'sqlite connection done manually
-            Dim dbLocation As String = "evaluations.db"
-            Dim sqliteConnectionString As String = "Data Source=" & dbLocation & "; version=3;"
-            Dim SQLiteConnection = New SQLiteConnection(sqliteConnectionString)
-            SQLiteConnection.Open()
-            'reading from database
-            Dim existsStrSql As String = "select question_id from questions where question_id ='" & questionId & "'"
-            Dim sqliteCommand As New SQLiteCommand(existsStrSql, SQLiteConnection)
-            Dim reader As SQLiteDataReader
-
-            Try
-                reader = sqliteCommand.ExecuteReader()
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-            End Try
-
-
-            If reader.HasRows Then
-                    'do nothing
-                    'update
-                Else
-                    Dim insertQuestionsSql As String = "insert into questions(question_id, question,type,score,exam_id,attachment)values
-                    (?,?,?,?,?,?);"
-
-                    sqliteCommand = New SQLiteCommand(insertQuestionsSql, SQLiteConnection)
-
-                    'sqliteCommand.Connection.Open()
-
-                    sqliteCommand.Parameters.AddWithValue("@questionId", questionId)
-                    sqliteCommand.Parameters.AddWithValue("@question", question)
-                    sqliteCommand.Parameters.AddWithValue("@type", type)
-                    sqliteCommand.Parameters.AddWithValue("@score", score)
-                    sqliteCommand.Parameters.AddWithValue("@exaam_id", examId)
-                    sqliteCommand.Parameters.AddWithValue("@atachment", attachment)
-
-                'Try
-                sqliteCommand.ExecuteNonQuery()
-                '  Catch ex As Exception
-                ' MessageBox.Show(ex.Message)
-                ' End Try
-
-                count = count + 1
-                    SQLiteConnection.Close()
-                End If
-
-
-        End While
-
-        dbconnect.MySqlReader.Dispose()
-        'end questions
-        '-------------
-
-        'question answers
-        '---------------
-        dbconnect.selectMySql(questionAnswersSql)
-        'read while write into sqlite database
-        While dbconnect.MySqlReader.Read
-
-            Dim choiceId As Integer = dbconnect.MySqlReader("choice_id")
-            Dim choice As String = dbconnect.MySqlReader("choice")
-            Dim status As String = dbconnect.MySqlReader("status")
-            Dim questionId As String = dbconnect.MySqlReader("question_id")
-
-            dbconnect.sqlLiteConnection("Evaluations.db")
-            'check if file exists
-            'sqlite connection done manually
-            Dim dbLocation As String = "evaluations.db"
-            Dim sqliteConnectionString As String = "Data Source=" & dbLocation & "; version=3;"
-            Dim SQLiteConnection = New SQLiteConnection(sqliteConnectionString)
-            SQLiteConnection.Open()
-            'reading from database
-            Dim existsStrSql As String = "select choice_id from question_answers where choice_id ='" & choiceId & "'"
-
-            Dim sqliteCommand As New SQLiteCommand(existsStrSql, SQLiteConnection)
-            Dim reader As SQLiteDataReader
-
-            Try
-                reader = sqliteCommand.ExecuteReader()
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-            End Try
-
-
-            If reader.HasRows Then
-                'do nothing
-                'update
-            Else
-                Dim insertQuestionAnswersSql As String = "insert into question_answers(choice_id, choice,status,question_id)values
-                (?,?,?,?);"
-                sqliteCommand = New SQLiteCommand(insertQuestionAnswersSql, SQLiteConnection)
-
-                'sqliteCommand.Connection.Open()
-
-                sqliteCommand.Parameters.AddWithValue("@choiceId", choiceId)
-                sqliteCommand.Parameters.AddWithValue("@choice", choice)
-                sqliteCommand.Parameters.AddWithValue("@status", status)
-                sqliteCommand.Parameters.AddWithValue("@questionId", questionId)
-
-
-                Try
-                    sqliteCommand.ExecuteNonQuery()
-                Catch ex As Exception
-                    MessageBox.Show(ex.Message)
-                End Try
-
-                count = count + 1
-                SQLiteConnection.Close()
-            End If
-
-
-        End While
-
-        dbconnect.MySqlReader.Dispose()
 
         'question type
         '--------------
@@ -462,7 +493,7 @@ Public Class loading
             Dim SQLiteConnection = New SQLiteConnection(sqliteConnectionString)
             SQLiteConnection.Open()
 
-            Dim liteSql As String = "select * from users where user_id='" & userId & "' "
+            Dim liteSql As String = "select * from users where hash='" & hash & "' "
             'reading from database
             Dim sqliteCommand As New SQLiteCommand(liteSql, SQLiteConnection)
             Dim reader As SQLiteDataReader
@@ -473,24 +504,27 @@ Public Class loading
                 MessageBox.Show(ex.Message)
             End Try
             'Dim sqliteConn = New SQLiteConnection("Data Source=dawatico_dawati.db; version=3;")
-
+            Dim exists As Boolean = False
             If reader.HasRows Then 'update existing user
+                exists = True
                 'write update statement here
+                reader.Close()
+                SQLiteConnection.Close()
             Else 'insert new record
-                'Dim insertLiteSql = "Insert into users(user_id,fname,lname,email,
-                ' hash,password,gender,user_type,date_joined,user_status,prof_img,about_me,online_status)VALUES ('" & userId & "','" & fname & "',
-                '    '" & lname & "','" & email & "','" & hash & "','" & password & "','" & gender & "','" & user_type & "',
-                '    '" & date_joined & "','" & user_status & "','" & prof_img & "','" & about_me & "','" & online_status & "');"
+                exists = False
+                reader.Close()
+                SQLiteConnection.Close()
+            End If
+            If exists = True Then
+
+            ElseIf exists = False Then
+                SQLiteConnection.Open()
                 Dim insertLiteSql = "Insert into users(user_id,fname,lname,email,hash,password,gender,user_type,date_joined,user_status,prof_img,about_me,online_status)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)"
 
+                sqliteCommand = New SQLiteCommand(insertLiteSql, SQLiteConnection)
                 'parameters
 
-                sqliteCommand = New SQLiteCommand(insertLiteSql, SQLiteConnection)
 
-
-
-                'sqliteCommand.Connection.Open()
-                '  Using transaction = sqliteCommand.Connection.BeginTransaction()
                 sqliteCommand.Parameters.AddWithValue("@user_id", userId)
                 sqliteCommand.Parameters.AddWithValue("@fname", fname)
                 sqliteCommand.Parameters.AddWithValue("@lname", lname)
@@ -505,20 +539,14 @@ Public Class loading
                 sqliteCommand.Parameters.AddWithValue("@aboutMe", about_me)
                 sqliteCommand.Parameters.AddWithValue("@onlinestatus", online_status)
 
-                'Call insert
-                'dbConnect.insertWithParams(insertLiteSql, "dawatico_dawati")
+
                 Try
                     sqliteCommand.ExecuteNonQuery()
                 Catch ex As Exception
                     MessageBox.Show(ex.Message)
                 End Try
-
-                '    'commit
-                '  transaction.Commit()
-
-                'call close
                 SQLiteConnection.Close()
-                ' End Using
+
             End If
         End While
 
@@ -526,6 +554,8 @@ Public Class loading
 
 
         count = count + 1
+
+
 
     End Sub
     Private Sub counter()
@@ -537,6 +567,92 @@ Public Class loading
             ' MessageBox.Show("" & count - 6", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         End If
+    End Sub
+    Private Sub reverseUpdateUsers()
+        'updates users who sign up on desktop to the online database for numbers
+        Dim dbConnect As New databaseConnection
+        dbConnect.sqlLiteConnection("dawatico_dawati.db")
+        Dim strSql As String = "Select * from users "
+        dbConnect.selectSqlite(strSql)
+
+        While dbConnect.reader.Read
+
+
+            Dim userId As Integer = dbConnect.reader("user_id")
+            Dim fname As String = dbConnect.reader("fname")
+            Dim lname As String = dbConnect.reader("lname")
+            Dim email As String = dbConnect.reader("email")
+            Dim hash As String = dbConnect.reader("hash")
+            'Dim username As String = dbConnect.reader("username")
+            Dim password As String = dbConnect.reader("password")
+            Dim gender As String = dbConnect.reader("gender")
+            Dim user_type As Integer = dbConnect.reader("user_type")
+            ' Dim date_joined As String = dbConnect.reader("date_joined")
+            Dim user_status As String = dbConnect.reader("user_status")
+            Dim prof_img As String = "avatar.jpg"
+            'Dim about_me As String = dbConnect.reader("about_me")
+            'Dim online_status As Integer = dbConnect.reader("online_status")
+            'Dim last_seen As String = dbConnect.reader("last_seen")
+
+
+            'mysql connection done manually
+
+            dbConnect.dbConnection()
+            Dim mystrSql As String = "Select * from users where hash='" & hash & "' "
+            dbConnect.selectMySql(mystrSql)
+            dbConnect.MySqlReader.Dispose() 'closes any other readers open
+            'Dim sqliteConn = New SQLiteConnection("Data Source=dawatico_dawati.db; version=3;")
+            Dim exists As Boolean = False
+            If dbConnect.MySqlReader.HasRows Then 'update existing user
+                exists = True
+                'write update statement here
+
+            Else 'insert new record
+                exists = False
+
+            End If
+            'mysql conn
+            dbConnect.closeDbConnection()
+            Dim conn = New MySqlConnection
+            Dim myConnectionString As String = "  SERVER=192.185.17.39; database=dawatico_dawati; uid=dawatico_dawati; pwd='@dawati2016'; SslMode= none; charset=UTF8 "
+            conn.ConnectionString = myConnectionString
+            If exists = True Then
+
+            ElseIf exists = False Then
+
+                Dim sqliteCommand As New MySqlCommand("Insert into users(user_id,fname,lname,email,hash,password,gender,user_type,user_status,prof_img)VALUES(@user_id,@fname,@lname,@email,@hash,@password,@gender,@usertype,@userstatus,@profimage)", conn)
+
+
+                'parameters
+
+
+                sqliteCommand.Parameters.AddWithValue("@user_id", userId)
+                sqliteCommand.Parameters.AddWithValue("@fname", fname)
+                sqliteCommand.Parameters.AddWithValue("@lname", lname)
+                sqliteCommand.Parameters.AddWithValue("@email", email)
+                sqliteCommand.Parameters.AddWithValue("@hash", hash)
+                sqliteCommand.Parameters.AddWithValue("@password", password)
+                sqliteCommand.Parameters.AddWithValue("@gender", gender)
+                sqliteCommand.Parameters.AddWithValue("@usertype", user_type)
+                'sqliteCommand.Parameters.AddWithValue("@datejoined", date_joined)
+                sqliteCommand.Parameters.AddWithValue("@userstatus", user_status)
+                sqliteCommand.Parameters.AddWithValue("@profimage", prof_img)
+                'sqliteCommand.Parameters.AddWithValue("@aboutMe", about_me)
+                'sqliteCommand.Parameters.AddWithValue("@onlinestatus", online_status)
+
+
+
+
+            End If
+        End While
+        dbConnect.closeSqlite()
+        dbConnect.closeDbConnection()
+
+
+        count = count + 1
+
+
+
     End Sub
 
 
