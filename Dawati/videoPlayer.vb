@@ -23,12 +23,12 @@
     Private Sub MetroButton2_Click(sender As Object, e As EventArgs) Handles exitMetroButton.Click
         AxWindowsMediaPlayer.close()
         mainForm.encrypt()
-
+        classRoom.Close()
         Close()
-
-        classRoom.MdiParent = dawatiParent
-        classRoom.WindowState = FormWindowState.Maximized
-        classRoom.Show()
+        dawatiParent.Show()
+        mainForm.MdiParent = dawatiParent
+        mainForm.WindowState = FormWindowState.Maximized
+        mainForm.Show()
     End Sub
 
     Private Sub playMetroButton_Click(sender As Object, e As EventArgs) Handles playMetroButton.Click

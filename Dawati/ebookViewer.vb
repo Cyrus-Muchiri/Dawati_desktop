@@ -46,9 +46,11 @@ Public Class ebookViewer
     Private Sub exitMetroButton_Click(sender As Object, e As EventArgs) Handles exitMetroButton.Click
         mainForm.encrypt()
         Close()
-        classRoom.MdiParent = dawatiParent
-        classRoom.Show()
-        classRoom.WindowState = FormWindowState.Maximized
+        classRoom.Close()
+        dawatiParent.Show()
+        mainForm.MdiParent = dawatiParent
+        mainForm.Show()
+        mainForm.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub playMetroButton_Click(sender As Object, e As EventArgs) Handles playMetroButton.Click

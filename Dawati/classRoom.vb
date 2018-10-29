@@ -139,13 +139,19 @@ Public Class classRoom
         ' Hide()
         'videoPlayer.MdiParent = ParentForm
         'MessageBox.Show(url)
+        dawatiParent.Hide()
         videoPlayer.Show()
     End Sub
     Private Sub playEbook(ByVal url As String)
-        ebookViewer.initialize(url)
         Hide()
-        ebookViewer.MdiParent = ParentForm
+
+
+        'ebookViewer.MdiParent = ParentForm
+        dawatiParent.Hide()
+        ebookViewer.initialize(url)
         ebookViewer.Show()
+
+
 
 
 
@@ -189,9 +195,14 @@ Public Class classRoom
 
             ElseIf selectedTab = "                              Class Work                                           |" Then
 
+                listbox = classWorkListBox
+                getSelectedEbook(listbox)
+                'videoPlayer.fillListBox()
             ElseIf selectedTab = "                                     Exams                           " Then
 
-
+                listbox = examsListBox
+                getSelectedEbook(listbox)
+                'videoPlayer.fillListBox()
             Else
                 'MessageBox.Show(selectedTab)
             End If
@@ -212,6 +223,8 @@ Public Class classRoom
             getSelectedEbook(listbox)
             ' videoPlayer.fillListBox()
         End If
+
+        'MessageBox.Show(mainForm.learningMaterialType)
         ' MessageBox.Show("true")
     End Sub
 

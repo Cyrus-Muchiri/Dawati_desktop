@@ -868,25 +868,29 @@
     End Sub
 
     Private Sub insertAnswer()
-        Dim dbConnect As New databaseConnection
-        For i As Integer = 1 To userchoiceCounter
+        Try
+            Dim dbConnect As New databaseConnection
+            For i As Integer = 1 To userchoiceCounter
 
-            dbConnect.sqlLiteConnection("Evaluations.db")
+                dbConnect.sqlLiteConnection("Evaluations.db")
 
-            Dim strSql As String = "Insert into respondent_attempts (question_id,choice,user_id) VALUES ('" & questionidentification(i) & "','" & userChoice(i) & "','" & userId & "')"
-            dbConnect.insertSqlite(strSql)
-        Next
+                Dim strSql As String = "Insert into respondent_attempts (question_id,choice,user_id) VALUES ('" & questionidentification(i) & "','" & userChoice(i) & "','" & userId & "')"
+                dbConnect.insertSqlite(strSql)
+            Next
 
-        dbConnect.closeSqlite()
+            dbConnect.closeSqlite()
 
-        Dim result As DialogResult = MessageBox.Show("Your exam has been submitted, do you want to view results now", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
-        If result = DialogResult.Yes Then
-            attemptReports.initialize(exam_id, examName, numOfQuestions)
-            attemptReports.MdiParent = dawatiParent
-            attemptReports.WindowState = FormWindowState.Maximized
-            Hide()
-            attemptReports.Show()
-        End If
+            Dim result As DialogResult = MessageBox.Show("Your exam has been submitted, do you want to view results now", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+            If result = DialogResult.Yes Then
+                attemptReports.initialize(exam_id, examName, numOfQuestions)
+                attemptReports.MdiParent = dawatiParent
+                attemptReports.WindowState = FormWindowState.Maximized
+                Hide()
+                attemptReports.Show()
+            End If
+        Catch
+            MessageBox.Show("The questions answered are not supported for marking", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End Try
     End Sub
 
     Private Sub questions_closed(sender As Object, e As EventArgs) Handles MyBase.Closed
