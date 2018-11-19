@@ -139,17 +139,18 @@ Public Class classRoom
         ' Hide()
         'videoPlayer.MdiParent = ParentForm
         'MessageBox.Show(url)
-        dawatiParent.Hide()
         videoPlayer.Show()
+        dawatiParent.Hide()
+
     End Sub
     Private Sub playEbook(ByVal url As String)
         Hide()
-
+        ebookViewer.Show()
 
         'ebookViewer.MdiParent = ParentForm
         dawatiParent.Hide()
         ebookViewer.initialize(url)
-        ebookViewer.Show()
+
 
 
 

@@ -43,11 +43,11 @@ Public Class loading
     End Sub
 
     Public Sub updateContent()
-        syncEvaluations()
-        updateUsers()
-
+        ' syncEvaluations()
+        'updateUsers()
+        'reverseUpdateUsers()
         writeMaterialDetails()
-        reverseUpdateUsers()
+
 
 
 
@@ -97,10 +97,10 @@ Public Class loading
                         dbConnect.insertSqlite(insertstrSql)
 
 
-                        If multimedia_type = 1 Then
-                            '  downloadVideos(file_name, multimedia_series)
-                        Else
-                            'downloadEbooks(file_id, file_name)
+                        If file_type = "video" Then
+                            downloadVideos(file_name, multimedia_series)
+                        ElseIf file_type = "slides" Then
+                            downloadEbooks(file_id, file_name)
                         End If
 
                         dbConnect.closeSqlite()
@@ -160,8 +160,12 @@ Public Class loading
     End Sub
     Public Sub downloadEbooks(ByVal fileId As Integer, ByVal fileName As String)
         Dim s As String = "https://www.dawati.co.ke/uploads/multimedia/content/slides/" & fileId & "/" & fileName & ".pdf"
-        My.Computer.Network.DownloadFile(s,
-                                            "assets\ebooks\decrypted\" & fileName & "")
+        Try
+            My.Computer.Network.DownloadFile(s,
+                                            "assets\ebooks\decrypted\" & fileName & ".pdf")
+        Catch e As Exception
+            MessageBox.Show(e.Message)
+        End Try
     End Sub
 
     'sends analytics to remote server
@@ -519,13 +523,13 @@ Public Class loading
 
             ElseIf exists = False Then
                 SQLiteConnection.Open()
-                Dim insertLiteSql = "Insert into users(user_id,fname,lname,email,hash,password,gender,user_type,date_joined,user_status,prof_img,about_me,online_status)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)"
+                Dim insertLiteSql = "Insert into users(fname,lname,email,hash,password,gender,user_type,date_joined,user_status,prof_img,about_me,online_status)VALUES(?,?,?,?,?,?,?,?,?,?,?,?)"
 
                 sqliteCommand = New SQLiteCommand(insertLiteSql, SQLiteConnection)
                 'parameters
 
 
-                sqliteCommand.Parameters.AddWithValue("@user_id", userId)
+                'sqliteCommand.Parameters.AddWithValue("@user_id", userId)
                 sqliteCommand.Parameters.AddWithValue("@fname", fname)
                 sqliteCommand.Parameters.AddWithValue("@lname", lname)
                 sqliteCommand.Parameters.AddWithValue("@email", email)
@@ -598,55 +602,59 @@ Public Class loading
             'mysql connection done manually
 
             dbConnect.dbConnection()
-            Dim mystrSql As String = "Select * from users where hash='" & hash & "' "
+            'dbConnect.MySqlReader.Dispose() 'closes any other readers open
+            Dim mystrSql As String = "Select * from users where email='" & email & "' "
             dbConnect.selectMySql(mystrSql)
-            dbConnect.MySqlReader.Dispose() 'closes any other readers open
+
             'Dim sqliteConn = New SQLiteConnection("Data Source=dawatico_dawati.db; version=3;")
-            Dim exists As Boolean = False
+            Dim exists As Boolean
             If dbConnect.MySqlReader.HasRows Then 'update existing user
                 exists = True
                 'write update statement here
-
+                dbConnect.closeDbConnection()
             Else 'insert new record
                 exists = False
-
+                dbConnect.closeDbConnection()
             End If
             'mysql conn
-            dbConnect.closeDbConnection()
+
             Dim conn = New MySqlConnection
             Dim myConnectionString As String = "  SERVER=192.185.17.39; database=dawatico_dawati; uid=dawatico_dawati; pwd='@dawati2016'; SslMode= none; charset=UTF8 "
             conn.ConnectionString = myConnectionString
+
+            ' MessageBox.Show(exists)
             If exists = True Then
 
             ElseIf exists = False Then
-
-                Dim sqliteCommand As New MySqlCommand("Insert into users(user_id,fname,lname,email,hash,password,gender,user_type,user_status,prof_img)VALUES(@user_id,@fname,@lname,@email,@hash,@password,@gender,@usertype,@userstatus,@profimage)", conn)
+                conn.Open()
+                Dim sqlCommand As New MySqlCommand("Insert into users(fname,lname,email,hash,password,gender,user_type,user_status,prof_img)VALUES(@fname,@lname,@email,@hash,@password,@gender,@usertype,@userstatus,@profimage)", conn)
 
 
                 'parameters
 
 
-                sqliteCommand.Parameters.AddWithValue("@user_id", userId)
-                sqliteCommand.Parameters.AddWithValue("@fname", fname)
-                sqliteCommand.Parameters.AddWithValue("@lname", lname)
-                sqliteCommand.Parameters.AddWithValue("@email", email)
-                sqliteCommand.Parameters.AddWithValue("@hash", hash)
-                sqliteCommand.Parameters.AddWithValue("@password", password)
-                sqliteCommand.Parameters.AddWithValue("@gender", gender)
-                sqliteCommand.Parameters.AddWithValue("@usertype", user_type)
-                'sqliteCommand.Parameters.AddWithValue("@datejoined", date_joined)
-                sqliteCommand.Parameters.AddWithValue("@userstatus", user_status)
-                sqliteCommand.Parameters.AddWithValue("@profimage", prof_img)
-                'sqliteCommand.Parameters.AddWithValue("@aboutMe", about_me)
-                'sqliteCommand.Parameters.AddWithValue("@onlinestatus", online_status)
+                ' sqlCommand.Parameters.AddWithValue("@user_id", userId)
+                sqlCommand.Parameters.AddWithValue("@fname", fname)
+                sqlCommand.Parameters.AddWithValue("@lname", lname)
+                sqlCommand.Parameters.AddWithValue("@email", email)
+                sqlCommand.Parameters.AddWithValue("@hash", hash)
+                sqlCommand.Parameters.AddWithValue("@password", password)
+                sqlCommand.Parameters.AddWithValue("@gender", gender)
+                sqlCommand.Parameters.AddWithValue("@usertype", user_type)
+                'sqlCommand.Parameters.AddWithValue("@datejoined", date_joined)
+                sqlCommand.Parameters.AddWithValue("@userstatus", "Desktop")
+                sqlCommand.Parameters.AddWithValue("@profimage", prof_img)
+                'sqlCommand.Parameters.AddWithValue("@aboutMe", about_me)
+                'sqlCommand.Parameters.AddWithValue("@onlinestatus", online_status)
 
 
-
-
+                sqlCommand.ExecuteNonQuery()
+                conn.Close()
             End If
+            dbConnect.closeDbConnection()
         End While
         dbConnect.closeSqlite()
-        dbConnect.closeDbConnection()
+
 
 
         count = count + 1
