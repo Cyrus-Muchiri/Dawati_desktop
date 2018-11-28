@@ -5,12 +5,28 @@ Imports Apitron.PDF.Rasterizer
 Public Class ebookViewer
     Private multimediaSeries As Integer
     Private studylevel As String
+    Private EbookViews As Integer
+
+    Public Sub getEbookViews(ByVal views As Integer)
+        EbookViews = views
+
+        If EbookViews = 1 Then
+            readsLabel.Text = "Read"
+        Else
+            readsLabel.Text = "Reads"
+        End If
+    End Sub
+
+
+
     Public Sub initialize(ByVal url As String)
         Dim ebookName As String = url.Substring(24)
         ebookLabel.Text = ebookName
         ebookAxAcroPDF.LoadFile(url)
         ebookPlayListBox.Items.Clear()
         fillOtherListBox()
+        readsCounterLabel.Text = EbookViews
+
 
         'Using fStream As FileStream = New FileStream(url, FileMode.Open)
         '    Dim document As Document = New Document(fStream)
@@ -29,6 +45,7 @@ Public Class ebookViewer
         Me.multimediaSeries = multimediaSeries
         Me.studylevel = studylevel
     End Sub
+
     Public Sub fillOtherListBox()
         Dim dbConnect As New databaseConnection
         dbConnect.sqlLiteConnection("multimedia.db")

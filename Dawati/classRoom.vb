@@ -113,6 +113,36 @@ Public Class classRoom
         'removes the file extension by substringing while in reverse
         Dim partialString As String = urlToSubstring.Substring(4)
         'revesing back to get orignal string
+
+
+
+
+        'increment video counters
+        Dim dbConnect As New databaseConnection
+        dbConnect.sqlLiteConnection("multimedia.db")
+        Dim strSql As String = "Select Views From multimedia_content WHERE file_name= '" & selectedItem & "'"
+        dbConnect.selectSqlite(strSql)
+
+
+        Dim views 'declaration
+        While dbConnect.reader.Read
+            views = dbConnect.reader("Views")
+        End While
+        'close connection
+        dbConnect.closeSqlite()
+        'Increment views in database
+
+        'call getter from video viewer to pass the value of views
+        videoPlayer.getVideoViews(views)
+
+        views += 1
+        dbConnect.sqlLiteConnection("multimedia.db")
+        Dim incrementStrSQL As String = "Update multimedia_content set Views= " & views & " Where file_name='" & selectedItem & "'"
+        dbConnect.insertSqlite(incrementStrSQL)
+        dbConnect.closeSqlite()
+
+
+
         Dim urlToDecrypt = StrReverse(partialString)
         mainForm.decryptVideo(urlToDecrypt)
         Dim videoUrl As String = "assets\videos\decrypted\" & selectedItem & ""
@@ -122,12 +152,41 @@ Public Class classRoom
     Public Sub getSelectedEbook(ByVal listBox As ListBox)
         'videos in file are encrypted so we have to decrypt first.
 
+
+
+
         Dim selectedItem As String = listBox.SelectedItem
-        'string to decrypt , order is reverse, substring then reverse.
-        'Dim urlToSubstring As String = StrReverse("assets\ebooks\encrypted\" & selectedItem & "")
-        'removes the file extension by substringing while in reverse
-        'Dim partialString As String = urlToSubstring.Substring(4)
-        ''revesing back to get orignal string
+
+
+        'increment ebook counters
+        Dim dbConnect As New databaseConnection
+        dbConnect.sqlLiteConnection("multimedia.db")
+        Dim strSql As String = "Select Views From multimedia_content WHERE file_name= '" & selectedItem & "'"
+        dbConnect.selectSqlite(strSql)
+
+
+        Dim views
+        While dbConnect.reader.Read
+            views = dbConnect.reader("Views")
+        End While
+        'close connection
+        dbConnect.closeSqlite()
+        'Increment views in database
+
+        ebookViewer.getEbookViews(views)
+
+        views += 1
+        dbConnect.sqlLiteConnection("multimedia.db")
+        Dim incrementStrSQL As String = "Update multimedia_content set Views= " & views & " Where file_name='" & selectedItem & "'"
+        dbConnect.insertSqlite(incrementStrSQL)
+        dbConnect.closeSqlite()
+        'call getter to pass value
+
+
+
+
+
+
         Dim urlToDecrypt = "assets\ebooks\encrypted\" & selectedItem & ""
         mainForm.decryptEbook(urlToDecrypt)
         Dim ebookUrl As String = "assets\ebooks\decrypted\" & selectedItem & ".pdf"

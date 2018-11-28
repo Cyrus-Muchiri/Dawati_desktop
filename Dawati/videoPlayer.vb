@@ -3,7 +3,19 @@
     Private multimediaSeries As String
     Private studylevel As String
     'Public Sub initialize(ByVal url As String)
+    Private videoViews As Integer
+    Public Sub getVideoViews(ByVal views As Integer)
+        videoViews = views
+        If videoViews = 1 Then
+            viewsLabel.Text = "View"
+        Else
+            viewsLabel.Text = "Views"
+        End If
+    End Sub
     Public Sub initialize(ByVal url As String)
+        ViewsCounter.Text = videoViews
+
+
         videoLabel.Text = url.Substring(24)
         AxWindowsMediaPlayer.URL = url
         '   videoPath = url

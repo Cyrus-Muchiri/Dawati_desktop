@@ -29,6 +29,8 @@ Partial Class videoPlayer
         Me.exitMetroButton = New MetroFramework.Controls.MetroButton()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.videoLabel = New System.Windows.Forms.Label()
+        Me.ViewsCounter = New System.Windows.Forms.Label()
+        Me.viewsLabel = New System.Windows.Forms.Label()
         CType(Me.AxWindowsMediaPlayer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -39,11 +41,11 @@ Partial Class videoPlayer
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.AxWindowsMediaPlayer.Enabled = True
         Me.AxWindowsMediaPlayer.Location = New System.Drawing.Point(31, 90)
-        Me.AxWindowsMediaPlayer.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.AxWindowsMediaPlayer.Margin = New System.Windows.Forms.Padding(4)
         Me.AxWindowsMediaPlayer.MaximumSize = New System.Drawing.Size(1188, 677)
         Me.AxWindowsMediaPlayer.Name = "AxWindowsMediaPlayer"
         Me.AxWindowsMediaPlayer.OcxState = CType(resources.GetObject("AxWindowsMediaPlayer.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxWindowsMediaPlayer.Size = New System.Drawing.Size(924, 595)
+        Me.AxWindowsMediaPlayer.Size = New System.Drawing.Size(1094, 677)
         Me.AxWindowsMediaPlayer.TabIndex = 0
         '
         'playListListBox
@@ -54,7 +56,7 @@ Partial Class videoPlayer
         Me.playListListBox.FormattingEnabled = True
         Me.playListListBox.ItemHeight = 29
         Me.playListListBox.Location = New System.Drawing.Point(1356, 108)
-        Me.playListListBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.playListListBox.Margin = New System.Windows.Forms.Padding(4)
         Me.playListListBox.Name = "playListListBox"
         Me.playListListBox.Size = New System.Drawing.Size(443, 410)
         Me.playListListBox.TabIndex = 1
@@ -63,7 +65,7 @@ Partial Class videoPlayer
         '
         Me.playMetroButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.playMetroButton.Location = New System.Drawing.Point(1688, 603)
-        Me.playMetroButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.playMetroButton.Margin = New System.Windows.Forms.Padding(4)
         Me.playMetroButton.Name = "playMetroButton"
         Me.playMetroButton.Size = New System.Drawing.Size(112, 54)
         Me.playMetroButton.TabIndex = 2
@@ -74,7 +76,7 @@ Partial Class videoPlayer
         '
         Me.exitMetroButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.exitMetroButton.Location = New System.Drawing.Point(1664, 800)
-        Me.exitMetroButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.exitMetroButton.Margin = New System.Windows.Forms.Padding(4)
         Me.exitMetroButton.Name = "exitMetroButton"
         Me.exitMetroButton.Size = New System.Drawing.Size(135, 43)
         Me.exitMetroButton.TabIndex = 3
@@ -105,12 +107,33 @@ Partial Class videoPlayer
         Me.videoLabel.TabIndex = 7
         Me.videoLabel.Text = "Label1"
         '
+        'ViewsCounter
+        '
+        Me.ViewsCounter.AutoSize = True
+        Me.ViewsCounter.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ViewsCounter.Location = New System.Drawing.Point(31, 813)
+        Me.ViewsCounter.Name = "ViewsCounter"
+        Me.ViewsCounter.Size = New System.Drawing.Size(0, 20)
+        Me.ViewsCounter.TabIndex = 8
+        '
+        'viewsLabel
+        '
+        Me.viewsLabel.AutoSize = True
+        Me.viewsLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.viewsLabel.Location = New System.Drawing.Point(92, 813)
+        Me.viewsLabel.Name = "viewsLabel"
+        Me.viewsLabel.Size = New System.Drawing.Size(54, 20)
+        Me.viewsLabel.TabIndex = 9
+        Me.viewsLabel.Text = "Views"
+        '
         'videoPlayer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1816, 896)
         Me.ControlBox = False
+        Me.Controls.Add(Me.viewsLabel)
+        Me.Controls.Add(Me.ViewsCounter)
         Me.Controls.Add(Me.videoLabel)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.exitMetroButton)
@@ -118,7 +141,7 @@ Partial Class videoPlayer
         Me.Controls.Add(Me.playListListBox)
         Me.Controls.Add(Me.AxWindowsMediaPlayer)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "videoPlayer"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Videos"
@@ -135,4 +158,6 @@ Partial Class videoPlayer
     Friend WithEvents exitMetroButton As MetroFramework.Controls.MetroButton
     Friend WithEvents Label1 As Label
     Friend WithEvents videoLabel As Label
+    Friend WithEvents ViewsCounter As Label
+    Friend WithEvents viewsLabel As Label
 End Class

@@ -29,6 +29,8 @@ Partial Class ebookViewer
         Me.ebookLabel = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ebookAxAcroPDF = New AxAcroPDFLib.AxAcroPDF()
+        Me.readsLabel = New System.Windows.Forms.Label()
+        Me.readsCounterLabel = New System.Windows.Forms.Label()
         CType(Me.ebookAxAcroPDF, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -39,18 +41,18 @@ Partial Class ebookViewer
         Me.ebookPlayListBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ebookPlayListBox.FormattingEnabled = True
         Me.ebookPlayListBox.ItemHeight = 30
-        Me.ebookPlayListBox.Location = New System.Drawing.Point(1330, 113)
-        Me.ebookPlayListBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ebookPlayListBox.Location = New System.Drawing.Point(1351, 123)
+        Me.ebookPlayListBox.Margin = New System.Windows.Forms.Padding(4)
         Me.ebookPlayListBox.Name = "ebookPlayListBox"
-        Me.ebookPlayListBox.Size = New System.Drawing.Size(455, 334)
+        Me.ebookPlayListBox.Size = New System.Drawing.Size(476, 334)
         Me.ebookPlayListBox.TabIndex = 1
         '
         'playMetroButton
         '
         Me.playMetroButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.playMetroButton.Highlight = True
-        Me.playMetroButton.Location = New System.Drawing.Point(1635, 558)
-        Me.playMetroButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.playMetroButton.Location = New System.Drawing.Point(1690, 475)
+        Me.playMetroButton.Margin = New System.Windows.Forms.Padding(4)
         Me.playMetroButton.Name = "playMetroButton"
         Me.playMetroButton.Size = New System.Drawing.Size(137, 54)
         Me.playMetroButton.TabIndex = 2
@@ -60,8 +62,8 @@ Partial Class ebookViewer
         'exitMetroButton
         '
         Me.exitMetroButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.exitMetroButton.Location = New System.Drawing.Point(1635, 746)
-        Me.exitMetroButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.exitMetroButton.Location = New System.Drawing.Point(1677, 766)
+        Me.exitMetroButton.Margin = New System.Windows.Forms.Padding(4)
         Me.exitMetroButton.Name = "exitMetroButton"
         Me.exitMetroButton.Size = New System.Drawing.Size(137, 50)
         Me.exitMetroButton.TabIndex = 3
@@ -86,7 +88,7 @@ Partial Class ebookViewer
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(1358, 42)
+        Me.Label1.Location = New System.Drawing.Point(1400, 42)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(204, 31)
@@ -97,18 +99,39 @@ Partial Class ebookViewer
         '
         Me.ebookAxAcroPDF.Enabled = True
         Me.ebookAxAcroPDF.Location = New System.Drawing.Point(12, 92)
-        Me.ebookAxAcroPDF.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ebookAxAcroPDF.Margin = New System.Windows.Forms.Padding(4)
         Me.ebookAxAcroPDF.Name = "ebookAxAcroPDF"
         Me.ebookAxAcroPDF.OcxState = CType(resources.GetObject("ebookAxAcroPDF.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.ebookAxAcroPDF.Size = New System.Drawing.Size(978, 797)
+        Me.ebookAxAcroPDF.Size = New System.Drawing.Size(998, 797)
         Me.ebookAxAcroPDF.TabIndex = 6
+        '
+        'readsLabel
+        '
+        Me.readsLabel.AutoSize = True
+        Me.readsLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.readsLabel.Location = New System.Drawing.Point(1432, 584)
+        Me.readsLabel.Name = "readsLabel"
+        Me.readsLabel.Size = New System.Drawing.Size(57, 20)
+        Me.readsLabel.TabIndex = 7
+        Me.readsLabel.Text = "Reads"
+        '
+        'readsCounterLabel
+        '
+        Me.readsCounterLabel.AutoSize = True
+        Me.readsCounterLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.readsCounterLabel.Location = New System.Drawing.Point(1377, 584)
+        Me.readsCounterLabel.Name = "readsCounterLabel"
+        Me.readsCounterLabel.Size = New System.Drawing.Size(0, 20)
+        Me.readsCounterLabel.TabIndex = 8
         '
         'ebookViewer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1789, 902)
+        Me.ClientSize = New System.Drawing.Size(1831, 922)
         Me.ControlBox = False
+        Me.Controls.Add(Me.readsCounterLabel)
+        Me.Controls.Add(Me.readsLabel)
         Me.Controls.Add(Me.ebookAxAcroPDF)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ebookLabel)
@@ -116,7 +139,7 @@ Partial Class ebookViewer
         Me.Controls.Add(Me.playMetroButton)
         Me.Controls.Add(Me.ebookPlayListBox)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "ebookViewer"
         Me.Text = "Ebook Viewer"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -131,4 +154,6 @@ Partial Class ebookViewer
     Friend WithEvents ebookLabel As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents ebookAxAcroPDF As AxAcroPDFLib.AxAcroPDF
+    Friend WithEvents readsLabel As Label
+    Friend WithEvents readsCounterLabel As Label
 End Class
