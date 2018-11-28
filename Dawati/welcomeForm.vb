@@ -13,13 +13,13 @@ Public Class welcomeForm
     
 
     Private Sub signUpMetroTile_Click_1(sender As Object, e As EventArgs) Handles signUpMetroTile.Click
-        signUpForm.Show()
+        signUpForm.ShowDialog()
 
 
     End Sub
 
     Private Sub signInMetroTile_Click(sender As Object, e As EventArgs) Handles signInMetroTile.Click
-        signInForm.Show()
+        signInForm.ShowDialog()
     End Sub
 
     Private Sub MetroButton3_Click(sender As Object, e As EventArgs) Handles exitMetroButton.Click
@@ -33,8 +33,10 @@ Public Class welcomeForm
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
         ' Panel1.BackColor = Color.FromArgb(30, Color.Blue)
     End Sub
-
-    'Private Sub welcomeForm_Load(sender As Object, e As EventArgs) Handles MyBase.Closed
-    '    Application.Exit()
-    'End Sub
+    Private Sub welcomeForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        initialize()
+    End Sub
+    Private Sub welcomeForm_closed(sender As Object, e As EventArgs) Handles MyBase.Closed
+        Application.Exit()
+    End Sub
 End Class

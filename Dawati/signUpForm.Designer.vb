@@ -437,7 +437,7 @@ Partial Class signUpForm
         Me.ControlBox = False
         Me.Controls.Add(Me.MetroPanel2)
         Me.Controls.Add(Me.detailsMetroPanel)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "signUpForm"

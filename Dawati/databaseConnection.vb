@@ -26,15 +26,24 @@ Public Class databaseConnection
 
     ' used for all insert statements
     Public Sub insertSqlite(ByVal strSql As String)
+        closeSqlite()
+        'Try
+        sqliteConnection.Open()
+        sqliteCommand = New SQLiteCommand(strSql, sqliteConnection)
+        loading.getSqliteCommand(sqliteCommand)
+        sqliteCommand.ExecuteNonQuery()
+        'Catch ex As Exception
+        '    MessageBox.Show(ex.Message)
+        'End Try
 
-        Try
-            sqliteCommand = New SQLiteCommand(strSql, sqliteConnection)
-            sqliteCommand.ExecuteNonQuery()
-        Catch ex As Exception
-            'MessageBox.Show(ex.Message)
-        End Try
 
-
+    End Sub
+    Public Sub insertWithParams(ByVal strsql As String, ByVal database As String)
+        Dim connstring As String = "Data Source=" & database & "; version=3;"
+        Dim conn = New SQLiteConnection(connstring)
+        sqliteCommand = New SQLiteCommand(strsql, conn)
+        loading.getSqliteCommand(sqliteCommand)
+        sqliteCommand.ExecuteNonQuery()
     End Sub
     ' used for all select statements
     Public Sub selectSqlite(ByVal strsql As String)
@@ -53,11 +62,12 @@ Public Class databaseConnection
     Public Sub dbConnection()
 
         ' myConnectionString = " SERVER=127.0.0.1; database=dawatico_dawati; uid=root; pwd=''; SslMode= none; charset=UTF8 "
-        myConnectionString = "  SERVER=192.185.17.39; database=dawatico_dawati; uid=dawatico_dawati; pwd='@dawati2016'; charset=UTF8 "
+        myConnectionString = "  SERVER=192.185.17.39; database=dawatico_dawati; uid=dawatico_dawati; pwd='@dawati2016'; SslMode= none; charset=UTF8 "
 
         Try
             conn.ConnectionString = myConnectionString
             conn.Open()
+
             ' MessageBox.Show("Success")
 
 
@@ -66,23 +76,23 @@ Public Class databaseConnection
         End Try
     End Sub
     Public Sub insertMySql(ByVal strSql As String)
-        Try
-            Dim sqlCommand As New MySqlCommand(strSql, conn)
+        ' Try
+        Dim sqlCommand As New MySqlCommand(strSql, conn)
             sqlCommand.CommandText = strSql
             sqlCommand.ExecuteNonQuery()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
+        '  Catch ex As Exception
+        ' MessageBox.Show(ex.Message)
+        '  End Try
     End Sub
     Public Sub selectMySql(ByVal strSql As String)
-        Try
-            Dim sqlCommand As New MySqlCommand(strSql, conn)
+        '   Try
+        Dim sqlCommand As New MySqlCommand(strSql, conn)
 
             sqlCommand.CommandText = strSql
             MySqlReader = sqlCommand.ExecuteReader
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
+        '   Catch ex As Exception
+        'MessageBox.Show(ex.Message)
+        ' End Try
 
     End Sub
     Public Sub closeDbConnection()

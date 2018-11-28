@@ -161,6 +161,7 @@ Public Class signUpForm
                 'sqlCommand.CommandText = strSQL
                 'sqlCommand.ExecuteNonQuery()
                 MessageBox.Show("Welcome to Dawati. You will log in as soon as your account is confirmed")
+                Close()
                 'close connection
                 'dbConnect.closeDbConnection()
                 'close

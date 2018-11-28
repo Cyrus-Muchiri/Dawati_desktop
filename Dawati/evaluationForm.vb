@@ -12,7 +12,7 @@
     Public Sub initialize()
 
     End Sub
-    Private Sub showExamDetails()
+    Public Sub showExamDetails()
         Dim selectedExam As String = evaluationsListBox.SelectedItem
         Dim dbConnect As New databaseConnection
         dbConnect.sqlLiteConnection("Evaluations.db")
@@ -35,6 +35,8 @@
             minutesLabel.Text = minutes
             MinutesNameLabel.Visible = True
         End While
+        questions.getter(exam_id, examName, numQuestions)
+
     End Sub
     Public Sub databaseReader(ByVal subject As String)
 
@@ -48,6 +50,8 @@
             evaluationsListBox.Items.Add(dbConnect.reader("exam_name"))
         End While
         dbConnect.closeSqlite()
+
+
 
     End Sub
 
@@ -80,9 +84,17 @@
 
     Private Sub startMetroTile_Click(sender As Object, e As EventArgs) Handles startMetroTile.Click
         questions.initialize(exam_id, examName, numQuestions)
+        questions.MdiParent = dawatiParent
+        Me.Hide()
         questions.Show()
+        questions.WindowState = FormWindowState.Maximized
+
         Close()
     End Sub
 
-
+    Private Sub evaluationForm_Load(sender As Object, e As EventArgs) Handles MyBase.Closed
+        mainForm.MdiParent = dawatiParent
+        mainForm.WindowState = FormWindowState.Maximized
+        mainForm.Show()
+    End Sub
 End Class

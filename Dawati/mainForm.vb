@@ -18,6 +18,7 @@ Public Class mainForm
     Public Shared learningMaterialType As String = "videos" ' stores either value ebook or video
     Public url As String
     Private fname As String
+    Private userId As Integer
     Private evaluation As New evaluationForm 'evaluationForm object
     Public Sub initialize()
         videosMetroPanel.Visible = True
@@ -42,7 +43,7 @@ Public Class mainForm
         dbConnect.sqlLiteConnection("dawatico_dawati.db")
         Try
             Dim email As String = signInForm.email
-            Dim strSQL As String = "SELECT fname, lname, prof_img from users WHERE email='" & email & "' ;"
+            Dim strSQL As String = "SELECT user_id,fname, lname, prof_img from users WHERE email='" & email & "' ;"
 
             'REMOTE CONNECTION, NOT USED NOW
             'Dim sqlCommand As New MySqlCommand(strSQL, dbConnect.conn)
@@ -55,7 +56,7 @@ Public Class mainForm
                 prof_pic = dbConnect.reader("prof_img")
                 fname = dbConnect.reader("fname")
                 lname = dbConnect.reader("lname")
-
+                userId = dbConnect.reader("user_id")
 
             End If
 
@@ -64,6 +65,9 @@ Public Class mainForm
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+
+        'set decrypted folders to hidden
+
         'loading image from file manager
 
         'This was used to get profile image from remote server, not useful now
@@ -85,6 +89,9 @@ Public Class mainForm
 
         'encrypts files, if there are any decrypted
         encrypt()
+
+        questions.getUserId(userId)
+        attemptReports.getUserId(userId)
 
 
     End Sub
@@ -157,6 +164,18 @@ Public Class mainForm
             Dim originalFileName As String = videosPath.Substring(24)
 
             'Dim filenameNoExtension As String = System.IO.Path.GetFileNameWithoutExtension(originalFileName)
+            Dim outfilePath = "assets\videos\decrypted\" & originalFileName & ".mp4"
+            url = outfilePath
+            Dim password = "1234567890"
+            decrypter.DecryptFile(password, videosPath, outfilePath)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+        Try
+            Dim videosPath = path
+            Dim originalFileName As String = videosPath.Substring(24)
+
+            'Dim filenameNoExtension As String = System.IO.Path.GetFileNameWithoutExtension(originalFileName)
             Dim outfilePath = "assets\videos\decrypted\" & originalFileName & ".m4v"
             url = outfilePath
             Dim password = "1234567890"
@@ -164,7 +183,7 @@ Public Class mainForm
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
-        'looping through all ebook files
+
     End Function
     Public Function decryptEbook(ByVal path As String)
         Dim decrypter As New folderEnc
@@ -242,14 +261,14 @@ Public Class mainForm
         subject = "Mathematics"
         learningMaterial = "videos"
         selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+        selectStudyLevel.ShowDialog()
     End Sub
 
     Private Sub englishVideosMetroTile_Click(sender As Object, e As EventArgs) Handles englishVideosMetroTile.Click
         subject = "english"
         learningMaterial = "videos"
         selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+        selectStudyLevel.ShowDialog()
     End Sub
 
     Private Sub physicsVideosMetroTile_Click(sender As Object, e As EventArgs) Handles physicsVideosMetroTile.Click
@@ -257,28 +276,28 @@ Public Class mainForm
         subject = "physics"
         learningMaterial = "videos"
         selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+        selectStudyLevel.ShowDialog()
     End Sub
 
     Private Sub socialVideosMetroTile_Click(sender As Object, e As EventArgs) Handles socialVideosMetroTile.Click
         subject = "social"
         learningMaterial = "videos"
         selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+        selectStudyLevel.ShowDialog()
     End Sub
 
     Private Sub biologyVideosMetroTile_Click(sender As Object, e As EventArgs) Handles biologyVideosMetroTile.Click
         subject = "biology"
         learningMaterial = "videos"
         selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+        selectStudyLevel.ShowDialog()
     End Sub
 
     Private Sub chemistryVideosMetroTile_Click(sender As Object, e As EventArgs) Handles chemistryVideosMetroTile.Click
         subject = "chemistry"
         learningMaterial = "videos"
         selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+        selectStudyLevel.ShowDialog()
     End Sub
     'End Videos MetroTile Click
     '----------------------------
@@ -290,14 +309,14 @@ Public Class mainForm
         subject = "Mathematics"
         learningMaterial = "videos"
         selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+        selectStudyLevel.ShowDialog()
     End Sub
 
     Private Sub englishVideosPictureBox_Click(sender As Object, e As EventArgs) Handles englishVideosPictureBox.Click
         subject = "english"
         learningMaterial = "videos"
         selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+        selectStudyLevel.ShowDialog()
     End Sub
 
     Private Sub physicsVideosPictureBox_Click(sender As Object, e As EventArgs) Handles physicsVideosPictureBox.Click
@@ -305,21 +324,21 @@ Public Class mainForm
         subject = "physics"
         learningMaterial = "videos"
         selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+        selectStudyLevel.ShowDialog()
     End Sub
 
     Private Sub biologyVideosPictureBox_Click(sender As Object, e As EventArgs) Handles biologyVideosPictureBox.Click
         subject = "biology"
         learningMaterial = "videos"
         selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+        selectStudyLevel.ShowDialog()
     End Sub
 
     Private Sub chemistryVideosPictureBox_Click(sender As Object, e As EventArgs) Handles chemistryVideosPictureBox.Click
         subject = "chemistry"
         learningMaterial = "videos"
         selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+        selectStudyLevel.ShowDialog()
     End Sub
     'End videos pictureBoxes click
     '--------------------------------
@@ -332,42 +351,42 @@ Public Class mainForm
         subject = "chemistry"
         learningMaterial = "eBook"
         selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+        selectStudyLevel.ShowDialog()
     End Sub
 
     Private Sub mathsEbooksMetroTile_Click(sender As Object, e As EventArgs) Handles mathsEbooksMetroTile.Click
         subject = "Mathematics"
         learningMaterial = "eBook"
         selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+        selectStudyLevel.ShowDialog()
     End Sub
 
     Private Sub englishEbooksMetroTile_Click(sender As Object, e As EventArgs) Handles englishEbooksMetroTile.Click
         subject = "english"
         learningMaterial = "eBook"
         selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+        selectStudyLevel.ShowDialog()
     End Sub
 
     Private Sub physicsEbookMetroTile_Click(sender As Object, e As EventArgs) Handles physicsEbookMetroTile.Click
         subject = "physics"
         learningMaterial = "eBook"
         selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+        selectStudyLevel.ShowDialog()
     End Sub
 
     Private Sub socialEbookMetroTile_Click(sender As Object, e As EventArgs) Handles socialEbookMetroTile.Click
         subject = "social"
         learningMaterial = "eBook"
         selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+        selectStudyLevel.ShowDialog()
     End Sub
 
     Private Sub biologyEbookMetroTile_Click(sender As Object, e As EventArgs) Handles biologyEbookMetroTile.Click
         subject = "biology"
         learningMaterial = "eBook"
         selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+        selectStudyLevel.ShowDialog()
     End Sub
     'Ebooks PictureBoxes on click
     '----------------------------
@@ -375,35 +394,35 @@ Public Class mainForm
         subject = "Mathematics"
         learningMaterial = "eBook"
         selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+        selectStudyLevel.ShowDialog()
     End Sub
 
     Private Sub englishEbooksPictureBox_Click(sender As Object, e As EventArgs) Handles englishEbooksPictureBox.Click
         subject = "english"
         learningMaterial = "eBook"
         selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+        selectStudyLevel.ShowDialog()
     End Sub
 
     Private Sub physicsEbooksPictureBox_Click(sender As Object, e As EventArgs) Handles physicsEbooksPictureBox.Click
         subject = "physics"
         learningMaterial = "eBook"
         selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+        selectStudyLevel.ShowDialog()
     End Sub
 
     Private Sub biologyEbooksPictureBox_Click(sender As Object, e As EventArgs) Handles biologyEbooksPictureBox.Click
         subject = "biology"
         learningMaterial = "eBook"
         selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+        selectStudyLevel.ShowDialog()
     End Sub
 
     Private Sub chemistryEbooksPictureBox_Click(sender As Object, e As EventArgs) Handles chemistryEbooksPictureBox.Click
         subject = "chemistry"
         learningMaterial = "eBook"
         selectStudyLevel.initialize(subject, learningMaterial)
-        selectStudyLevel.Show()
+        selectStudyLevel.ShowDialog()
     End Sub
 
     'View profile panel
@@ -435,28 +454,42 @@ Public Class mainForm
     Private Sub mathsEvalMetroTile_Click(sender As Object, e As EventArgs) Handles mathsEvalMetroTile.Click
 
         evaluationForm.databaseReader("Mathematics")
+        evaluationForm.MdiParent = dawatiParent
+        Me.Hide()
         evaluationForm.Show()
+        evaluationForm.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub engEvalMetroTile_Click(sender As Object, e As EventArgs) Handles engEvalMetroTile.Click
         evaluationForm.databaseReader("English")
+        evaluationForm.MdiParent = dawatiParent
+        Me.Hide()
         evaluationForm.Show()
+        evaluationForm.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub phyEvalMetroTile_Click(sender As Object, e As EventArgs) Handles phyEvalMetroTile.Click
         evaluationForm.databaseReader("Physics")
+        evaluationForm.MdiParent = dawatiParent
+        Me.Hide()
         evaluationForm.Show()
-        'evaluationSubject = "Physics"
+        evaluationForm.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub chemistryEvalMetroTile_Click(sender As Object, e As EventArgs) Handles chemistryEvalMetroTile.Click
         evaluationForm.databaseReader("Chemistry")
+        evaluationForm.MdiParent = dawatiParent
+        Me.Hide()
         evaluationForm.Show()
+        evaluationForm.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub biologyEvalMetroTile_Click(sender As Object, e As EventArgs) Handles biologyEvalMetroTile.Click
         evaluationForm.databaseReader("Biology")
+        evaluationForm.MdiParent = dawatiParent
+        Me.Hide()
         evaluationForm.Show()
+        evaluationForm.WindowState = FormWindowState.Maximized
     End Sub
 
 
@@ -467,28 +500,43 @@ Public Class mainForm
 
     Private Sub mathsPictureBox_Click(sender As Object, e As EventArgs) Handles mathsPictureBox.Click
 
+        evaluationForm.MdiParent = dawatiParent
+        Me.Hide()
         evaluationForm.Show()
+        evaluationForm.WindowState = FormWindowState.Maximized
         evaluationForm.databaseReader("Mathematics")
     End Sub
 
     Private Sub englishPictureBox_Click(sender As Object, e As EventArgs) Handles englishPictureBox.Click
         evaluationForm.databaseReader("English")
+        evaluationForm.MdiParent = dawatiParent
+        Me.Hide()
         evaluationForm.Show()
+        evaluationForm.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub physicsPictureBox_Click(sender As Object, e As EventArgs) Handles physicsPictureBox.Click
         evaluationForm.databaseReader("Physics")
+        evaluationForm.MdiParent = dawatiParent
+        Me.Hide()
         evaluationForm.Show()
+        evaluationForm.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub chemistryPictureBox_Click(sender As Object, e As EventArgs) Handles chemistryPictureBox.Click
         evaluationForm.databaseReader("Chemistry")
+        evaluationForm.MdiParent = dawatiParent
+        Me.Hide()
         evaluationForm.Show()
+        evaluationForm.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub biologyPictureBox_Click(sender As Object, e As EventArgs) Handles biologyPictureBox.Click
         evaluationForm.databaseReader("Biology")
+        evaluationForm.MdiParent = dawatiParent
+        Me.Hide()
         evaluationForm.Show()
+        evaluationForm.WindowState = FormWindowState.Maximized
     End Sub
     'End PictureBoxes Click for evaluations
     '------------------------------------
@@ -514,7 +562,8 @@ Public Class mainForm
         If dialogReslt = DialogResult.OK Then
             'start
             BackgroundWorker1.RunWorkerAsync()
-
+            updateContentMetroTile.Visible = False
+            updatingMetroTile.Visible = True
         Else
 
         End If
@@ -528,11 +577,20 @@ Public Class mainForm
     Private Sub BackgroundWorker1_RunWorkerCompleted(ByVal sender As System.Object,
                                                      ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker1.RunWorkerCompleted
         MessageBox.Show("Finished downloading your content")
+        updatingMetroTile.Visible = False
+        updateContentMetroTile.Visible = True
+
+
     End Sub
 
     Private Sub mainForm_Close(sender As Object, e As EventArgs) Handles MyBase.Closed
         Application.Exit()
     End Sub
+
+    Private Sub fnameMetroLabel_Click(sender As Object, e As EventArgs) Handles fnameMetroLabel.Click
+
+    End Sub
+
 
 
     'End exit
