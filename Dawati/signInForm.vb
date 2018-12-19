@@ -55,26 +55,14 @@ Public Class signInForm
             If BCrypt.Net.BCrypt.Verify(password, dbPassword) Then
                 'getting user category
                 If userCategory = 1 Then
-                    'mainForm.initialize()
-                    'mainForm.Show()
-                    'Close()
-                    ''welcomeForm.Hide()
-                    'Dim main As New mainForm
                     mainForm.initialize()
-                    'main.MdiParent = dawatiParent
-                    'mainForm.Show()
                     dawatiParent.Show()
                     Close()
                     welcomeForm.Hide()
                 ElseIf userCategory = 2 Then
-                    'mainForm.initialize()
-                    'mainForm.Show()
-                    'Close()
-                    'welcomeForm.Hide()
-                    'Dim main As New mainForm
+
                     mainForm.initialize()
-                    'main.MdiParent = dawatiParent
-                    'mainForm.Show()
+
                     dawatiParent.Show()
                     Close()
                     welcomeForm.Hide()
@@ -87,16 +75,17 @@ Public Class signInForm
                     Close()
                     welcomeForm.Hide()
                 ElseIf userCategory = 4 Then
-                    'MessageBox.Show("You will be logged on as a School admin    ")
+                    MessageBox.Show("Your account type ,School admin, is not supported    ")
                 ElseIf userCategory = 5 Then
-                    'MessageBox.Show("You will be logged on as a admin")
+                    MessageBox.Show("Your account type ,System admin, is not supported    ")
                 End If
             Else
                 MessageBox.Show("Wrong password")
 
             End If
-        Else
-            MessageBox.Show("Your account is yet to be confirmed")
+        ElseIf IsNothing(userStatus) Then
+
+            MessageBox.Show("Your account does not exist on local database. If you have an online account, it will be available after you update the the applications data. To do so, kindly create a dummy account using the sign UP button, once logged on, Click on 'Update Content'. This requires internet." & vbCrLf & vbCrLf & "If you do not have an account, Click sign up to create your account")
         End If
 
     End Sub

@@ -6,7 +6,7 @@ Public Class welcomeForm
 
         welcomeLabel.Text = "DAWATI ONLINE EDUCATION"
         welcomeLabel.ForeColor = Color.FromArgb(0, 161, 154)
-        mainPictureBox.BackgroundImage = Image.FromFile("assets\images\elearn3.jpg")
+        mainPictureBox.BackgroundImage = Image.FromFile("assets\images\banner.png")
         mainPictureBox.BackgroundImageLayout = ImageLayout.Stretch
 
     End Sub
