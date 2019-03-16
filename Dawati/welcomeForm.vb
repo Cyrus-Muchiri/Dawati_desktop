@@ -12,7 +12,7 @@ Public Class welcomeForm
     End Sub
     
 
-    Private Sub signUpMetroTile_Click_1(sender As Object, e As EventArgs) Handles signUpMetroTile.Click
+    Private Sub signUpMetroTile_Click_1(sender As Object, e As EventArgs) 
         signUpForm.ShowDialog()
 
 

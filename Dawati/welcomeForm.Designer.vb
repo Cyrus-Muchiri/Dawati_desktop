@@ -24,7 +24,6 @@ Partial Class welcomeForm
     Private Sub InitializeComponent()
         Me.exitMetroButton = New MetroFramework.Controls.MetroButton()
         Me.signInMetroTile = New MetroFramework.Controls.MetroTile()
-        Me.signUpMetroTile = New MetroFramework.Controls.MetroTile()
         Me.mainPictureBox = New System.Windows.Forms.PictureBox()
         Me.welcomeLabel = New System.Windows.Forms.Label()
         CType(Me.mainPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -34,7 +33,7 @@ Partial Class welcomeForm
         '
         Me.exitMetroButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.exitMetroButton.Location = New System.Drawing.Point(1584, 700)
-        Me.exitMetroButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.exitMetroButton.Margin = New System.Windows.Forms.Padding(4)
         Me.exitMetroButton.Name = "exitMetroButton"
         Me.exitMetroButton.Size = New System.Drawing.Size(100, 54)
         Me.exitMetroButton.TabIndex = 3
@@ -46,10 +45,10 @@ Partial Class welcomeForm
         Me.signInMetroTile.ActiveControl = Nothing
         Me.signInMetroTile.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.signInMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.signInMetroTile.Location = New System.Drawing.Point(1557, 194)
-        Me.signInMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.signInMetroTile.Location = New System.Drawing.Point(1533, 158)
+        Me.signInMetroTile.Margin = New System.Windows.Forms.Padding(4)
         Me.signInMetroTile.Name = "signInMetroTile"
-        Me.signInMetroTile.Size = New System.Drawing.Size(159, 91)
+        Me.signInMetroTile.Size = New System.Drawing.Size(186, 115)
         Me.signInMetroTile.Style = MetroFramework.MetroColorStyle.Purple
         Me.signInMetroTile.TabIndex = 12
         Me.signInMetroTile.Text = "SIGN IN"
@@ -57,28 +56,13 @@ Partial Class welcomeForm
         Me.signInMetroTile.UseCustomBackColor = True
         Me.signInMetroTile.UseSelectable = True
         '
-        'signUpMetroTile
-        '
-        Me.signUpMetroTile.ActiveControl = Nothing
-        Me.signUpMetroTile.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.signUpMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(164, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.signUpMetroTile.Location = New System.Drawing.Point(1557, 33)
-        Me.signUpMetroTile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.signUpMetroTile.Name = "signUpMetroTile"
-        Me.signUpMetroTile.Size = New System.Drawing.Size(159, 98)
-        Me.signUpMetroTile.Style = MetroFramework.MetroColorStyle.Silver
-        Me.signUpMetroTile.TabIndex = 11
-        Me.signUpMetroTile.Text = "SIGN UP"
-        Me.signUpMetroTile.UseCustomBackColor = True
-        Me.signUpMetroTile.UseSelectable = True
-        '
         'mainPictureBox
         '
         Me.mainPictureBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.mainPictureBox.Location = New System.Drawing.Point(28, 158)
-        Me.mainPictureBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.mainPictureBox.Margin = New System.Windows.Forms.Padding(4)
         Me.mainPictureBox.Name = "mainPictureBox"
         Me.mainPictureBox.Size = New System.Drawing.Size(1481, 630)
         Me.mainPictureBox.TabIndex = 13
@@ -88,7 +72,7 @@ Partial Class welcomeForm
         '
         Me.welcomeLabel.AutoSize = True
         Me.welcomeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.welcomeLabel.Location = New System.Drawing.Point(396, 50)
+        Me.welcomeLabel.Location = New System.Drawing.Point(413, 52)
         Me.welcomeLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.welcomeLabel.Name = "welcomeLabel"
         Me.welcomeLabel.Size = New System.Drawing.Size(214, 69)
@@ -104,9 +88,8 @@ Partial Class welcomeForm
         Me.Controls.Add(Me.welcomeLabel)
         Me.Controls.Add(Me.mainPictureBox)
         Me.Controls.Add(Me.signInMetroTile)
-        Me.Controls.Add(Me.signUpMetroTile)
         Me.Controls.Add(Me.exitMetroButton)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "welcomeForm"
         Me.Text = "Dawati"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -117,7 +100,6 @@ Partial Class welcomeForm
     End Sub
     Friend WithEvents exitMetroButton As MetroFramework.Controls.MetroButton
     Friend WithEvents signInMetroTile As MetroFramework.Controls.MetroTile
-    Friend WithEvents signUpMetroTile As MetroFramework.Controls.MetroTile
     Friend WithEvents mainPictureBox As PictureBox
     Friend WithEvents welcomeLabel As Label
 End Class

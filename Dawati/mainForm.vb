@@ -237,14 +237,14 @@ Public Class mainForm
         aboutPanel.Visible = False
 
     End Sub
-    Private Sub editMetroButton_Click(sender As Object, e As EventArgs) Handles editMetroButton.Click
+    Private Sub editMetroButton_Click(sender As Object, e As EventArgs)
         fnameMetroTextBox.ReadOnly = False
         lnameMetroTextBox.ReadOnly = False
         emailMetroTextBox.ReadOnly = False
-        browseButton.Visible = True
-        aboutPanel.Visible = False
-        editMetroButton.Visible = False
-        updateMetroButton.Visible = True
+        'browseButton.Visible = True
+        'aboutPanel.Visible = False
+        'editMetroButton.Visible = False
+        'updateMetroButton.Visible = True
     End Sub
 
     Private Sub aboutMetroTile_Click(sender As Object, e As EventArgs) Handles aboutMetroTile.Click
@@ -279,7 +279,7 @@ Public Class mainForm
         selectStudyLevel.ShowDialog()
     End Sub
 
-    Private Sub socialVideosMetroTile_Click(sender As Object, e As EventArgs) Handles socialVideosMetroTile.Click
+    Private Sub socialVideosMetroTile_Click(sender As Object, e As EventArgs)
         subject = "social"
         learningMaterial = "videos"
         selectStudyLevel.initialize(subject, learningMaterial)
@@ -375,7 +375,7 @@ Public Class mainForm
         selectStudyLevel.ShowDialog()
     End Sub
 
-    Private Sub socialEbookMetroTile_Click(sender As Object, e As EventArgs) Handles socialEbookMetroTile.Click
+    Private Sub socialEbookMetroTile_Click(sender As Object, e As EventArgs)
         subject = "social"
         learningMaterial = "eBook"
         selectStudyLevel.initialize(subject, learningMaterial)
@@ -545,15 +545,22 @@ Public Class mainForm
 
     Private Sub exitMetroButton_Click(sender As Object, e As EventArgs) Handles exitMetroButton.Click
 
-        Close()
-        Application.Exit()
+        Dim buttonDialogResult As DialogResult = MessageBox.Show("Are you sure you want to quit?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+        If buttonDialogResult = DialogResult.Yes Then
+            Me.Close()
+
+        End If
     End Sub
 
 
 
 
     Private Sub logoutMetroTile_Click(sender As Object, e As EventArgs) Handles logoutMetroTile.Click
-        Close()
+        Dim buttonDialogResult As DialogResult = MessageBox.Show("Are you sure you want to quit?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+        If buttonDialogResult = DialogResult.Yes Then
+            Me.Close()
+
+        End If
     End Sub
     'updates content
     Private Sub updateContentMetroTile_Click(sender As Object, e As EventArgs) Handles updateContentMetroTile.Click
@@ -587,9 +594,7 @@ Public Class mainForm
         Application.Exit()
     End Sub
 
-    Private Sub fnameMetroLabel_Click(sender As Object, e As EventArgs) Handles fnameMetroLabel.Click
 
-    End Sub
 
 
 

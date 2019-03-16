@@ -46,9 +46,9 @@ Public Class loading
 
 
         ' the Update happens in this order
+        updateUsers()
         writeMaterialDetails()
         syncEvaluations()
-        updateUsers()
         reverseUpdateUsers()
 
 
