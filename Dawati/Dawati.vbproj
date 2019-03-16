@@ -79,14 +79,6 @@
     <ManifestKeyFile>Dawati_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Apitron.PDF.Controls, Version=1.0.122.0, Culture=neutral, PublicKeyToken=6e759dbb0039406e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Apitron.PDF.Controls.1.0.122\lib\net451\Apitron.PDF.Controls.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Apitron.PDF.Rasterizer, Version=3.0.122.0, Culture=neutral, PublicKeyToken=6e759dbb0039406e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Apitron.PDF.Controls.1.0.122\lib\net451\Apitron.PDF.Rasterizer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="BCrypt.Net, Version=0.1.4141.31969, Culture=neutral, PublicKeyToken=f3bc8f8c31beeb49, processorArchitecture=MSIL">
       <HintPath>..\packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
       <Private>True</Private>

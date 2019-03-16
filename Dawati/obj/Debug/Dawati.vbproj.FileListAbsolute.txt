@@ -69,8 +69,6 @@ C:\Users\25479\Documents\Visual Studio 2015\Projects\Dawati\Dawati\obj\Debug\Daw
 C:\Users\25479\Documents\Visual Studio 2015\Projects\Dawati\Dawati\bin\Debug\Dawati.exe
 C:\Users\25479\Documents\Visual Studio 2015\Projects\Dawati\Dawati\bin\Debug\Dawati.pdb
 C:\Users\25479\Documents\Visual Studio 2015\Projects\Dawati\Dawati\bin\Debug\Dawati.xml
-C:\Users\25479\Documents\Visual Studio 2015\Projects\Dawati\Dawati\bin\Debug\Apitron.PDF.Controls.dll
-C:\Users\25479\Documents\Visual Studio 2015\Projects\Dawati\Dawati\bin\Debug\Apitron.PDF.Rasterizer.dll
 C:\Users\25479\Documents\Visual Studio 2015\Projects\Dawati\Dawati\bin\Debug\BCrypt.Net.dll
 C:\Users\25479\Documents\Visual Studio 2015\Projects\Dawati\Dawati\bin\Debug\EntityFramework.dll
 C:\Users\25479\Documents\Visual Studio 2015\Projects\Dawati\Dawati\bin\Debug\EntityFramework.SqlServer.dll
@@ -84,8 +82,6 @@ C:\Users\25479\Documents\Visual Studio 2015\Projects\Dawati\Dawati\bin\Debug\MyS
 C:\Users\25479\Documents\Visual Studio 2015\Projects\Dawati\Dawati\bin\Debug\System.Data.SQLite.dll
 C:\Users\25479\Documents\Visual Studio 2015\Projects\Dawati\Dawati\bin\Debug\System.Data.SQLite.EF6.dll
 C:\Users\25479\Documents\Visual Studio 2015\Projects\Dawati\Dawati\bin\Debug\System.Data.SQLite.Linq.dll
-C:\Users\25479\Documents\Visual Studio 2015\Projects\Dawati\Dawati\bin\Debug\Apitron.PDF.Controls.xml
-C:\Users\25479\Documents\Visual Studio 2015\Projects\Dawati\Dawati\bin\Debug\Apitron.PDF.Rasterizer.xml
 C:\Users\25479\Documents\Visual Studio 2015\Projects\Dawati\Dawati\bin\Debug\BCrypt.Net.xml
 C:\Users\25479\Documents\Visual Studio 2015\Projects\Dawati\Dawati\bin\Debug\EntityFramework.xml
 C:\Users\25479\Documents\Visual Studio 2015\Projects\Dawati\Dawati\bin\Debug\EntityFramework.SqlServer.xml

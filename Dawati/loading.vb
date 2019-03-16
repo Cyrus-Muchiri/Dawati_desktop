@@ -43,12 +43,13 @@ Public Class loading
     End Sub
 
     Public Sub updateContent()
-        ' syncEvaluations()
-        'updateUsers()
-        'reverseUpdateUsers()
+
+
+        ' the Update happens in this order
         writeMaterialDetails()
-
-
+        syncEvaluations()
+        updateUsers()
+        reverseUpdateUsers()
 
 
     End Sub
@@ -57,7 +58,7 @@ Public Class loading
     Public Sub writeMaterialDetails()
         ' stores data from remote database
         Dim file_name, file_type, target, study_level As String
-        Dim file_id, num_slides, multimedia_series, multimedia_type As Integer
+        Dim file_id, num_slides, multimedia_series, multimedia_type, views As Integer
         Dim count As Integer = 0
         Dim dbConnect = New databaseConnection 'object
         dbConnect.dbConnection()
@@ -75,6 +76,8 @@ Public Class loading
                 multimedia_series = dbConnect.MySqlReader("multimedia_series")
                 multimedia_type = dbConnect.MySqlReader("multimedia_type")
                 study_level = dbConnect.MySqlReader("study_level")
+                views = 0
+
 
                 'check for existing content in local database
                 dbConnect.sqlLiteConnection("multimedia.db")
@@ -89,12 +92,12 @@ Public Class loading
                         'add counter
                         count = count + 1
                         'record doesn't exist
-                        Dim insertstrSql As String = "Insert into multimedia_content (file_id,file_name,file_type,target,num_slides,multimedia_series,
-                    multimedia_type,study_level ) VALUES( '" & file_id & "','" & file_name & "','" & file_type & "','" & target & "','" & num_slides & "',
-                    '" & multimedia_series & "','" & multimedia_type & "','" & study_level & "') "
+                        Dim insertstrSql As String = "Insert into multimedia_content (file_id,file_name,file_type,target,num_slides,multimedia_series,multimedia_type,study_level,views ) VALUES( '" & file_id & "','" & file_name & "','" & file_type & "','" & target & "','" & num_slides & "','" & multimedia_series & "','" & multimedia_type & "','" & study_level & "','" & views & "') "
                         'download said video
 
-                        dbConnect.insertSqlite(insertstrSql)
+                        dbConnect.qinsertSqlite(insertstrSql)
+                        'MessageBox.Show("Success")
+
 
 
                         If file_type = "video" Then
@@ -103,7 +106,7 @@ Public Class loading
                             downloadEbooks(file_id, file_name)
                         End If
 
-                        dbConnect.closeSqlite()
+                        'dbConnect.closeSqlite()
 
                     End If
 
@@ -140,7 +143,7 @@ Public Class loading
 
         ElseIf multimediaSeries = "2" Then
             'Chemistry
-            My.Computer.Network.DownloadFile("https://www.dawati.co.ke/uploads/multimedia/content/Chemistry/" & filename & "",
+            My.Computer.Network.DownloadFile("https://www.dawati.co.ke/uploads/multimedia/content/video/Chemistry/" & filename & "",
                                              "assets\videos\decrypted\" & filename & "")
 
         ElseIf multimediaSeries = "1" Then
@@ -247,7 +250,7 @@ Public Class loading
                 'Try
                 sqliteCommandQuestions.ExecuteNonQuery()
                 '  Catch ex As Exception
-                MessageBox.Show("It was a success")
+                'MessageBox.Show("It was a success")
                 ' End Try
                 SQLiteConnection.Close()
                 count = count + 1
@@ -320,7 +323,7 @@ Public Class loading
 
                 Try
                     sqliteCommandQA.ExecuteNonQuery()
-                    MessageBox.Show("This is also working")
+                    'MessageBox.Show("This is also working")
                 Catch ex As Exception
                     MessageBox.Show(ex.Message)
                 End Try
@@ -403,8 +406,13 @@ Public Class loading
                 sqliteCommand.Parameters.AddWithValue("@numQuestions", numOfQuestions)
                 sqliteCommand.Parameters.AddWithValue("@hours", hours)
                 sqliteCommand.Parameters.AddWithValue("@minutes", minutes)
+                Try
+                    sqliteCommand.ExecuteNonQuery()
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message)
 
-                sqliteCommand.ExecuteNonQuery()
+                End Try
+
                 count = count + 1
                 SQLiteConnection.Close()
             End If
