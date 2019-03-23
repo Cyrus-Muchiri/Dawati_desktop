@@ -10,13 +10,7 @@ Public Class welcomeForm
         mainPictureBox.BackgroundImageLayout = ImageLayout.Stretch
 
     End Sub
-    
 
-    Private Sub signUpMetroTile_Click_1(sender As Object, e As EventArgs) 
-        signUpForm.ShowDialog()
-
-
-    End Sub
 
     Private Sub signInMetroTile_Click(sender As Object, e As EventArgs) Handles signInMetroTile.Click
         signInForm.ShowDialog()
@@ -38,5 +32,9 @@ Public Class welcomeForm
     End Sub
     Private Sub welcomeForm_closed(sender As Object, e As EventArgs) Handles MyBase.Closed
         Application.Exit()
+    End Sub
+
+    Private Sub signUpMetroTile_Click(sender As Object, e As EventArgs) Handles signUpMetroTile.Click
+        signUpForm.ShowDialog()
     End Sub
 End Class

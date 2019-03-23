@@ -98,7 +98,7 @@ Partial Class mainForm
         Me.mathsEvalMetroTile = New MetroFramework.Controls.MetroTile()
         Me.chemistryPictureBox = New System.Windows.Forms.PictureBox()
         Me.aboutPanel = New System.Windows.Forms.Panel()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.copyrightLabel = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -180,7 +180,7 @@ Partial Class mainForm
         'exitMetroButton
         '
         Me.exitMetroButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.exitMetroButton.Location = New System.Drawing.Point(1701, 782)
+        Me.exitMetroButton.Location = New System.Drawing.Point(1709, 782)
         Me.exitMetroButton.Margin = New System.Windows.Forms.Padding(4)
         Me.exitMetroButton.Name = "exitMetroButton"
         Me.exitMetroButton.Size = New System.Drawing.Size(100, 47)
@@ -197,7 +197,7 @@ Partial Class mainForm
         Me.MetroPanel1.HorizontalScrollbarBarColor = True
         Me.MetroPanel1.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.HorizontalScrollbarSize = 12
-        Me.MetroPanel1.Location = New System.Drawing.Point(1644, 278)
+        Me.MetroPanel1.Location = New System.Drawing.Point(1640, 280)
         Me.MetroPanel1.Margin = New System.Windows.Forms.Padding(4)
         Me.MetroPanel1.Name = "MetroPanel1"
         Me.MetroPanel1.Size = New System.Drawing.Size(213, 64)
@@ -243,7 +243,7 @@ Partial Class mainForm
         'avatarPictureBox
         '
         Me.avatarPictureBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.avatarPictureBox.Location = New System.Drawing.Point(1640, 105)
+        Me.avatarPictureBox.Location = New System.Drawing.Point(1648, 105)
         Me.avatarPictureBox.Margin = New System.Windows.Forms.Padding(4)
         Me.avatarPictureBox.Name = "avatarPictureBox"
         Me.avatarPictureBox.Size = New System.Drawing.Size(213, 153)
@@ -486,10 +486,10 @@ Partial Class mainForm
         Me.ebooksMetroPanel.HorizontalScrollbarBarColor = True
         Me.ebooksMetroPanel.HorizontalScrollbarHighlightOnWheel = False
         Me.ebooksMetroPanel.HorizontalScrollbarSize = 12
-        Me.ebooksMetroPanel.Location = New System.Drawing.Point(309, 121)
+        Me.ebooksMetroPanel.Location = New System.Drawing.Point(304, 121)
         Me.ebooksMetroPanel.Margin = New System.Windows.Forms.Padding(4)
         Me.ebooksMetroPanel.Name = "ebooksMetroPanel"
-        Me.ebooksMetroPanel.Size = New System.Drawing.Size(1305, 734)
+        Me.ebooksMetroPanel.Size = New System.Drawing.Size(1318, 753)
         Me.ebooksMetroPanel.TabIndex = 9
         Me.ebooksMetroPanel.UseCustomBackColor = True
         Me.ebooksMetroPanel.VerticalScrollbarBarColor = True
@@ -673,7 +673,7 @@ Partial Class mainForm
         Me.videosMetroPanel.Location = New System.Drawing.Point(304, 121)
         Me.videosMetroPanel.Margin = New System.Windows.Forms.Padding(4)
         Me.videosMetroPanel.Name = "videosMetroPanel"
-        Me.videosMetroPanel.Size = New System.Drawing.Size(1305, 731)
+        Me.videosMetroPanel.Size = New System.Drawing.Size(1318, 753)
         Me.videosMetroPanel.TabIndex = 15
         Me.videosMetroPanel.UseCustomBackColor = True
         Me.videosMetroPanel.VerticalScrollbarBarColor = True
@@ -840,7 +840,7 @@ Partial Class mainForm
         Me.classRoomLabel.AutoSize = True
         Me.classRoomLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.classRoomLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.classRoomLabel.Location = New System.Drawing.Point(782, 54)
+        Me.classRoomLabel.Location = New System.Drawing.Point(764, 45)
         Me.classRoomLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.classRoomLabel.Name = "classRoomLabel"
         Me.classRoomLabel.Size = New System.Drawing.Size(362, 42)
@@ -868,7 +868,7 @@ Partial Class mainForm
         Me.profilePanel.Location = New System.Drawing.Point(304, 121)
         Me.profilePanel.Margin = New System.Windows.Forms.Padding(4)
         Me.profilePanel.Name = "profilePanel"
-        Me.profilePanel.Size = New System.Drawing.Size(1310, 743)
+        Me.profilePanel.Size = New System.Drawing.Size(1318, 753)
         Me.profilePanel.TabIndex = 17
         '
         'profilemagePictureBox
@@ -1131,10 +1131,10 @@ Partial Class mainForm
         Me.evaluationMetroPanel.HorizontalScrollbarBarColor = True
         Me.evaluationMetroPanel.HorizontalScrollbarHighlightOnWheel = False
         Me.evaluationMetroPanel.HorizontalScrollbarSize = 12
-        Me.evaluationMetroPanel.Location = New System.Drawing.Point(313, 117)
+        Me.evaluationMetroPanel.Location = New System.Drawing.Point(304, 121)
         Me.evaluationMetroPanel.Margin = New System.Windows.Forms.Padding(4)
         Me.evaluationMetroPanel.Name = "evaluationMetroPanel"
-        Me.evaluationMetroPanel.Size = New System.Drawing.Size(1305, 734)
+        Me.evaluationMetroPanel.Size = New System.Drawing.Size(1318, 753)
         Me.evaluationMetroPanel.TabIndex = 18
         Me.evaluationMetroPanel.UseCustomBackColor = True
         Me.evaluationMetroPanel.VerticalScrollbarBarColor = True
@@ -1300,26 +1300,25 @@ Partial Class mainForm
         Me.aboutPanel.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.aboutPanel.BackColor = System.Drawing.Color.Silver
-        Me.aboutPanel.Controls.Add(Me.Label8)
+        Me.aboutPanel.Controls.Add(Me.copyrightLabel)
         Me.aboutPanel.Controls.Add(Me.PictureBox1)
         Me.aboutPanel.Controls.Add(Me.Label7)
         Me.aboutPanel.Controls.Add(Me.Label6)
-        Me.aboutPanel.Location = New System.Drawing.Point(308, 110)
+        Me.aboutPanel.Location = New System.Drawing.Point(304, 121)
         Me.aboutPanel.Margin = New System.Windows.Forms.Padding(4)
         Me.aboutPanel.Name = "aboutPanel"
-        Me.aboutPanel.Size = New System.Drawing.Size(1302, 750)
+        Me.aboutPanel.Size = New System.Drawing.Size(1318, 753)
         Me.aboutPanel.TabIndex = 19
         '
-        'Label8
+        'copyrightLabel
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(612, 607)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(62, 20)
-        Me.Label8.TabIndex = 3
-        Me.Label8.Text = "© 2018"
+        Me.copyrightLabel.AutoSize = True
+        Me.copyrightLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.copyrightLabel.Location = New System.Drawing.Point(612, 607)
+        Me.copyrightLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.copyrightLabel.Name = "copyrightLabel"
+        Me.copyrightLabel.Size = New System.Drawing.Size(0, 20)
+        Me.copyrightLabel.TabIndex = 3
         '
         'PictureBox1
         '
@@ -1359,7 +1358,7 @@ Partial Class mainForm
         Me.internetConnectionLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.internetConnectionLabel.AutoSize = True
         Me.internetConnectionLabel.ForeColor = System.Drawing.Color.Green
-        Me.internetConnectionLabel.Location = New System.Drawing.Point(1650, 386)
+        Me.internetConnectionLabel.Location = New System.Drawing.Point(1662, 376)
         Me.internetConnectionLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.internetConnectionLabel.Name = "internetConnectionLabel"
         Me.internetConnectionLabel.Size = New System.Drawing.Size(192, 17)
@@ -1371,10 +1370,10 @@ Partial Class mainForm
         '
         Me.updateContentMetroTile.ActiveControl = Nothing
         Me.updateContentMetroTile.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.updateContentMetroTile.Location = New System.Drawing.Point(1661, 412)
+        Me.updateContentMetroTile.Location = New System.Drawing.Point(1665, 406)
         Me.updateContentMetroTile.Margin = New System.Windows.Forms.Padding(4)
         Me.updateContentMetroTile.Name = "updateContentMetroTile"
-        Me.updateContentMetroTile.Size = New System.Drawing.Size(184, 112)
+        Me.updateContentMetroTile.Size = New System.Drawing.Size(185, 118)
         Me.updateContentMetroTile.TabIndex = 21
         Me.updateContentMetroTile.Text = "Update Content"
         Me.updateContentMetroTile.UseSelectable = True
@@ -1388,7 +1387,7 @@ Partial Class mainForm
         Me.updatingMetroTile.ActiveControl = Nothing
         Me.updatingMetroTile.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.updatingMetroTile.BackColor = System.Drawing.Color.FromArgb(CType(CType(233, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(27, Byte), Integer))
-        Me.updatingMetroTile.Location = New System.Drawing.Point(1657, 406)
+        Me.updatingMetroTile.Location = New System.Drawing.Point(1665, 406)
         Me.updatingMetroTile.Name = "updatingMetroTile"
         Me.updatingMetroTile.Size = New System.Drawing.Size(185, 118)
         Me.updatingMetroTile.TabIndex = 0
@@ -1402,21 +1401,21 @@ Partial Class mainForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(1856, 904)
+        Me.ClientSize = New System.Drawing.Size(1864, 904)
         Me.ControlBox = False
         Me.Controls.Add(Me.internetConnectionLabel)
         Me.Controls.Add(Me.classRoomLabel)
         Me.Controls.Add(Me.MetroPanel1)
         Me.Controls.Add(Me.exitMetroButton)
         Me.Controls.Add(Me.avatarPictureBox)
-        Me.Controls.Add(Me.profilePanel)
         Me.Controls.Add(Me.MetroPanel2)
         Me.Controls.Add(Me.updatingMetroTile)
         Me.Controls.Add(Me.updateContentMetroTile)
-        Me.Controls.Add(Me.videosMetroPanel)
-        Me.Controls.Add(Me.evaluationMetroPanel)
         Me.Controls.Add(Me.aboutPanel)
         Me.Controls.Add(Me.ebooksMetroPanel)
+        Me.Controls.Add(Me.profilePanel)
+        Me.Controls.Add(Me.videosMetroPanel)
+        Me.Controls.Add(Me.evaluationMetroPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "mainForm"
@@ -1538,7 +1537,7 @@ Partial Class mainForm
     Friend WithEvents aboutPanel As Panel
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents Label8 As Label
+    Friend WithEvents copyrightLabel As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents internetConnectionLabel As Label
     Friend WithEvents updateContentMetroTile As MetroFramework.Controls.MetroTile

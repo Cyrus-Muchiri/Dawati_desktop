@@ -6,12 +6,19 @@
     Private userid As Integer
     'initializing arrays of type control
     Private questionNo(30) As Label
+    'score variables
+    Private totalScore As Double = 0.0
+    Private scorePercentage As Double = 0.0
+    Private totalPossibleScore As Double = 0.0
+
+
+
 
     'global variables
     Private question As String
-        Private questionId As String
-        Private questionType As String
-        Private score As String
+    Private questionId As String
+    Private questionType As String
+    Private score As String
         Private attachment As String
 
 
@@ -53,33 +60,38 @@
 
             Dim i As Integer = 0 'questions counter
 
-            'open database connnection
-            For i = 0 To i = numOfQuestions
-                dbConnect.sqlLiteConnection("Evaluations.db")
-                Dim strSql As String = "select * from questions where exam_id ='" & exam_id & "'"
-                dbConnect.selectSqlite(strSql)
+        'open database connnection
+        For i = 0 To i = numOfQuestions
+            dbConnect.sqlLiteConnection("Evaluations.db")
+            Dim strSql As String = "select * from questions where exam_id ='" & exam_id & "'"
+            dbConnect.selectSqlite(strSql)
 
-                While dbConnect.reader.Read
-                    question = dbConnect.reader("question")
-                    questionId = dbConnect.reader("question_id")
-                    questionType = dbConnect.reader("type")
-                    score = dbConnect.reader("score")
-                    attachment = dbConnect.reader("attachment")
+            While dbConnect.reader.Read
+                question = dbConnect.reader("question")
+                questionId = dbConnect.reader("question_id")
+                questionType = dbConnect.reader("type")
+                score = dbConnect.reader("score")
+                attachment = dbConnect.reader("attachment")
 
-                    ''store answer values if question type is 2 or 3
-                    'If questionType = 2 Or questionType = 3 Then
-                    '    choice1 = dbConnect.reader("")
-                    '    choice1 = dbConnect.reader("")
-                    '    choice1 = dbConnect.reader("")
-                    '    choice1 = dbConnect.reader("")
-                    'End If
+                ''store answer values if question type is 2 or 3
+                'If questionType = 2 Or questionType = 3 Then
+                '    choice1 = dbConnect.reader("")
+                '    choice1 = dbConnect.reader("")
+                '    choice1 = dbConnect.reader("")
+                '    choice1 = dbConnect.reader("")
+                'End If
 
-                    'call displayQuestion method
-                    displayQuestion(question, questionId, questionType, score, attachment)
+                'call displayQuestion method
+                displayQuestion(question, questionId, questionType, score, attachment)
 
-                End While
-            Next
-        End Sub
+            End While
+        Next
+
+        totalScoreLabel.Text = totalScore.ToString & "/" & totalPossibleScore
+        Dim percentage_score As Double = calculatePercentage()
+        percentageScoreLabel.Text = Decimal.Round(percentage_score, 2, MidpointRounding.AwayFromZero).ToString
+
+    End Sub
 
     Private Sub displayQuestion(ByVal question As String, ByVal questionId As String, ByVal questionType As String, ByVal score As String, ByVal attachment As String)
         If questionType = 1 Then
@@ -109,6 +121,10 @@
         Return Choice
     End Function
     Private Sub trueFalseQuestions(ByVal question As String, ByVal questionId As String, ByVal score As Integer, ByVal attachment As String)
+        'increment totalPossibleScore
+        totalPossibleScore += score
+
+
         'local variable to store users answer
         Dim myChoice = showSelectedAnswer(questionId, userid)
 
@@ -242,12 +258,16 @@
             correctAnswerlabel(tf).Location = New Point(34, ycord)
             ycord += 20
         Else
-            statuslabel(tf).Text = "The answer to this question is not provided"
+            statuslabel(tf).Text = status
             statuslabel(tf).Size = New Size(500, 20)
         End If
         'score label
         If status = "Correct" Then
             scorelabel(tf).Text = score & "  marks"
+
+            'increment scores
+            totalScore += score
+
 
         Else
             scorelabel(tf).Text = 0 & "  marks"
@@ -301,6 +321,9 @@
         'select answers and strore them in variables
         '-------------------------------------------
         Dim myChoice = showSelectedAnswer(questionId, userid)
+
+        'increment totalPossibleScore
+        totalPossibleScore += score
 
         ' stores the ycordinate of the answers
         Dim aYcordinate As Integer = 31
@@ -509,6 +532,8 @@
         ycord += 25
         If status = "Correct" Then
             scorelabel(SS).Text = score & "  marks"
+            'increment scores
+            totalScore += score
 
         Else
             scorelabel(SS).Text = 0 & "  marks"
@@ -566,6 +591,8 @@
         'users choice
         Dim myChoice As String = ""
         myChoice = showSelectedAnswer(questionId, userid)
+        'increment totalPossibleScore
+        totalPossibleScore += score
 
         ' stores the ycordinate of the answers
         Dim aYcordinate As Integer = 31
@@ -779,6 +806,9 @@
         If status = "Correct" Then
             scorelabel(MS).Text = score & "  marks"
 
+            'increment scores
+            totalScore += score
+
         Else
             scorelabel(MS).Text = 0 & "  marks"
             ' statusPanel(MS).Controls.Add(correctAnswerlabel(MS))
@@ -922,6 +952,16 @@
         End While
         dbconnect.closeSqlite()
         Return correctChoice
+    End Function
+    'Public Function calculateSore() As Double
+    '    Dim total = totalScore
+
+    '    Return total
+
+    'End Function
+    Public Function calculatePercentage() As Double
+        Dim percentage As Double = (totalScore / totalPossibleScore) * 100
+        Return percentage
     End Function
 
     'Public Function correctAnswersMS(ByVal questionId As String) As String()

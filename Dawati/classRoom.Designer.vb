@@ -99,7 +99,7 @@ Partial Class classRoom
         Me.labsTabPage.Location = New System.Drawing.Point(4, 38)
         Me.labsTabPage.Margin = New System.Windows.Forms.Padding(4)
         Me.labsTabPage.Name = "labsTabPage"
-        Me.labsTabPage.Size = New System.Drawing.Size(1504, 528)
+        Me.labsTabPage.Size = New System.Drawing.Size(1523, 563)
         Me.labsTabPage.TabIndex = 1
         Me.labsTabPage.Text = "                                    Lab practicals                               " &
     "           |"
@@ -132,7 +132,7 @@ Partial Class classRoom
         Me.examsTabPage.Location = New System.Drawing.Point(4, 38)
         Me.examsTabPage.Margin = New System.Windows.Forms.Padding(4)
         Me.examsTabPage.Name = "examsTabPage"
-        Me.examsTabPage.Size = New System.Drawing.Size(1504, 528)
+        Me.examsTabPage.Size = New System.Drawing.Size(1523, 563)
         Me.examsTabPage.TabIndex = 2
         Me.examsTabPage.Text = "                                     Exams                           "
         Me.examsTabPage.VerticalScrollbarBarColor = True
@@ -156,9 +156,11 @@ Partial Class classRoom
         '
         'Label1
         '
+        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(753, 88)
+        Me.Label1.Location = New System.Drawing.Point(741, 88)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(312, 20)
@@ -189,6 +191,8 @@ Partial Class classRoom
         '
         'subjectLabel
         '
+        Me.subjectLabel.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.subjectLabel.AutoSize = True
         Me.subjectLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.subjectLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
@@ -201,10 +205,12 @@ Partial Class classRoom
         '
         'studyLevelLabel
         '
+        Me.studyLevelLabel.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.studyLevelLabel.AutoSize = True
         Me.studyLevelLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.studyLevelLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(161, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.studyLevelLabel.Location = New System.Drawing.Point(850, 44)
+        Me.studyLevelLabel.Location = New System.Drawing.Point(843, 56)
         Me.studyLevelLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.studyLevelLabel.Name = "studyLevelLabel"
         Me.studyLevelLabel.Size = New System.Drawing.Size(108, 32)

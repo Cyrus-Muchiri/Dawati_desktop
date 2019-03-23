@@ -83,6 +83,10 @@ Public Class mainForm
         fnameMetroLabel.Text = fname
         LnameMetroLabel.Text = lname
 
+        'echo copyright year
+        Dim currentYear = Date.Today.Year
+        copyrightLabel.Text = "© 2018 - " & currentYear
+
         'checks internet conection, if present syncs
         Dim loading_object = New loading
         loading.checkConnection()

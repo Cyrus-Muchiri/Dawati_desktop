@@ -27,6 +27,10 @@ Partial Class attemptReports
         Me.scoreTextLabel = New System.Windows.Forms.Label()
         Me.ExamTitleLabel = New System.Windows.Forms.Label()
         Me.questionsPanel = New System.Windows.Forms.Panel()
+        Me.label10 = New System.Windows.Forms.Label()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.totalScoreLabel = New System.Windows.Forms.Label()
+        Me.percentageScoreLabel = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'commentsTextLabel
@@ -91,11 +95,55 @@ Partial Class attemptReports
         Me.questionsPanel.Size = New System.Drawing.Size(1481, 712)
         Me.questionsPanel.TabIndex = 10
         '
+        'label10
+        '
+        Me.label10.AutoSize = True
+        Me.label10.Location = New System.Drawing.Point(12, 131)
+        Me.label10.Name = "label10"
+        Me.label10.Size = New System.Drawing.Size(45, 17)
+        Me.label10.TabIndex = 18
+        Me.label10.Text = "Score"
+        '
+        'label3
+        '
+        Me.label3.AutoSize = True
+        Me.label3.Location = New System.Drawing.Point(12, 199)
+        Me.label3.Name = "label3"
+        Me.label3.Size = New System.Drawing.Size(81, 17)
+        Me.label3.TabIndex = 19
+        Me.label3.Text = "Percentage"
+        '
+        'totalScoreLabel
+        '
+        Me.totalScoreLabel.AutoSize = True
+        Me.totalScoreLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.totalScoreLabel.ForeColor = System.Drawing.Color.Teal
+        Me.totalScoreLabel.Location = New System.Drawing.Point(149, 131)
+        Me.totalScoreLabel.Name = "totalScoreLabel"
+        Me.totalScoreLabel.Size = New System.Drawing.Size(66, 24)
+        Me.totalScoreLabel.TabIndex = 20
+        Me.totalScoreLabel.Text = "Label1"
+        '
+        'percentageScoreLabel
+        '
+        Me.percentageScoreLabel.AutoSize = True
+        Me.percentageScoreLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.percentageScoreLabel.ForeColor = System.Drawing.Color.Teal
+        Me.percentageScoreLabel.Location = New System.Drawing.Point(149, 199)
+        Me.percentageScoreLabel.Name = "percentageScoreLabel"
+        Me.percentageScoreLabel.Size = New System.Drawing.Size(66, 24)
+        Me.percentageScoreLabel.TabIndex = 21
+        Me.percentageScoreLabel.Text = "Label2"
+        '
         'attemptReports
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1780, 812)
+        Me.Controls.Add(Me.percentageScoreLabel)
+        Me.Controls.Add(Me.totalScoreLabel)
+        Me.Controls.Add(Me.label3)
+        Me.Controls.Add(Me.label10)
         Me.Controls.Add(Me.commentsTextLabel)
         Me.Controls.Add(Me.scoreLabel)
         Me.Controls.Add(Me.scoreTextLabel)
@@ -114,4 +162,8 @@ Partial Class attemptReports
     Friend WithEvents scoreTextLabel As Label
     Friend WithEvents ExamTitleLabel As Label
     Friend WithEvents questionsPanel As Panel
+    Friend WithEvents label10 As Label
+    Friend WithEvents label3 As Label
+    Friend WithEvents totalScoreLabel As Label
+    Friend WithEvents percentageScoreLabel As Label
 End Class
